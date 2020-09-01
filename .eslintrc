@@ -1,0 +1,9 @@
+{
+    "plugins": [
+        "eslint-plugin-san",
+        "san"
+    ],
+    "rules": {
+        "san/if-no-var": 1
+    }
+}
