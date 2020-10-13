@@ -1,15 +1,18 @@
 Global:
-    tool : build_submitter
+  tool: build_submitter
+
 Default:
-    profile : [dev]
+  profile: [dev]
+
 Profiles:
-    - profile:
-        name : dev
-        env : cmc_standard
-        command : ./build.sh
-        release : true
-    - profile:
-        name :  publish
-        env : cmc_standard
-        command : ./publish.sh
-        release : true
+  - profile:
+    name: dev
+    env: DECK_CENTOS7U5_K3
+    command: export NODE_ENV='development'
+    release: false
+
+  - profile:
+    name: prod
+    env: DECK_CENTOS7U5_K3
+    command: export NODE_ENV='production'
+    release: false
