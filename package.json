@@ -2,27 +2,27 @@
     "name": "eslint-plugin-san",
     "version": "0.0.1",
     "description": "Official ESLint plugin for San",
-    "main": "lib/index.js",
-    "scripts": {
-        "test": "mocha tests --recursive"
-    },
     "keywords": [
         "eslint",
         "eslintplugin",
-        "eslint-plugin",
-        "eslint-config",
-        "san"
+        "eslint-plugin"
     ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ecomfe/fecs"
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "jest",
+        "test:cover": "jest --coverage",
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs"
     },
-    "license": "MIT",
     "dependencies": {
-        "requireindex": "~1.1.0"
     },
     "devDependencies": {
         "eslint": "^7.1.0",
-        "mocha": "^7.2.0"
-    }
+        "eslint-plugin-vue": "^7.0.1",
+        "vuepress": "^1.6.0"
+    },
+    "engines": {
+        "node": ">=8.10"
+    },
+    "license": "MIT"
 }
