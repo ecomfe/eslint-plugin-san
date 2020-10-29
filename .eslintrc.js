@@ -27,7 +27,7 @@ module.exports = {
     overrides: [
         {
             files: ['**/*.san'],
-            parser: require.resolve('vue-eslint-parser'),
+            parser: require.resolve('san-eslint-parser'),
             parserOptions: {
                 ecmaVersion: 2020,
                 sourceType: 'module'

@@ -9,8 +9,8 @@
 // Requirements
 // ------------------------------------------------------------------------------
 
-const requireRule = require('../../../lib/utils/utils').requireRule;
 const RuleTester = require('eslint').RuleTester;
+const requireRule = require('../../../lib/utils/utils').requireRule;
 const rule = requireRule('no-duplicate-attributes');
 
 // ------------------------------------------------------------------------------
