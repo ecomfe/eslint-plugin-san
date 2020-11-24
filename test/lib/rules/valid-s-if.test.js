@@ -5,6 +5,8 @@
  */
 'use strict';
 
+/* eslint-disable */
+
 // ------------------------------------------------------------------------------
 // Requirements
 // ------------------------------------------------------------------------------
@@ -34,12 +36,12 @@ tester.run('valid-s-if', rule, {
         },
         // parsing error
         {
-            filename: 'parsing-error.vue',
+            filename: 'parsing-error.san',
             code: '<template><div s-if="."></div></template>'
         },
         // comment value (parsing error)
         {
-            filename: 'comment-value.vue',
+            filename: 'comment-value.san',
             code: '<template><div s-if="/**/"></div></template>'
         }
     ],
@@ -47,9 +49,7 @@ tester.run('valid-s-if', rule, {
         {
             filename: 'test.san',
             code: '<template><div><div s-if="foo" s-else></div></div></template>',
-            errors: [
-                "'s-if' and 's-else' directives can't exist on the same element. You may want 's-else-if' directives."
-            ]
+            errors: ["'s-if' and 's-else' directives can't exist on the same element. You may want 's-else-if' directives."]
         },
         {
             filename: 'test.san',
@@ -73,7 +73,7 @@ tester.run('valid-s-if', rule, {
         },
         // empty value
         {
-            filename: 'empty-value.vue',
+            filename: 'empty-value.san',
             code: '<template><div><div s-if=""></div></div></template>',
             errors: ["'s-if' directives require that attribute value."]
         }
