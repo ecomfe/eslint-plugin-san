@@ -16,11 +16,12 @@
     },
     "dependencies": {
         "eslint-plugin-vue": "^7.0.1",
-        "jest": "^26.5.3",
         "san-eslint-parser": "^1.0.0"
     },
     "devDependencies": {
+        "babel-eslint": "^10.1.0",
         "eslint": "^7.1.0",
+        "jest": "^26.5.3",
         "vuepress": "^1.6.0"
     },
     "engines": {

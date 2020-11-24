@@ -18,7 +18,7 @@ const rule = requireRule('no-duplicate-attributes');
 // ------------------------------------------------------------------------------
 
 const tester = new RuleTester({
-    parser: require.resolve('vue-eslint-parser'),
+    parser: require.resolve('san-eslint-parser'),
     parserOptions: {ecmaVersion: 2015}
 });
 
@@ -68,11 +68,6 @@ tester.run('no-duplicate-attributes', rule, {
           filename: 'test.san',
           code: '<template><div><div foo foo></div></div></template>',
           errors: ["Duplicate attribute 'foo'."]
-        },
-        {
-            filename: 'test.san',
-            code: '<template><div><div foo v-bind:foo></div></div></template>',
-            errors: ["Duplicate attribute 'foo'."]
         },
         {
             filename: 'test.san',
