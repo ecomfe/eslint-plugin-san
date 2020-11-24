@@ -44,9 +44,9 @@ sidebarDepth: 0
 | Draft |[san/no-textarea-mustache](./rules/no-textarea-mustache.md) | 禁止`<textarea>`使用插值 |   |
 | Draft | [san/return-in-computed-property](./rules/return-in-computed-property.md) | 强制计算数据方法提供返回值 |  |
 | Draft | [san/valid-template-root](./rules/valid-template-root.md) | 禁止无效模板根节点 |  |
-| Draft | [san/valid-s-html](./rules/valid-s-html.md) | 正确使用`s-html` |  |
+| Draft | [san/valid-s-show](./rules/valid-s-show.md) | 正确使用`s-show` |  |
 | Draft | [san/valid-s-if](./rules/valid-s-if.md) | 正确使用`s-if` |  |
-| Draft | [san/valid-s-elif](./rules/valid-s-elif.md) | 正确使用`s-elif`  |   |
+| Draft | [san/valid-s-else-if](./rules/valid-s-else-if.md) | 正确使用`s-else-if`  |   |
 | Draft | [san/valid-s-else](./rules/valid-s-else.md) | 正确使用`s-else` |  |
 | Draft | [san/no-template-key](./rules/no-template-key.md) | 禁止`<template>`使用属性 |    |
 | Draft | [san/valid-on](./rules/valid-on.md) | 正确使用`on` |  |
