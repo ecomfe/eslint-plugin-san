@@ -17,7 +17,7 @@ const rule = require('../../../lib/rules/valid-template-root');
 // ------------------------------------------------------------------------------
 
 const tester = new RuleTester({
-    parser: require.resolve('vue-eslint-parser'),
+    parser: require.resolve('san-eslint-parser'),
     parserOptions: {ecmaVersion: 2015}
 });
 

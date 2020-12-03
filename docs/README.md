@@ -53,7 +53,6 @@ sidebarDepth: 0
 | Draft | [san/valid-twoway-binding](./rules/valid-twoway-binding.md) | 强制双向绑定使用正确表达式 |  |
 | Draft | [san/valid-s-for](./rules/valid-s-for.md) | 正确使用`s-for` |  |
 | Draft | [san/no-unused-vars](./rules/no-unused-vars.md) | 禁止s-for指令有未使用的变量定义 |  |
-| Draft | [san/require-valid-default-prop](./rules/require-valid-default-prop.md) | 强制属性默认值类型与属性类型一致 |   |
 
 ### 强烈推荐(strongly-recommended)
 
@@ -75,8 +74,6 @@ sidebarDepth: 0
 | Draft | [san/mustache-interpolation-spacing](./rules/mustache-interpolation-spacing.md) | 强制插值内无空白 |
 | Draft | [san/no-multi-spaces](./rules/no-multi-spaces.md) | 禁止多余的空格 |
 | Draft | [san/name-property-casing](./rules/name-property-casing.md) | 组件名称大小写 |
-| Draft | [san/require-default-prop](./rules/require-default-prop.md) | 需要定义属性默认值 |  |
-| Draft | [san/require-prop-types](./rules/require-prop-types.md) | 需要定义属性默认类型 |  |
 
 ### 推荐(recommended)
 
