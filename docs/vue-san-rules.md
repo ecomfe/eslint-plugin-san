@@ -16,7 +16,7 @@ Enforce all the rules in this category, as well as all higher priority rules, wi
 | Rule ID | Description | San | Reason |
 |:--------|:------------|:---|---------|
 | [vue/comment-directive](./comment-directive.md) | support comment-directives in `<template>` | :white_check_mark: | |
-| [vue/experimental-script-setup-vars](./experimental-script-setup-vars.md) | prevent variables defined in `<script setup>` to be marked as undefined | :white_check_mark: | |
+| [vue/experimental-script-setup-vars](./experimental-script-setup-vars.md) | prevent variables defined in `<script setup>` to be marked as undefined | | No |
 | [vue/jsx-uses-vars](./jsx-uses-vars.md) | prevent variables used in JSX to be marked as unused |  | No |
 
 
