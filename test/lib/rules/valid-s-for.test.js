@@ -93,32 +93,31 @@ tester.run('valid-s-for', rule, {
         {
             filename: 'test.san',
             code: `
-        <template>
-          <template s-for="x in xs">
-            <template s-for="y in x.ys">
-              <li s-for="z in y.zs" :key="z.id">
-                123
-              </li>
-            </template>
-          </template>
-        </template>
-      `
+                <template>
+                    <template s-for="x in xs">
+                        <template s-for="y in x.ys">
+                            <li s-for="z in y.zs" :key="z.id">
+                                123
+                            </li>
+                        </template>
+                    </template>
+                </template>
+            `
         },
         {
             filename: 'test.san',
             code: `
-        <template>
-          <template s-for="x in xs">
-            <template s-for="y in ys">
-              <li s-for="z in zs" :key="x.id + y.id + z.id">
-                123
-              </li>
-            </template>
-          </template>
-        </template>
-      `
+                <template>
+                    <template s-for="x in xs">
+                        <template s-for="y in ys">
+                            <li s-for="z in zs" :key="x.id + y.id + z.id">
+                                123
+                            </li>
+                        </template>
+                    </template>
+                </template>
+            `
         },
-        // key on <template> : In Vue.js 3.x, you can place key on <template>.
         {
             filename: 'test.san',
             code: '<template><div><template s-for="x in list" s-bind:key="x"><div /></template></div></template>'
@@ -156,7 +155,6 @@ tester.run('valid-s-for', rule, {
             code:
                 '<template><div><template s-for="x in list" :key="x"><custom-component></custom-component></template></div></template>'
         },
-        // key on <slot> : In Vue.js 3.x, you can place key on <slot>.
         {
             filename: 'test.san',
             code: '<template><div><slot s-for="x in list" :key="x"><div /></slot></div></template>'
@@ -278,16 +276,16 @@ tester.run('valid-s-for', rule, {
                 "Expected 's-bind:key' directive to use the variables which are defined by the 's-for' directive."
             ],
             code: `
-        <template>
-          <template s-for="x in xs">
-            <template s-for="y in a.ys">
-              <li s-for="z in y.zs" :key="z.id">
-                123
-              </li>
-            </template>
-          </template>
-        </template>
-      `
+                <template>
+                    <template s-for="x in xs">
+                        <template s-for="y in a.ys">
+                            <li s-for="z in y.zs" :key="z.id">
+                                123
+                            </li>
+                        </template>
+                    </template>
+                </template>
+            `
         },
         {
             filename: 'test.san',
@@ -295,16 +293,16 @@ tester.run('valid-s-for', rule, {
                 "Expected 's-bind:key' directive to use the variables which are defined by the 's-for' directive."
             ],
             code: `
-        <template>
-          <template s-for="x in xs">
-            <template s-for="y in x.ys">
-              <li s-for="z in a.zs" :key="z.id">
-                123
-              </li>
-            </template>
-          </template>
-        </template>
-      `
+                <template>
+                    <template s-for="x in xs">
+                        <template s-for="y in x.ys">
+                            <li s-for="z in a.zs" :key="z.id">
+                                123
+                            </li>
+                        </template>
+                    </template>
+                </template>
+            `
         },
         {
             filename: 'test.san',
@@ -312,16 +310,16 @@ tester.run('valid-s-for', rule, {
                 "Expected 's-bind:key' directive to use the variables which are defined by the 's-for' directive."
             ],
             code: `
-        <template>
-          <template s-for="x in xs">
-            <template s-for="y in x.ys">
-              <li s-for="z in x.zs" :key="z.id">
-                123
-              </li>
-            </template>
-          </template>
-        </template>
-      `
+                <template>
+                    <template s-for="x in xs">
+                        <template s-for="y in x.ys">
+                            <li s-for="z in x.zs" :key="z.id">
+                                123
+                            </li>
+                        </template>
+                    </template>
+                </template>
+            `
         },
         // empty value
         {

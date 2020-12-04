@@ -4103,6 +4103,11 @@ eslint@^7.1.0:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
+esm@^3.2.25:
+  version "3.2.25"
+  resolved "https://registry.npm.taobao.org/esm/download/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"
+  integrity sha1-NCwYwp1WFXaIulzjH4Qx+7eVzBA=
+
 espree@^6.2.1:
   version "6.2.1"
   resolved "https://registry.npmjs.org/espree/-/espree-6.2.1.tgz#77fc72e1fd744a2052c20f38a5b575832e82734a"
@@ -8373,14 +8378,15 @@ safe-regex@^1.1.0:
   resolved "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-san-eslint-parser@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npm.taobao.org/san-eslint-parser/download/san-eslint-parser-1.0.0.tgz#3d57524c7d67447bf4cfaee2ac41dd78033d9104"
-  integrity sha1-PVdSTH1nRHv0z67irEHdeAM9kQQ=
+san-eslint-parser@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/san-eslint-parser/download/san-eslint-parser-1.1.0.tgz#55394d9dffe37a9e5ca547af7830adde1846aa10"
+  integrity sha1-VTlNnf/jep5cpUeveDCt3hhGqhA=
   dependencies:
     debug "^4.1.1"
     eslint-scope "^5.0.0"
     eslint-visitor-keys "^1.1.0"
+    esm "^3.2.25"
     espree "^6.2.1"
     esquery "^1.0.1"
     lodash "^4.17.15"

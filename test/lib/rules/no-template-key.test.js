@@ -58,8 +58,6 @@ tester.run('no-template-key', rule, {
         },
         {
             filename: 'test.san',
-            // It is probably not valid, but it works as the Vue.js 3.x compiler.
-            // We can prevent it with other rules. e.g. san/require-s-for-key
             code: '<template><template s-for="item in list" key="foo"><div /></template></template>'
         }
     ],
