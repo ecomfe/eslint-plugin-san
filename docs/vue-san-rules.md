@@ -125,12 +125,12 @@ Enforce all the rules in this category, as well as all higher priority rules, wi
 | Rule ID | Description | San | Reason | Remark |
 |:--------|:------------|:---|---------|---------|
 | [vue/attributes-order](https://eslint.vuejs.org/rules/attributes-order.html) | enforce order of attributes | ✅ | |  |
-| [vue/component-tags-order](https://eslint.vuejs.org/rules/component-tags-order.html) | enforce order of component top-level elements |  | |  |
-| [vue/no-lone-template](https://eslint.vuejs.org/rules/no-lone-template.html) | disallow unnecessary `<template>` |  | |  |
-| [vue/no-multiple-slot-args](https://eslint.vuejs.org/rules/no-multiple-slot-args.html) | disallow to pass multiple arguments to scoped slots |  | |  |
-| [vue/no-v-html](https://eslint.vuejs.org/rules/no-v-html.html) | disallow use of v-html to prevent XSS attack |  | |  |
+| [vue/component-tags-order](https://eslint.vuejs.org/rules/component-tags-order.html) | enforce order of component top-level elements | ✅ | |  |
+| [vue/no-lone-template](https://eslint.vuejs.org/rules/no-lone-template.html) | disallow unnecessary `<template>` | ✅ | |  |
+| [vue/no-multiple-slot-args](https://eslint.vuejs.org/rules/no-multiple-slot-args.html) | disallow to pass multiple arguments to scoped slots | ❌ | |  |
+| [vue/no-v-html](https://eslint.vuejs.org/rules/no-v-html.html) | disallow use of v-html to prevent XSS attack | ❌ | |  |
 | [vue/order-in-components](https://eslint.vuejs.org/rules/order-in-components.html) | enforce order of properties in components | ✅ | |  |
-| [vue/this-in-template](https://eslint.vuejs.org/rules/this-in-template.html) | disallow usage of `this` in template |  | |  |
+| [vue/this-in-template](https://eslint.vuejs.org/rules/this-in-template.html) | disallow usage of `this` in template | ✅ | |  |
 
 ## Uncategorized
 
