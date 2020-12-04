@@ -4,6 +4,8 @@
  */
 'use strict';
 
+/* eslint-disable */
+
 // ------------------------------------------------------------------------------
 // Requirements
 // ------------------------------------------------------------------------------
@@ -36,7 +38,7 @@ ruleTester.run('mustache-interpolation-spacing', rule, {
         },
         {
             filename: 'test.san',
-            code: '<template> <div :style="  " :class="       foo      " v-if=foo   ></div>      </template>'
+            code: '<template> <div :style="  " :class="       foo      " s-if=foo   ></div>      </template>'
         },
         {
             filename: 'test.san',

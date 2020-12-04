@@ -1,32 +1,29 @@
 /**
- * @author Toru Nagashima
- * @copyright 2017 Toru Nagashima. All rights reserved.
- * See LICENSE file in root directory for full license.
+ * @fileoverview disallow adding multiple root nodes to the template
+ * @author Przemyslaw Falowski (@przemkow)
  */
 'use strict';
+
+/* eslint-disable */
 
 // ------------------------------------------------------------------------------
 // Requirements
 // ------------------------------------------------------------------------------
 
+const rule = require('../../../lib/rules/no-multiple-template-root');
+
 const RuleTester = require('eslint').RuleTester;
-const rule = require('../../../lib/rules/valid-template-root');
 
 // ------------------------------------------------------------------------------
 // Tests
 // ------------------------------------------------------------------------------
 
-const tester = new RuleTester({
+const ruleTester = new RuleTester({
     parser: require.resolve('san-eslint-parser'),
     parserOptions: {ecmaVersion: 2015}
 });
-
-tester.run('valid-template-root', rule, {
+ruleTester.run('no-multiple-template-root', rule, {
     valid: [
-        {
-            filename: 'test.san',
-            code: ''
-        },
         {
             filename: 'test.san',
             code: '<template><div>abc</div></template>'
@@ -60,71 +57,48 @@ tester.run('valid-template-root', rule, {
         {
             filename: 'test.san',
             code: '<template><div s-if="foo"></div><div s-else-if="bar"></div></template>'
-        },
-        {
-            filename: 'test.san',
-            code: '<template src="foo.html"></template>'
-        },
-        {
-            filename: 'test.san',
-            code: '<template><div><textarea/>test</div></template>'
-        },
-        {
-            filename: 'test.san',
-            code: '<template><table><custom-thead></custom-thead></table></template>'
-        },
-        {
-            filename: 'test.san',
-            code: '<template lang="pug">test</template>'
-        },
-        {
-            filename: 'test.san',
-            code: '<template><div></div><div></div></template>'
-        },
-        {
-            filename: 'test.san',
-            code: '<template>\n    <div></div>\n    <div></div>\n</template>'
-        },
-        {
-            filename: 'test.san',
-            code: '<template>{{a b c}}</template>'
-        },
-        {
-            filename: 'test.san',
-            code: '<template><div></div>aaaaaa</template>'
-        },
-        {
-            filename: 'test.san',
-            code: '<template>aaaaaa<div></div></template>'
-        },
-        {
-            filename: 'test.san',
-            code: '<template><div s-for="x in list"></div></template>'
-        },
-        {
-            filename: 'test.san',
-            code: '<template><slot></slot></template>'
-        },
-        {
-            filename: 'test.san',
-            code: '<template><template></template></template>'
         }
     ],
     invalid: [
         {
             filename: 'test.san',
-            code: '<template>\n</template>',
-            errors: ['The template requires child element.']
+            code: '<template><div></div><div></div></template>',
+            errors: ['The template root requires exactly one element.']
         },
         {
             filename: 'test.san',
-            code: '<template src="foo.html">abc</template>',
-            errors: ["The template root with 'src' attribute is required to be empty."]
+            code: '<template>\n    <div></div>\n    <div></div>\n</template>',
+            errors: ['The template root requires exactly one element.']
         },
         {
             filename: 'test.san',
-            code: '<template src="foo.html"><div></div></template>',
-            errors: ["The template root with 'src' attribute is required to be empty."]
+            code: '<template>{{a b c}}</template>',
+            errors: ['The template root requires an element rather than texts.']
+        },
+        {
+            filename: 'test.san',
+            code: '<template><div></div>aaaaaa</template>',
+            errors: ['The template root requires an element rather than texts.']
+        },
+        {
+            filename: 'test.san',
+            code: '<template>aaaaaa<div></div></template>',
+            errors: ['The template root requires an element rather than texts.']
+        },
+        {
+            filename: 'test.san',
+            code: '<template><div s-for="x in list"></div></template>',
+            errors: ["The template root disallows 's-for' directives."]
+        },
+        {
+            filename: 'test.san',
+            code: '<template><slot></slot></template>',
+            errors: ["The template root disallows '<slot>' elements."]
+        },
+        {
+            filename: 'test.san',
+            code: '<template><template></template></template>',
+            errors: ["The template root disallows '<template>' elements."]
         }
     ]
 });

@@ -4,6 +4,8 @@
  */
 'use strict';
 
+/* eslint-disable */
+
 // ------------------------------------------------------------------------------
 // Requirements
 // ------------------------------------------------------------------------------
@@ -102,10 +104,10 @@ age="30"></component></template>`,
             errors: ["':age' should be on a new line."]
         },
         {
-            code: `<template><component :is="test" v-bind="user"></component></template>`,
+            code: `<template><component :is="test" s-bind="user"></component></template>`,
             output: `<template><component :is="test"
-v-bind="user"></component></template>`,
-            errors: ["'v-bind' should be on a new line."]
+s-bind="user"></component></template>`,
+            errors: ["'s-bind' should be on a new line."]
         },
         {
             code: `<template><component :name="user.name" @buy="buyProduct"></component></template>`,
@@ -120,16 +122,16 @@ v-bind="user"></component></template>`,
             errors: ["'@click.stop' should be on a new line."]
         },
         {
-            code: `<template><component :name="user.name" v-if="something"></component></template>`,
+            code: `<template><component :name="user.name" s-if="something"></component></template>`,
             output: `<template><component :name="user.name"
-v-if="something"></component></template>`,
-            errors: ["'v-if' should be on a new line."]
+s-if="something"></component></template>`,
+            errors: ["'s-if' should be on a new line."]
         },
         {
-            code: `<template><component name="John Doe"    v-bind:age="user.age"></component></template>`,
+            code: `<template><component name="John Doe"    s-bind:age="user.age"></component></template>`,
             output: `<template><component name="John Doe"
-v-bind:age="user.age"></component></template>`,
-            errors: ["'v-bind:age' should be on a new line."]
+s-bind:age="user.age"></component></template>`,
+            errors: ["'s-bind:age' should be on a new line."]
         },
         {
             code: `<template><component job="Vet"

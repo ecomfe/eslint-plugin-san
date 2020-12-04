@@ -4,6 +4,8 @@
  */
 'use strict';
 
+/* eslint-disable */
+
 // ------------------------------------------------------------------------------
 // Requirements
 // ------------------------------------------------------------------------------
@@ -37,8 +39,8 @@ ruleTester.run('no-multi-spaces', rule, {
         '<template><div>{{test}}</div></template>',
         '<template><div>{{test}}<!-- fooo --></div></template>',
         '<template><div>{{test}} <!--        fooo           --></div></template>',
-        '<template><div v-for="i in b">{{ i }}</div></template>',
-        '<template><div v-for=" i in b ">{{ i }}</div></template>',
+        '<template><div s-for="i in b">{{ i }}</div></template>',
+        '<template><div s-for=" i in b ">{{ i }}</div></template>',
         '<template><div :test="`           `"> {{ a }} </div></template>',
         '<template><div :test="`           `">          \n        {{ a }} </div></template>',
         {
@@ -154,8 +156,8 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
-            code: '<template><foo v-foo="" class="foo"  /></template>',
-            output: '<template><foo v-foo="" class="foo" /></template>',
+            code: '<template><foo s-foo="" class="foo"  /></template>',
+            output: '<template><foo s-foo="" class="foo" /></template>',
             errors: [
                 {
                     message: "Multiple spaces found before '/>'.",
@@ -164,8 +166,8 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
-            code: '<template><foo v-foo="" \n         class="foo"    /></template>',
-            output: '<template><foo v-foo="" \n         class="foo" /></template>',
+            code: '<template><foo s-foo="" \n         class="foo"    /></template>',
+            output: '<template><foo s-foo="" \n         class="foo" /></template>',
             errors: [
                 {
                     message: "Multiple spaces found before '/>'.",

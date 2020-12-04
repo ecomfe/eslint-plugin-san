@@ -40,26 +40,26 @@ Enforce all the rules in this category, as well as all higher priority rules, wi
 | [vue/no-dupe-keys](https://eslint.vuejs.org/rules/no-dupe-keys.html) | disallow duplication of field names | ✅ | |  |
 | [vue/no-dupe-v-else-if](https://eslint.vuejs.org/rules/no-dupe-v-else-if.html) | disallow duplicate conditions in `v-if` / `v-else-if` chains | ✅ | |  |
 | [vue/no-duplicate-attributes](https://eslint.vuejs.org/rules/no-duplicate-attributes.html) | disallow duplication of attributes | ✅ | |  |
-| [vue/no-multiple-template-root](https://eslint.vuejs.org/rules/no-multiple-template-root.html) | disallow adding multiple root nodes to the template |  | |  |
-| [vue/no-mutating-props](https://eslint.vuejs.org/rules/no-mutating-props.html) | disallow mutation of component props |  | |  |
+| [vue/no-multiple-template-root](https://eslint.vuejs.org/rules/no-multiple-template-root.html) | disallow adding multiple root nodes to the template | ✅ | |  |
+| [vue/no-mutating-props](https://eslint.vuejs.org/rules/no-mutating-props.html) | disallow mutation of component props | ❌ | 没有相关语法 |  |
 | [vue/no-parsing-error](https://eslint.vuejs.org/rules/no-parsing-error.html) | disallow parsing errors in `<template>` | ✅ | |  |
 | [vue/no-reserved-keys](https://eslint.vuejs.org/rules/no-reserved-keys.html) | disallow overwriting reserved keys | ✅ | |  |
 | [vue/no-shared-component-data](https://eslint.vuejs.org/rules/no-shared-component-data.html) | enforce component's data property to be a function | ✅ | |  |
 | [vue/no-side-effects-in-computed-properties](https://eslint.vuejs.org/rules/no-side-effects-in-computed-properties.html) | disallow side effects in computed properties | ✅ | |  |
 | [vue/no-template-key](https://eslint.vuejs.org/rules/no-template-key.html) | disallow `key` attribute on `<template>` | ✅ | |  |
 | [vue/no-textarea-mustache](https://eslint.vuejs.org/rules/no-textarea-mustache.html) | disallow mustaches in `<textarea>` | ✅ | |  |
-| [vue/no-unused-components](https://eslint.vuejs.org/rules/no-unused-components.html) | disallow registering components that are not used inside templates |  | |  |
+| [vue/no-unused-components](https://eslint.vuejs.org/rules/no-unused-components.html) | disallow registering components that are not used inside templates | ✅ | |  |
 | [vue/no-unused-vars](https://eslint.vuejs.org/rules/no-unused-vars.html) | disallow unused variable definitions of v-for directives or scope attributes | ✅ | |  |
-| [vue/no-use-v-if-with-v-for](https://eslint.vuejs.org/rules/no-use-v-if-with-v-for.html) | disallow use v-if on the same element as v-for |  | |  |
-| [vue/no-v-for-template-key](https://eslint.vuejs.org/rules/no-v-for-template-key.html) | disallow `key` attribute on `<template v-for>` |  |  |  |
-| [vue/no-v-model-argument](https://eslint.vuejs.org/rules/no-v-model-argument.html) | disallow adding an argument to `v-model` used in custom component |  | |  |
+| [vue/no-use-v-if-with-v-for](https://eslint.vuejs.org/rules/no-use-v-if-with-v-for.html) | disallow use v-if on the same element as v-for | ✅ | |  |
+| [vue/no-v-for-template-key](https://eslint.vuejs.org/rules/no-v-for-template-key.html) | disallow `key` attribute on `<template v-for>` | ❌ |  |  |
+| [vue/no-v-model-argument](https://eslint.vuejs.org/rules/no-v-model-argument.html) | disallow adding an argument to `v-model` used in custom component | ❌ | |  |
 | [vue/require-component-is](https://eslint.vuejs.org/rules/require-component-is.html) | require `v-bind:is` of `<component>` elements | ❌ |  |  |
-| [vue/require-prop-type-constructor](https://eslint.vuejs.org/rules/require-prop-type-constructor.html) | require prop type to be a constructor |  | |  |
-| [vue/require-render-return](https://eslint.vuejs.org/rules/require-render-return.html) | enforce render function to always return value |  | |  |
-| [vue/require-v-for-key](https://eslint.vuejs.org/rules/require-v-for-key.html) | require `v-bind:key` with `v-for` directives |  | |  |
+| [vue/require-prop-type-constructor](https://eslint.vuejs.org/rules/require-prop-type-constructor.html) | require prop type to be a constructor | ❌ | |  |
+| [vue/require-render-return](https://eslint.vuejs.org/rules/require-render-return.html) | enforce render function to always return value | ❌ | |  |
+| [vue/require-v-for-key](https://eslint.vuejs.org/rules/require-v-for-key.html) | require `v-bind:key` with `v-for` directives | ❌ | |  |
 | [vue/require-valid-default-prop](https://eslint.vuejs.org/rules/require-valid-default-prop.html) | enforce props default values to be valid | ✅ | |  |
 | [vue/return-in-computed-property](https://eslint.vuejs.org/rules/return-in-computed-property.html) | enforce that a return statement is present in computed property | ✅ | |  |
-| [vue/use-v-on-exact](https://eslint.vuejs.org/rules/use-v-on-exact.html) | enforce usage of `exact` modifier on `v-on` |  | |  |
+| [vue/use-v-on-exact](https://eslint.vuejs.org/rules/use-v-on-exact.html) | enforce usage of `exact` modifier on `v-on` | ❌ | |  |
 | [vue/valid-template-root](https://eslint.vuejs.org/rules/valid-template-root.html) | enforce valid template root | ✅ | |  |
 | [vue/valid-v-bind-sync](https://eslint.vuejs.org/rules/valid-v-bind-sync.html) | enforce valid `.sync` modifier on `v-bind` directives | ❌ |  |  |
 | [vue/valid-v-bind](https://eslint.vuejs.org/rules/valid-v-bind.html) | enforce valid `v-bind` directives | ❌ |  |  |
@@ -67,14 +67,14 @@ Enforce all the rules in this category, as well as all higher priority rules, wi
 | [vue/valid-v-else-if](https://eslint.vuejs.org/rules/valid-v-else-if.html) | enforce valid `v-else-if` directives | ✅ | | san/valid-s-elif |
 | [vue/valid-v-else](https://eslint.vuejs.org/rules/valid-v-else.html) | enforce valid `v-else` directives | ✅ | | san/valid-s-else |
 | [vue/valid-v-for](https://eslint.vuejs.org/rules/valid-v-for.html) | enforce valid `v-for` directives | ✅ | | san/valid-s-for |
-| [vue/valid-v-html](https://eslint.vuejs.org/rules/valid-v-html.html) | enforce valid `v-html` directives | ✅ | | san/valid-s-html |
+| [vue/valid-v-html](https://eslint.vuejs.org/rules/valid-v-html.html) | enforce valid `v-html` directives | ❌ | | san/valid-s-html |
 | [vue/valid-v-if](https://eslint.vuejs.org/rules/valid-v-if.html) | enforce valid `v-if` directives | ✅ | | san/valid-s-if |
 | [vue/valid-v-model](https://eslint.vuejs.org/rules/valid-v-model.html) | enforce valid `v-model` directives | ❌ |  |  |
 | [vue/valid-v-on](https://eslint.vuejs.org/rules/valid-v-on.html) | enforce valid `v-on` directives | ✅ | | san/valid-on |
 | [vue/valid-v-once](https://eslint.vuejs.org/rules/valid-v-once.html) | enforce valid `v-once` directives | ❌ |  |  |
 | [vue/valid-v-pre](https://eslint.vuejs.org/rules/valid-v-pre.html) | enforce valid `v-pre` directives | ❌ |  |  |
 | [vue/valid-v-show](https://eslint.vuejs.org/rules/valid-v-show.html) | enforce valid `v-show` directives | ❌ |  |  |
-| [vue/valid-v-slot](https://eslint.vuejs.org/rules/valid-v-slot.html) | enforce valid `v-slot` directives |  | | <slot name="xx"> |
+| [vue/valid-v-slot](https://eslint.vuejs.org/rules/valid-v-slot.html) | enforce valid `v-slot` directives | ❌ | | <slot name="xx"> |
 | [vue/valid-v-text](https://eslint.vuejs.org/rules/valid-v-text.html) | enforce valid `v-text` directives | ❌ |  |  |
 
 ## Priority B: Strongly Recommended (Improving Readability) 
@@ -90,27 +90,27 @@ Enforce all the rules in this category, as well as all higher priority rules, wi
 | Rule ID | Description | San | Reason | Remark |
 |:--------|:------------|:---|---------|---------|
 | [vue/attribute-hyphenation](https://eslint.vuejs.org/rules/attribute-hyphenation.html) | enforce attribute naming style on custom components in template | ✅ | |  |
-| [vue/component-definition-name-casing](https://eslint.vuejs.org/rules/component-definition-name-casing.html) | enforce specific casing for component definition name |  | |  |
-| [vue/html-closing-bracket-newline](https://eslint.vuejs.org/rules/html-closing-bracket-newline.html) | require or disallow a line break before tag's closing brackets |  | |  |
-| [vue/html-closing-bracket-spacing](https://eslint.vuejs.org/rules/html-closing-bracket-spacing.html) | require or disallow a space before tag's closing brackets |  | |  |
+| [vue/component-definition-name-casing](https://eslint.vuejs.org/rules/component-definition-name-casing.html) | enforce specific casing for component definition name | ❌ | |  |
+| [vue/html-closing-bracket-newline](https://eslint.vuejs.org/rules/html-closing-bracket-newline.html) | require or disallow a line break before tag's closing brackets | ✅ | |  |
+| [vue/html-closing-bracket-spacing](https://eslint.vuejs.org/rules/html-closing-bracket-spacing.html) | require or disallow a space before tag's closing brackets | ✅ | |  |
 | [vue/html-end-tags](https://eslint.vuejs.org/rules/html-end-tags.html) | enforce end tag style | ✅ | |  |
 | [vue/html-indent](https://eslint.vuejs.org/rules/html-indent.html) | enforce consistent indentation in `<template>` | ✅ | |  |
 | [vue/html-quotes](https://eslint.vuejs.org/rules/html-quotes.html) | enforce quotes style of HTML attributes | ✅ | |  |
 | [vue/html-self-closing](https://eslint.vuejs.org/rules/html-self-closing.html) | enforce self-closing style | ✅ | |  |
 | [vue/max-attributes-per-line](https://eslint.vuejs.org/rules/max-attributes-per-line.html) | enforce the maximum number of attributes per line | ✅ | |  |
-| [vue/multiline-html-element-content-newline](https://eslint.vuejs.org/rules/multiline-html-element-content-newline.html) | require a line break before and after the contents of a multiline element |  | |  |
+| [vue/multiline-html-element-content-newline](https://eslint.vuejs.org/rules/multiline-html-element-content-newline.html) | require a line break before and after the contents of a multiline element | ✅ | |  |
 | [vue/mustache-interpolation-spacing](https://eslint.vuejs.org/rules/mustache-interpolation-spacing.html) | enforce unified spacing in mustache interpolations | ✅ | |  |
 | [vue/no-multi-spaces](https://eslint.vuejs.org/rules/no-multi-spaces.html) | disallow multiple spaces | ✅ | |  |
-| [vue/no-spaces-around-equal-signs-in-attribute](https://eslint.vuejs.org/rules/no-spaces-around-equal-signs-in-attribute.html) | disallow spaces around equal signs in attribute |  | |  |
-| [vue/no-template-shadow](https://eslint.vuejs.org/rules/no-template-shadow.html) | disallow variable declarations from shadowing variables declared in the outer scope |  | |  |
-| [vue/one-component-per-file](https://eslint.vuejs.org/rules/one-component-per-file.html) | enforce that each component should be in its own file |  | |  |
-| [vue/prop-name-casing](https://eslint.vuejs.org/rules/prop-name-casing.html) | enforce specific casing for the Prop name in Vue components |  | |  |
+| [vue/no-spaces-around-equal-signs-in-attribute](https://eslint.vuejs.org/rules/no-spaces-around-equal-signs-in-attribute.html) | disallow spaces around equal signs in attribute | ✅ | |  |
+| [vue/no-template-shadow](https://eslint.vuejs.org/rules/no-template-shadow.html) | disallow variable declarations from shadowing variables declared in the outer scope | ✅ | |  |
+| [vue/one-component-per-file](https://eslint.vuejs.org/rules/one-component-per-file.html) | enforce that each component should be in its own file | ✅ | |  |
+| [vue/prop-name-casing](https://eslint.vuejs.org/rules/prop-name-casing.html) | enforce specific casing for the Prop name in Vue components | ❌ | prop |  |
 | [vue/require-default-prop](https://eslint.vuejs.org/rules/require-default-prop.html) | require default value for props | ✅ | |  |
 | [vue/require-prop-types](https://eslint.vuejs.org/rules/require-prop-types.html) | require type definitions in props | ✅ | |  |
-| [vue/singleline-html-element-content-newline](https://eslint.vuejs.org/rules/singleline-html-element-content-newline.html) | require a line break before and after the contents of a singleline element |  | |  |
-| [vue/v-bind-style](https://eslint.vuejs.org/rules/v-bind-style.html) | enforce `v-bind` directive style |  | |  |
-| [vue/v-on-style](https://eslint.vuejs.org/rules/v-on-style.html) | enforce `v-on` directive style |  | |  |
-| [vue/v-slot-style](https://eslint.vuejs.org/rules/v-slot-style.html) | enforce `v-slot` directive style |  | |  |
+| [vue/singleline-html-element-content-newline](https://eslint.vuejs.org/rules/singleline-html-element-content-newline.html) | require a line break before and after the contents of a singleline element | ✅ | |  |
+| [vue/v-bind-style](https://eslint.vuejs.org/rules/v-bind-style.html) | enforce `v-bind` directive style | ❌ | |  |
+| [vue/v-on-style](https://eslint.vuejs.org/rules/v-on-style.html) | enforce `v-on` directive style | ❌ | v-on 与 @ |  |
+| [vue/v-slot-style](https://eslint.vuejs.org/rules/v-slot-style.html) | enforce `v-slot` directive style | ❌ | |  |
 
 ## Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead) 
 

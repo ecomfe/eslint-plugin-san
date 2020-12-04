@@ -5,6 +5,8 @@
  */
 'use strict';
 
+/* eslint-disable */
+
 // ------------------------------------------------------------------------------
 // Requirements
 // ------------------------------------------------------------------------------
@@ -22,16 +24,16 @@ const tester = new RuleTester({
 });
 
 const ALL_CODE = `<template>
-  <div></div>
-  <div/>
-  <img>
-  <img/>
-  <x-test></x-test>
-  <x-test/>
-  <svg><path></path></svg>
-  <svg><path/></svg>
-  <math><mspace></mspace></math>
-  <math><mspace/></math>
+    <div></div>
+    <div/>
+    <img>
+    <img/>
+    <x-test></x-test>
+    <x-test/>
+    <svg><path></path></svg>
+    <svg><path/></svg>
+    <math><mspace></mspace></math>
+    <math><mspace/></math>
 </template>`;
 
 const anyWith = opts =>
@@ -90,7 +92,7 @@ tester.run('html-self-closing', rule, {
         {
             code: '<template><x-test></x-test></template>',
             output: '<template><x-test/></template>',
-            errors: ['Require self-closing on Vue.js custom components (<x-test>).']
+            errors: ['Require self-closing on San.js custom components (<x-test>).']
         },
         {
             code: '<template><svg><path></path></svg></template>',
@@ -107,16 +109,16 @@ tester.run('html-self-closing', rule, {
         {
             code: ALL_CODE,
             output: `<template>
-  <div/>
-  <div/>
-  <img>
-  <img/>
-  <x-test></x-test>
-  <x-test/>
-  <svg><path></path></svg>
-  <svg><path/></svg>
-  <math><mspace></mspace></math>
-  <math><mspace/></math>
+    <div/>
+    <div/>
+    <img>
+    <img/>
+    <x-test></x-test>
+    <x-test/>
+    <svg><path></path></svg>
+    <svg><path/></svg>
+    <math><mspace></mspace></math>
+    <math><mspace/></math>
 </template>`,
             options: [anyWith({html: {normal: 'always'}})],
             errors: [{message: 'Require self-closing on HTML elements (<div>).', line: 2}]
@@ -124,16 +126,16 @@ tester.run('html-self-closing', rule, {
         {
             code: ALL_CODE,
             output: `<template>
-  <div></div>
-  <div></div>
-  <img>
-  <img/>
-  <x-test></x-test>
-  <x-test/>
-  <svg><path></path></svg>
-  <svg><path/></svg>
-  <math><mspace></mspace></math>
-  <math><mspace/></math>
+    <div></div>
+    <div></div>
+    <img>
+    <img/>
+    <x-test></x-test>
+    <x-test/>
+    <svg><path></path></svg>
+    <svg><path/></svg>
+    <math><mspace></mspace></math>
+    <math><mspace/></math>
 </template>`,
             options: [anyWith({html: {normal: 'never'}})],
             errors: [{message: 'Disallow self-closing on HTML elements (<div/>).', line: 3}]
@@ -141,16 +143,16 @@ tester.run('html-self-closing', rule, {
         {
             code: ALL_CODE,
             output: `<template>
-  <div></div>
-  <div/>
-  <img/>
-  <img/>
-  <x-test></x-test>
-  <x-test/>
-  <svg><path></path></svg>
-  <svg><path/></svg>
-  <math><mspace></mspace></math>
-  <math><mspace/></math>
+    <div></div>
+    <div/>
+    <img/>
+    <img/>
+    <x-test></x-test>
+    <x-test/>
+    <svg><path></path></svg>
+    <svg><path/></svg>
+    <math><mspace></mspace></math>
+    <math><mspace/></math>
 </template>`,
             options: [anyWith({html: {void: 'always'}})],
             errors: [
@@ -163,16 +165,16 @@ tester.run('html-self-closing', rule, {
         {
             code: ALL_CODE,
             output: `<template>
-  <div></div>
-  <div/>
-  <img>
-  <img>
-  <x-test></x-test>
-  <x-test/>
-  <svg><path></path></svg>
-  <svg><path/></svg>
-  <math><mspace></mspace></math>
-  <math><mspace/></math>
+    <div></div>
+    <div/>
+    <img>
+    <img>
+    <x-test></x-test>
+    <x-test/>
+    <svg><path></path></svg>
+    <svg><path/></svg>
+    <math><mspace></mspace></math>
+    <math><mspace/></math>
 </template>`,
             options: [anyWith({html: {void: 'never'}})],
             errors: [
@@ -185,21 +187,21 @@ tester.run('html-self-closing', rule, {
         {
             code: ALL_CODE,
             output: `<template>
-  <div></div>
-  <div/>
-  <img>
-  <img/>
-  <x-test/>
-  <x-test/>
-  <svg><path></path></svg>
-  <svg><path/></svg>
-  <math><mspace></mspace></math>
-  <math><mspace/></math>
+    <div></div>
+    <div/>
+    <img>
+    <img/>
+    <x-test/>
+    <x-test/>
+    <svg><path></path></svg>
+    <svg><path/></svg>
+    <math><mspace></mspace></math>
+    <math><mspace/></math>
 </template>`,
             options: [anyWith({html: {component: 'always'}})],
             errors: [
                 {
-                    message: 'Require self-closing on Vue.js custom components (<x-test>).',
+                    message: 'Require self-closing on San.js custom components (<x-test>).',
                     line: 6
                 }
             ]
@@ -207,21 +209,21 @@ tester.run('html-self-closing', rule, {
         {
             code: ALL_CODE,
             output: `<template>
-  <div></div>
-  <div/>
-  <img>
-  <img/>
-  <x-test></x-test>
-  <x-test></x-test>
-  <svg><path></path></svg>
-  <svg><path/></svg>
-  <math><mspace></mspace></math>
-  <math><mspace/></math>
+    <div></div>
+    <div/>
+    <img>
+    <img/>
+    <x-test></x-test>
+    <x-test></x-test>
+    <svg><path></path></svg>
+    <svg><path/></svg>
+    <math><mspace></mspace></math>
+    <math><mspace/></math>
 </template>`,
             options: [anyWith({html: {component: 'never'}})],
             errors: [
                 {
-                    message: 'Disallow self-closing on Vue.js custom components (<x-test/>).',
+                    message: 'Disallow self-closing on San.js custom components (<x-test/>).',
                     line: 7
                 }
             ]
@@ -229,16 +231,16 @@ tester.run('html-self-closing', rule, {
         {
             code: ALL_CODE,
             output: `<template>
-  <div></div>
-  <div/>
-  <img>
-  <img/>
-  <x-test></x-test>
-  <x-test/>
-  <svg><path/></svg>
-  <svg><path/></svg>
-  <math><mspace></mspace></math>
-  <math><mspace/></math>
+    <div></div>
+    <div/>
+    <img>
+    <img/>
+    <x-test></x-test>
+    <x-test/>
+    <svg><path/></svg>
+    <svg><path/></svg>
+    <math><mspace></mspace></math>
+    <math><mspace/></math>
 </template>`,
             options: [anyWith({svg: 'always'})],
             errors: [{message: 'Require self-closing on SVG elements (<path>).', line: 8}]
@@ -246,16 +248,16 @@ tester.run('html-self-closing', rule, {
         {
             code: ALL_CODE,
             output: `<template>
-  <div></div>
-  <div/>
-  <img>
-  <img/>
-  <x-test></x-test>
-  <x-test/>
-  <svg><path></path></svg>
-  <svg><path></path></svg>
-  <math><mspace></mspace></math>
-  <math><mspace/></math>
+    <div></div>
+    <div/>
+    <img>
+    <img/>
+    <x-test></x-test>
+    <x-test/>
+    <svg><path></path></svg>
+    <svg><path></path></svg>
+    <math><mspace></mspace></math>
+    <math><mspace/></math>
 </template>`,
             options: [anyWith({svg: 'never'})],
             errors: [{message: 'Disallow self-closing on SVG elements (<path/>).', line: 9}]
@@ -263,16 +265,16 @@ tester.run('html-self-closing', rule, {
         {
             code: ALL_CODE,
             output: `<template>
-  <div></div>
-  <div/>
-  <img>
-  <img/>
-  <x-test></x-test>
-  <x-test/>
-  <svg><path></path></svg>
-  <svg><path/></svg>
-  <math><mspace/></math>
-  <math><mspace/></math>
+    <div></div>
+    <div/>
+    <img>
+    <img/>
+    <x-test></x-test>
+    <x-test/>
+    <svg><path></path></svg>
+    <svg><path/></svg>
+    <math><mspace/></math>
+    <math><mspace/></math>
 </template>`,
             options: [anyWith({math: 'always'})],
             errors: [
@@ -285,16 +287,16 @@ tester.run('html-self-closing', rule, {
         {
             code: ALL_CODE,
             output: `<template>
-  <div></div>
-  <div/>
-  <img>
-  <img/>
-  <x-test></x-test>
-  <x-test/>
-  <svg><path></path></svg>
-  <svg><path/></svg>
-  <math><mspace></mspace></math>
-  <math><mspace></mspace></math>
+    <div></div>
+    <div/>
+    <img>
+    <img/>
+    <x-test></x-test>
+    <x-test/>
+    <svg><path></path></svg>
+    <svg><path/></svg>
+    <math><mspace></mspace></math>
+    <math><mspace></mspace></math>
 </template>`,
             options: [anyWith({math: 'never'})],
             errors: [
