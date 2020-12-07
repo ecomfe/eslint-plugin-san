@@ -105,8 +105,8 @@ module.exports = {
     },
 
     themeConfig: {
-        repo: 'vuejs/eslint-plugin-vue',
-        docsRepo: 'vuejs/eslint-plugin-vue',
+        repo: 'ecomfe/eslint-plugin-san',
+        docsRepo: 'ecomfe/eslint-plugin-san',
         docsDir: 'docs',
         docsBranch: 'master',
         editLinks: true,
@@ -122,8 +122,6 @@ module.exports = {
 
         sidebar: {
             '/rules/': [
-                '/rules/',
-
                 // Rules in each category.
                 ...categorizedRules,
 
@@ -131,7 +129,7 @@ module.exports = {
                 ...extraCategories
             ],
 
-            '/': ['/', '/user-guide/', '/developer-guide/', '/rules/', '/style-guide/']
+            '/': ['/user-guide/', '/developer-guide/', '/rules/', '/style-guide/']
         },
 
         algolia: {

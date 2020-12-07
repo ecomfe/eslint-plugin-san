@@ -18,7 +18,6 @@ Enforce all the rules in this category, as well as all higher priority rules, wi
 | [vue/comment-directive](https://eslint.vuejs.org/rules/comment-directive.html) | support comment-directives in `<template>` | ✅ | | 已完成 |
 | [vue/experimental-script-setup-vars](https://eslint.vuejs.org/rules/experimental-script-setup-vars.html) | prevent variables defined in `<script setup>` to be marked as undefined | ❌ |  |  |
 | [vue/jsx-uses-vars](https://eslint.vuejs.org/rules/jsx-uses-vars.html) | prevent variables used in JSX to be marked as unused | ❌ |  |  |
-| [vue-scoped-css/require-selector-used-inside](./require-selector-used-inside.md) | disallow selectors defined that is not used inside `<template>` |  |  |  |
 
 
 
