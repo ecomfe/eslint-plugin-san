@@ -1,0 +1,19 @@
+<!--{}-->
+<template>
+  <div
+    s-on:c="
+      try
+      {
+      }
+      catch
+        (
+          err
+        )
+      {
+      }
+      finally
+      {
+      }
+    "
+  ></div>
+</template>

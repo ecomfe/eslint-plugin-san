@@ -1,0 +1,36 @@
+<!--{"options":[4,{"switchCase":1}]}-->
+<template>
+    <div
+        s-on:a="
+            switch
+                (
+                    a
+                )
+            {
+                case
+                    1
+                    :
+                    foo;
+                case (
+                    2
+                ):
+                    foo;
+                case 3:
+                    foo;
+                case 4:
+                {
+                    foo;
+                }
+                default
+                    :
+                    foo;
+            }
+        "
+        s-on:b="
+            switch (a) {
+                case 1:
+                    foo;
+            }
+        "
+    ></div>
+</template>

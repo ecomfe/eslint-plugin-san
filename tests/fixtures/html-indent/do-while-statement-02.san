@@ -1,0 +1,15 @@
+<!--{}-->
+<template>
+  <div
+    s-on:b="
+      do
+      {
+        ;
+      }
+      while
+        (
+          a
+        )
+    "
+  ></div>
+</template>

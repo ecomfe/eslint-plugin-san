@@ -1,0 +1,17 @@
+<!--{}-->
+<template>
+  <div
+    s-on:e="
+      async function
+        foo
+        (
+          a
+          ,
+          b
+        )
+      {
+        ;
+      }
+    "
+  ></div>
+</template>

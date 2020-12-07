@@ -1,0 +1,16 @@
+<!--{}-->
+<template>
+  <div
+    s-for="
+      (
+        x
+        ,
+        y
+        ,
+        z
+      )
+        of
+          xs
+    "
+  ></div>
+</template>

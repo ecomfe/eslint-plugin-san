@@ -1,0 +1,14 @@
+<!--{}-->
+<template>
+  <div
+    s-on:a="
+      if
+        (
+          a
+        )
+      {
+        ;
+      }
+    "
+  ></div>
+</template>

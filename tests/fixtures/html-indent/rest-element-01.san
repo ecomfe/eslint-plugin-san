@@ -1,0 +1,12 @@
+<!--{}-->
+<template>
+  <div
+    s-bind:a="
+      [
+        a,
+        ...
+          b
+      ] = []
+    "
+  ></div>
+</template>

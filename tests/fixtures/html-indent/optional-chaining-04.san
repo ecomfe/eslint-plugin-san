@@ -1,0 +1,15 @@
+<!--{}-->
+<template>
+  <div s-bind:a="
+    obj?.
+      (
+        aaa
+      )?.
+      (
+        bbb
+      )
+      ?.(
+        ccc
+      )
+  "/>
+</template>

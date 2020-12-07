@@ -1,0 +1,10 @@
+<!--{}-->
+<template>
+  <div
+    s-on:a="
+      while(1)
+        break
+        ;
+    "
+  ></div>
+</template>

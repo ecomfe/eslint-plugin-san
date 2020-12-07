@@ -1,0 +1,18 @@
+<!--{}-->
+<template>
+  <div
+    s-on:b="
+      class
+        A
+        extends
+          B
+      {
+        ;
+        foo(){}
+        ;
+        bar(){}
+        ;
+      }
+    "
+  ></div>
+</template>

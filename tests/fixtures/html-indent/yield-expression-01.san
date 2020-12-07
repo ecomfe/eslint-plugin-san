@@ -1,0 +1,10 @@
+<!--{}-->
+<template>
+  <div
+    s-bind:a="
+      function*(){
+        yield
+      }
+    "
+  ></div>
+</template>

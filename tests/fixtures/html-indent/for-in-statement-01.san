@@ -1,0 +1,16 @@
+<!--{}-->
+<template>
+  <div
+    s-on:a="
+      for
+        (
+          a
+            in
+            b
+        )
+      {
+        ;
+      }
+    "
+  ></div>
+</template>

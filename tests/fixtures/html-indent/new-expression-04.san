@@ -1,0 +1,10 @@
+<!--{}-->
+<template>
+  <div
+    s-bind:d="
+      new foo(
+        a
+      )
+    "
+  ></div>
+</template>

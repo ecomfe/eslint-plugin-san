@@ -1,0 +1,9 @@
+<!--{}-->
+<template>
+  <div
+    s-on:b="
+      return a
+      ;
+    "
+  ></div>
+</template>

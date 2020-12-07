@@ -1,0 +1,14 @@
+<!--{}-->
+<template>
+  <div
+    s-bind:a="
+      `hello, ${
+        aaa
+      }, ${
+        (
+          bbb
+        )
+      }`
+    "
+  ></div>
+</template>

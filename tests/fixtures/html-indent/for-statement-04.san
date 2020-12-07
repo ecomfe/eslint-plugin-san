@@ -1,0 +1,17 @@
+<!--{}-->
+<template>
+  <div
+    s-on:d="
+      for
+        (
+          a
+          ;
+          d
+          ;
+        )
+      {
+        ;
+      }
+    "
+  ></div>
+</template>

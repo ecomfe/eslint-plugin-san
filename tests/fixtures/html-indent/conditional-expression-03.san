@@ -1,0 +1,12 @@
+<!--{}-->
+<template>
+  <div
+    s-bind:c="
+      a
+        ?
+          b
+        :
+          c
+    "
+  ></div>
+</template>

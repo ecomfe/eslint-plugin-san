@@ -1,0 +1,10 @@
+<!--{}-->
+<template>
+  <div
+    s-for="
+      x
+        in
+          xs
+    "
+  ></div>
+</template>
