@@ -9,9 +9,8 @@
 // Requirements
 // ------------------------------------------------------------------------------
 
+const rule = require('../../../lib/rules/no-parsing-error');
 const RuleTester = require('eslint').RuleTester;
-const requireRule = require('../../../lib/utils/utils').requireRule;
-const rule = requireRule('no-parsing-error');
 
 // ------------------------------------------------------------------------------
 // Tests

@@ -49,8 +49,8 @@ export default {
     data() {
         return {
             linter: null,
-            preprocess: processors['.vue'].preprocess,
-            postprocess: processors['.vue'].postprocess,
+            preprocess: processors['.san'].preprocess,
+            postprocess: processors['.san'].postprocess,
             format: {
                 insertSpaces: true,
                 tabSize: 2
@@ -88,7 +88,7 @@ export default {
                     SharedArrayBuffer: false
                 },
                 rules: this.rules,
-                parser: 'vue-eslint-parser',
+                parser: 'san-eslint-parser',
                 parserOptions: {
                     ecmaVersion: 2020,
                     sourceType: 'module',
@@ -123,17 +123,17 @@ export default {
         const [{default: Linter}, {default: noUndefRule}, {parseForESLint}] = await Promise.all([
             import('eslint4b/dist/linter'),
             import('eslint/lib/rules/no-undef'),
-            import('espree').then(() => import('vue-eslint-parser'))
+            import('espree').then(() => import('san-eslint-parser'))
         ]);
 
         const linter = (this.linter = new Linter());
 
         for (const ruleId of Object.keys(rules)) {
-            linter.defineRule(`vue/${ruleId}`, rules[ruleId]);
+            linter.defineRule(`san/${ruleId}`, rules[ruleId]);
         }
         linter.defineRule('no-undef', noUndefRule);
 
-        linter.defineParser('vue-eslint-parser', {parseForESLint});
+        linter.defineParser('san-eslint-parser', {parseForESLint});
     }
 };
 </script>

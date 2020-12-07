@@ -15,23 +15,17 @@ const uncategorizedExtensionRule = rules.filter(
 const deprecatedRules = rules.filter(rule => rule.meta.deprecated);
 
 const sidebarCategories = [
-    {title: 'Base Rules', categoryIds: ['base']},
+    {
+        title: 'Base Rules',
+        categoryIds: ['base']
+    },
     {
         title: 'Priority A: Essential',
-        categoryIds: ['vue3-essential', 'essential']
-    },
-    {title: 'Priority A: Essential', categoryIds: ['essential']},
-    {
-        title: 'Priority B: Strongly Recommended',
-        categoryIds: ['vue3-strongly-recommended', 'strongly-recommended']
+        categoryIds: ['essential']
     },
     {
         title: 'Priority B: Strongly Recommended',
         categoryIds: ['strongly-recommended']
-    },
-    {
-        title: 'Priority C: Recommended',
-        categoryIds: ['vue3-recommended', 'recommended']
     },
     {
         title: 'Priority C: Recommended',
@@ -142,7 +136,7 @@ module.exports = {
 
         algolia: {
             apiKey: 'b2b69365da747a9a9635cda391317c36',
-            indexName: 'eslint-plugin-vue'
+            indexName: 'eslint-plugin-san'
         }
     }
 };

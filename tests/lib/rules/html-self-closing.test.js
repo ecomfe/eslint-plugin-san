@@ -11,9 +11,8 @@
 // Requirements
 // ------------------------------------------------------------------------------
 
+const rule = require('../../../lib/rules/html-self-closing');
 const RuleTester = require('eslint').RuleTester;
-const requireRule = require('../../../lib/utils/utils').requireRule;
-const rule = requireRule('html-self-closing');
 
 // ------------------------------------------------------------------------------
 // Tests

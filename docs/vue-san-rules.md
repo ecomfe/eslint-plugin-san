@@ -75,7 +75,7 @@ Enforce all the rules in this category, as well as all higher priority rules, wi
 | [vue/valid-v-once](https://eslint.vuejs.org/rules/valid-v-once.html) | enforce valid `v-once` directives | ❌ |  |  |
 | [vue/valid-v-pre](https://eslint.vuejs.org/rules/valid-v-pre.html) | enforce valid `v-pre` directives | ❌ |  |  |
 | [vue/valid-v-show](https://eslint.vuejs.org/rules/valid-v-show.html) | enforce valid `v-show` directives | ✅ |  | 已完成 |
-| [vue/valid-v-slot](https://eslint.vuejs.org/rules/valid-v-slot.html) | enforce valid `v-slot` directives | ❌ | <slot name="xx"> |  |
+| [vue/valid-v-slot](https://eslint.vuejs.org/rules/valid-v-slot.html) | enforce valid `v-slot` directives | ❌ |  |  |
 | [vue/valid-v-text](https://eslint.vuejs.org/rules/valid-v-text.html) | enforce valid `v-text` directives | ❌ |  |  |
 
 ## Priority B: Strongly Recommended (Improving Readability) 

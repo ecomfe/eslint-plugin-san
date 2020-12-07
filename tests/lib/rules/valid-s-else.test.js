@@ -9,9 +9,8 @@
 // Requirements
 // ------------------------------------------------------------------------------
 
+const rule = require('../../../lib/rules/valid-s-else');
 const RuleTester = require('eslint').RuleTester;
-const requireRule = require('../../../lib/utils/utils').requireRule;
-const rule = requireRule('valid-s-else');
 
 // ------------------------------------------------------------------------------
 // Tests
