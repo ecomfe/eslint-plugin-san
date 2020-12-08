@@ -91,7 +91,7 @@ module.exports = {
         };
     },
 
-    base: '/',
+    base: '/eslint-plugin-san',
     title: 'eslint-plugin-san',
     description: 'Official ESLint plugin for San',
     evergreen: true,
@@ -116,8 +116,7 @@ module.exports = {
             {text: '用户指南', link: '/user-guide/'},
             {text: '开发指南', link: '/developer-guide/'},
             {text: '规则', link: '/rules/'},
-            {text: '样式指南', link: '/style-guide/'},
-            {text: '示例', link: 'https://mysticatea.github.io/vue-eslint-demo'}
+            {text: '样式指南', link: '/style-guide/'}
         ],
 
         sidebar: {
