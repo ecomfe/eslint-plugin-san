@@ -136,4 +136,5 @@ module.exports = {
             indexName: 'eslint-plugin-san'
         }
     }
+
 };
