@@ -185,7 +185,7 @@ For example:
 The following rules extend the rules provided by ESLint itself and apply them to the expressions in the `<template>`.
 
 | Rule ID | Description | San | Desc | Sechdule |
-|:--------|:------------|:---| |---------|
+|:--------|:------------|:---|---------|---------|
 | [vue/array-bracket-spacing](https://eslint.vuejs.org/rules/array-bracket-spacing.html) | enforce consistent spacing inside array brackets |  | Baidu |  |
 | [vue/arrow-spacing](https://eslint.vuejs.org/rules/arrow-spacing.html) | enforce consistent spacing before and after the arrow in arrow functions |  | Baidu |  |
 | [vue/block-spacing](https://eslint.vuejs.org/rules/block-spacing.html) | disallow or enforce spaces inside of blocks after opening block and before  | | Baidu |  |

@@ -38,7 +38,7 @@ export default {
         },
         filename: {
             type: String,
-            default: 'example.vue'
+            default: 'example.san'
         },
         language: {
             type: String,

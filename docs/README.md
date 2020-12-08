@@ -29,7 +29,7 @@
 |:---|:------------|:------------|:---|
 | Draft | [san/custom-event-name-casing](./rules/custom-event-name-casing.md) | 统一自定义事件名称大小写样式 |Done|
 | Draft | [san/no-async-in-computed-properties](./rules/no-async-in-computed-properties.md) | 禁止计算数据方法有异步操作 |Done|
-| Draft | [san/no-dupe-keys](./rules/no-dupe-keys.md) | 禁止数据项和计算数据重名 ||
+| Draft | [san/no-dupe-keys](./rules/no-dupe-keys.md) | 禁止数据项和计算数据重名 |Done|
 | Draft | [san/no-dupe-v-else-if](./rules/no-dupe-v-else-if.md) | 禁止v-if/v-else-if出现重复条件 |Done|
 | Draft | [san/no-duplicate-attributes](./rules/no-duplicate-attributes.md) | 禁止属性名重复 |Done|
 | Draft | [san/no-multiple-template-root](./rules/no-multiple-template-root.md) | 禁止template出现多个根元素 |Done|
@@ -66,7 +66,7 @@
 | Draft | [san/html-closing-bracket-newline](./rules/html-closing-bracket-newline.md) | 强制右尖括号`>`换行 |Done|
 | Draft | [san/html-closing-bracket-spacing](./rules/html-closing-bracket-spacing.md) | 强制右尖括号`>`前统一空格 |Done|
 | Draft | [san/html-end-tags](./rules/html-end-tags.md) | 强制模板标签命名 |Done|
-| Draft | [san/html-indent](./rules/html-indent.md) | 强制模板缩进 ||
+| Draft | [san/html-indent](./rules/html-indent.md) | 强制模板缩进 |Done|
 | Draft | [san/html-quotes](./rules/html-quotes.md) | 属性引号的使用 | Done |
 | Draft | [san/html-self-closing](./rules/html-self-closing.md) | 强制模板标签自闭合 |Done|
 | Draft | [san/max-attributes-per-line](./rules/max-attributes-per-line.md) | 强制单行最大属性数量 |Done|

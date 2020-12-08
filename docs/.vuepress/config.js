@@ -91,11 +91,11 @@ module.exports = {
         };
     },
 
-    base: '/eslint-plugin-san',
+    base: '/eslint-plugin-san/',
     title: 'eslint-plugin-san',
     description: 'Official ESLint plugin for San',
     evergreen: true,
-    head: [['link', {rel: 'icon', href: '/favicon.png'}]],
+    head: [['link', {rel: 'icon', href: '/favicon.ico'}]],
 
     plugins: {
         '@vuepress/pwa': {
