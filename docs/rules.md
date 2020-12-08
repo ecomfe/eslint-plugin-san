@@ -13,7 +13,7 @@ Enforce all the rules in this category, as well as all higher priority rules, wi
 }
 ```
 
-| Rule ID | Description | San | Desc | Schedule |
+| Rule ID | Description | San | Remark | Schedule |
 |:--------|:------------|:---|---------|---------|
 | [vue/comment-directive](https://eslint.vuejs.org/rules/comment-directive.html) | support comment-directives in `<template>` | ✅ | | 已完成 |
 | [vue/experimental-script-setup-vars](https://eslint.vuejs.org/rules/experimental-script-setup-vars.html) | prevent variables defined in `<script setup>` to be marked as undefined | ❌ |  |  |
@@ -31,7 +31,7 @@ Enforce all the rules in this category, as well as all higher priority rules, wi
 }
 ```
 
-| Rule ID | Description | San | Desc | Schedule |
+| Rule ID | Description | San | Remark | Schedule |
 |:--------|:------------|:---|---------|---------|
 | [vue/custom-event-name-casing](https://eslint.vuejs.org/rules/custom-event-name-casing.html) | enforce custom event names always use "kebab-case" | ✅ | | 已完成 |
 | [vue/no-arrow-functions-in-watch](https://eslint.vuejs.org/rules/no-arrow-functions-in-watch.html) | disallow using arrow functions to define watcher | ❌ | 没有相关语法 |  |
@@ -87,7 +87,7 @@ Enforce all the rules in this category, as well as all higher priority rules, wi
 }
 ```
 
-| eRule ID | Description | San | Desc | Schedule |
+| eRule ID | Description | San | Remark | Schedule |
 |:--------|:------------|:---|---------|---------|
 | [vue/attribute-hyphenation](https://eslint.vuejs.org/rules/attribute-hyphenation.html) | enforce attribute naming style on custom components in template | ✅ | | 已完成 |
 | [vue/component-definition-name-casing](https://eslint.vuejs.org/rules/component-definition-name-casing.html) | enforce specific casing for component definition name | ❌ | |  |
@@ -122,7 +122,7 @@ Enforce all the rules in this category, as well as all higher priority rules, wi
 }
 ```
 
-| Rule ID | Description | San | Desc | Sechdule |
+| Rule ID | Description | San | Remark | Sechdule |
 |:--------|:------------|:---|---------|---------|
 | [vue/attributes-order](https://eslint.vuejs.org/rules/attributes-order.html) | enforce order of attributes | ✅ | | 已完成 |
 | [vue/component-tags-order](https://eslint.vuejs.org/rules/component-tags-order.html) | enforce order of component top-level elements | ✅ | | 已完成 |
@@ -147,7 +147,7 @@ For example:
 }
 ```
 
-| Rule ID | Description | San | Desc | Schedule |
+| Rule ID | Description | San | Remark | Schedule |
 |:--------|:------------|:---|---------|---------|
 | [vue/component-name-in-template-casing](https://eslint.vuejs.org/rules/component-name-in-template-casing.html) | enforce specific casing for the component naming style in template |  |  |  |
 | [vue/html-comment-content-newline](https://eslint.vuejs.org/rules/html-comment-content-newline.html) | enforce unified line brake in HTML comments |  | |  |
@@ -184,8 +184,8 @@ For example:
 
 The following rules extend the rules provided by ESLint itself and apply them to the expressions in the `<template>`.
 
-| Rule ID | Description | San | Desc | Sechdule |
-|:--------|:------------|:---| |---------|
+| Rule ID | Description | San | Remark | Sechdule |
+|:--------|:------------|:---| ----- |---------|
 | [vue/array-bracket-spacing](https://eslint.vuejs.org/rules/array-bracket-spacing.html) | enforce consistent spacing inside array brackets |  | Baidu |  |
 | [vue/arrow-spacing](https://eslint.vuejs.org/rules/arrow-spacing.html) | enforce consistent spacing before and after the arrow in arrow functions |  | Baidu |  |
 | [vue/block-spacing](https://eslint.vuejs.org/rules/block-spacing.html) | disallow or enforce spaces inside of blocks after opening block and before  | | Baidu |  |
@@ -222,7 +222,7 @@ The following rules extend the rules provided by ESLint itself and apply them to
 - :warning: We're going to remove deprecated rules in the next major release. Please migrate to successor/new rules.
 - :innocent: We don't fix bugs which are in deprecated rules since we don't have enough resources.
 
-| Rule ID   | Replaced by  | San | Desc | Schedule |
+| Rule ID   | Replaced by  | San | Remark | Schedule |
 | :-------------- | :---------- | ---- | ---- | --------------- |
 | [vue/name-property-casing](https://eslint.vuejs.org/rules/name-property-casing.html) | [vue/component-definition-name-casing](https://eslint.vuejs.org/rules/component-definition-name-casing.html) |  ❌   |      | |
 | [vue/no-confusing-v-for-v-if](https://eslint.vuejs.org/rules/no-confusing-v-for-v-if.html) | [vue/no-use-v-if-with-v-for](https://eslint.vuejs.org/rules/no-use-v-if-with-v-for.html)    |   ❌   |      | |
