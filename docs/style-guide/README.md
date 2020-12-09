@@ -23,16 +23,16 @@
 * 根结点有多个元素；
 * 在根结点使用循环；
 * 在根结点使用 template 和 slot；
-* 在根结点使用 v-if，但是没有 v-else；
+* 在根结点使用 s-if，但是没有 s-else；
 
 ```html
 // bad
 <template></template>
 <template>hello</template>
 <template><div>one</div><div>two</div></template>
-<template><div v-for="x in list"></div></template>
+<template><div s-for="x in list"></div></template>
 <template><template>hello</template></template>
-<template><div v-if="title"></div></template>
+<template><div s-if="title"></div></template>
 
 // good
 <template><div>one</div></template>
@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import OtherComponent from './OtherComponent.vue';
+import OtherComponent from './OtherComponent.san';
 
 export default {
     components: {
@@ -68,7 +68,7 @@ export default {
 </template>
 
 <script>
-import OtherComponent from './OtherComponent.vue';
+import OtherComponent from './OtherComponent.san';
 
 export default {
     components: {
