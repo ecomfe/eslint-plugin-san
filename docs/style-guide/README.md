@@ -760,17 +760,17 @@ export default {
 
 ### 4.4 其它
 
-#### [建议] 组件中使用 `$emit` 事件时携带的参数，个数不应该超过 `2` 个。建议将数据参数以 `Object` 形式传递，将事件参数 `event` 放在最后
+#### [建议] 组件中使用 `fire` 事件时携带的参数，个数不应该超过 `2` 个。建议将数据参数以 `Object` 形式传递，将事件参数 `event` 放在最后
 
 ```javascript
 // bad
 onClick(event) {
-    this.$emit('click', this.value1, this.value2, event);
+    this.fire('click', this.value1, this.value2, event);
 }
 
 // good
 onClick(event) {
-   this.$emit(
+   this.fire(
        'click',
        {
            value1: this.value1,
@@ -782,7 +782,7 @@ onClick(event) {
 
 // good
 onClick(event) {
-   this.$emit('click', event);
+   this.fire('click', event);
 }
 ```
 
