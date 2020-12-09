@@ -15,7 +15,6 @@
         "docs:build": "vuepress build docs"
     },
     "dependencies": {
-        "eslint-plugin-vue": "^7.0.1",
         "san-eslint-parser": "1.1.0"
     },
     "devDependencies": {
@@ -27,9 +26,11 @@
         "jest": "^26.5.3",
         "typescript": "^4.1.2",
         "vue-eslint-editor": "^1.1.0",
-        "vue-router": "3.4.5",
-        "vuepress": "^1.6.0"
+        "vuepress": "^1.4.1"
     },
+    "files": [
+        "lib"
+    ],
     "engines": {
         "node": ">=8.10"
     },
