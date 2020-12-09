@@ -15,7 +15,7 @@ const RuleTester = require('eslint').RuleTester;
 // ------------------------------------------------------------------------------
 
 const tester = new RuleTester({
-    parser: require.resolve('vue-eslint-parser')
+    parser: require.resolve('san-eslint-parser')
 });
 
 tester.run('component-tags-order', rule, {

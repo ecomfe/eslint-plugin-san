@@ -17,7 +17,6 @@ module.exports = fs
     .map(name => {
         const meta = {...require(path.join(ROOT, name)).meta};
         if (meta.docs && !meta.docs.categories && meta.docs.category) {
-            // for vue3 migration
             meta.docs = {...meta.docs};
             meta.docs.categories = [meta.docs.category];
         }
