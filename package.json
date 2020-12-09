@@ -3,6 +3,8 @@
     "version": "0.0.1",
     "description": "Official ESLint plugin for San",
     "keywords": [
+	"san.js",
+	"san",
         "eslint",
         "eslintplugin",
         "eslint-plugin"
@@ -29,7 +31,8 @@
         "vuepress": "^1.4.1"
     },
     "files": [
-        "lib"
+        "lib",
+	"README.md"
     ],
     "engines": {
         "node": ">=8.10"
