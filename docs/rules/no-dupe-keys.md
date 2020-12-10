@@ -21,16 +21,15 @@ This rule is aimed at preventing duplicated property names.
 <script>
 /* ✗ BAD */
 export default {
-  props: {
-    foo: String
-  },
   computed: {
-    foo: {
-      get () {}
+    foo() {
+      return this.data.get('a')
     }
   },
-  data: {
-    foo: null
+  data() {
+    return {
+      foo: null
+    }
   },
   methods: {
     foo () {}
@@ -43,37 +42,9 @@ export default {
 
 ## :wrench: Options
 
-```json
-{
-  "san/no-dupe-keys": ["error", {
-    "groups": []
-  }]
-}
-```
-
-- `"groups"` (`string[]`) Array of additional groups to search for duplicates. Default is empty.
-
-### `"groups": ["firebase"]`
-
-<eslint-code-block :rules="{'san/no-dupe-keys': ['error', {groups: ['firebase']}]}">
-
-```vue
-<script>
-/* ✗ BAD */
-export default {
-  computed: {
-    foo () {}
-  },
-  firebase: {
-    foo () {}
-  }
-}
-</script>
-```
-
-</eslint-code-block>
+Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-dupe-keys.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-dupe-keys.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-dupe-keys.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-dupe-keys.js)
