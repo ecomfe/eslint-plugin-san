@@ -23,16 +23,16 @@
 * 根结点有多个元素；
 * 在根结点使用循环；
 * 在根结点使用 template 和 slot；
-* 在根结点使用 v-if，但是没有 v-else；
+* 在根结点使用 s-if，但是没有 s-else；
 
 ```html
 // bad
 <template></template>
 <template>hello</template>
 <template><div>one</div><div>two</div></template>
-<template><div v-for="x in list"></div></template>
+<template><div s-for="x in list"></div></template>
 <template><template>hello</template></template>
-<template><div v-if="title"></div></template>
+<template><div s-if="title"></div></template>
 
 // good
 <template><div>one</div></template>
@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import OtherComponent from './OtherComponent.vue';
+import OtherComponent from './OtherComponent.san';
 
 export default {
     components: {
@@ -68,7 +68,7 @@ export default {
 </template>
 
 <script>
-import OtherComponent from './OtherComponent.vue';
+import OtherComponent from './OtherComponent.san';
 
 export default {
     components: {
@@ -138,8 +138,7 @@ export default {
 <template>
     <div>
         <template key="x"></template>
-        <template v-bind:key="y"></template>
-        <template :key="z"></template>
+        <template key="{{y}}"></template>
     </div>
 </template>
 
@@ -156,10 +155,10 @@ export default {
 
 ```html
 // bad
-<c-title :url="url" :label-type="type"></c-title>
+<c-title url="{{url}}" label-type="{{type}}"></c-title>
 
 // good
-<c-title :url="url" :label-type="type"/>
+<c-title url="{{url}}" label-type="{{type}}"/>
 ```
 
 #### [强制] 标签右括号 `>` 的位置：
@@ -191,15 +190,15 @@ export default {
 
 // bad
 <c-title
-    :text="text"
-    :url="url"
-    :label-type="type"/>
+    text="{{text}}"
+    url="{{url}}"
+    label-type="{{type}}"/>
 
 // good
 <c-title
-    :text="text"
-    :url="url"
-    :label-type="type"
+    text="{{text}}"
+    url="{{url}}"
+    label-type="{{type}}"
 />
 ```
 
@@ -208,11 +207,11 @@ export default {
 
 ```html
 // bad
-<c-title :url="url" :label-type="type" />
+<c-title url="url" label-type="{{type}}" />
 
 // good
 <div></div>
-<c-title :url="url" :label-type="type"/>
+<c-title url="url" label-type="{{type}}"/>
 ```
 
 
@@ -256,12 +255,12 @@ export default {
 
 ```html
 // bad
-<c-title text="带箭头标题" :arrow="true"/>
+<c-title text="带箭头标题" arrow="{{true}}"/>
 
 // good
 <input type="text" disabled>
 <c-title text="带箭头标题" arrow/>
-<c-title text="带箭头标题" :arrow="false"/>
+<c-title text="带箭头标题" arrow="{{false}}"/>
 ```
 
 
@@ -269,14 +268,14 @@ export default {
 
 ```html
 // bad
-<c-title :text="text" :url="url" :label-type="type"/>
+<c-title text="{{text}}" url="{{url}}" label-type="{{type}}"/>
 
 // good
-<c-title :text="text" :url="url"/>
+<c-title text="{{text}}" url="{{url}}"/>
 <c-title
-    :text="text"
-    :url="url"
-    :label-type="type"
+    text="{{text}}"
+    url="{{url}}"
+    label-type="{{type}}"
 />
 ```
 
@@ -324,21 +323,20 @@ export default {
 
 ```html
 // bad
-<c-title foo="abc" :foo="def"/>
+<c-title foo="abc" foo="{{def}}"/>
 <c-title foo="def" foo="abc"/>
 <c-title class="def" class="abc"/>
 <c-title style="def" style="abc"/>
 
 // good
-<c-title :foo="def"/>
+<c-title foo="{{def}}"/>
 <c-title foo="abc"/>
 <c-title
     class="c-color"
-    :class="{'c-selected': selected}"
+    class="{{selected ? 'c-selected' : ''}}"
 />
 <c-title
-    style="color: #000;"
-    :style="{width: '100px'}"
+    style="color: #000; width: 100px"
 />
 ```
 
@@ -353,18 +351,18 @@ export default {
 #### [建议] `ref` 命名采用 `PascalCase`
 
 ```html
-<div ref="userInfo"></div>
+<div s-ref="userInfo"></div>
 ```
 
 ### 3.4 指令
 
-#### [强制] 在使用 `v-for` 的元素上添加 `key`，以便维护内部组件及其子树的状态
+#### [强制] 在使用 `s-for` 的元素上添加 `key`，以便维护内部组件及其子树的状态
 
 ```html
 <ul>
     <li
         v-for="todo in todos"
-        :key="todo.id"
+        key="{{todo.id}}"
     >
         {{ todo.text }}
     </li>
@@ -372,19 +370,18 @@ export default {
 ```
 
 
-#### [建议] 不要把 `v-if` 和 `v-for` 同时用在同一个元素上
+#### [建议] 不要把 `s-if` 和 `s-for` 同时用在同一个元素上
 
 解释：
 
-当 Vue 处理指令时，`v-for` 比 `v-if` 具有更高的优先级。所以如果想要使用 `v-if` 判断 `v-for` 元素列表是否显示，将两个指令同时应用在同一个元素的方法就是错误的。引入这个规则是为了避免引起困惑。
+当 San 处理指令时，`s-for` 比 `s-if` 具有更高的优先级。所以如果想要使用 `s-if` 判断 `s-for` 元素列表是否显示，将两个指令同时应用在同一个元素的方法就是错误的。引入这个规则是为了避免引起困惑。
 
 ```html
 // bad
 <ul>
     <li
-        v-for="user in users"
-        v-if="user.isActive"
-        :key="user.id"
+        s-for="user in users"
+        s-if="user.isActive"
     >
         {{ user.name }}
     </li>
@@ -395,7 +392,6 @@ export default {
     <ul>
         <li
             v-for="user in activeUsers"
-            :key="user.id"
         >
             {{ user.name }}
         </li>
@@ -442,10 +438,10 @@ export default {
 ```html
 // bad
 <div     class="foo"
-      :style="bar"         >   </div>
+      style="{{bar}}"         >   </div>
 
 // good
-<div class="foo" :style="bar"></div>
+<div class="foo" style="{{bar}}"></div>
 ```
 
 
@@ -456,12 +452,12 @@ export default {
 ```html
 // bad
 <ol><!-- "i" is defined but never used. -->
-    <li v-for="i in 5">item</li>
+    <li s-for="i in 5">item</li>
 </ol>
 
 // good
 <ol>
-    <li v-for="i in 5">{{ i }}</li>
+    <li s-for="i in 5">{{ i }}</li>
 </ol>
 ```
 
@@ -470,12 +466,12 @@ export default {
 
 ```html
 // bad
-<a :href="this.url">
+<a :href="{{this.url}}">
     {{ this.text }}
 </a>
 
 // good
-<a :href="url">
+<a href="{{url}}">
     {{ text }}
 </a>
 ```
@@ -760,17 +756,17 @@ export default {
 
 ### 4.4 其它
 
-#### [建议] 组件中使用 `$emit` 事件时携带的参数，个数不应该超过 `2` 个。建议将数据参数以 `Object` 形式传递，将事件参数 `event` 放在最后
+#### [建议] 组件中使用 `fire` 事件时携带的参数，个数不应该超过 `2` 个。建议将数据参数以 `Object` 形式传递，将事件参数 `event` 放在最后
 
 ```javascript
 // bad
 onClick(event) {
-    this.$emit('click', this.value1, this.value2, event);
+    this.fire('click', this.value1, this.value2, event);
 }
 
 // good
 onClick(event) {
-   this.$emit(
+   this.fire(
        'click',
        {
            value1: this.value1,
@@ -782,7 +778,7 @@ onClick(event) {
 
 // good
 onClick(event) {
-   this.$emit('click', event);
+   this.fire('click', event);
 }
 ```
 
