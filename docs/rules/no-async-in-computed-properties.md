@@ -10,7 +10,6 @@ description: disallow asynchronous actions in computed properties
 - :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
 
 Computed properties should be synchronous. Asynchronous actions inside them may not work as expected and can lead to an unexpected behaviour, that's why you should avoid them.
-If you need async computed properties you might want to consider using additional plugin [vue-async-computed]
 
 ## :book: Rule Details
 
@@ -26,7 +25,7 @@ export default {
     foo () {
       var bar = 0
       try {
-        bar = bar / this.a
+        bar = bar / this.data.get('a')
       } catch (e) {
         return 0
       } finally {
@@ -64,11 +63,7 @@ export default {
 
 Nothing.
 
-## :books: Further Reading
-
-- [vue-async-computed](https://github.com/foxbenjaminfox/vue-async-computed)
-
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-async-in-computed-properties.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-async-in-computed-properties.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-async-in-computed-properties.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-async-in-computed-properties.js)

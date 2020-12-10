@@ -24,21 +24,21 @@ See [Guide - Custom Events] for more details.
 ```vue
 <template>
   <!-- ✓ GOOD -->
-  <button @click="$emit('my-event')" />
+  <button on-click="fire('my-event')" />
 
   <!-- ✗ BAD -->
-  <button @click="$emit('myEvent')" />
+  <button on-click="fire('myEvent')" />
 </template>
 <script>
 export default {
   methods: {
     onClick () {
       /* ✓ GOOD */
-      this.$emit('my-event')
-      this.$emit('update:myProp', myProp)
+      this.fire('my-event')
+      this.fire('my-event', params1, params2)
 
       /* ✗ BAD */
-      this.$emit('myEvent')
+      this.fire('myEvent')
     }
   }
 }
@@ -55,10 +55,9 @@ Nothing.
 
 - [Guide - Custom Events]
 
-[Guide - Custom Events]: https://v3.vuejs.org/guide/component-custom-events.html
-[Guide (for v2) - Custom Events]: https://vuejs.org/v2/guide/components-custom-events.html
+[Guide - Custom Events]: https://baidu.github.io/san/tutorial/event/#自定义事件
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/custom-event-name-casing.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/custom-event-name-casing.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/custom-event-name-casing.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/custom-event-name-casing.js)

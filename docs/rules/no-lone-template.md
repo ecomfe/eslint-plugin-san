@@ -12,8 +12,6 @@ description: disallow unnecessary `<template>`
 ## :book: Rule Details
 
 This rule aims to eliminate unnecessary and potentially confusing `<template>`.  
-In Vue.js 2.x, the `<template>` elements that have no specific directives have no effect.  
-In Vue.js 3.x, the `<template>` elements that have no specific directives render the `<template>` elements as is, but in most cases this may not be what you intended.
 
 <eslint-code-block :rules="{'san/no-lone-template': ['error']}">
 
@@ -36,37 +34,7 @@ In Vue.js 3.x, the `<template>` elements that have no specific directives render
 
 ## :wrench: Options
 
-```json
-{
-  "san/no-lone-template": ["error", {
-    "ignoreAccessible": false
-  }]
-}
-```
-
-- `ignoreAccessible` ... If `true`, ignore accessible `<template>` elements. default `false`.  
-  Note: this option is useless if you are using Vue.js 2.x.
-
-### `"ignoreAccessible": true`
-
-<eslint-code-block :rules="{'san/no-lone-template': ['error', { 'ignoreAccessible': true }]}">
-
-```vue
-<template>
-  <!-- ✓ GOOD -->
-  <template ref="foo">...</template>
-  <template id="bar">...</template>
-
-  <!-- ✗ BAD -->
-  <template class="baz">...</template>
-</template>
-```
-
-</eslint-code-block>
-
-## :mute: When Not To Use It
-
-If you are using Vue.js 3.x and want to define the `<template>` element intentionally, you will have to turn this rule off or use `"ignoreAccessible"` option.
+Nothing.
 
 ## :couple: Related Rules
 
@@ -78,5 +46,5 @@ If you are using Vue.js 3.x and want to define the `<template>` element intentio
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-lone-template.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-lone-template.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-lone-template.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-lone-template.js)
