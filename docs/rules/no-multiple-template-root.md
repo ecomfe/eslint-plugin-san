@@ -11,7 +11,7 @@ description: disallow adding multiple root nodes to the template
 
 ## :book: Rule Details
 
-This rule checks whether template contains single root element valid for Vue 2.
+This rule checks whether template contains single root element valid for San.
 
 <eslint-code-block :rules="{'san/no-multiple-template-root': ['error']}">
 
@@ -62,5 +62,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-multiple-template-root.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-multiple-template-root.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-multiple-template-root.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-multiple-template-root.js)

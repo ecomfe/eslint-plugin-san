@@ -31,7 +31,7 @@ Then reports syntax errors if exist.
   <!-- ✗ BAD -->
   {{ . }}
   {{ foo bar }}
-  <div :class="*abc*" / @click="def(">
+  <div class={{*abc*}} / on-click="def(">
     </span>
   </div id="ghi">
 </template>
@@ -102,5 +102,5 @@ The error codes which have `x-` prefix are original of this rule because errors 
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-parsing-error.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-parsing-error.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-parsing-error.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-parsing-error.js)

@@ -11,7 +11,7 @@ description: disallow overwriting reserved keys
 
 ## :book: Rule Details
 
-This rule prevents to use [reserved names](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/utils/vue-reserved.json) to avoid conflicts and unexpected behavior.
+This rule prevents to use [reserved names](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/utils/san-reserved.json) to avoid conflicts and unexpected behavior.
 
 <eslint-code-block :rules="{'san/no-reserved-keys': ['error']}">
 
@@ -20,18 +20,15 @@ This rule prevents to use [reserved names](https://github.com/vuejs/eslint-plugi
 /* ✗ BAD */
 export default {
   props: {
-    $el: String
+    el: String
   },
   computed: {
-    $on: {
-      get () {}
+    fire() {
+      return 3;
     }
   },
-  data: {
-    _foo: null
-  },
   methods: {
-    $nextTick () {}
+    nextTick () {}
   }
 }
 </script>
@@ -41,43 +38,13 @@ export default {
 
 ## :wrench: Options
 
-```json
-{
-  "san/no-reserved-keys": ["error", {
-    "reserved": [],
-    "groups": []
-  }]
-}
-```
-
-- `reserved` (`string[]`) ... Array of additional restricted attributes inside `groups`. Default is empty.
-- `groups` (`string[]`) ... Array of additional group names to search for duplicates in. Default is empty.
-
-### `"reserved": ["foo", "foo2"], "groups": ["firebase"]`
-
-<eslint-code-block :rules="{'san/no-reserved-keys': ['error', {reserved: ['foo', 'foo2'], groups: ['firebase']}]}">
-
-```vue
-<script>
-/* ✗ BAD */
-export default {
-  computed: {
-    foo () {}
-  },
-  firebase: {
-    foo2 () {}
-  }
-}
-</script>
-```
-
-</eslint-code-block>
+Nothing.
 
 ## :books: Further Reading
 
-- [List of reserved keys](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/utils/vue-reserved.json)
+- [List of reserved keys](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/utils/san-reserved.json)
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-reserved-keys.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-reserved-keys.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-reserved-keys.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-reserved-keys.js)

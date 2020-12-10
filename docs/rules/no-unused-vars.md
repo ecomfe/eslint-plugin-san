@@ -49,5 +49,5 @@ This rule report variable definitions of s-for directives or scope attributes if
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-unused-vars.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-unused-vars.js)
+- [Rule source](https://github.com/ecom/eslint-plugin-san/blob/master/lib/rules/no-unused-vars.js)
+- [Test source](https://github.com/ecom/eslint-plugin-san/blob/master/tests/lib/rules/no-unused-vars.js)
