@@ -21,25 +21,19 @@ This rule reports components that haven't been used in the template.
   <div>
     <h2>Lorem ipsum</h2>
     <the-modal>
-      <component is="TheInput" />
-      <component :is="'TheDropdown'" />
-      <TheButton>CTA</TheButton>
+      <the-button>CTA</the-button>
     </the-modal>
   </div>
 </template>
 
 <script>
-  import TheButton from 'components/TheButton.vue'
-  import TheModal from 'components/TheModal.vue'
-  import TheInput from 'components/TheInput.vue'
-  import TheDropdown from 'components/TheDropdown.vue'
+  import TheButton from 'components/TheButton.san'
+  import TheModal from 'components/TheModal.san'
 
   export default {
     components: {
       TheButton,
-      TheModal,
-      TheInput,
-      TheDropdown,
+      TheModal
     }
   }
 </script>
@@ -54,18 +48,18 @@ This rule reports components that haven't been used in the template.
 <template>
   <div>
     <h2>Lorem ipsum</h2>
-    <TheModal />
+    <the-modal />
   </div>
 </template>
 
 <script>
-  import TheButton from 'components/TheButton.vue'
-  import TheModal from 'components/TheModal.vue'
+  import TheButton from 'components/TheButton.san'
+  import TheModal from 'components/TheModal.san'
 
   export default {
     components: {
-      TheButton, // Unused component
-      'the-modal': TheModal // Unused component
+      'the-button': TheButton, // Unused component
+      'the-modal': TheModal // Used component
     }
   }
 </script>
@@ -73,9 +67,6 @@ This rule reports components that haven't been used in the template.
 
 </eslint-code-block>
 
-::: warning Note
-Components registered under `PascalCase` or `camelCase` names have may be called however you like, except using `snake_case`. Otherwise, they will need to be called directly under the specified name.
-:::
 
 ## :wrench: Options
 
@@ -99,22 +90,22 @@ Components registered under `PascalCase` or `camelCase` names have may be called
 <template>
   <div>
     <h2>Lorem ipsum</h2>
-    <TheButton s-if="" />
-    <TheSelect s-else-if="" />
-    <TheInput s-else="" />
+    <the-button s-if="" />
+    <the-select s-else-if="" />
+    <the-input s-else="" />
   </div>
 </template>
 
 <script>
-  import TheButton from 'components/TheButton.vue'
-  import TheSelect from 'components/TheSelect.vue'
-  import TheInput from 'components/TheInput.vue'
+  import TheButton from 'components/TheButton.san'
+  import TheSelect from 'components/TheSelect.san'
+  import TheInput from 'components/TheInput.san'
 
   export default {
     components: {
-      TheButton,
-      TheSelect,
-      TheInput,
+      'the-button': TheButton,
+      'the-select': TheSelect,
+      'the-input': TheInput,
     },
   }
 </script>
@@ -129,20 +120,20 @@ Components registered under `PascalCase` or `camelCase` names have may be called
 <template>
   <div>
     <h2>Lorem ipsum</h2>
-    <component :is="computedComponent" />
+    <computedComponent />
   </div>
 </template>
 
 <script>
-  import TheButton from 'components/TheButton.vue'
-  import TheSelect from 'components/TheSelect.vue'
-  import TheInput from 'components/TheInput.vue'
+  import TheButton from 'components/TheButton.san'
+  import TheSelect from 'components/TheSelect.san'
+  import TheInput from 'components/TheInput.san'
 
   export default {
     components: {
-      TheButton, // <- not used
-      TheSelect, // <- not used
-      TheInput, // <- not used
+      'the-button': TheButton, // <- not used
+      'the-select': TheSelect, // <- not used
+      'the-input': TheInput, // <- not used
     },
     computed: {
       computedComponent() {
@@ -156,5 +147,5 @@ Components registered under `PascalCase` or `camelCase` names have may be called
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-unused-components.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-unused-components.js)
+- [Rule source](https://github.com/ecom/eslint-plugin-san/blob/master/lib/rules/no-unused-components.js)
+- [Test source](https://github.com/ecom/eslint-plugin-san/blob/master/tests/lib/rules/no-unused-components.js)

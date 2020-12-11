@@ -27,7 +27,6 @@ This rule aims to eliminate shadowed variable declarations of s-for directives o
   <div>
     <div s-for="k in 5">
       <div s-for="k in 10"></div>
-      <div slot-scope="{ k }"></div>
     </div>
   </div>
   <div s-for="l in 5"></div>
@@ -52,5 +51,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-template-shadow.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-template-shadow.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-template-shadow.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-template-shadow.js)

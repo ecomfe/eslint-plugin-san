@@ -18,7 +18,7 @@ This rule reports mustaches in `<textarea>`.
 ```vue
 <template>
   <!-- ✓ GOOD -->
-  <textarea s-model="message" />
+  <textarea value="{=message=}" />
 
   <!-- ✗ BAD -->
   <textarea>{{ message }}</textarea>
@@ -27,20 +27,15 @@ This rule reports mustaches in `<textarea>`.
 
 </eslint-code-block>
 
-::: warning Note
-Interpolation on textareas (`<textarea>{{text}}</textarea>`) won't work. Use `s-model` instead.
-[https://v3.vuejs.org/guide/forms.html#multiline-text](https://v3.vuejs.org/guide/forms.html#multiline-text)
-:::
-
 ## :wrench: Options
 
 Nothing.
 
 ## :books: Further Reading
 
-- [Guide - Form Input Bindings / Multiline text](https://v3.vuejs.org/guide/forms.html#multiline-text)
+- [Guide - Form Input Bindings / Multiline text](https://baidu.github.io/san/tutorial/form/#输入框)
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-textarea-mustache.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-textarea-mustache.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-textarea-mustache.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-textarea-mustache.js)

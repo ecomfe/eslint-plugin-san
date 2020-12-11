@@ -23,26 +23,26 @@ There are two common cases where this can be tempting:
 <template>
   <!-- ✓ GOOD -->
   <ul s-if="complete">
-    <TodoItem
+    <todo-item
       s-for="todo in todos"
-      :todo="todo"
+      todo="{{todo}}"
     />
   </ul>
-  <TodoItem
+  <todo-item
     s-for="todo in shownTodos"
-    :todo="todo"
+    todo="{{todo}}"
   />
 
   <!-- ✗ BAD -->
-  <TodoItem
+  <todo-item
     s-if="complete"
     s-for="todo in todos"
-    :todo="todo"
+    todo="{{todo}}"
   /><!-- ↑ In this case, the `s-if` should be written on the wrapper element. -->
-  <TodoItem
+  <todo-item
     s-for="todo in todos"
     s-if="todo.shown"
-    :todo="todo"
+    todo="{{todo}}"
   /><!-- ↑ In this case, the `s-for` list variable should be replace with a computed property that returns your filtered list. -->
 </template>
 ```
@@ -68,30 +68,25 @@ There are two common cases where this can be tempting:
 ```vue
 <template>
   <!-- ✓ GOOD -->
-  <TodoItem
+  <todo-item
     s-for="todo in todos"
     s-if="todo.shown"
-    :todo="todo"
+    todo="{{todo}}"
   />
 
   <!-- ✗ BAD -->
-  <TodoItem
+  <todo-item
     s-for="todo in todos"
     s-if="shown"
-    :todo="todo"
+    todo="{{todo}}"
   />
 </template>
 ```
 
 </eslint-code-block>
 
-## :books: Further Reading
-
-- [Style guide - Avoid s-if with s-for](https://v3.vuejs.org/style-guide/#avoid-s-if-with-s-for-essential)
-- [Guide - Conditional Rendering / s-if with s-for](https://v3.vuejs.org/guide/conditional.html#s-if-with-s-for)
-- [Guide - List Rendering / s-for with s-if](https://v3.vuejs.org/guide/list.html#s-for-with-s-if)
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-use-s-if-with-s-for.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-use-s-if-with-s-for.js)
+- [Rule source](https://github.com/ecom/eslint-plugin-san/blob/master/lib/rules/no-use-s-if-with-s-for.js)
+- [Test source](https://github.com/ecom/eslint-plugin-san/blob/master/tests/lib/rules/no-use-s-if-with-s-for.js)

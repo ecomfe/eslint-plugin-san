@@ -23,10 +23,13 @@ It is considered a very bad practice to introduce side effects inside computed p
 export default {
   computed: {
     fullName () {
+      const firstName = this.data.get('firstName')
+      const lastName = this.data.get('lastName')
+
       return `${this.firstName} ${this.lastName}`
     },
     reversedArray () {
-      return this.array.slice(0).reverse() // .slice makes a copy of the array, instead of mutating the orginal
+      return this.data.get('array').slice(0).reverse() // .slice makes a copy of the array, instead of mutating the orginal
     }
   }
 }
@@ -43,11 +46,11 @@ export default {
 export default {
   computed: {
     fullName () {
-      this.firstName = 'lorem' // <- side effect
-      return `${this.firstName} ${this.lastName}`
+      this.data.set('firstName') = 'lorem' // <- side effect
+      return `${this.data.set('firstName')} ${this.data.set('lastName')}`
     },
     reversedArray () {
-      return this.array.reverse() // <- side effect - orginal array is being mutated
+      return this.data.get('array').reverse() // <- side effect - orginal array is being mutated
     }
   }
 }
@@ -62,9 +65,9 @@ Nothing.
 
 ## :books: Further Reading
 
-- [Guide - Computed Caching vs Methods](https://v3.vuejs.org/guide/computed.html#computed-caching-vs-methods)
+- [Guide - Computed](https://baidu.github.io/san/tutorial/component/#计算数据)
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-side-effects-in-computed-properties.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-side-effects-in-computed-properties.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-side-effects-in-computed-properties.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-side-effects-in-computed-properties.js)
