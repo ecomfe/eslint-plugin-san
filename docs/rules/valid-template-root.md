@@ -24,20 +24,11 @@ This rule reports the template root in the following cases:
 
 </eslint-code-block>
 
-<eslint-code-block :rules="{'san/valid-template-root': ['error']}">
-
-```vue
-<!-- The root with src attribute is not empty -->
-<template src="foo.html"><div></div></template>
-```
-
-</eslint-code-block>
-
 ## :wrench: Options
 
 Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/valid-template-root.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/valid-template-root.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/valid-template-root.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/valid-template-root.js)

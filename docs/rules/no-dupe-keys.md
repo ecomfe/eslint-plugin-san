@@ -26,14 +26,14 @@ export default {
       return this.data.get('a')
     }
   },
-  data() {
+
+  initData() {
     return {
       foo: null
     }
   },
-  methods: {
-    foo () {}
-  }
+
+  foo () {}
 }
 </script>
 ```

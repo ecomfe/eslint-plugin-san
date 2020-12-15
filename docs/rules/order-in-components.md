@@ -13,7 +13,6 @@ description: enforce order of properties in components
 ## :book: Rule Details
 
 This rule makes sure you keep declared order of properties in components.
-Recommended order of properties can be [found here](https://v3.vuejs.org/style-guide/#component-instance-options-order-recommended).
 
 <eslint-code-block fix :rules="{'san/order-in-components': ['error']}">
 
@@ -21,13 +20,13 @@ Recommended order of properties can be [found here](https://v3.vuejs.org/style-g
 <script>
 /* ✓ GOOD */
 export default {
-  name: 'app',
-  props: {
-    propA: Number
+  dataTypes: {
+    name: DataTypes.string
   },
+
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your San App'
     }
   }
 }
@@ -42,14 +41,14 @@ export default {
 <script>
 /* ✗ BAD */
 export default {
-  name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your San App'
     }
   },
-  props: {
-    propA: Number
+
+  dataTypes: {
+    name: DataTypes.string
   }
 }
 </script>
@@ -63,39 +62,13 @@ export default {
 {
   "san/order-in-components": ["error", {
     "order": [
-      "el",
-      "name",
-      "key",
-      "parent",
-      "functional",
-      ["delimiters", "comments"],
-      ["components", "directives", "filters"],
-      "extends",
-      "mixins",
-      ["provide", "inject"],
-      "ROUTER_GUARDS",
-      "layout",
-      "middleware",
-      "validate",
-      "scrollToTop",
-      "transition",
-      "loading",
-      "inheritAttrs",
-      "model",
-      ["props", "propsData"],
-      "emits",
-      "setup",
-      "asyncData",
-      "data",
-      "fetch",
-      "head",
+      "dataTypes",
+      "initData",
       "computed",
-      "watch",
-      "watchQuery",
+      "filters",
       "LIFECYCLE_HOOKS",
       "methods",
-      ["template", "render"],
-      "renderError"
+      "template"
     ]
   }]
 }
@@ -108,13 +81,7 @@ export default {
 
   If an element is an array of strings, it means any of those can be placed there unordered. Default is above.
 
-
-## :books: Further Reading
-
-- [Style guide - Component/instance options order](https://v3.vuejs.org/style-guide/#component-instance-options-order-recommended)
-- [Style guide (for v2) - Component/instance options order](https://vuejs.org/v2/style-guide/#Component-instance-options-order-recommended)
-
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/order-in-components.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/order-in-components.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/order-in-components.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/order-in-components.js)

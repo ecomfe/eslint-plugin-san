@@ -30,7 +30,7 @@ export default class SomeComp extends san.Component {
 }
 
 export default {
-  data () {
+  initData () {
     return {
       foo: 'bar'
     }
@@ -47,13 +47,13 @@ export default {
 <script>
 /* ✗ BAD */
 export default class SomeComp extends san.Component {
-  static data = {
+  static initData = {
     foo: 'bar'
   }
 })
 
 export default {
-  data: {
+  initData: {
     foo: 'bar'
   }
 }

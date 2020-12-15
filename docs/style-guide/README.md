@@ -131,26 +131,6 @@ export default {
 </ul>
 ```
 
-#### [强制] `template` 标签上不能带有 `key` 属性
-
-```html
-// bad
-<template>
-    <div>
-        <template key="x"></template>
-        <template key="{{y}}"></template>
-    </div>
-</template>
-
-// good
-<template>
-    <div>
-        <div key="x"></div>
-        <template></template>
-    </div>
-</template>
-```
-
 #### [强制] 如果自定义标签中没有内容，需要以自闭合标签形式出现
 
 ```html
@@ -284,34 +264,24 @@ export default {
 
 优先级顺序：
 
-1. 定义（提供组件的选项）
-    - is
-2. 列表渲染（创建多个变化的相同元素）
+1. 列表渲染（创建多个变化的相同元素）
     - v-for
-3. 条件渲染（元素是否渲染/显示）
+2. 条件渲染（元素是否渲染/显示）
     - v-if
     - v-else-if
     - v-else
-    - v-show
-    - v-cloak
-4. 渲染方式（改变元素的渲染方式）
-    - v-pre/v-once
-5. 全局感知（需要超越组件的知识）
+3. 全局感知（需要超越组件的知识）
     - id
-6. 唯一的特性（需要唯一值的特性）
+4. 唯一的特性（需要唯一值的特性）
     - ref
-    - key
     - slot
-7. 双向绑定（把绑定和事件结合起来）
-    - v-model
-8. 未绑定的属性
-9. 其它绑定（所有普通的绑定）
-    - v-bind
-9. 事件（组件事件监听器）
-    - v-on
-10. 内容（覆写元素的内容）
-    - v-html
-    - v-text
+5. 双向绑定（把绑定和事件结合起来）
+6. 未绑定的属性
+7. 其它绑定（所有普通的绑定）
+    - s-bind
+8. 事件（组件事件监听器）
+    - s-on
+9. 内容（覆写元素的内容）
 
 #### [强制] 不能有重复的属性，`class` 和 `style` 除外
 
@@ -356,20 +326,6 @@ export default {
 
 ### 3.4 指令
 
-#### [强制] 在使用 `s-for` 的元素上添加 `key`，以便维护内部组件及其子树的状态
-
-```html
-<ul>
-    <li
-        v-for="todo in todos"
-        key="{{todo.id}}"
-    >
-        {{ todo.text }}
-    </li>
-</ul>
-```
-
-
 #### [建议] 不要把 `s-if` 和 `s-for` 同时用在同一个元素上
 
 解释：
@@ -409,13 +365,6 @@ export default {
 }
 </script>
 ```
-
-
-#### [建议] 以下指令统一使用缩写
-
-* 使用 `:` 表示 `v-bind:`
-* 使用 `@` 表示 `v-on:`
-
 
 ### 3.5 插值（Mustache）
 
@@ -484,39 +433,23 @@ export default {
 #### [强制] 指定 `props` 类型
 
 ```html
-// bad
-<script>
-export default {
-    props: ['status']
-};
-</script>
-
 // good
 <script>
 export default {
-    props: {
-        status: String
+    dataTypes: {
+        status: DataTypes.string
     }
 };
 ```
 
-
-#### [强制] 如果 `props` 没有指定为 `required` 或者 `required` 为 `false`，则需要指定默认值
+#### [强制] 在 `dataTypes` 中声明的属性，其属性名应该始终符合 `camelCase`
 
 ```html
 // bad
 <script>
 export default {
-    props: {
-        a: Number,
-        b: [Number, String],
-        c: {
-            type: Number
-        },
-        d: {
-            type: Number,
-            required: false
-        }
+    dataTypes: {
+        'greeting-text': DataTypes.string
     }
 };
 </script>
@@ -524,99 +457,8 @@ export default {
 // good
 <script>
 export default {
-    props: {
-        a: {
-            type: Number,
-            required: true
-        },
-        b: {
-            type: [Number, String],
-            default: 0
-        },
-        c: {
-            type: Number,
-            default: 0,
-            required: false
-        }
-    }
-};
-</script>
-```
-
-
-#### [强制] `props` 提供的默认值必须满足校验条件
-
-```html
-// bad
-<script>
-export default {
-    props: {
-        propA: {
-            type: String,
-            default: {}
-        },
-        propB: {
-            type: String,
-            default: []
-        },
-        propC: {
-            type: Object,
-            default: []
-        },
-        propD: {
-            type: Array,
-            default: []
-        },
-        propE: {
-            type: Object,
-            default: {
-                message: 'hello'
-            }
-        }
-    }
-};
-</script>
-
-// good
-<script>
-export default {
-    props: {
-        propA: Number,
-        propB: [String, Number],
-        propD: {
-            type: Number,
-            default: 100
-        },
-        propE: {
-            type: Object,
-            default() {
-                return {
-                    message: 'hello'
-                };
-            }
-        }
-    }
-};
-```
-
-
-#### [强制] 在 `props` 中声明的属性，其属性名应该始终符合 `camelCase`
-
-```html
-// bad
-<script>
-export default {
-    props: {
-        'greeting-text': String
-    }
-};
-</script>
-
-// good
-<script>
-export default {
-    props: {
-        greetingText: String
+    dataTypes: {
+        greetingText: DataTypes.string
     }
 };
 </script>
@@ -624,13 +466,13 @@ export default {
 
 ### 4.2 data
 
-#### [强制] `data` 必须是一个函数
+#### [强制] `initData` 必须是一个函数
 
 ```html
 // bad
 <script>
 export default {
-    data: {
+    initData: {
         b: 1
     }
 }
@@ -639,7 +481,7 @@ export default {
 // good
 <script>
 export default {
-    data() {
+    initData() {
         return {
             b: 1
         };
@@ -649,46 +491,47 @@ export default {
 ```
 
 
-#### [强制] `data` 中禁止使用 `computed` 中的变量
+#### [强制] `initData` 中禁止使用 `computed` 中的变量
 
 ```html
 // bad
 <script>
 export default {
-    props: {
-        a: {
-            type: String,
-            default: 0
-        }
+    dataTypes: {
+        a: DataTypes.string
     },
-    data() {
+
+    initData() {
         return {
-            d: this.f
+            d: this.data.get('f')
         };
     },
+
     computed: {
         f() {
-            return this.a * 10;
+            return this.data.get('a') * 10;
         }
     }
 };
 </script>
 ```
 
-#### [强制] `props`, `data`, `computed`, `methods` 中不能有重复的 `key`
+#### [强制] `dataTypes`, `initData`, `computed`, `methods` 中不能有重复的 `key`
 
 ```html
 // bad
 <script>
 export default {
-    props: {
-        foo: String
+    dataTypes: {
+        foo: DataTypes.string
     },
-    data() {
+
+    initData() {
         return {
             foo: null
         };
     },
+
     computed: {
         foo() {
             return 'foo';
@@ -700,14 +543,16 @@ export default {
 // good
 <script>
 export default {
-    props: {
-        foo: String
+    dataTypes: {
+        foo: DataTypes.string
     },
+
     data() {
         return {
             bar: null
         };
     },
+
     computed: {
         baz() {
             return foo + bar;
@@ -719,36 +564,29 @@ export default {
 
 ### 4.3 变量
 
-#### [强制] 不能使用 Vue 中的保留字段命名变量
-
-解释：
-
-Vue 使用 `_` 前缀来定义其自身的私有属性，所以使用相同的前缀 (比如 `_update`) 有覆写实例属性的风险。即便你检查确认 Vue 当前版本没有用到这个属性名，也不能保证和将来的版本没有冲突。
-
-对于 `$` 前缀来说，其在 Vue 生态系统中的目的是暴露给用户的一个特殊的实例属性，所以把它用于私有属性并不合适。
-
-不过，我们推荐把这两个前缀结合为 `$_`，作为一个用户定义的私有属性的约定，以确保不会和 Vue 自身相冲突。
+#### [强制] 不能使用 San 中的保留字段命名变量
 
 ```html
 // bad
 <script>
 export default {
-    props: {
-        $el: String
+    dataTypes: {
+        el: DataTypes.string
     },
+
     data() {
         return {
             _foo: null
         };
     },
+
     computed: {
-        $on() {
+        fire() {
             return 2;
         }
     },
-    methods: {
-        $nextTick() {
-        }
+
+    nextTick() {
     }
 }
 </script>
@@ -761,19 +599,21 @@ export default {
 ```javascript
 // bad
 onClick(event) {
-    this.fire('click', this.value1, this.value2, event);
+    const {value1, value2} = this.data.get();
+    this.fire('click', value1, value2, event);
 }
 
 // good
 onClick(event) {
-   this.fire(
-       'click',
-       {
-           value1: this.value1,
-           value2: this.value2
-       },
-       event
-   );
+    const {value1, value2} = this.data.get();
+    this.fire(
+        'click',
+        {
+           value1,
+           value2
+        },
+        event
+    );
 }
 
 // good
@@ -797,7 +637,6 @@ onClick(event) {
 
 ## 6 参考
 
-* [vue 代码风格指南](https://cn.vuejs.org/v2/style-guide/)
 * [ecomfe HTML 编码规范](https://github.com/ecomfe/spec/blob/master/html-style-guide.md)
 * [ecomfe JavaScript 编码规范](https://github.com/ecomfe/spec/blob/master/javascript-style-guide.md)
 * [ecomfe JavaScript 编码规范 - ESNext 补充篇（草案）](https://github.com/ecomfe/spec/blob/master/es-next-style-guide.md)

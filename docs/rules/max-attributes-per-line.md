@@ -122,11 +122,7 @@ There is a configurable number of attributes that are acceptable in one-line cas
 
 </eslint-code-block>
 
-## :books: Further Reading
-
-- [Style guide - Multi attribute elements](https://v3.vuejs.org/style-guide/#multi-attribute-elements-strongly-recommended)
-
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/max-attributes-per-line.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/max-attributes-per-line.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/max-attributes-per-line.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/max-attributes-per-line.js)

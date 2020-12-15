@@ -102,15 +102,15 @@ This rule enforces a line break before and after the contents of a multiline ele
 ```vue
 <template>
   <!-- ✓ GOOD -->
-  <VueComponent>multiline
-  content</VueComponent>
+  <SanComponent>multiline
+  content</SanComponent>
 
   <pre>some
   content</pre>
 
-  <VueComponent><span
+  <SanComponent><span
     class="bold">For example,</span>
-  Defines the Vue component that accepts preformatted text.</VueComponent>
+  Defines the Vue component that accepts preformatted text.</SanComponent>
 </template>
 ```
 
@@ -148,5 +148,5 @@ This rule enforces a line break before and after the contents of a multiline ele
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/multiline-html-element-content-newline.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/multiline-html-element-content-newline.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/multiline-html-element-content-newline.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/multiline-html-element-content-newline.js)

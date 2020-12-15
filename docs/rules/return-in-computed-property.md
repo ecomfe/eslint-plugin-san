@@ -20,11 +20,11 @@ This rule enforces that a `return` statement is present in `computed` properties
 export default {
   computed: {
     /* ✓ GOOD */
-    foo () {
-      if (this.bar) {
-        return this.baz
+    foo() {
+      if (this.data.get('bar')) {
+        return this.data.get('baz')
       } else {
-        return this.baf
+        return this.data.get('baf')
       }
     },
     bar: function () {
@@ -32,8 +32,9 @@ export default {
     },
     /* ✗ BAD */
     baz () {
-      if (this.baf) {
-        return this.baf
+      const baf = this.data.get('baf')
+      if (baf) {
+        return baf
       }
     },
     baf: function () {}
@@ -67,7 +68,7 @@ export default {
   computed: {
     /* ✓ GOOD */
     foo () {
-      if (this.bar) {
+      if (this.data.get('bar')) {
         return undefined
       } else {
         return
@@ -78,8 +79,9 @@ export default {
     },
     /* ✗ BAD */
     baz () {
-      if (this.baf) {
-        return this.baf
+      const baf = this.data.get('baf')
+      if (baf) {
+        return baf
       }
     },
     baf: function () {}
@@ -92,5 +94,5 @@ export default {
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/return-in-computed-property.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/return-in-computed-property.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/return-in-computed-property.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/return-in-computed-property.js)

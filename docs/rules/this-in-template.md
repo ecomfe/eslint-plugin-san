@@ -18,13 +18,13 @@ This rule aims at preventing usage of `this` in Vue templates.
 ```vue
 <template>
   <!-- ✓ GOOD -->
-  <a :href="url">
+  <a href="{{url}}">
     {{ text }}
   </a>
   
   <!-- ✗ BAD -->
-  <a :href="this.url">
-    {{ this.text }}
+  <a href="{{this.data.get('url')}}">
+    {{ this.data.get('text') }}
   </a>
 </template>
 ```
@@ -48,12 +48,12 @@ This rule aims at preventing usage of `this` in Vue templates.
 ```vue
 <template>
   <!-- ✓ GOOD -->
-  <a :href="this.url">
-    {{ this.text }}
+  <a href="{{this.data.get('url')}}">
+    {{ this.data.get('text') }}
   </a>
   
   <!-- ✗ BAD -->
-  <a :href="url">
+  <a href="{{url}}">
     {{ text }}
   </a>
 </template>
@@ -63,5 +63,5 @@ This rule aims at preventing usage of `this` in Vue templates.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/this-in-template.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/this-in-template.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/this-in-template.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/this-in-template.js)

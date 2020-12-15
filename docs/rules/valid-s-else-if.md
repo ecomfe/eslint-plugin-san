@@ -15,8 +15,8 @@ This rule checks whether every `s-else-if` directive is valid.
 
 This rule reports `s-else-if` directives in the following cases:
 
-- The directive has that argument. E.g. `<div s-if="foo"></div><div s-else-if:aaa="bar"></div>`
-- The directive has that modifier. E.g. `<div s-if="foo"></div><div s-else-if.bbb="bar"></div>`
+- The directive has that argument. E.g. `<div s-if="foo"></div><div s-else-if="{{ {aaa: bar} }}"></div>`
+- The directive has that modifier. E.g. `<div s-if="foo"></div><div s-else-if="{{ {bbb: bar} }}"></div>`
 - The directive does not have that attribute value. E.g. `<div s-if="foo"></div><div s-else-if></div>`
 - The directive is on the elements that the previous element don't have `s-if`/`s-else-if` directives. E.g. `<div s-else-if="bar"></div>`
 - The directive is on the elements which have `s-if`/`s-else` directives. E.g. `<div s-if="foo" s-else-if="bar"></div>`
@@ -31,8 +31,8 @@ This rule reports `s-else-if` directives in the following cases:
 
   <!-- ✗ BAD -->
   <div s-else-if/>
-  <div s-else-if:aaa="foo"/>
-  <div s-else-if.bbb="foo"/>
+  <div s-else-if="{{ {aaa: bar} }}"/>
+  <div s-else-if="{{ {bbb: bar} }}"/>
 </template>
 ```
 
@@ -58,5 +58,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/valid-s-else-if.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/valid-s-else-if.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/valid-s-else-if.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/valid-s-else-if.js)

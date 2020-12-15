@@ -21,22 +21,21 @@ This rule aims at removing multiple spaces in tags, which are not used for inden
   <!-- ✓ GOOD -->
   <div
     class="foo"
-    :style="bar" />
+    style="{{bar}}" />
   <i
-    :class="{
-      'fa-angle-up' : isExpanded,
-      'fa-angle-down' : !isExpanded,
-    }"
+    class="{{
+      isExpanded ? 'fa-angle-up' : 'fa-angle-down'
+    }}"
   />
 
   <!-- ✗ BAD -->
   <div     class="foo"
-    :style =  "bar"         />
+    style =  "{{bar}}"         />
   <i
-    :class="{
-      'fa-angle-up'   : isExpanded,
-      'fa-angle-down' : !isExpanded,
-    }"
+    class="{{
+      isExpanded ? 'fa-angle-up'   : '',
+      !isExpanded ? 'fa-angle-down' : '',
+    }}"
   />
 </template>
 ```
@@ -63,10 +62,10 @@ This rule aims at removing multiple spaces in tags, which are not used for inden
 <template>
   <!-- ✓ GOOD -->
   <i
-    :class="{
-      'fa-angle-up'   : isExpanded,
-      'fa-angle-down' : !isExpanded,
-    }"
+    class="{{
+      isExpanded ? 'fa-angle-up'   : '',
+      !isExpanded ? 'fa-angle-down' : '',
+    }}"
   />
 </template>
 ```
@@ -75,5 +74,5 @@ This rule aims at removing multiple spaces in tags, which are not used for inden
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-multi-spaces.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-multi-spaces.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-multi-spaces.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-multi-spaces.js)

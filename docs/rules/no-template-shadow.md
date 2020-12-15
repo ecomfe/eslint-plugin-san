@@ -34,7 +34,7 @@ This rule aims to eliminate shadowed variable declarations of s-for directives o
 
 <script>
   export default {
-    data () {
+    initData () {
       return {
         l: false
       }

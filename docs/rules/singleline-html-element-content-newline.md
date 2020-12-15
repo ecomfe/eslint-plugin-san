@@ -69,7 +69,7 @@ This rule enforces a line break before and after the contents of a singleline el
 
 
 ::: info
-  All inline non void elements can be found [here](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/utils/inline-non-void-elements.json).
+  All inline non void elements can be found [here](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/utils/inline-non-void-elements.json).
 :::
 
 
@@ -109,5 +109,5 @@ This rule enforces a line break before and after the contents of a singleline el
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/singleline-html-element-content-newline.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/singleline-html-element-content-newline.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/singleline-html-element-content-newline.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/singleline-html-element-content-newline.js)

@@ -91,11 +91,7 @@ Every option can be set to one of the following values:
 
 </eslint-code-block>
 
-## :books: Further Reading
-
-- [Style guide - Self closing components](https://v3.vuejs.org/style-guide/#Self-closing-components-strongly-recommended)
-
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/html-self-closing.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/html-self-closing.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/html-self-closing.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/html-self-closing.js)
