@@ -12,30 +12,20 @@ description: enforce order of attributes
 
 ## :book: Rule Details
 
-This rule aims to enforce ordering of component attributes. The default order is specified in the [Vue.js Style Guide](https://v3.vuejs.org/style-guide/#element-attribute-order-recommended) and is:
+This rule aims to enforce ordering of component attributes. The default order is:
 
-- `DEFINITION`
-  e.g. 'is', 's-is'
 - `LIST_RENDERING`
   e.g. 's-for item in items'
 - `CONDITIONALS`
-  e.g. 's-if', 's-else-if', 's-else', 's-show', 's-cloak'
-- `RENDER_MODIFIERS`
-  e.g. 's-once', 's-pre'
+  e.g. 's-if', 's-else-if', 's-else'
 - `GLOBAL`
   e.g. 'id'
 - `UNIQUE`
   e.g. 'ref', 'key', 's-slot', 'slot'
-- `TWO_WAY_BINDING`
-  e.g. 's-model'
-- `OTHER_DIRECTIVES`
-  e.g. 's-custom-directive'
 - `OTHER_ATTR`
-  e.g. 'custom-prop="foo"', 's-bind:prop="foo"', ':prop="foo"'
+  e.g. 'custom-prop="foo"', 's-bind={{ {prop: foo} }}', 'prop="{{foo}}"'
 - `EVENTS`
-  e.g. '@click="functionCall"', 's-on="event"'
-- `CONTENT`
-  e.g. 's-text', 's-html'
+  e.g. 's-on="event"'
 
 ### the default order
 
@@ -45,29 +35,26 @@ This rule aims to enforce ordering of component attributes. The default order is
 <template>
   <!-- ✓ GOOD -->
   <div
-    is="header"
     s-for="item in items"
     s-if="!visible"
-    s-once
     id="uniqueID"
     ref="header"
-    s-model="headerData"
     my-prop="prop"
-    @click="functionCall"
-    s-text="textContent">
+    on-click="functionCall"
+  >
   </div>
   <div
     s-for="item in items"
     s-if="!visible"
-    prop-one="prop"
-    :prop-two="prop"
-    prop-three="prop"
-    @click="functionCall"
-    s-text="textContent">
+    prop-one="{{prop}}"
+    prop-two="{{prop}}"
+    prop-three="{{prop}}"
+    on-click="functionCall"
+   >
   </div>
   <div
     prop-one="prop"
-    :prop-two="prop"
+    prop-two="{{prop}}"
     prop-three="prop">
   </div>
 
@@ -75,14 +62,10 @@ This rule aims to enforce ordering of component attributes. The default order is
   <div
     ref="header"
     s-for="item in items"
-    s-once
     id="uniqueID"
-    s-model="headerData"
     my-prop="prop"
     s-if="!visible"
-    is="header"
-    @click="functionCall"
-    s-text="textContent">
+    on-click="functionCall">
   </div>
 </template>
 ```
@@ -94,17 +77,12 @@ This rule aims to enforce ordering of component attributes. The default order is
 {
   "san/attributes-order": ["error", {
     "order": [
-      "DEFINITION",
       "LIST_RENDERING",
       "CONDITIONALS",
-      "RENDER_MODIFIERS",
       "GLOBAL",
       "UNIQUE",
-      "TWO_WAY_BINDING",
-      "OTHER_DIRECTIVES",
       "OTHER_ATTR",
-      "EVENTS",
-      "CONTENT"
+      "EVENTS"
     ],
     "alphabetical": false
   }]
@@ -120,17 +98,16 @@ This rule aims to enforce ordering of component attributes. The default order is
   <!-- ✓ GOOD -->
     <div
       a-custom-prop="value"
-      :another-custom-prop="value"
-      :blue-color="false"
+      another-custom-prop="{{value}}"
+      blue-color="{{false}}"
       boolean-prop
       class="foo"
-      :class="bar"
+      class="{{bar}}"
       z-prop="Z"
-      s-on:[c]="functionCall"
-      @change="functionCall"
-      s-on:click="functionCall"
-      @input="functionCall"
-      s-text="textContent">
+      on-[c]="functionCall"
+      on-change="functionCall"
+      on-click="functionCall"
+      on-input="functionCall">
     </div>
 
   <!-- ✗ BAD -->
@@ -140,22 +117,22 @@ This rule aims to enforce ordering of component attributes. The default order is
     </div>
 
     <div
-      @input="bar"
-      @change="foo">
+      on-input="bar"
+      on-change="foo">
     </div>
 
     <div
-      s-on:click="functionCall"
-      s-on:[c]="functionCall">
+      on-click="functionCall"
+      on-[c]="functionCall">
     </div>
 
     <div
-      :z-prop="Z"
-      :a-prop="A">
+      z-prop="{{Z}}"
+      a-prop="{{A}}">
     </div>
 
     <div
-      :class="foo"
+      class="{{foo}}"
       class="bar">
     </div>
 
@@ -175,7 +152,6 @@ This rule aims to enforce ordering of component attributes. The default order is
   <!-- ✓ GOOD -->
   <div
     ref="header"
-    is="header"
     prop-one="prop"
     prop-two="prop">
   </div>
@@ -183,8 +159,7 @@ This rule aims to enforce ordering of component attributes. The default order is
   <!-- ✗ BAD -->
   <div
     ref="header"
-    prop-one="prop"
-    is="header">
+    prop-one="prop">
   </div>
 </template>
 ```
@@ -200,12 +175,10 @@ This rule aims to enforce ordering of component attributes. The default order is
   <!-- ✓ GOOD -->
   <div
     ref="header"
-    is="header"
     prop-one="prop"
     prop-two="prop">
   </div>
   <div
-    is="header"
     ref="header"
     prop-one="prop"
     prop-two="prop">
@@ -215,12 +188,7 @@ This rule aims to enforce ordering of component attributes. The default order is
 
 </eslint-code-block>
 
-## :books: Further Reading
-
-- [Style guide - Element attribute order](https://v3.vuejs.org/style-guide/#element-attribute-order-recommended)
-- [Style guide (for v2) - Element attribute order](https://vuejs.org/v2/style-guide/#Element-attribute-order-recommended)
-
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/attributes-order.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/attributes-order.js)
+- [Rule source](https://github.com/ecomefe/eslint-plugin-san/blob/master/lib/rules/attributes-order.js)
+- [Test source](https://github.com/ecomefe/eslint-plugin-san/blob/master/tests/lib/rules/attributes-order.js)

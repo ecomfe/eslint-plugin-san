@@ -59,5 +59,5 @@ This rule aims at enforcing unified spacing in mustache interpolations.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/mustache-interpolation-spacing.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/mustache-interpolation-spacing.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/mustache-interpolation-spacing.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/mustache-interpolation-spacing.js)

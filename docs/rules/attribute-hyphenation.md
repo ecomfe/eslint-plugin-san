@@ -104,5 +104,5 @@ Don't use hyphenated name but allow custom attributes
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/attribute-hyphenation.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/attribute-hyphenation.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/attribute-hyphenation.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/attribute-hyphenation.js)

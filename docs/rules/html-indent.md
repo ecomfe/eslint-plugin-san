@@ -29,21 +29,17 @@ This rule enforces a consistent indentation style in `<template>`. The default s
     Hello.
   </div>
   <div class="foo"
-       :foo="bar"
+    foo="{{bar}}"
   >
     World.
   </div>
   <div
     id="a"
     class="b"
-    :other-attr="{
-      aaa: 1,
-      bbb: 2
-    }"
-    @other-attr2="
-      foo();
-      bar();
-    "
+    other-attr="{{
+      {aaa: 1, bbb: 2}
+    }}"
+    on-other-attr2="foo()"
   >
     {{
       displayMessage
@@ -82,7 +78,7 @@ This rule enforces a consistent indentation style in `<template>`. The default s
   - `closeBracket.endTag` (`integer`) ... The multiplier of indentation for right brackets of end tags (`</div>`). Default is `0`.
   - `closeBracket.selfClosingTag` (`integer`) ... The multiplier of indentation for right brackets of start tags (`<div/>`). Default is `0`.
 - `alignAttributesVertically` (`boolean`) ... Condition for whether attributes should be vertically aligned to the first attribute in multiline case or not. Default is `true`
-- `ignores` (`string[]`) ... The selector to ignore nodes. The AST spec is [here](https://github.com/mysticatea/vue-eslint-parser/blob/master/docs/ast.md). You can use [esquery](https://github.com/estools/esquery#readme) to select nodes. Default is an empty array.
+- `ignores` (`string[]`) ... The selector to ignore nodes. You can use [esquery](https://github.com/estools/esquery#readme) to select nodes. Default is an empty array.
 
 ### `2, {"attribute": 1, "closeBracket": 1}`
 
@@ -95,9 +91,9 @@ This rule enforces a consistent indentation style in `<template>`. The default s
     id="a"
     class="b"
     other-attr=
-      "{longname: longvalue}"
+      "{{ {longname: longvalue} }}"
     other-attr2
-      ="{longname: longvalue}"
+      ="{{ {longname: longvalue} }}"
     >
     Text
   </div>
@@ -117,9 +113,9 @@ This rule enforces a consistent indentation style in `<template>`. The default s
       id="a"
       class="b"
       other-attr=
-        "{longname: longvalue}"
+        "{{ {longname: longvalue} }}"
       other-attr2
-        ="{longname: longvalue}"
+        ="{{ {longname: longvalue} }}"
     >
     Text
   </div>
@@ -192,5 +188,5 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/html-indent.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/html-indent.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/html-indent.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/html-indent.js)

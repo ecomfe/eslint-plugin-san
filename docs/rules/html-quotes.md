@@ -90,11 +90,7 @@ Object option:
 
 </eslint-code-block>
 
-## :books: Further Reading
-
-- [Style guide - Quoted attribute values](https://v3.vuejs.org/style-guide/#Quoted-attribute-values-strongly-recommended)
-
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/html-quotes.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/html-quotes.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/html-quotes.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/html-quotes.js)

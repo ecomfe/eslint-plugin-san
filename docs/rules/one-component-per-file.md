@@ -18,13 +18,13 @@ This rule checks if there is only one component per file.
 ```js
 /* ✗ BAD */
 
-Vue.component('TodoList', {
+export class UIAlert extends san.Component {
   // ...
-})
+}
 
-Vue.component('TodoItem', {
+export class UIAlert extends san.Component {
   // ...
-})
+}
 ```
 
 </eslint-code-block>
@@ -35,7 +35,7 @@ Vue.component('TodoItem', {
 <script>
 /* ✓ GOOD */
 export default {
-  name: 'my-component'
+  name: 'ui-alert'
 }
 </script>
 ```
@@ -46,11 +46,7 @@ export default {
 
 Nothing.
 
-## :books: Further Reading
-
-- [Style guide - Component files](https://v3.vuejs.org/style-guide/#component-files-strongly-recommended)
-
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/one-component-per-file.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/one-component-per-file.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/one-component-per-file.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/one-component-per-file.js)

@@ -19,17 +19,17 @@ This rule prevents to use [reserved names](https://github.com/ecomfe/eslint-plug
 <script>
 /* ✗ BAD */
 export default {
-  props: {
-    el: String
+  dataTypes: {
+    el: DataTypes.string
   },
+
   computed: {
     fire() {
       return 3;
     }
   },
-  methods: {
-    nextTick () {}
-  }
+  
+  nextTick () {}
 }
 </script>
 ```

@@ -95,5 +95,5 @@ Plus, you can use [`san/html-indent`](./html-indent.md) rule to enforce indent-l
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/html-closing-bracket-newline.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/html-closing-bracket-newline.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/html-closing-bracket-newline.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/html-closing-bracket-newline.js)

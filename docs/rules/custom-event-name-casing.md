@@ -31,15 +31,13 @@ See [Guide - Custom Events] for more details.
 </template>
 <script>
 export default {
-  methods: {
-    onClick () {
-      /* ✓ GOOD */
-      this.fire('my-event')
-      this.fire('my-event', params1, params2)
+  onClick () {
+    /* ✓ GOOD */
+    this.fire('my-event')
+    this.fire('my-event', params1, params2)
 
-      /* ✗ BAD */
-      this.fire('myEvent')
-    }
+    /* ✗ BAD */
+    this.fire('myEvent')
   }
 }
 </script>
