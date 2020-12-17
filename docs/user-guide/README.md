@@ -2,12 +2,6 @@
 
 ## :cd: Installation
 
-Via `san-cli` (**Recommended**):
-
-```bash
-san add @san/cli-plugin-eslint
-```
-
 Via [npm](https://www.npmjs.com/):
 
 ```bash
