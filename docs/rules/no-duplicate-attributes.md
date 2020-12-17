@@ -15,21 +15,22 @@ It's possibly mistakes.
 ## :book: Rule Details
 
 This rule reports duplicate attributes.
-`s-bind={{ foo: 1 }}` directives are handled as the attributes `foo`.
 
 <eslint-code-block :rules="{'san/no-duplicate-attributes': ['error']}">
 
 ```vue
 <template>
   <!-- ✓ GOOD -->
-  <MyComponent foo="{{abc}}" />
+  <MyComponent :foo="abc" />
   <MyComponent foo="abc" />
+  <MyComponent class="abc" :class="def" />
 
   <!-- ✗ BAD -->
-  <MyComponent foo="{{abc}}" foo="def" />
-  <MyComponent foo="abc" foo="{{def}}" />
+  <MyComponent :foo="abc" foo="def" />
+  <MyComponent foo="abc" :foo="def" />
   <MyComponent foo="abc" foo="def" />
-  <MyComponent foo.a="{{abc}}" foo.b="{{def}}" />
+  <MyComponent :foo.a="abc" :foo.b="def" />
+  <MyComponent class="abc" class="def" />
 </template>
 ```
 
@@ -46,11 +47,11 @@ This rule reports duplicate attributes.
 }
 ```
 
-- `allowCoexistClass` (`boolean`) ... Enables [`s-bind={{class}}`] directive can coexist with the plain `class` attribute. Default is `true`.
-- `allowCoexistStyle` (`boolean`) ... Enables [`s-bind={{style}}`] directive can coexist with the plain `style` attribute. Default is `true`.
+- `allowCoexistClass` (`boolean`) ... Enables [`s-bind:class`] directive can coexist with the plain `class` attribute. Default is `true`.
+- `allowCoexistStyle` (`boolean`) ... Enables [`s-bind:style`] directive can coexist with the plain `style` attribute. Default is `true`.
 
-[`s-bind={{class}}`]: https://baidu.github.io/san/tutorial/style/#class
-[`s-bind={{style}}`]: https://baidu.github.io/san/tutorial/style/#style
+[`s-bind:class`]: https://v3.vuejs.org/guide/class-and-style.html
+[`s-bind:style`]: https://v3.vuejs.org/guide/class-and-style.html
 
 ### `"allowCoexistClass": false, "allowCoexistStyle": false`
 
@@ -59,8 +60,8 @@ This rule reports duplicate attributes.
 ```vue
 <template>
   <!-- ✗ BAD -->
-  <MyComponent class="abc" class="{{def}}" />
-  <MyComponent style="abc" style="{{def}}" />
+  <MyComponent class="abc" :class="def" />
+  <MyComponent style="abc" :style="def" />
 </template>
 ```
 
@@ -68,5 +69,5 @@ This rule reports duplicate attributes.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-duplicate-attributes.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-duplicate-attributes.js)
+- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/no-duplicate-attributes.js)
+- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/no-duplicate-attributes.js)
