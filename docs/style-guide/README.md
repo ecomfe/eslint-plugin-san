@@ -265,31 +265,23 @@ export default {
 优先级顺序：
 
 1. 列表渲染（创建多个变化的相同元素）
-    - v-for
+    - s-for
 2. 条件渲染（元素是否渲染/显示）
-    - v-if
-    - v-else-if
-    - v-else
+    - s-if
+    - s-else-if / s-elif
+    - s-else
 3. 全局感知（需要超越组件的知识）
     - id
 4. 唯一的特性（需要唯一值的特性）
-    - ref
+    - s-ref
     - slot
-5. 双向绑定（把绑定和事件结合起来）
 6. 未绑定的属性
-7. 其它绑定（所有普通的绑定）
-    - s-bind
+6. 绑定的属性
 8. 事件（组件事件监听器）
-    - s-on
+    - on-
 9. 内容（覆写元素的内容）
 
-#### [强制] 不能有重复的属性，`class` 和 `style` 除外
-
-解释：
-
-这里重复的属性包括以下两种情况：
-1. 属性名完全一样：如有多个 `foo` 或者有多个 `:foo`
-2. 有一个普通属性和一个 `v-bind` 动态绑定的属性，动态绑定的属性名与普通属性名重复
+#### [强制] 不能有重复的属性，包括`class` 和 `style` 
 
 ```html
 // bad
@@ -297,14 +289,15 @@ export default {
 <c-title foo="def" foo="abc"/>
 <c-title class="def" class="abc"/>
 <c-title style="def" style="abc"/>
-
-// good
-<c-title foo="{{def}}"/>
-<c-title foo="abc"/>
 <c-title
     class="c-color"
     class="{{selected ? 'c-selected' : ''}}"
 />
+
+// good
+<c-title foo="{{def}}"/>
+<c-title foo="abc"/>
+<c-title class="c-color {{selected ? 'c-selected' : ''}}"/>
 <c-title
     style="color: #000; width: 100px"
 />
@@ -347,7 +340,7 @@ export default {
 <template>
     <ul>
         <li
-            v-for="user in activeUsers"
+            s-for="user in activeUsers"
         >
             {{ user.name }}
         </li>
@@ -357,7 +350,7 @@ export default {
 export default {
     computed: {
         activeUsers: function () {
-            return this.users.filter(function (user) {
+            return this.data.get('users').filter(function (user) {
                 return user.isActive;
             });
         }
@@ -415,7 +408,7 @@ export default {
 
 ```html
 // bad
-<a :href="{{this.url}}">
+<a href="{{this.url}}">
     {{ this.text }}
 </a>
 
@@ -428,9 +421,9 @@ export default {
 
 ## 4 javascript 部分
 
-### 4.1 props
+### 4.1 dataTypes
 
-#### [强制] 指定 `props` 类型
+#### [强制] 指定 `dataTypes` 类型
 
 ```html
 // good
@@ -594,7 +587,7 @@ export default {
 
 ### 4.4 其它
 
-#### [建议] 组件中使用 `fire` 事件时携带的参数，个数不应该超过 `2` 个。建议将数据参数以 `Object` 形式传递，将事件参数 `event` 放在最后
+#### [建议] 组件中使用 `fire` 事件时携带的参数，个数不应该超过 `1` 个。建议将数据参数以 `Object` 形式传递，将事件参数 `event` 放在最后
 
 ```javascript
 // bad
@@ -610,9 +603,9 @@ onClick(event) {
         'click',
         {
            value1,
-           value2
-        },
-        event
+           value2,
+           event
+        }
     );
 }
 
