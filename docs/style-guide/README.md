@@ -23,7 +23,6 @@
 * 根结点有多个元素；
 * 在根结点使用循环；
 * 在根结点使用 template 和 slot；
-* 在根结点使用 s-if，但是没有 s-else；
 
 ```html
 // bad
@@ -32,7 +31,6 @@
 <template><div>one</div><div>two</div></template>
 <template><div s-for="x in list"></div></template>
 <template><template>hello</template></template>
-<template><div s-if="title"></div></template>
 
 // good
 <template><div>one</div></template>
@@ -40,7 +38,7 @@
 
 ### 3.2 标签
 
-#### [强制] 自定义组件的标签名不得使用 HTML 中默认已定义的标签（reserved HTML elements），要求至少由两个单词组成，并且符合 `kebab-case`
+#### [强制] 自定义组件的标签名不得使用 HTML 中预留的标签（reserved HTML elements）；并且要求至少由两个单词组成，符合 `kebab-case`
 
 解释：
 
@@ -107,7 +105,7 @@ export default {
 <br>
 ```
 
-#### [强制] 非根结点的 `template` 标签里必须有一个以上的子结点
+#### [强制] `fragment`标签或者非根结点的 `template` 标签，必须有一个以上的子结点
 
 ```html
 // bad
@@ -183,18 +181,6 @@ export default {
 ```
 
 
-#### [建议] 自闭合标签的 `/>` 前不用添加空格
-
-```html
-// bad
-<c-title url="url" label-type="{{type}}" />
-
-// good
-<div></div>
-<c-title url="url" label-type="{{type}}"/>
-```
-
-
 ### 3.3 属性
 
 #### [强制] 属性值必须用双引号包围
@@ -264,19 +250,21 @@ export default {
 
 优先级顺序：
 
-1. 列表渲染（创建多个变化的相同元素）
-    - s-for
-2. 条件渲染（元素是否渲染/显示）
+1. 条件渲染（元素是否渲染/显示）
     - s-if
     - s-else-if / s-elif
     - s-else
-3. 全局感知（需要超越组件的知识）
+2. 列表渲染（创建多个变化的相同元素）
+    - s-for
+3. 动态组件
+    - s-is
+4. 全局感知（需要超越组件的知识）
     - id
-4. 唯一的特性（需要唯一值的特性）
+5. 唯一的特性（需要唯一值的特性）
     - s-ref
     - slot
 6. 未绑定的属性
-6. 绑定的属性
+7. 绑定的属性
 8. 事件（组件事件监听器）
     - on-
 9. 内容（覆写元素的内容）
@@ -311,7 +299,7 @@ export default {
 <div slot="header-left"></div>
 ```
 
-#### [建议] `ref` 命名采用 `PascalCase`
+#### [建议] `ref` 命名采用 `camelCase`
 
 ```html
 <div s-ref="userInfo"></div>
@@ -323,7 +311,7 @@ export default {
 
 解释：
 
-当 San 处理指令时，`s-for` 比 `s-if` 具有更高的优先级。所以如果想要使用 `s-if` 判断 `s-for` 元素列表是否显示，将两个指令同时应用在同一个元素的方法就是错误的。引入这个规则是为了避免引起困惑。
+引入这个规则是为了避免引起困惑。
 
 ```html
 // bad
@@ -423,18 +411,6 @@ export default {
 
 ### 4.1 dataTypes
 
-#### [强制] 指定 `dataTypes` 类型
-
-```html
-// good
-<script>
-export default {
-    dataTypes: {
-        status: DataTypes.string
-    }
-};
-```
-
 #### [强制] 在 `dataTypes` 中声明的属性，其属性名应该始终符合 `camelCase`
 
 ```html
@@ -455,6 +431,18 @@ export default {
     }
 };
 </script>
+```
+
+#### [建议] 指定 `dataTypes` 类型
+
+```html
+// good
+<script>
+export default {
+    dataTypes: {
+        status: DataTypes.string
+    }
+};
 ```
 
 ### 4.2 data
@@ -509,7 +497,7 @@ export default {
 </script>
 ```
 
-#### [强制] `dataTypes`, `initData`, `computed`, `methods` 中不能有重复的 `key`
+#### [强制] `dataTypes`, `initData`, `computed` 中不能有重复的 `key`
 
 ```html
 // bad
@@ -587,7 +575,7 @@ export default {
 
 ### 4.4 其它
 
-#### [建议] 组件中使用 `fire` 事件时携带的参数，个数不应该超过 `1` 个。建议将数据参数以 `Object` 形式传递，将事件参数 `event` 放在最后
+#### [建议] 组件中使用 `fire`或`dispatch` 事件时携带的参数，个数不应该超过 `1` 个。建议将数据参数以 `Object` 形式传递
 
 ```javascript
 // bad
