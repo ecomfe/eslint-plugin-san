@@ -1,6 +1,6 @@
 {
     "name": "eslint-plugin-san",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "Official ESLint plugin for San",
     "keywords": [
         "san.js",
@@ -17,6 +17,7 @@
         "docs:build": "vuepress build docs"
     },
     "dependencies": {
+        "eslint-utils": "^2.1.0",
         "san-eslint-parser": "1.1.0"
     },
     "devDependencies": {
