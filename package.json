@@ -2,6 +2,7 @@
     "name": "eslint-plugin-san",
     "version": "1.0.0",
     "description": "Official ESLint plugin for San",
+    "author": "ecomfe-core",
     "keywords": [
         "san.js",
         "san",
