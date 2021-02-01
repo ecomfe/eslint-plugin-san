@@ -1,6 +1,6 @@
 # eslint-plugin-san
 
-> Official ESLint plugin for San
+> Official ESLint plugin for San. Inspired by [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue)
 
 ## Installation
 
