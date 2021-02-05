@@ -116,7 +116,7 @@ module.exports = {
             {text: '用户指南', link: '/user-guide/'},
             {text: '开发指南', link: '/developer-guide/'},
             {text: '规则', link: '/rules/'},
-            {text: '样式指南', link: '/style-guide/'}
+            {text: '代码规范', link: '/style-guide/'}
         ],
 
         sidebar: {
