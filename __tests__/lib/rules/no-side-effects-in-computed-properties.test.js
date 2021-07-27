@@ -24,204 +24,210 @@ const ruleTester = new RuleTester();
 ruleTester.run('no-side-effects-in-computed-properties', rule, {
     valid: [
         {
-            code: `san.defineComponent({
-        ...foo,
-        computed: {
-          ...test0({}),
-          test1() {
-            return this.firstName + ' ' + this.lastName
-          },
-          test2() {
-            return this.something.slice(0).reverse()
-          },
-          test3() {
-            const example = this.something * 2
-            return example + 'test'
-          },
-          test4() {
-            return {
-              ...this.something,
-              test: 'example'
-            }
-          },
-          test5: {
-            get() {
-              return this.firstName + ' ' + this.lastName
-            },
-            set(newValue) {
-              const names = newValue.split(' ')
-              this.firstName = names[0]
-              this.lastName = names[names.length - 1]
-            }
-          },
-          test6: {
-            get() {
-              return this.something.slice(0).reverse()
-            }
-          },
-          test7: {
-            get() {
-              const example = this.something * 2
-              return example + 'test'
-            }
-          },
-          test8: {
-            get() {
-              return {
-                ...this.something,
-                test: 'example'
-              }
-            }
-          },
-          test9() {
-            return Object.keys(this.a).sort()
-          },
-          test10: {
-            get() {
-              return Object.keys(this.a).sort()
-            }
-          },
-          test11() {
-            const categories = {}
+            code: `
+              san.defineComponent({
+                  ...foo,
+                  computed: {
+                      ...test0({}),
+                      test1() {
+                          return this.data.get('firstName') + ' ' + this.data.get('lastName');
+                      },
+                      test2() {
+                          return this.data.get('something').slice(0).reverse();
+                      },
+                      test3() {
+                          const example = this.data.get('something') * 2;
+                          return example + 'test';
+                      },
+                      test4() {
+                          return {
+                              ...this.data.get('something'),
+                              test: 'example'
+                          };
+                      },
+                      test5: {
+                          get() {
+                              return this.firstName + ' ' + this.lastName;
+                          },
+                          set(newValue) {
+                              const names = newValue.split(' ');
+                              this.firstName = names[0];
+                              this.lastName = names[names.length - 1];
+                          }
+                      },
+                      test6: {
+                          get() {
+                              return this.data.get('something').slice(0).reverse();
+                          }
+                      },
+                      test7: {
+                          get() {
+                              const example = this.data.get('something') * 2;
+                              return example + 'test';
+                          }
+                      },
+                      test8: {
+                          get() {
+                              return {
+                                  ...this.data.get('something'),
+                                  test: 'example'
+                              };
+                          }
+                      },
+                      test9() {
+                          return Object.keys(this.data.get('something')).sort();
+                      },
+                      test10() {
+                          return this.data.get('something').a.popasdasd();
+                      },
+                      test11() {
+                          const categories = {};
 
-            this.types.forEach(c => {
-              categories[c.category] = categories[c.category] || []
-              categories[c.category].push(c)
-            })
+                          this.data.get('something').forEach((c) => {
+                              categories[c.category] = categories[c.category] || [];
+                              categories[c.category].push(c);
+                          });
 
-            return categories
-          },
-          test12() {
-            return this.types.map(t => {
-              // [].push('xxx')
-              return t
-            })
-          },
-          test13 () {
-            this.someArray.forEach(arr => console.log(arr))
-          }
-        }
-      })`,
+                          return categories;
+                      },
+                      test12() {
+                          return this.data.get('something').map((t) => {
+                              // [].push('xxx')
+                              return t;
+                          });
+                      },
+                      test13() {
+                          this.data.get('something').forEach((arr) => console.log(arr));
+                      }
+                  }
+              });
+            `,
             parserOptions
         },
         {
-            code: `san.defineComponent({
-        computed: {
-          ...mapGetters(['example']),
-          test1() {
-            const num = 0
-            const something = {
-              a: 'val',
-              b: ['1', '2']
-            }
-            num++
-            something.a = 'something'
-            something.b.reverse()
-            return something.b
-          }
-        }
-      })`,
-            parserOptions
-        },
-        {
-            code: `san.defineComponent({
-        name: 'something',
-        data() {
-          return {}
-        }
-      })`,
-            parserOptions
-        },
-        {
-            code: `san.defineComponent({
-        computed: {
-          test () {
-            let a;
-            a = this.something
-            return a
-          },
-        }
-      })`,
-            parserOptions
-        },
-        {
-            code: `san.defineComponent({
-        computed: {
-          test () {
-            return {
-              action1() {
-                this.something++
-              },
-              action2() {
-                this.something = 1
-              },
-              action3() {
-                this.something.reverse()
+            code: `
+            san.defineComponent({
+              computed: {
+                test1() {
+                  const num = 0
+                  const something = {
+                    a: 'val',
+                    b: ['1', '2']
+                  }
+                  num++
+                  something.a = 'something'
+                  something.b.reverse()
+                  return something.b
+                }
               }
-            }
-          },
-        }
-      })`,
+            })`,
             parserOptions
         },
         {
-            code: `san.defineComponent({
-        computed: {
-          test () {
-            return this.something['a']().reverse()
-          },
-        }
-      })`,
+            code: `
+            san.defineComponent({
+                name: 'something',
+                data() {
+                    return {}
+                }
+            })`,
             parserOptions
         },
         {
-            code: `const test = { el: '#app' }
-        san.defineComponent({
-        el: test.el
-      })`,
+            code: `
+            san.defineComponent({
+                computed: {
+                    test () {
+                        let a;
+                        a = this.data.get('something')
+                        return a
+                    },
+                }
+            })`,
             parserOptions
         },
         {
-            code: `san.defineComponent({
-        computed: {
-          test () {
-            return [...this.items].reverse()
-          },
-        }
-      })`,
+            code: `
+            san.defineComponent({
+              computed: {
+                test () {
+                  return {
+                    action1() {
+                      this.data.get('something')
+                    },
+                    action2() {
+                      this.data.set('something', 1)
+                    },
+                    action3() {
+                      this.data.get('something').reverse()
+                    }
+                  }
+                },
+              }
+            })`,
+            parserOptions
+        },
+        {
+            code: `
+              san.defineComponent({
+                computed: {
+                  test () {
+                    return this.data.get('something')['a']().reverse()
+                  },
+                }
+              })`,
+            parserOptions
+        },
+        {
+            code: `
+              const test = { el: '#app' }
+              san.defineComponent({
+                el: test.el
+              })`,
+            parserOptions
+        },
+        {
+            code: `
+              san.defineComponent({
+                computed: {
+                  test () {
+                    return [...this.data.get('something')].reverse()
+                  },
+                }
+              })`,
             parserOptions
         }
     ],
     invalid: [
         {
             code: `san.defineComponent({
-        computed: {
-          test1() {
-            this.firstName = 'lorem'
-            asd.qwe.zxc = 'lorem'
-            return this.firstName + ' ' + this.lastName
-          },
-          test2() {
-            this.count += 2;
-            this.count++;
-            return this.count;
-          },
-          test3() {
-            return this.something.reverse()
-          },
-          test4() {
-            const test = this.another.something.push('example')
-            return 'something'
-          },
-          test5() {
-            this.something[index] = thing[index]
-            return this.something
-          },
-          test6() {
-            return this.something.keys.sort()
-          }
-        }
-      })`,
+              computed: {
+                test1() {
+                  this.data.set('something', 'lorem')
+                  asd.qwe.zxc = 'lorem'
+                  return this.data.get('firstName') + ' ' + this.data.get('lastName')
+                },
+                test2() {
+                  this.data.set('count', this.data.get('count') + 2);
+                  asd.qwe.zxc = 'lorem'
+                  return this.data.get('count');
+                },
+                test3() {
+                  return this.data.get('something').reverse()
+                },
+                test4() {
+                  const test = this.data.get('something').something.push('example')
+                  return 'something'
+                },
+                test5() {
+                  this.data.get('something')[index] = thing[index]
+                  return this.data.get('something')
+                },
+                test6() {
+                  return this.data.get('something').keys.sort()
+                }
+              }
+            })`,
             parserOptions,
             errors: [
                 {
@@ -230,10 +236,6 @@ ruleTester.run('no-side-effects-in-computed-properties', rule, {
                 },
                 {
                     line: 9,
-                    message: 'Unexpected side effect in "test2" computed property.'
-                },
-                {
-                    line: 10,
                     message: 'Unexpected side effect in "test2" computed property.'
                 },
                 {
@@ -255,68 +257,12 @@ ruleTester.run('no-side-effects-in-computed-properties', rule, {
             ]
         },
         {
-            code: `san.defineComponent({
-        computed: {
-          test1: {
-            get() {
-              this.firstName = 'lorem'
-              return this.firstName + ' ' + this.lastName
-            }
-          },
-          test2: {
-            get() {
-              this.count += 2;
-              this.count++;
-              return this.count;
-            }
-          },
-          test3: {
-            get() {
-              return this.something.reverse()
-            }
-          },
-          test4: {
-            get() {
-              const test = this.another.something.push('example')
-              return 'something'
-            },
-            set(newValue) {
-              this.something = newValue
-            }
-          },
-        }
-      })`,
-            parserOptions,
-            errors: [
-                {
-                    line: 5,
-                    message: 'Unexpected side effect in "test1" computed property.'
-                },
-                {
-                    line: 11,
-                    message: 'Unexpected side effect in "test2" computed property.'
-                },
-                {
-                    line: 12,
-                    message: 'Unexpected side effect in "test2" computed property.'
-                },
-                {
-                    line: 18,
-                    message: 'Unexpected side effect in "test3" computed property.'
-                },
-                {
-                    line: 23,
-                    message: 'Unexpected side effect in "test4" computed property.'
-                }
-            ]
-        },
-        {
             filename: 'test.san',
             code: `
         export default {
           computed: {
             test1() : string {
-              return this.something.reverse()
+              return this.data.get('something').reverse()
             }
           }
         };
@@ -335,9 +281,9 @@ ruleTester.run('no-side-effects-in-computed-properties', rule, {
             code: `app.component({
         computed: {
           test1() {
-            this.firstName = 'lorem'
+            this.data.set('something', 'lorem')
             asd.qwe.zxc = 'lorem'
-            return this.firstName + ' ' + this.lastName
+            return this.data.get('firstName') + ' ' + this.data.get('lastName')
           },
         }
       })`,
@@ -353,13 +299,13 @@ ruleTester.run('no-side-effects-in-computed-properties', rule, {
             code: `san.defineComponent({
         computed: {
           test1() {
-            return this?.something?.reverse?.()
+            return this.data.get('something', 'lorem').reverse?.()
           },
           test2() {
-            return (this?.something)?.reverse?.()
+            return this.data.get('something', 'lorem').reverse?.()
           },
           test3() {
-            return (this?.something?.reverse)?.()
+            return (this.data.get('something', 'lorem').reverse)?.()
           },
         }
       })`,

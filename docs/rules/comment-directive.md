@@ -25,7 +25,7 @@ We can't write HTML comments in tags.
 
 ESLint doesn't provide any API to enhance `eslint-disable` functionality and ESLint rules cannot affect other rules. But ESLint provides [processors API](https://eslint.org/docs/developer-guide/working-with-plugins#processors-in-plugins).
 
-This rule sends all `eslint-disable`-like comments as errors to the post-process of the `.vue` file processor, then the post-process removes all `san/comment-directive` errors and the reported errors in disabled areas.
+This rule sends all `eslint-disable`-like comments as errors to the post-process of the `.san` file processor, then the post-process removes all `san/comment-directive` errors and the reported errors in disabled areas.
 
 <eslint-code-block :rules="{'san/comment-directive': ['error'], 'san/max-attributes-per-line': ['error']}">
 

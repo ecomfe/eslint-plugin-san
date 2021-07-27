@@ -11,7 +11,7 @@ description: disallow usage of `this` in template
 
 ## :book: Rule Details
 
-This rule aims at preventing usage of `this` in Vue templates.
+This rule aims at preventing usage of `this` in San templates.
 
 <eslint-code-block :rules="{'san/this-in-template': ['error']}">
 
@@ -38,7 +38,7 @@ This rule aims at preventing usage of `this` in Vue templates.
   "san/this-in-template": ["error", "always" | "never"]
 }
 ```
-- `"always"` ... Always use `this` while accessing properties from Vue.
+- `"always"` ... Always use `this` while accessing properties from San.
 - `"never"` (default) ... Never use `this` keyword in expressions.
 
 ### `"always"`

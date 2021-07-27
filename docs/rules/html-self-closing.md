@@ -14,7 +14,7 @@ description: enforce self-closing style
 
 This rule aims to enforce the self-closing sign as the configured style.
 
-In Vue.js template, we can use either two styles for elements which don't have their content.
+In San.js template, we can use either two styles for elements which don't have their content.
 
 1. `<YourComponent></YourComponent>`
 2. `<YourComponent/>` (self-closing)
@@ -59,7 +59,7 @@ Self-closing is simple and shorter, but it's not supported in the HTML spec.
 
 - `html.void` (`"never"` by default) ... The style of well-known HTML void elements.
 - `html.normal` (`"always"` by default) ... The style of well-known HTML elements except void elements.
-- `html.component` (`"always"` by default) ... The style of Vue.js custom components.
+- `html.component` (`"always"` by default) ... The style of San.js custom components.
 - `svg`(`"always"` by default) .... The style of well-known SVG elements.
 - `math`(`"always"` by default) .... The style of well-known MathML elements.
 

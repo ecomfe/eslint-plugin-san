@@ -51,5 +51,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/rules/valid-s-show.js)
-- [Test source](https://github.com/vuejs/eslint-plugin-san/blob/master/tests/lib/rules/valid-s-show.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-s-show.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/valid-s-show.test.js)

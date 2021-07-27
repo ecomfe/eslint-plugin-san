@@ -92,7 +92,7 @@ This rule enforces a line break before and after the contents of a multiline ele
     default `false`
 
 ::: info
-  All inline non void elements can be found [here](https://github.com/vuejs/eslint-plugin-san/blob/master/lib/utils/inline-non-void-elements.json).
+  All inline non void elements can be found [here](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/utils/inline-non-void-elements.json).
 :::
 
 ### `"ignores": ["VueComponent", "pre", "textarea"]`
@@ -110,7 +110,7 @@ This rule enforces a line break before and after the contents of a multiline ele
 
   <SanComponent><span
     class="bold">For example,</span>
-  Defines the Vue component that accepts preformatted text.</SanComponent>
+  Defines the San component that accepts preformatted text.</SanComponent>
 </template>
 ```
 

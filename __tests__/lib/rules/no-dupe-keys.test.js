@@ -77,11 +77,6 @@ ruleTester.run('no-dupe-keys', rule, {
                         foo () {
                         }
                     },
-                    data () {
-                        return {
-                            foo: null
-                        }
-                    },
                     foo () {
                     },
                     initData () {
@@ -100,11 +95,7 @@ ruleTester.run('no-dupe-keys', rule, {
                 },
                 {
                     message: "Duplicated key 'foo'.",
-                    line: 12
-                },
-                {
-                    message: "Duplicated key 'foo'.",
-                    line: 21
+                    line: 16
                 }
             ]
         },
@@ -158,74 +149,11 @@ ruleTester.run('no-dupe-keys', rule, {
             filename: 'test.san',
             code: `
                 export default {
-                    dataTypes: {
-                        foo: DataTypes.bool
-                    },
-                    data () {
-                        return {
-                            set foo(v) {},
-                            get foo() {}
-                        }
-                    }
-                }
-            `,
-            errors: [
-                {
-                    message: "Duplicated key 'foo'.",
-                    line: 9
-                }
-            ]
-        },
-        {
-            filename: 'test.san',
-            code: `
-                export default {
-                    dataTypes: {
-                        foo: DataTypes.bool
-                    },
-                    data () {
-                        return {
-                            set foo(v) {}
-                        }
-                    }
-                }
-            `,
-            errors: [
-                {
-                    message: "Duplicated key 'foo'.",
-                    line: 8
-                }
-            ]
-        },
-        {
-            filename: 'test.san',
-            code: `
-                export default {
                     initData () {
                         return {
                             get foo() {},
                             set foo(v) {},
                             get foo() {},
-                        }
-                    }
-                }
-            `,
-            errors: [
-                {
-                    message: "Duplicated key 'foo'.",
-                    line: 7
-                }
-            ]
-        },
-        {
-            filename: 'test.san',
-            code: `
-                export default {
-                    data () {
-                        return {
-                            get foo() {},
-                            set foo(v) {},
-                            set foo(v) {},
                         }
                     }
                 }

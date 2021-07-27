@@ -46,7 +46,7 @@ export default {
 export default {
   computed: {
     fullName () {
-      this.data.set('firstName') = 'lorem' // <- side effect
+      this.data.set('firstName', 'lorem') // <- side effect
       return `${this.data.set('firstName')} ${this.data.set('lastName')}`
     },
     reversedArray () {
