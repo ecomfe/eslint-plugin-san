@@ -24,7 +24,7 @@ export default {
     name: DataTypes.string
   },
 
-  data () {
+  initData () {
     return {
       msg: 'Welcome to Your San App'
     }
@@ -41,7 +41,7 @@ export default {
 <script>
 /* ✗ BAD */
 export default {
-  data () {
+  initData () {
     return {
       msg: 'Welcome to Your San App'
     }
@@ -62,13 +62,24 @@ export default {
 {
   "san/order-in-components": ["error", {
     "order": [
+      // 视图
+      "template",
+      "components",
+
+      // 数据
       "dataTypes",
       "initData",
       "computed",
       "filters",
+
+      // 消息
+      "messages",
+
+      // 生命周期
       "LIFECYCLE_HOOKS",
-      "methods",
-      "template"
+
+      // 其他
+      "trimWhitespace"
     ]
   }]
 }
@@ -76,8 +87,7 @@ export default {
 
 - `order` (`(string | string[])[]`) ... The order of properties. Elements are the property names or one of the following groups:
 
-  - `LIFECYCLE_HOOKS`: [Vue Lifecycle Events](https://v3.vuejs.org/guide/instance.html#lifecycle-diagram), in the order they are called
-  - `ROUTER_GUARDS`: [Vue Router Navigation Guards](https://router.vuejs.org/guide/advanced/navigation-guards.html#in-component-guards), in the order they are called
+  - `LIFECYCLE_HOOKS`: [San Lifecycle Events](https://baidu.github.io/san/tutorial/component/#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F), in the order they are called
 
   If an element is an array of strings, it means any of those can be placed there unordered. Default is above.
 

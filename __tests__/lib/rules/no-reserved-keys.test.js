@@ -119,69 +119,16 @@ ruleTester.run('no-reserved-keys', rule, {
             filename: 'test.js',
             code: `
                 san.defineComponent({
-                    data: {
-                        _foo: ''
+                    attach() {
+                        // ...
                     }
                 })
             `,
             parserOptions: {ecmaVersion: 6},
             errors: [
                 {
-                    message: "Keys starting with with '_' are reserved in '_foo' group.",
-                    line: 4
-                }
-            ]
-        },
-        {
-            filename: 'test.js',
-            code: `
-                san.defineComponent({
-                    initData: () => {
-                        return {
-                            _foo: ''
-                        }
-                    }
-                })
-            `,
-            parserOptions: {ecmaVersion: 6},
-            errors: [
-                {
-                    message: "Keys starting with with '_' are reserved in '_foo' group.",
-                    line: 5
-                }
-            ]
-        },
-        {
-            filename: 'test.js',
-            code: `
-                san.defineComponent({
-                    data: {
-                        _foo: ''
-                    }
-                })
-            `,
-            parserOptions: {ecmaVersion: 6},
-            errors: [
-                {
-                    message: "Keys starting with with '_' are reserved in '_foo' group.",
-                    line: 4
-                }
-            ]
-        },
-        {
-            filename: 'test.js',
-            code: `
-                san.defineComponent({
-                    initData: () => ({
-                        _foo: ''
-                    })
-                })
-            `,
-            parserOptions: {ecmaVersion: 6},
-            errors: [
-                {
-                    message: "Keys starting with with '_' are reserved in '_foo' group.",
-                    line: 4
+                    message: "Key 'attach' is reserved.",
+                    line: 3
                 }
             ]
         },

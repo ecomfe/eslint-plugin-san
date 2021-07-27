@@ -20,12 +20,9 @@ ruleTester.run('order-in-components', rule, {
             filename: 'test.san',
             code: `
                 export default {
-                    name: 'app',
-                    props: {
-                        propA: Number,
-                    },
-                    ...a,
-                    data () {
+                    el: 'app',
+                    template: '<div></div>',
+                    initData () {
                         return {
                             msg: 'Welcome to Your San.js App'
                         }
@@ -38,41 +35,28 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    el,
-                    name,
-                    parent,
-                    functional,
-                    delimiters, comments,
-                    components, directives, filters,
-                    extends: MyComp,
-                    mixins,
-                    provide, inject,
-                    inheritAttrs,
-                    model,
-                    props, propsData,
-                    emits,
-                    setup,
-                    data,
-                    computed,
-                    watch,
-                    beforeCreate,
-                    created,
-                    beforeMount,
-                    mounted,
-                    beforeUpdate,
-                    updated,
-                    activated,
-                    deactivated,
-                    beforeUnmount,
-                    unmounted,
-                    beforeDestroy,
-                    destroyed,
-                    renderTracked,
-                    renderTriggered,
-                    errorCaptured,
-                    methods,
-                    template, render,
-                    renderError,
+                    // 视图
+                    'el': '#app',
+                    'template': '<div></div>',
+                    'components': {},
+                
+                    // 数据
+                    'dataTypes': {},
+                    'initData'() {return {}},
+                    'computed': {},
+                    'filters': {},
+                
+                    // 消息
+                    'messages': {},
+
+                    // 生命周期
+                    'compiled'() {},
+                    'inited'() {},
+                    'created'() {},
+                    'attached'() {},
+                    'updated'() {},
+                    'detached'() {},
+                    'disposed'() {}
                 };
             `,
             parserOptions
@@ -88,20 +72,6 @@ ruleTester.run('order-in-components', rule, {
             filename: 'test.san',
             code: `
                 export default 'example-text'
-            `,
-            parserOptions
-        },
-        {
-            filename: 'test.jsx',
-            code: `
-                export default {
-                    name: 'app',
-                    data () {
-                        return {
-                            msg: 'Welcome to Your San.js App'
-                        }
-                    },
-                }
             `,
             parserOptions
         },
@@ -131,9 +101,8 @@ ruleTester.run('order-in-components', rule, {
             filename: 'test.js',
             code: `
                 san.defineComponent({
-                    name: 'app',
                     components: {},
-                    data () {
+                    initDdata () {
                         return {
                             msg: 'Welcome to Your San.js App'
                         }
@@ -146,10 +115,8 @@ ruleTester.run('order-in-components', rule, {
             filename: 'test.js',
             code: `
                 san.defineComponent({
-                    el: '#app',
-                    name: 'app',
                     components: {},
-                    data () {
+                    initData () {
                         return {
                             msg: 'Welcome to Your San.js App'
                         }
@@ -172,304 +139,79 @@ ruleTester.run('order-in-components', rule, {
             filename: 'test.san',
             code: `
                 export default {
-                    name: 'app',
-                    data () {
-                        return {
-                            msg: 'Welcome to Your San.js App'
-                        }
-                    },
-                    props: {
+                    dataTypes: {},
+                    components: {
                         propA: Number,
-                    },
+                    }
                 }
             `,
             parserOptions,
             output: `
                 export default {
-                    name: 'app',
-                    props: {
+                    components: {
                         propA: Number,
                     },
-                    data () {
-                        return {
-                            msg: 'Welcome to Your San.js App'
-                        }
-                    },
+                    dataTypes: {}
                 }
             `,
             errors: [
                 {
-                    message: 'The "props" property should be above the "data" property on line 4.',
-                    line: 9
-                }
-            ]
-        },
-        {
-            filename: 'test.jsx',
-            code: `
-                export default {
-                    render (h) {
-                        return (
-                            <span>{ this.msg }</span>
-                        )
-                    },
-                    name: 'app',
-                    data () {
-                        return {
-                            msg: 'Welcome to Your San.js App'
-                        }
-                    },
-                    props: {
-                        propA: Number,
-                    },
-                }
-            `,
-            parserOptions: {
-                ecmaVersion: 6,
-                sourceType: 'module',
-                ecmaFeatures: {jsx: true}
-            },
-            output: `
-                export default {
-                    name: 'app',
-                    render (h) {
-                        return (
-                            <span>{ this.msg }</span>
-                        )
-                    },
-                    data () {
-                        return {
-                            msg: 'Welcome to Your San.js App'
-                        }
-                    },
-                    props: {
-                        propA: Number,
-                    },
-                }
-            `,
-            errors: [
-                {
-                    message: 'The "name" property should be above the "render" property on line 3.',
-                    line: 8
-                },
-                {
-                    message: 'The "data" property should be above the "render" property on line 3.',
-                    line: 9
-                },
-                {
-                    message: 'The "props" property should be above the "data" property on line 9.',
-                    line: 14
-                }
-            ]
-        },
-        {
-            filename: 'test.js',
-            code: `
-                san.defineComponent({
-                    name: 'app',
-                    data () {
-                        return {
-                            msg: 'Welcome to Your San.js App'
-                        }
-                    },
-                    components: {},
-                    template: '<div></div>'
-                })
-            `,
-            parserOptions: {ecmaVersion: 6},
-            output: `
-                san.defineComponent({
-                    name: 'app',
-                    components: {},
-                    data () {
-                        return {
-                            msg: 'Welcome to Your San.js App'
-                        }
-                    },
-                    template: '<div></div>'
-                })
-            `,
-            errors: [
-                {
-                    message: 'The "components" property should be above the "data" property on line 4.',
-                    line: 9
-                }
-            ]
-        },
-        {
-            filename: 'test.js',
-            code: `
-                app.component({
-                    name: 'app',
-                    data () {
-                        return {
-                            msg: 'Welcome to Your San.js App'
-                        }
-                    },
-                    components: {},
-                    template: '<div></div>'
-                })
-            `,
-            parserOptions: {ecmaVersion: 6},
-            output: `
-                app.component({
-                    name: 'app',
-                    components: {},
-                    data () {
-                        return {
-                            msg: 'Welcome to Your San.js App'
-                        }
-                    },
-                    template: '<div></div>'
-                })
-            `,
-            errors: [
-                {
-                    message: 'The "components" property should be above the "data" property on line 4.',
-                    line: 9
-                }
-            ]
-        },
-        {
-            filename: 'test.js',
-            code: `
-                san.defineComponent({
-                    name: 'app',
-                    data () {
-                        return {
-                            msg: 'Welcome to Your San.js App'
-                        }
-                    },
-                    components: {},
-                    template: '<div></div>'
-                })
-            `,
-            parserOptions: {ecmaVersion: 6},
-            output: `
-                san.defineComponent({
-                    name: 'app',
-                    components: {},
-                    data () {
-                        return {
-                            msg: 'Welcome to Your San.js App'
-                        }
-                    },
-                    template: '<div></div>'
-                })
-            `,
-            errors: [
-                {
-                    message: 'The "components" property should be above the "data" property on line 4.',
-                    line: 9
-                }
-            ]
-        },
-        {
-            filename: 'test.js',
-            code: `
-                san.defineComponent({
-                    name: 'app',
-                    el: '#app',
-                    data () {
-                        return {
-                            msg: 'Welcome to Your San.js App'
-                        }
-                    },
-                    components: {},
-                    template: '<div></div>'
-                })
-            `,
-            parserOptions: {ecmaVersion: 6},
-            output: `
-                san.defineComponent({
-                    el: '#app',
-                    name: 'app',
-                    data () {
-                        return {
-                            msg: 'Welcome to Your San.js App'
-                        }
-                    },
-                    components: {},
-                    template: '<div></div>'
-                })
-            `,
-            errors: [
-                {
-                    message: 'The "el" property should be above the "name" property on line 3.',
+                    message: 'The "components" property should be above the "dataTypes" property on line 3.',
                     line: 4
-                },
-                {
-                    message: 'The "components" property should be above the "data" property on line 5.',
-                    line: 10
                 }
             ]
         },
         {
-            filename: 'example.san',
+            filename: 'test.js',
             code: `
-                export default {
-                    data() {
+                san.defineComponent({
+                    template: '<div></div>',
+                    initData () {
                         return {
-                            isActive: false,
-                        };
+                            msg: 'Welcome to Your San.js App'
+                        }
                     },
-                    toggleMenu() {
-                        this.isActive = !this.isActive;
-                    },
-                    closeMenu() {
-                        this.isActive = false;
-                    },
-                    name: 'burger',
-                };
+                    components: {}
+                })
             `,
-            parserOptions,
+            parserOptions: {ecmaVersion: 6},
             output: `
-                export default {
-                    name: 'burger',
-                    data() {
+                san.defineComponent({
+                    template: '<div></div>',
+                    components: {},
+                    initData () {
                         return {
-                            isActive: false,
-                        };
-                    },
-                    toggleMenu() {
-                        this.isActive = !this.isActive;
-                    },
-                    closeMenu() {
-                        this.isActive = false;
-                    },
-                };
+                            msg: 'Welcome to Your San.js App'
+                        }
+                    }
+                })
             `,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 14
+                    message: 'The "components" property should be above the "initData" property on line 4.',
+                    line: 9
                 }
             ]
         },
         {
-            filename: 'example.san',
+            filename: 'test.js',
             code: `
-                export default {
-                    data() {
-                    },
-                    name: 'burger',
-                    test: 'ok'
-                };
+                app.component({
+                    compiled() {},
+                    template: '<div></div>'
+                })
             `,
-            parserOptions,
+            parserOptions: {ecmaVersion: 6},
             output: `
-                export default {
-                    data() {
-                    },
-                    test: 'ok',
-                    name: 'burger'
-                };
+                app.component({
+                    template: '<div></div>',
+                    compiled() {}
+                })
             `,
-            options: [{order: ['data', 'test', 'name']}],
             errors: [
                 {
-                    message: 'The "test" property should be above the "name" property on line 5.',
-                    line: 6
+                    message: 'The "template" property should be above the "compiled" property on line 3.',
+                    line: 4
                 }
             ]
         },
@@ -477,26 +219,26 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    /** data provider */
-                    data() {
+                    /** compiled of san component */
+                    compiled() {
                     },
-                    /** name of vue component */
-                    name: 'burger'
+                    /** template of san component */
+                    template() {}
                 };
             `,
             parserOptions,
             output: `
                 export default {
-                    /** name of vue component */
-                    name: 'burger',
-                    /** data provider */
-                    data() {
+                    /** template of san component */
+                    template() {},
+                    /** compiled of san component */
+                    compiled() {
                     }
                 };
             `,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 4.',
+                    message: 'The "template" property should be above the "compiled" property on line 4.',
                     line: 7
                 }
             ]
@@ -505,39 +247,52 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    /** data provider */
-                    data() {
-                    }/*test*/,
-                    /** name of vue component */
-                    name: 'burger'
+                    components: {},
+                    filters: {},
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: `
                 export default {
-                    /** name of vue component */
-                    name: 'burger',
-                    /** data provider */
-                    data() {
-                    }/*test*/
+                    components: {},
+                    template: '<div></div>',
+                    filters: {}
                 };
             `,
+            options: [{order: ['components', 'template', 'filters']}],
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 4.',
-                    line: 7
+                    message: 'The "template" property should be above the "filters" property on line 4.',
+                    line: 5
                 }
             ]
         },
         {
             filename: 'example.san',
-            code: `export default {data(){},name:'burger'};`,
+            code: `
+                export default {
+                    messages: {},
+                    computed: {},
+                    template: '<div></div>'
+                };
+            `,
             parserOptions,
-            output: `export default {name:'burger',data(){}};`,
+            output: `
+                export default {
+                    computed: {},
+                    messages: {},
+                    template: '<div></div>'
+                };
+            `,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 1.',
-                    line: 1
+                    message: 'The "computed" property should be above the "messages" property on line 3.',
+                    line: 4
+                },
+                {
+                    message: 'The "template" property should be above the "computed" property on line 4.',
+                    line: 5
                 }
             ]
         },
@@ -546,18 +301,17 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     test: obj.fn(),
-                    name: 'burger',
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: null,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 6
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 5
                 }
             ]
         },
@@ -566,18 +320,17 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     test: new MyClass(),
-                    name: 'burger',
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: null,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 6
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 5
                 }
             ]
         },
@@ -586,18 +339,17 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     test: i++,
-                    name: 'burger',
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: null,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 6
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 5
                 }
             ]
         },
@@ -606,18 +358,17 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     test: i = 0,
-                    name: 'burger',
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: null,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 6
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 5
                 }
             ]
         },
@@ -626,18 +377,17 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     test: template\`\${foo}\`,
-                    name: 'burger',
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: null,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 6
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 5
                 }
             ]
         },
@@ -646,18 +396,17 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     [obj.fn()]: 'test',
-                    name: 'burger',
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: null,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 6
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 5
                 }
             ]
         },
@@ -666,18 +415,17 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     test: {test: obj.fn()},
-                    name: 'burger',
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: null,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 6
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 5
                 }
             ]
         },
@@ -686,18 +434,17 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     test: [obj.fn(), 1],
-                    name: 'burger',
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: null,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 6
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 5
                 }
             ]
         },
@@ -706,18 +453,17 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     test: obj.fn().prop,
-                    name: 'burger',
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: null,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 6
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 5
                 }
             ]
         },
@@ -726,18 +472,17 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     test: delete obj.prop,
-                    name: 'burger',
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: null,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 6
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 5
                 }
             ]
         },
@@ -746,18 +491,17 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     test: fn() + a + b,
-                    name: 'burger',
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: null,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 6
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 5
                 }
             ]
         },
@@ -766,18 +510,17 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     test: a ? fn() : null,
-                    name: 'burger',
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: null,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 6
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 5
                 }
             ]
         },
@@ -786,18 +529,17 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     test: \`test \${fn()} \${a}\`,
-                    name: 'burger',
+                    template: '<div></div>'
                 };
             `,
             parserOptions,
             output: null,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 6
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 5
                 }
             ]
         },
@@ -806,25 +548,23 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
-                    name: 'burger',
-                    test: fn(),
+                    components: {},
+                    template: '<div></div>',
+                    test: \`test \${fn()} \${a}\`,
                 };
             `,
             parserOptions,
             output: `
                 export default {
-                    name: 'burger',
-                    data() {
-                    },
-                    test: fn(),
+                    template: '<div></div>',
+                    components: {},
+                    test: \`test \${fn()} \${a}\`,
                 };
             `,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 5
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 4
                 }
             ]
         },
@@ -833,8 +573,7 @@ ruleTester.run('order-in-components', rule, {
             filename: 'example.san',
             code: `
                 export default {
-                    data() {
-                    },
+                    components: {},
                     testArray: [1, 2, 3, true, false, 'a', 'b', 'c'],
                     testRegExp: /[a-z]*/,
                     testSpreadElement: [...array],
@@ -845,15 +584,14 @@ ruleTester.run('order-in-components', rule, {
                     testTemplate: \`a:\${a},b:\${b},c:\${c}.\`,
                     testNullish: a ?? b,
                     testOptionalChaining: a?.b?.c,
-                    name: 'burger',
+                    template: '<div></div>',
                 };
             `,
             parserOptions,
             output: `
                 export default {
-                    name: 'burger',
-                    data() {
-                    },
+                    template: '<div></div>',
+                    components: {},
                     testArray: [1, 2, 3, true, false, 'a', 'b', 'c'],
                     testRegExp: /[a-z]*/,
                     testSpreadElement: [...array],
@@ -868,8 +606,8 @@ ruleTester.run('order-in-components', rule, {
             `,
             errors: [
                 {
-                    message: 'The "name" property should be above the "data" property on line 3.',
-                    line: 15
+                    message: 'The "template" property should be above the "components" property on line 3.',
+                    line: 14
                 }
             ]
         }

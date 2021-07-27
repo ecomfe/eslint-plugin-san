@@ -12,7 +12,7 @@ description: enforce attribute naming style on custom components in template
 
 ## :book: Rule Details
 
-This rule enforces using hyphenated attribute names on custom components in Vue templates.
+This rule enforces using hyphenated attribute names on custom components in San templates.
 
 <eslint-code-block fix :rules="{'san/attribute-hyphenation': ['error', 'always']}">
 
