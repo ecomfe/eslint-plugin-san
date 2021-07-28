@@ -1,10 +1,10 @@
 ---
 pageClass: rule-details
 sidebarDepth: 0
-title: san/no-shared-component-data
+title: san/initdata-in-component
 description: enforce component's data property to be a function
 ---
-# san/no-shared-component-data
+# san/initdata-in-component
 > enforce component's data property to be a function
 
 - :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
@@ -16,7 +16,7 @@ When using the data property on a component , the value must be a function that 
 
 When the value of `data` is an object, it’s shared across all instances of a component.
 
-<eslint-code-block fix :rules="{'san/no-shared-component-data': ['error']}">
+<eslint-code-block fix :rules="{'san/initdata-in-component': ['error']}">
 
 ```vue
 <script>
@@ -28,30 +28,16 @@ export default class SomeComp extends san.Component {
     }
   }
 }
-
-export default {
-  initData () {
-    return {
-      foo: 'bar'
-    }
-  }
-}
 </script>
 ```
 
 </eslint-code-block>
 
-<eslint-code-block fix :rules="{'san/no-shared-component-data': ['error']}">
+<eslint-code-block fix :rules="{'san/initdata-in-component': ['error']}">
 
 ```vue
 <script>
 /* ✗ BAD */
-export default class SomeComp extends san.Component {
-  static initData = {
-    foo: 'bar'
-  }
-})
-
 export default {
   initData: {
     foo: 'bar'
@@ -72,5 +58,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-shared-component-data.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-shared-component-data.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/initdata-in-component.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/initdata-in-component.js)

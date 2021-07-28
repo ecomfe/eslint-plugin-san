@@ -53,37 +53,44 @@ tester.run('component-tags-order', rule, {
 
         // order
         {
+            filename: 'test.san',
             code: '<script></script><template></template><style></style>',
             output: null,
             options: [{order: ['script', 'template', 'style']}]
         },
         {
+            filename: 'test.san',
             code: '<template></template><script></script><style></style>',
             output: null,
             options: [{order: ['template', 'script', 'style']}]
         },
         {
+            filename: 'test.san',
             code: '<style></style><template></template><script></script>',
             output: null,
             options: [{order: ['style', 'template', 'script']}]
         },
         {
+            filename: 'test.san',
             code: '<template></template><script></script><style></style>',
             output: null,
             options: [{order: ['template', 'docs', 'script', 'style']}]
         },
         {
+            filename: 'test.san',
             code: '<template></template><docs></docs><script></script><style></style>',
             output: null,
             options: [{order: ['template', 'script', 'style']}]
         },
         {
+            filename: 'test.san',
             code:
                 '<docs><div id="id">text <!--comment--> </div><br></docs><script></script><template></template><style></style>',
             output: null,
             options: [{order: ['docs', 'script', 'template', 'style']}]
         },
         {
+            filename: 'test.san',
             code: '<template></template><docs></docs><script></script><style></style>',
             output: null,
             options: [{order: [['docs', 'script', 'template'], 'style']}]
@@ -97,6 +104,7 @@ tester.run('component-tags-order', rule, {
     ],
     invalid: [
         {
+            filename: 'test.san',
             code: '<style></style><template></template><script></script>',
             errors: [
                 {
@@ -112,6 +120,7 @@ tester.run('component-tags-order', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template></template><script></script><style></style>',
             options: [{order: ['script', 'template', 'style']}],
             errors: [
@@ -123,6 +132,7 @@ tester.run('component-tags-order', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
             <template></template>
 
@@ -137,6 +147,7 @@ tester.run('component-tags-order', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template></template>
                 <script></script>
@@ -151,6 +162,7 @@ tester.run('component-tags-order', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <script></script>
                 <template></template>
@@ -165,6 +177,7 @@ tester.run('component-tags-order', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template></template>
                 <docs></docs>
@@ -180,6 +193,7 @@ tester.run('component-tags-order', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template></template>
                 <docs></docs>
@@ -195,6 +209,7 @@ tester.run('component-tags-order', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template></template>
                 <docs>
@@ -211,6 +226,7 @@ tester.run('component-tags-order', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <script></script>
                 <template></template>
@@ -224,6 +240,7 @@ tester.run('component-tags-order', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <style></style>
                 <template></template>
@@ -241,6 +258,7 @@ tester.run('component-tags-order', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <style></style>
                 <docs></docs>
@@ -260,6 +278,7 @@ tester.run('component-tags-order', rule, {
         },
         // no <template>
         {
+            filename: 'test.san',
             code: `
                 <style></style>
                 <script></script>

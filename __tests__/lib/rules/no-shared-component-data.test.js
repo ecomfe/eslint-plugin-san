@@ -8,7 +8,7 @@
 // Requirements
 // ------------------------------------------------------------------------------
 
-const rule = require('../../../lib/rules/no-shared-component-data');
+const rule = require('../../../lib/rules/initdata-in-component');
 
 const RuleTester = require('eslint').RuleTester;
 
@@ -22,7 +22,7 @@ const parserOptions = {
 // ------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester();
-ruleTester.run('no-shared-component-data', rule, {
+ruleTester.run('initdata-in-component', rule, {
     valid: [
         {
             filename: 'test.js',

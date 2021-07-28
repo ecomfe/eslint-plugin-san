@@ -44,7 +44,7 @@ Enforce all the rules in this category, as well as all higher priority rules, wi
 | [vue/no-mutating-props](https://eslint.vuejs.org/rules/no-mutating-props.html) | disallow mutation of component props | ❌ | 没有相关语法 |  |
 | [vue/no-parsing-error](https://eslint.vuejs.org/rules/no-parsing-error.html) | disallow parsing errors in `<template>` | ✅ | | 已完成 |
 | [vue/no-reserved-keys](https://eslint.vuejs.org/rules/no-reserved-keys.html) | disallow overwriting reserved keys | ✅ | | 已完成 |
-| [vue/no-shared-component-data](https://eslint.vuejs.org/rules/no-shared-component-data.html) | enforce component's data property to be a function | ✅ | | 已完成 |
+| [vue/initdata-in-component](https://eslint.vuejs.org/rules/initdata-in-component.html) | enforce component's data property to be a function | ✅ | | 已完成 |
 | [vue/no-side-effects-in-computed-properties](https://eslint.vuejs.org/rules/no-side-effects-in-computed-properties.html) | disallow side effects in computed properties | ✅ | | 已完成 |
 | [vue/no-template-key](https://eslint.vuejs.org/rules/no-template-key.html) | disallow `key` attribute on `<template>` | ✅ | | 已完成 |
 | [vue/no-textarea-mustache](https://eslint.vuejs.org/rules/no-textarea-mustache.html) | disallow mustaches in `<textarea>` | ✅ | | 已完成 |

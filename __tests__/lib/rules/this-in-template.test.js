@@ -25,78 +25,97 @@ function createValidTests(prefix, options) {
     const comment = options.join('');
     return [
         {
+            filename: 'test.san',
             code: `<template><div>{{ ${prefix}foo.bar }}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div s-for="foo in ${prefix}bar">{{ foo }}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div s-if="${prefix}foo">{{ ${prefix}foo }}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div :class="${prefix}foo">{{ ${prefix}foo }}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div :class="{this: ${prefix}foo}">{{ ${prefix}foo }}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div s-for="bar in ${prefix}foo" s-if="bar">{{ bar }}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div s-if="${prefix}foo()">{{ ${prefix}bar }}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div :parent="this"></div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div s-for="x of ${prefix}xs">{{this.x}}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div s-for="x of ${prefix}xs">{{this.x()}}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div s-for="x of ${prefix}xs">{{this.x.y()}}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div s-for="x of ${prefix}xs">{{this.x['foo']}}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div s-for="x of ${prefix}xs">{{this['x']}}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div>{{ this.class }}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div>{{ this['0'] }}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div>{{ this['this'] }}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div>{{ this['foo bar'] }}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div>{{ }}</div></template><!-- ${comment} -->`,
             options
         },
         {
+            filename: 'test.san',
             code: `
             <template>
                 <div>
@@ -111,6 +130,7 @@ function createValidTests(prefix, options) {
 
         // We cannot use `.` in dynamic arguments because the right of the `.` becomes a modifier.
         {
+            filename: 'test.san',
             code: `<template><div s-on:[x]="1"></div></template><!-- ${comment} -->`,
             options
         }
@@ -121,41 +141,49 @@ function createInvalidTests(prefix, options, message, type) {
     const comment = options.join('');
     return [
         {
+            filename: 'test.san',
             code: `<template><div>{{ ${prefix}foo }}</div></template><!-- ${comment} -->`,
             errors: [{message, type}],
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div>{{ ${prefix}foo() }}</div></template><!-- ${comment} -->`,
             errors: [{message, type}],
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div>{{ ${prefix}foo.bar() }}</div></template><!-- ${comment} -->`,
             errors: [{message, type}],
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div :class="${prefix}foo"></div></template><!-- ${comment} -->`,
             errors: [{message, type}],
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div :class="{foo: ${prefix}foo}"></div></template><!-- ${comment} -->`,
             errors: [{message, type}],
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div :class="{foo: ${prefix}foo()}"></div></template><!-- ${comment} -->`,
             errors: [{message, type}],
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div s-if="${prefix}foo"></div></template><!-- ${comment} -->`,
             errors: [{message, type}],
             options
         },
         {
+            filename: 'test.san',
             code: `<template><div s-for="foo in ${prefix}bar"></div></template><!-- ${comment} -->`,
             errors: [{message, type}],
             options
@@ -172,11 +200,13 @@ function createInvalidTests(prefix, options, message, type) {
             ? []
             : [
                   {
+                    filename: 'test.san',
                       code: `<template><div>{{ this['xs'] }}</div></template><!-- ${comment} -->`,
                       errors: [{message, type}],
                       options
                   },
                   {
+                    filename: 'test.san',
                       code: `<template><div>{{ this['xs0AZ_foo'] }}</div></template><!-- ${comment} -->`,
                       errors: [{message, type}],
                       options

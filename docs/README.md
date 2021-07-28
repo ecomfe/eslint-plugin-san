@@ -35,7 +35,7 @@
 | Draft | [san/no-multiple-template-root](./rules/no-multiple-template-root.md) | 禁止template出现多个根元素 |Done|
 | Draft | [san/no-parsing-error](./rules/no-parsing-error.md) | 禁止template语法解析错误 | Done |
 | Draft | [san/no-reserved-keys](./rules/no-reserved-keys.md) | 禁止覆写保留关键字 | Done |
-| Draft | [san/no-shared-component-data](./rules/no-shared-component-data.md) | 禁止组件实例共享data, initData必须为返回有效值的函数 | Done |
+| Draft | [san/initdata-in-component](./rules/initdata-in-component.md) | 禁止组件实例共享data, initData必须为返回有效值的函数 | Done |
 | Draft | [san/no-side-effects-in-computed-properties](./rules/no-side-effects-in-computed-properties.md) | 禁止有副作用的计算数据方法 | Done |
 | Draft | [san/no-template-key](./rules/no-template-key.md) | 禁止`<template>`使用属性 | Done |
 | Draft | [san/no-textarea-mustache](./rules/no-textarea-mustache.md) | 禁止`<textarea>`使用插值 | Done |

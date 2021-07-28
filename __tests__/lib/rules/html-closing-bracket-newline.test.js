@@ -37,6 +37,7 @@ tester.run('html-closing-bracket-newline', rule, {
         </template>
         `,
         {
+            filename: 'test.san',
             code: `<template><div></div></template>`,
             options: [
                 {
@@ -46,6 +47,7 @@ tester.run('html-closing-bracket-newline', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div
@@ -61,6 +63,7 @@ tester.run('html-closing-bracket-newline', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div
@@ -77,6 +80,7 @@ tester.run('html-closing-bracket-newline', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div id="">
@@ -91,6 +95,7 @@ tester.run('html-closing-bracket-newline', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template
                 >
@@ -109,6 +114,7 @@ tester.run('html-closing-bracket-newline', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template
                 >
@@ -137,6 +143,7 @@ tester.run('html-closing-bracket-newline', rule, {
     ],
     invalid: [
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div
@@ -156,6 +163,7 @@ tester.run('html-closing-bracket-newline', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div
@@ -174,6 +182,7 @@ tester.run('html-closing-bracket-newline', rule, {
             errors: ['Expected 1 line break before closing bracket, but no line breaks found.']
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div
@@ -199,6 +208,7 @@ tester.run('html-closing-bracket-newline', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div
@@ -223,6 +233,7 @@ tester.run('html-closing-bracket-newline', rule, {
             errors: ['Expected no line breaks before closing bracket, but 1 line break found.']
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div
@@ -247,6 +258,7 @@ tester.run('html-closing-bracket-newline', rule, {
             errors: ['Expected 1 line break before closing bracket, but no line breaks found.']
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div id=""
@@ -273,6 +285,7 @@ tester.run('html-closing-bracket-newline', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template
                 >
@@ -305,6 +318,7 @@ tester.run('html-closing-bracket-newline', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template
                 >
