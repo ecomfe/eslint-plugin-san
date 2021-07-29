@@ -48,6 +48,7 @@ ruleTester.run('no-multi-spaces', rule, {
             code: 'export default { }'
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <i
@@ -65,6 +66,7 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <i
@@ -84,6 +86,7 @@ ruleTester.run('no-multi-spaces', rule, {
     ],
     invalid: [
         {
+            filename: 'test.san',
             code: '<template><div     /></template>',
             output: '<template><div /></template>',
             errors: [
@@ -94,6 +97,7 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div   class="foo"  /></template>',
             output: '<template><div class="foo" /></template>',
             errors: [
@@ -108,6 +112,7 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div\t\tclass="foo"\t\t/></template>',
             output: '<template><div class="foo" /></template>',
             errors: [
@@ -122,6 +127,7 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div   :class="foo"  /></template>',
             output: '<template><div :class="foo" /></template>',
             errors: [
@@ -136,6 +142,7 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div :foo="" class="foo"  /></template>',
             output: '<template><div :foo="" class="foo" /></template>',
             errors: [
@@ -146,6 +153,7 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div foo="" class="foo"  /></template>',
             output: '<template><div foo="" class="foo" /></template>',
             errors: [
@@ -156,6 +164,7 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><foo s-foo="" class="foo"  /></template>',
             output: '<template><foo s-foo="" class="foo" /></template>',
             errors: [
@@ -166,6 +175,7 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><foo s-foo="" \n         class="foo"    /></template>',
             output: '<template><foo s-foo="" \n         class="foo" /></template>',
             errors: [
@@ -176,6 +186,7 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div>{{  test  }}</div></template>',
             output: '<template><div>{{ test }}</div></template>',
             errors: [
@@ -190,6 +201,7 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div               ></div></template>',
             output: '<template><div ></div></template>',
             errors: [
@@ -200,6 +212,7 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="      i    in    b       ">{{ test }}</div></template>',
             output: '<template><div s-for=" i in b ">{{ test }}</div></template>',
             errors: [
@@ -222,6 +235,7 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <i
@@ -250,6 +264,7 @@ ruleTester.run('no-multi-spaces', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <i

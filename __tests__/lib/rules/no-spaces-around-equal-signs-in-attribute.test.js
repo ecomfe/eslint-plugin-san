@@ -45,6 +45,7 @@ tester.run('no-spaces-around-equal-signs-in-attribute', rule, {
     ],
     invalid: [
         {
+            filename: 'test.san',
             code: '<template><div attr = "value" /></template>',
             output: '<template><div attr="value" /></template>',
             errors: [
@@ -58,6 +59,7 @@ tester.run('no-spaces-around-equal-signs-in-attribute', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div attr = "" /></template>',
             output: '<template><div attr="" /></template>',
             errors: [
@@ -71,6 +73,7 @@ tester.run('no-spaces-around-equal-signs-in-attribute', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: "<template><div attr = 'value' /></template>",
             output: "<template><div attr='value' /></template>",
             errors: [
@@ -84,6 +87,7 @@ tester.run('no-spaces-around-equal-signs-in-attribute', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div attr = value /></template>',
             output: '<template><div attr=value /></template>',
             errors: [
@@ -97,6 +101,7 @@ tester.run('no-spaces-around-equal-signs-in-attribute', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div attr \t\n   =   \t\n "value" /></template>',
             output: '<template><div attr="value" /></template>',
             errors: [
@@ -110,6 +115,7 @@ tester.run('no-spaces-around-equal-signs-in-attribute', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div attr ="value" /></template>',
             output: '<template><div attr="value" /></template>',
             errors: [
@@ -123,6 +129,7 @@ tester.run('no-spaces-around-equal-signs-in-attribute', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div attr= "value" /></template>',
             output: '<template><div attr="value" /></template>',
             errors: [
@@ -136,6 +143,7 @@ tester.run('no-spaces-around-equal-signs-in-attribute', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `<template>
                 <div
                     is = "header"

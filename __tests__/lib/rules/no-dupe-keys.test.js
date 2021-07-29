@@ -91,10 +91,6 @@ ruleTester.run('no-dupe-keys', rule, {
             errors: [
                 {
                     message: "Duplicated key 'foo'.",
-                    line: 7
-                },
-                {
-                    message: "Duplicated key 'foo'.",
                     line: 16
                 }
             ]
@@ -116,32 +112,6 @@ ruleTester.run('no-dupe-keys', rule, {
                 {
                     message: "Duplicated key 'bar'.",
                     line: 7
-                }
-            ]
-        },
-        {
-            filename: 'test.san',
-            code: `
-                export default {
-                    dataTypes: {
-                        foo: DataTypes.bool
-                    },
-                    initData () {
-                        return {
-                            get foo() {
-                                return foo
-                            },
-                            set foo(v) {
-                                foo = v
-                            }
-                        }
-                    }
-                }
-            `,
-            errors: [
-                {
-                    message: "Duplicated key 'foo'.",
-                    line: 8
                 }
             ]
         },

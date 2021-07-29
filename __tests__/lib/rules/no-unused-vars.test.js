@@ -24,74 +24,94 @@ const tester = new RuleTester({
 tester.run('no-unused-vars', rule, {
     valid: [
         {
+            filename: 'test.san',
             code: '<template><ol s-for="i in 5"><li>{{i}}</li></ol></template>'
         },
         {
+            filename: 'test.san',
             code: '<template><ol s-for="i in 5"><li :prop="i"></li></ol></template>'
         },
         {
+            filename: 'test.san',
             code: '<template s-for="i in 5"><comp s-for="j in 10">{{i}}{{j}}</comp></template>'
         },
         {
+            filename: 'test.san',
             code: '<template><ol s-for="i in data"><li s-for="f in i">{{ f.bar.baz }}</li></ol></template>'
         },
         {
+            filename: 'test.san',
             code: '<template><template scope="props">{{props}}</template></template>'
         },
         {
+            filename: 'test.san',
             code: '<template><template scope="props"><span s-if="props"></span></template></template>'
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="(item, key) in items" :key="key">{{item.name}}</div></template>'
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="(v, i, c) in foo">{{c}}</div></template>'
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="x in foo">{{value | f(x)}}</div></template>'
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="x in foo" :[x]></div></template>'
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="_ in foo" ></div></template>',
             options: [{ignorePattern: '^_'}]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="ignorei in foo" ></div></template>',
             options: [{ignorePattern: '^ignore'}]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="thisisignore in foo" ></div></template>',
             options: [{ignorePattern: 'ignore$'}]
         }
     ],
     invalid: [
         {
+            filename: 'test.san',
             code: '<template><ol s-for="i in 5"><li></li></ol></template>',
             errors: ["'i' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><template scope="props"></template></template>',
             errors: ["'props' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><span slot-scope="props"></span></template>',
             errors: ["'props' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><span><template scope="props"></template></span></template>',
             errors: ["'props' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="i in 5"><comp s-for="j in 10">{{i}}{{i}}</comp></div></template>',
             errors: ["'j' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><ol s-for="i in data"><li s-for="f in i"></li></ol></template>',
             errors: ["'f' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="(a, b, c) in foo"></div></template>',
             errors: [
                 "'a' is defined but never used.",
@@ -100,18 +120,22 @@ tester.run('no-unused-vars', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="(a, b, c) in foo">{{a}}</div></template>',
             errors: ["'b' is defined but never used.", "'c' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="(a, b, c) in foo">{{b}}</div></template>',
             errors: ["'c' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="(item, key) in items" :key="item.id">{{item.name}}</div></template>',
             errors: ["'key' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="x in items">{{value | x}}</div></template>',
             errors: [
                 {
@@ -127,42 +151,51 @@ tester.run('no-unused-vars', rule, {
             options: [{ignorePattern: '^_'}]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="x in items">{{value}}</div></template>',
             options: [{ignorePattern: 'ignore$'}],
             errors: ["'x' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><span slot-scope="props"></span></template>',
             errors: ["'props' is defined but never used."],
             options: [{ignorePattern: '^ignore'}]
         },
         {
+            filename: 'test.san',
             code: '<template><span><template scope="props"></template></span></template>',
             errors: ["'props' is defined but never used."],
             options: [{ignorePattern: '^ignore'}]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="_i in foo" ></div></template>',
             errors: ["'_i' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="(a, _i) in foo" ></div></template>',
             options: [{ignorePattern: '^_'}],
             errors: ["'a' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><my-component s-slot="a" >{{d}}</my-component></template>',
             errors: ["'a' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><my-component s-for="i in foo" s-slot="a" >{{a}}</my-component></template>',
             errors: ["'i' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><my-component s-for="i in foo" s-slot="a" >{{i}}</my-component></template>',
             errors: ["'a' is defined but never used."]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="({a, b}, [c, d], e, f) in foo" >{{f}}</div></template>',
             errors: [
                 "'a' is defined but never used.",
@@ -172,6 +205,7 @@ tester.run('no-unused-vars', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="({a, b}, c, [d], e, f) in foo" >{{f}}</div></template>',
             errors: [
                 "'a' is defined but never used.",
@@ -180,6 +214,7 @@ tester.run('no-unused-vars', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><my-component s-slot="{a, b, c, d}" >{{d}}</my-component></template>',
             errors: [
                 "'a' is defined but never used.",
@@ -188,6 +223,7 @@ tester.run('no-unused-vars', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template><div s-for="({a, b: bar}, c = 1, [d], e, f) in foo" >{{f}}</div></template>',
             errors: [
                 "'a' is defined but never used.",

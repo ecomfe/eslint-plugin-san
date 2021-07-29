@@ -65,6 +65,7 @@ tester.run('html-self-closing', rule, {
 
         // Don't error if there are comments in their content.
         {
+            filename: 'test.san',
             code: '<template><div><!-- comment --></div></template>',
             output: null,
             options: [{html: {normal: 'always'}}]
@@ -79,26 +80,31 @@ tester.run('html-self-closing', rule, {
     invalid: [
         // default
         {
+            filename: 'test.san',
             code: '<template><div></div></template>',
             output: '<template><div/></template>',
             errors: ['Require self-closing on HTML elements (<div>).']
         },
         {
+            filename: 'test.san',
             code: '<template><img/></template>',
             output: '<template><img></template>',
             errors: ['Disallow self-closing on HTML void elements (<img/>).']
         },
         {
+            filename: 'test.san',
             code: '<template><x-test></x-test></template>',
             output: '<template><x-test/></template>',
             errors: ['Require self-closing on San.js custom components (<x-test>).']
         },
         {
+            filename: 'test.san',
             code: '<template><svg><path></path></svg></template>',
             output: '<template><svg><path/></svg></template>',
             errors: ['Require self-closing on SVG elements (<path>).']
         },
         {
+            filename: 'test.san',
             code: '<template><math><mspace></mspace></math></template>',
             output: '<template><math><mspace/></math></template>',
             errors: ['Require self-closing on MathML elements (<mspace>).']
@@ -106,6 +112,7 @@ tester.run('html-self-closing', rule, {
 
         // others
         {
+            filename: 'test.san',
             code: ALL_CODE,
             output: `<template>
     <div/>
@@ -123,6 +130,7 @@ tester.run('html-self-closing', rule, {
             errors: [{message: 'Require self-closing on HTML elements (<div>).', line: 2}]
         },
         {
+            filename: 'test.san',
             code: ALL_CODE,
             output: `<template>
     <div></div>
@@ -140,6 +148,7 @@ tester.run('html-self-closing', rule, {
             errors: [{message: 'Disallow self-closing on HTML elements (<div/>).', line: 3}]
         },
         {
+            filename: 'test.san',
             code: ALL_CODE,
             output: `<template>
     <div></div>
@@ -162,6 +171,7 @@ tester.run('html-self-closing', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: ALL_CODE,
             output: `<template>
     <div></div>
@@ -184,6 +194,7 @@ tester.run('html-self-closing', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: ALL_CODE,
             output: `<template>
     <div></div>
@@ -206,6 +217,7 @@ tester.run('html-self-closing', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: ALL_CODE,
             output: `<template>
     <div></div>
@@ -228,6 +240,7 @@ tester.run('html-self-closing', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: ALL_CODE,
             output: `<template>
     <div></div>
@@ -245,6 +258,7 @@ tester.run('html-self-closing', rule, {
             errors: [{message: 'Require self-closing on SVG elements (<path>).', line: 8}]
         },
         {
+            filename: 'test.san',
             code: ALL_CODE,
             output: `<template>
     <div></div>
@@ -262,6 +276,7 @@ tester.run('html-self-closing', rule, {
             errors: [{message: 'Disallow self-closing on SVG elements (<path/>).', line: 9}]
         },
         {
+            filename: 'test.san',
             code: ALL_CODE,
             output: `<template>
     <div></div>
@@ -284,6 +299,7 @@ tester.run('html-self-closing', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: ALL_CODE,
             output: `<template>
     <div></div>

@@ -32,30 +32,36 @@ ruleTester.run('html-closing-bracket-spacing', rule, {
         '<template><div foo=a></div><div foo=a /></template>',
         '<template><div foo="a"></div><div foo="a" /></template>',
         {
+            filename: 'test.san',
             code: '<template ><div ></div><div /></template>',
             options: [{startTag: 'always'}]
         },
         {
+            filename: 'test.san',
             code: '<template><div></div ><div /></template >',
             options: [{endTag: 'always'}]
         },
         {
+            filename: 'test.san',
             code: '<template><div></div><div/></template>',
             options: [{selfClosingTag: 'never'}]
         },
         '<template><div',
         '<template><div></div',
         {
+            filename: 'test.san',
             code: '<template><div',
             options: [{startTag: 'never', endTag: 'never'}]
         },
         {
+            filename: 'test.san',
             code: '<template><div></div',
             options: [{startTag: 'never', endTag: 'never'}]
         }
     ],
     invalid: [
         {
+            filename: 'test.san',
             code: '<template>\n  <div >\n  </div >\n  <div/>\n</template>',
             output: '<template>\n  <div>\n  </div>\n  <div />\n</template>',
             errors: [
@@ -80,6 +86,7 @@ ruleTester.run('html-closing-bracket-spacing', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template>\n  <div foo ></div>\n  <div foo/>\n</template>',
             output: '<template>\n  <div foo></div>\n  <div foo />\n</template>',
             errors: [
@@ -98,6 +105,7 @@ ruleTester.run('html-closing-bracket-spacing', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template>\n  <div foo="1" ></div>\n  <div foo="1"/>\n</template>',
             output: '<template>\n  <div foo="1"></div>\n  <div foo="1" />\n</template>',
             errors: [
@@ -116,6 +124,7 @@ ruleTester.run('html-closing-bracket-spacing', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: '<template >\n  <div>\n  </div>\n  <div />\n</template >',
             output: '<template >\n  <div >\n  </div >\n  <div/>\n</template >',
             options: [

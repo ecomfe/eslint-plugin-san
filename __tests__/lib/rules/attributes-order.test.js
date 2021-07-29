@@ -646,6 +646,7 @@ tester.run('attributes-order', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `<template>
             <div
               class="content"
@@ -687,6 +688,7 @@ tester.run('attributes-order', rule, {
             ]
         },
         {
+          filename: 'test.san',
             code: `<template>
             <my-component
               s-if="!visible"

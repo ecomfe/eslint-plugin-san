@@ -25,9 +25,11 @@ const ruleTester = new RuleTester({
 ruleTester.run('max-attributes-per-line', rule, {
     valid: [
         {
+            filename: 'test.san',
             code: `<template><component></component></template>`
         },
         {
+            filename: 'test.san',
             code: `<template><component
         name="John Doe"
         age="30"
@@ -35,6 +37,7 @@ ruleTester.run('max-attributes-per-line', rule, {
       ></component></template>`
         },
         {
+            filename: 'test.san',
             code: `<template><component
         name="John Doe"
         age="30"
@@ -43,6 +46,7 @@ ruleTester.run('max-attributes-per-line', rule, {
             options: [{multiline: {allowFirstLine: true}}]
         },
         {
+            filename: 'test.san',
             code: `<template><component
         name="John Doe"
         age="30"
@@ -50,6 +54,7 @@ ruleTester.run('max-attributes-per-line', rule, {
       </component></template>`
         },
         {
+            filename: 'test.san',
             code: `<template><component
         name="John Doe"
         age="30">
@@ -58,14 +63,17 @@ ruleTester.run('max-attributes-per-line', rule, {
             options: [{singleline: 1}]
         },
         {
+            filename: 'test.san',
             code: `<template><component></component></template>`,
             options: [{singleline: 1, multiline: {max: 1, allowFirstLine: false}}]
         },
         {
+            filename: 'test.san',
             code: `<template><component name="John Doe" age="30" job="Vet"></component></template>`,
             options: [{singleline: 3, multiline: {max: 1, allowFirstLine: false}}]
         },
         {
+            filename: 'test.san',
             code: `<template><component name="John Doe"
         age="30">
         </component>
@@ -73,6 +81,7 @@ ruleTester.run('max-attributes-per-line', rule, {
             options: [{singleline: 3, multiline: {max: 1, allowFirstLine: true}}]
         },
         {
+            filename: 'test.san',
             code: `<template><component
         name="John Doe"
         age="30">
@@ -81,6 +90,7 @@ ruleTester.run('max-attributes-per-line', rule, {
             options: [{singleline: 3, multiline: {max: 1, allowFirstLine: false}}]
         },
         {
+            filename: 'test.san',
             code: `<template><component
         name="John Doe" age="30"
         job="Vet">
@@ -92,48 +102,56 @@ ruleTester.run('max-attributes-per-line', rule, {
 
     invalid: [
         {
+            filename: 'test.san',
             code: `<template><component name="John Doe" age="30"></component></template>`,
             output: `<template><component name="John Doe"
 age="30"></component></template>`,
             errors: ["'age' should be on a new line."]
         },
         {
+            filename: 'test.san',
             code: `<template><component :name="user.name" :age="user.age"></component></template>`,
             output: `<template><component :name="user.name"
 :age="user.age"></component></template>`,
             errors: ["':age' should be on a new line."]
         },
         {
+            filename: 'test.san',
             code: `<template><component :is="test" s-bind="user"></component></template>`,
             output: `<template><component :is="test"
 s-bind="user"></component></template>`,
             errors: ["'s-bind' should be on a new line."]
         },
         {
+            filename: 'test.san',
             code: `<template><component :name="user.name" @buy="buyProduct"></component></template>`,
             output: `<template><component :name="user.name"
 @buy="buyProduct"></component></template>`,
             errors: ["'@buy' should be on a new line."]
         },
         {
+            filename: 'test.san',
             code: `<template><component :name="user.name" @click.stop></component></template>`,
             output: `<template><component :name="user.name"
 @click.stop></component></template>`,
             errors: ["'@click.stop' should be on a new line."]
         },
         {
+            filename: 'test.san',
             code: `<template><component :name="user.name" s-if="something"></component></template>`,
             output: `<template><component :name="user.name"
 s-if="something"></component></template>`,
             errors: ["'s-if' should be on a new line."]
         },
         {
+            filename: 'test.san',
             code: `<template><component name="John Doe"    s-bind:age="user.age"></component></template>`,
             output: `<template><component name="John Doe"
 s-bind:age="user.age"></component></template>`,
             errors: ["'s-bind:age' should be on a new line."]
         },
         {
+            filename: 'test.san',
             code: `<template><component job="Vet"
         name="John Doe"
         age="30">
@@ -154,6 +172,7 @@ job="Vet"
             ]
         },
         {
+            filename: 'test.san',
             code: `<template><component name="John Doe" age="30" job="Vet"></component></template>`,
             options: [{singleline: {max: 2}}],
             output: `<template><component name="John Doe" age="30"
@@ -167,6 +186,7 @@ job="Vet"></component></template>`,
             ]
         },
         {
+            filename: 'test.san',
             code: `<template><component name="John Doe" age="30" job="Vet"></component></template>`,
             options: [{singleline: 1, multiline: {max: 1, allowFirstLine: false}}],
             output: `<template><component name="John Doe"
@@ -185,6 +205,7 @@ age="30" job="Vet"></component></template>`,
             ]
         },
         {
+            filename: 'test.san',
             code: `<template><component name="John Doe"
         age="30">
         </component>
@@ -204,6 +225,7 @@ name="John Doe"
             ]
         },
         {
+            filename: 'test.san',
             code: `<template><component
         name="John Doe" age="30"
         job="Vet">
@@ -225,6 +247,7 @@ age="30"
             ]
         },
         {
+            filename: 'test.san',
             code: `<template><component
         name="John Doe" age="30"
         job="Vet">
@@ -246,6 +269,7 @@ age="30"
             ]
         },
         {
+            filename: 'test.san',
             code: `<template><component
         name="John Doe" age="30"
         job="Vet" pet="dog" petname="Snoopy">
@@ -267,6 +291,7 @@ petname="Snoopy">
             ]
         },
         {
+            filename: 'test.san',
             code: `<template><component
         name="John Doe" age="30"
         job="Vet" pet="dog" petname="Snoopy" extra="foo">

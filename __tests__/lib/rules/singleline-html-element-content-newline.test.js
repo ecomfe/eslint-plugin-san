@@ -116,6 +116,7 @@ tester.run('singleline-html-element-content-newline', rule, {
 
         // ignoreWhenNoAttributes: false
         {
+          filename: 'test.san',
             code: `
       <template>
         <div>
@@ -125,6 +126,7 @@ tester.run('singleline-html-element-content-newline', rule, {
             options: [{ignoreWhenNoAttributes: false}]
         },
         {
+          filename: 'test.san',
             code: `
       <template>
         <div>
@@ -135,6 +137,7 @@ tester.run('singleline-html-element-content-newline', rule, {
             options: [{ignoreWhenNoAttributes: false}]
         },
         {
+          filename: 'test.san',
             code: `
       <template>
         <div>
@@ -159,6 +162,7 @@ tester.run('singleline-html-element-content-newline', rule, {
         <textarea><span attr>content</span></textarea>
       </template>`,
         {
+          filename: 'test.san',
             code: `
         <template>
           <ignore-tag>content</ignore-tag>
@@ -172,6 +176,7 @@ tester.run('singleline-html-element-content-newline', rule, {
             ]
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <IgnoreTag>content</IgnoreTag>
@@ -185,6 +190,7 @@ tester.run('singleline-html-element-content-newline', rule, {
             ]
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <ignore-tag>content</ignore-tag>
@@ -218,6 +224,7 @@ tester.run('singleline-html-element-content-newline', rule, {
     ],
     invalid: [
         {
+          filename: 'test.san',
             code: `
         <template>
           <div class="panel">content</div>
@@ -250,6 +257,7 @@ content
             ]
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <tr attr><td>singleline</td><td>children</td></tr>
@@ -268,6 +276,7 @@ content
             ]
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <div attr><!-- singleline comment --></div>
@@ -286,6 +295,7 @@ content
             ]
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <div attr><!-- singleline --><!-- comments --></div>
@@ -304,6 +314,7 @@ content
             ]
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <div attr     >content</div    >
@@ -322,6 +333,7 @@ content
             ]
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <div attr     >content</div
@@ -342,6 +354,7 @@ content
             ]
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <div attr></div>
@@ -357,6 +370,7 @@ content
             errors: ['Expected 1 line break after opening tag (`<div>`), but no line breaks found.']
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <div attr>    </div>
@@ -371,6 +385,7 @@ content
             errors: ['Expected 1 line break after opening tag (`<div>`), but no line breaks found.']
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <div>singleline content</div>
@@ -390,6 +405,7 @@ singleline content
             ]
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <tr><td>singleline</td><td>children</td></tr>
@@ -417,6 +433,7 @@ children
             ]
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <div><!-- singleline comment --></div>
@@ -436,6 +453,7 @@ children
             ]
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <div   >   singleline element   </div   >
@@ -455,6 +473,7 @@ singleline element
             ]
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <div></div>
@@ -470,6 +489,7 @@ singleline element
             errors: ['Expected 1 line break after opening tag (`<div>`), but no line breaks found.']
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <div>    </div>
@@ -485,6 +505,7 @@ singleline element
             errors: ['Expected 1 line break after opening tag (`<div>`), but no line breaks found.']
         },
         {
+          filename: 'test.san',
             code: `
         <template>
           <Div class="panel">content</Div>

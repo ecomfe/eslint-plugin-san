@@ -47,7 +47,7 @@ export default {
   computed: {
     fullName () {
       this.data.set('firstName', 'lorem') // <- side effect
-      return `${this.data.set('firstName')} ${this.data.set('lastName')}`
+      return `${this.data.get('firstName')} ${this.data.get('lastName')}`
     },
     reversedArray () {
       return this.data.get('array').reverse() // <- side effect - orginal array is being mutated

@@ -6,6 +6,8 @@
 
 const rule = require('../../../lib/rules/order-in-components');
 const RuleTester = require('eslint').RuleTester;
+require('@typescript-eslint/parser');
+require('san-eslint-parser');
 
 const ruleTester = new RuleTester();
 
@@ -135,6 +137,54 @@ ruleTester.run('order-in-components', rule, {
     ],
 
     invalid: [
+        {
+            filename: 'test.ts',
+            code: `
+                // @san/component
+                class A {
+                    static computed = {
+                        a() {
+                            return 3;
+                        }
+                    };
+                    initData() {
+                        return {
+                            b: 1
+                        }
+                    }
+                }
+            `,
+            parser: require.resolve('san-eslint-parser'),
+            parserOptions: {
+                parser: require.resolve('@typescript-eslint/parser'),
+                ecmaVersion: 6,
+                sourceType: "module",
+                ecmaFeatures: {
+                    classes: true
+                }
+            },
+            output: `
+                // @san/component
+                class A {
+                    static computed = {
+                        a() {
+                            return 3;
+                        }
+                    };
+                    initData() {
+                        return {
+                            b: 1
+                        }
+                    }
+                }
+            `,
+            errors: [
+                {
+                    message: 'The "initData" property should be above the "computed" property on line 4.',
+                    line: 9
+                }
+            ]
+        },
         {
             filename: 'test.san',
             code: `

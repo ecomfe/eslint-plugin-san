@@ -147,6 +147,7 @@ tester.run('multiline-html-element-content-newline', rule, {
 
         // allowEmptyLines
         {
+            filename: 'test.san',
             code: `
             <template>
                 <div
@@ -157,6 +158,7 @@ tester.run('multiline-html-element-content-newline', rule, {
             options: [{allowEmptyLines: true, ignoreWhenEmpty: false}]
         },
         {
+            filename: 'test.san',
             code: `
             <template>
                 <div
@@ -169,6 +171,7 @@ tester.run('multiline-html-element-content-newline', rule, {
             options: [{allowEmptyLines: true}]
         },
         {
+            filename: 'test.san',
             code: `
             <template>
                 <div
@@ -209,6 +212,7 @@ tester.run('multiline-html-element-content-newline', rule, {
                 content</textarea>
         </template>`,
         {
+            filename: 'test.san',
             code: `
             <template>
                 <ignore-tag>content</ignore-tag>
@@ -227,6 +231,7 @@ tester.run('multiline-html-element-content-newline', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
             <template>
                 <IgnoreTag>content</IgnoreTag>
@@ -245,6 +250,7 @@ tester.run('multiline-html-element-content-newline', rule, {
             ]
         },
         {
+            filename: 'test.san',
             code: `
             <template>
                 <ignore-tag>content</ignore-tag>
@@ -273,6 +279,7 @@ tester.run('multiline-html-element-content-newline', rule, {
     ],
     invalid: [
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div
@@ -310,6 +317,7 @@ content
         },
         // spaces
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div
@@ -345,6 +353,7 @@ content
         },
         // elements
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div><div></div>
@@ -378,6 +387,7 @@ content
         },
         // contents
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div>multiline
@@ -396,6 +406,7 @@ multiline
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div>multiline content
@@ -410,6 +421,7 @@ multiline content
             errors: ['Expected 1 line break after opening tag (`<div>`), but no line breaks found.']
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div>
@@ -425,6 +437,7 @@ multiline content
         },
         // comments
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div><!--comment-->
@@ -445,6 +458,7 @@ multiline content
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div><!--comment
@@ -466,6 +480,7 @@ multiline content
         },
         // one error
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div>content
@@ -484,6 +499,7 @@ content
             errors: ['Expected 1 line break after opening tag (`<div>`), but no line breaks found.']
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div>
@@ -503,6 +519,7 @@ content
         },
         // multi
         {
+            filename: 'test.san',
             code: `
                 <template><div>content<div>content
                 content</div>content</div></template>
@@ -528,6 +545,7 @@ content
         },
         // multi line breaks
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div>
@@ -553,6 +571,7 @@ content
         },
         // allowEmptyLines
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div
@@ -576,6 +595,7 @@ content
             errors: ['Expected 1 line break after opening tag (`<div>`), but no line breaks found.']
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div>
@@ -610,6 +630,7 @@ content
         },
         // mustache
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div>{{content}}
@@ -631,6 +652,7 @@ content
         },
         // mix
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div>content
@@ -654,6 +676,7 @@ content
         },
         // start tag
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div
@@ -674,6 +697,7 @@ content
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div
@@ -694,6 +718,7 @@ content
             ]
         },
         {
+            filename: 'test.san',
             code: `
                 <template>
                     <div

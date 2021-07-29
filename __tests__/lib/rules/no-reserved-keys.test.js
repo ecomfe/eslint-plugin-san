@@ -102,23 +102,6 @@ ruleTester.run('no-reserved-keys', rule, {
             filename: 'test.js',
             code: `
                 san.defineComponent({
-                    dataTypes: {
-                        el: DataTypes.string
-                    }
-                })
-            `,
-            parserOptions: {ecmaVersion: 6},
-            errors: [
-                {
-                    message: "Key 'el' is reserved.",
-                    line: 4
-                }
-            ]
-        },
-        {
-            filename: 'test.js',
-            code: `
-                san.defineComponent({
                     attach() {
                         // ...
                     }
