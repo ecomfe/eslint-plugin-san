@@ -89,9 +89,10 @@ If you want to use custom parsers such as [babel-eslint](https://www.npmjs.com/p
 
 ### How does ESLint detect components?
 
-All component-related rules are applied to code that passes any of the following checks:
+All component-related rules are applied to code that passes any of the following checks by default:
 
-- `export default {}` in `.san` or `.js` file
+- `export default {}` and `san.defineComponent({})` in `.san/.js/.ts` file
+- `static template` and `template: '...'` in `.san/.js/.ts` file
 
 However, if you want to take advantage of the rules in any of your custom objects that are San components, you might need to use the special comment `// @san/component` that marks an object in the next line as a San component in any file, e.g.:
 
@@ -110,6 +111,29 @@ export default class UINoticeBar extends san.Component {
         }
     }
 }
+```
+
+Also, if you want to ignore the template checks, you can use the `/* eslint-disable */` and `/* eslint-enable */` block to wrap the `template` code block, e.g.:
+```js
+// @san/component
+export default class A {
+    /* eslint-disable */
+    static template = `
+        <div>${template}</div><div>
+    </div>`;
+    /* eslint-enable */
+    initData() {
+        return {
+            a: 1
+        }
+    }
+    static computed = {
+        a() {
+            return 3;
+        }
+    };
+}
+
 ```
 
 ### Disabling rules via `<!-- eslint-disable -->`

@@ -12,14 +12,14 @@
     ],
     "main": "lib/index.js",
     "scripts": {
-        "test": "jest",
-        "test:cover": "jest --coverage",
+        "test": "jest __tests__/lib/rules",
+        "test:cover": "jest __tests__/lib/rules --coverage",
         "docs:dev": "vuepress dev docs",
         "docs:build": "vuepress build docs"
     },
     "dependencies": {
         "eslint-utils": "^2.1.0",
-        "san-eslint-parser": "1.1.0"
+        "san-eslint-parser": "^1.3.0"
     },
     "devDependencies": {
         "@vuepress/plugin-pwa": "^1.7.1",

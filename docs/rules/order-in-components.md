@@ -65,21 +65,19 @@ export default {
       // 视图
       "template",
       "components",
+      "trimWhitespace",
+
+      // 事件
+      "messages",
 
       // 数据
       "dataTypes",
-      "initData",
       "computed",
       "filters",
-
-      // 消息
-      "messages",
+      "initData",
 
       // 生命周期
-      "LIFECYCLE_HOOKS",
-
-      // 其他
-      "trimWhitespace"
+      "LIFECYCLE_HOOKS"
     ]
   }]
 }
