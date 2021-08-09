@@ -175,7 +175,7 @@ tester.run('html-closing-bracket-newline', rule, {
                 <template>
                     <div
                         id=""
->
+                    >
                     </div>
                 </template>
             `,
@@ -245,7 +245,7 @@ tester.run('html-closing-bracket-newline', rule, {
                 <template>
                     <div
                         id=""
->
+                    >
                     </div>
                 </template>
             `,
@@ -302,7 +302,7 @@ tester.run('html-closing-bracket-newline', rule, {
                     <div
                         id="">
                     </div
->
+                    >
                 </template
                 >
             `,
@@ -331,9 +331,9 @@ tester.run('html-closing-bracket-newline', rule, {
                 <template
                 >
                     <div id=""
->
+                    >
                     </div
->
+                    >
                 </template
                 >
             `,

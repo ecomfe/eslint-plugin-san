@@ -42,15 +42,15 @@ ruleTester.run('order-in-components', rule, {
                     'template': '<div></div>',
                     'components': {},
                 
-                    // 数据
-                    'dataTypes': {},
-                    'initData'() {return {}},
-                    'computed': {},
-                    'filters': {},
-                
                     // 消息
                     'messages': {},
 
+                    // 数据
+                    'dataTypes': {},
+                    'computed': {},
+                    'filters': {},
+                    'initData'() {return {}},
+                
                     // 生命周期
                     'compiled'() {},
                     'inited'() {},
@@ -142,16 +142,16 @@ ruleTester.run('order-in-components', rule, {
             code: `
                 // @san/component
                 class A {
-                    static computed = {
-                        a() {
-                            return 3;
-                        }
-                    };
                     initData() {
                         return {
                             b: 1
                         }
                     }
+                    static computed = {
+                        a() {
+                            return 3;
+                        }
+                    };
                 }
             `,
             parser: require.resolve('san-eslint-parser'),
@@ -166,21 +166,21 @@ ruleTester.run('order-in-components', rule, {
             output: `
                 // @san/component
                 class A {
-                    static computed = {
-                        a() {
-                            return 3;
-                        }
-                    };
                     initData() {
                         return {
                             b: 1
                         }
                     }
+                    static computed = {
+                        a() {
+                            return 3;
+                        }
+                    };
                 }
             `,
             errors: [
                 {
-                    message: 'The "initData" property should be above the "computed" property on line 4.',
+                    message: 'The "computed" property should be above the "initData" property on line 4.',
                     line: 9
                 }
             ]
@@ -330,18 +330,14 @@ ruleTester.run('order-in-components', rule, {
             parserOptions,
             output: `
                 export default {
-                    computed: {},
+                    template: '<div></div>',
                     messages: {},
-                    template: '<div></div>'
+                    computed: {}
                 };
             `,
             errors: [
                 {
-                    message: 'The "computed" property should be above the "messages" property on line 3.',
-                    line: 4
-                },
-                {
-                    message: 'The "template" property should be above the "computed" property on line 4.',
+                    message: 'The "template" property should be above the "messages" property on line 3.',
                     line: 5
                 }
             ]

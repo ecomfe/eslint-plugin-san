@@ -82,7 +82,7 @@ tester.run('no-unused-components', rule, {
             filename: 'test.san',
             code: `<template>
         <div>
-          <component :is="'TheButton'" />
+          <component s-is="'TheButton'" />
         </div>
       </template>
       <script>
@@ -97,7 +97,7 @@ tester.run('no-unused-components', rule, {
             filename: 'test.san',
             code: `<template>
         <div>
-          <component is="TheButton" />
+          <component s-is="'TheButton'" />
         </div>
       </template>
       <script>
@@ -112,7 +112,7 @@ tester.run('no-unused-components', rule, {
             filename: 'test.san',
             code: `<template>
         <div>
-          <theButton />
+          <component s-is="theButton" />
         </div>
       </template>
       <script>
@@ -127,7 +127,7 @@ tester.run('no-unused-components', rule, {
             filename: 'test.san',
             code: `<template>
         <div>
-          <component is="theButton" />
+          <component s-is="The-button" />
         </div>
       </template>
       <script>
@@ -142,127 +142,7 @@ tester.run('no-unused-components', rule, {
             filename: 'test.san',
             code: `<template>
         <div>
-          <the-button />
-        </div>
-      </template>
-      <script>
-        export default {
-          components: {
-            TheButton
-          }
-        }
-      </script>`
-        },
-        {
-            filename: 'test.san',
-            code: `<template>
-        <div>
-          <the-button />
-        </div>
-      </template>
-      <script>
-        export default {
-          components: {
-            theButton
-          }
-        }
-      </script>`
-        },
-        {
-            filename: 'test.san',
-            code: `<template>
-        <div>
-          <component is="the-button" />
-        </div>
-      </template>
-      <script>
-        export default {
-          components: {
-            TheButton
-          }
-        }
-      </script>`
-        },
-        {
-            filename: 'test.san',
-            code: `<template>
-        <div>
-          <The-button />
-        </div>
-      </template>
-      <script>
-        export default {
-          components: {
-            TheButton
-          }
-        }
-      </script>`
-        },
-        {
-            filename: 'test.san',
-            code: `<template>
-        <div>
-          <component is="The-button" />
-        </div>
-      </template>
-      <script>
-        export default {
-          components: {
-            TheButton
-          }
-        }
-      </script>`
-        },
-        {
-            filename: 'test.san',
-            code: `<template>
-        <div>
-          <The-Button />
-        </div>
-      </template>
-      <script>
-        export default {
-          components: {
-            TheButton
-          }
-        }
-      </script>`
-        },
-        {
-            filename: 'test.san',
-            code: `<template>
-        <div>
-          <component is="The-Button" />
-        </div>
-      </template>
-      <script>
-        export default {
-          components: {
-            TheButton
-          }
-        }
-      </script>`
-        },
-        {
-            filename: 'test.san',
-            code: `<template>
-        <div>
-          <the-Button />
-        </div>
-      </template>
-      <script>
-        export default {
-          components: {
-            TheButton
-          }
-        }
-      </script>`
-        },
-        {
-            filename: 'test.san',
-            code: `<template>
-        <div>
-          <component is="the-Button" />
+          <component s-is="the-Button" />
         </div>
       </template>
       <script>
@@ -294,8 +174,8 @@ tester.run('no-unused-components', rule, {
             filename: 'test.san',
             code: `<template>
         <div>
-          <component is="the-button" />
-          <component is="next_Button" />
+          <component s-is="the-button" />
+          <component s-is="next_Button" />
         </div>
       </template>
       <script>
@@ -312,7 +192,7 @@ tester.run('no-unused-components', rule, {
             code: `<template>
         <div>
           <h2>Lorem ipsum</h2>
-          <component is="TheButton" />
+          <component s-is="TheButton" />
         </div>
       </template>
       <script>
@@ -348,33 +228,6 @@ tester.run('no-unused-components', rule, {
       </script>`
         },
 
-        {
-            filename: 'test.san',
-            code: `
-      <template>
-        <div>
-          <component :is="dynamicComponent"></component>
-        </div>
-      </template>
-      <script>
-        import Foo from 'components/Foo';
-        import Bar from 'components/Bar';
-
-        export default {
-          components: {
-            Foo,
-            Bar
-          },
-          computed: {
-            dynamicComponent() {
-              return '...'
-            }
-          }
-        }
-      </script>`,
-            options: [{ignoreWhenBindingPresent: true}]
-        },
-
         // Ignore when `render` is used instead of template
         {
             filename: 'test.san',
@@ -390,44 +243,20 @@ tester.run('no-unused-components', rule, {
         }
       </script>`
         },
-        {
-            filename: 'test.san',
-            code: `
-      <template src="./test.html" />
-      <script>
-        export default {
-          components: {
-            TheButton
-          }
-        }
-      </script>`
-        },
-        {
-            filename: 'test.san',
-            code: `
-      <template src="./test.html"></template>
-      <script>
-        export default {
-          components: {
-            TheButton
-          }
-        }
-      </script>`
-        },
 
-        // empty `:is`
+        // empty `s-is`
         {
             filename: 'test.san',
             code: `
       <template>
-        <component :is=""></component>
+        <component s-is=""></component>
       </template>`
         },
         {
             filename: 'test.san',
             code: `
       <template>
-        <component :is></component>
+        <component s-is></component>
       </template>`
         },
 
@@ -491,6 +320,69 @@ tester.run('no-unused-components', rule, {
         }
     ],
     invalid: [
+        {
+            filename: 'test.san',
+            code: `<template>
+        <div>
+          <the-button />
+        </div>
+      </template>
+      <script>
+        export default {
+          components: {
+            theButton
+          }
+        }
+      </script>`,
+          errors: [
+              {
+                  message: 'The "theButton" component has been registered but not used.',
+                  line: 9
+              }
+          ]
+        },
+        {
+            filename: 'test.san',
+            code: `<template>
+        <div>
+          <the-button />
+        </div>
+      </template>
+      <script>
+        export default {
+          components: {
+            TheButton
+          }
+        }
+      </script>`,
+          errors: [
+              {
+                  message: 'The "TheButton" component has been registered but not used.',
+                  line: 9
+              }
+          ]
+        },
+        {
+            filename: 'test.san',
+            code: `<template>
+        <div>
+          <theButton />
+        </div>
+      </template>
+      <script>
+        export default {
+          components: {
+            TheButton
+          }
+        }
+      </script>`,
+            errors: [
+                {
+                    message: 'The "TheButton" component has been registered but not used.',
+                    line: 9
+                }
+            ]
+        },
         {
             filename: 'test.san',
             code: `
@@ -562,50 +454,13 @@ tester.run('no-unused-components', rule, {
                 }
             ]
         },
-        // Setting: ignoreWhenBindingPresent
-        {
-            filename: 'test.san',
-            code: `
-      <template>
-        <div>
-          <component :is="dynamicComponent"></component>
-        </div>
-      </template>
-      <script>
-        import Foo from 'components/Foo';
-        import Bar from 'components/Bar';
-
-        export default {
-          components: {
-            Foo,
-            Bar
-          },
-          computed: {
-            dynamicComponent() {
-              return '...'
-            }
-          }
-        }
-      </script>`,
-            options: [{ignoreWhenBindingPresent: false}],
-            errors: [
-                {
-                    message: 'The "Foo" component has been registered but not used.',
-                    line: 13
-                },
-                {
-                    message: 'The "Bar" component has been registered but not used.',
-                    line: 14
-                }
-            ]
-        },
 
         // empty `:is`
         {
             filename: 'test.san',
             code: `
       <template>
-        <component :is=""></component>
+        <component s-is=""></component>
       </template>
       <script>
         export default {
@@ -625,7 +480,7 @@ tester.run('no-unused-components', rule, {
             filename: 'test.san',
             code: `
       <template>
-        <component :is></component>
+        <component s-is></component>
       </template>
       <script>
         export default {
