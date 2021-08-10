@@ -1,12 +1,6 @@
 name: blog deploy
 
-on: 
-  push:
-    branches: 
-      - master
-  pull_request:
-    branches: 
-      - master
+on: workflow_dispatch
 
 jobs:
   build-deploy:
@@ -20,6 +14,6 @@ jobs:
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2.5.0
       env:
-        ACTIONS_DEPLOY_KEY: ${{secrets.ACTIONS_DEPLOY_KEY}}
+        PERSONAL_TOKEN: ${{secrets.PERSONAL_TOKEN}}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: ./docs/.sdoc/dist
