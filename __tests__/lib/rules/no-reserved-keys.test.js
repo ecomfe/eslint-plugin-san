@@ -94,6 +94,15 @@ ruleTester.run('no-reserved-keys', rule, {
                 };
             `,
             parserOptions
+        },
+        {
+            filename: 'test.js',
+            code: `
+                san.defineComponent({
+                    el() {}
+                })
+            `,
+            parserOptions: {ecmaVersion: 6}
         }
     ],
 
@@ -111,21 +120,6 @@ ruleTester.run('no-reserved-keys', rule, {
             errors: [
                 {
                     message: "Key 'attach' is reserved.",
-                    line: 3
-                }
-            ]
-        },
-        {
-            filename: 'test.js',
-            code: `
-                san.defineComponent({
-                    el() {}
-                })
-            `,
-            parserOptions: {ecmaVersion: 6},
-            errors: [
-                {
-                    message: "Key 'el' is reserved.",
                     line: 3
                 }
             ]
