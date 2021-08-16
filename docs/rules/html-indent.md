@@ -28,7 +28,8 @@ This rule enforces a consistent indentation style in `<template>`. The default s
   <div class="foo">
     Hello.
   </div>
-  <div class="foo"
+  <div 
+    class="foo"
     foo="{{bar}}"
   >
     World.

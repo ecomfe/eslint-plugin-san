@@ -4,7 +4,8 @@
 * Remove a rule: `no-template-key` and `no-shared-component-data`.
 
 ## Add
-* Add a feature in 42 rules to parse the template in ts/js files.
+* Add a feature in all rules to parse the template in ts/js files.
+* Add a feature to parse the interpolation in attribute.
 * Add a rule [initdata-in-component](https://github.com/ecomfe/eslint-plugin-san/blob/main/docs/rules/initdata-in-component.md).
 * Add a rule [no-expression-in-template-literals](https://github.com/ecomfe/eslint-plugin-san/blob/main/docs/rules/no-expression-in-template-literals.md).
 * Add a rule [boolean-value](https://github.com/ecomfe/eslint-plugin-san/blob/main/docs/rules/boolean-value.md)

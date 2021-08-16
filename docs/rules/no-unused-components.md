@@ -32,8 +32,8 @@ This rule reports components that haven't been used in the template.
 
   export default {
     components: {
-      TheButton,
-      TheModal
+      'the-button': TheButton,
+      'the-modal': TheModal
     }
   }
 </script>
