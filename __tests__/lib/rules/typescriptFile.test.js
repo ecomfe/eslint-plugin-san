@@ -96,7 +96,7 @@ function runWithMultiRules(name, rulesName, cb) {
     })
 }
 
-// runWithMultiRules('comment-directive', [
-//     'max-attributes-per-line',
-//     'comment-directive'
-// ], messages => {assert(messages.length === 0);});
+runWithMultiRules('comment-directive', [
+    'max-attributes-per-line',
+    'comment-directive'
+], messages => {assert(messages.length === 0);});
