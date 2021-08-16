@@ -18,14 +18,22 @@ This rule report variable definitions of s-for directives or scope attributes if
 ```vue
 <template>
   <!-- ✓ GOOD -->
-  <ol s-for="i in 5">
-    <li>{{ i }}</li>
-  </ol>
+  <div s-for="i in 5">
+    <div>{{ i }}</li>
+  </div>
+
+  <div s-for="i in 5">
+    <div class="{{i}}"></li>
+  </div>
 
   <!-- ✗ BAD -->
-  <ol s-for="i in 5">
-    <li>item</li>
-  </ol>
+  <div s-for="i in 5">
+    <div>item</div>
+  </div>
+
+  <div s-for="i in 5">
+    <div class="i"></li>
+  </div>
 </template>
 ```
 
