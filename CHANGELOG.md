@@ -1,4 +1,4 @@
-### V2.0.0
+### V1.0.0
 
 ## Remove
 * Remove a rule: `no-template-key` and `no-shared-component-data`.
