@@ -16,4 +16,4 @@ jobs:
       env:
         PERSONAL_TOKEN: ${{secrets.PERSONAL_TOKEN}}
         PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./docs/.sdoc/dist
+        PUBLISH_DIR: ./docs/.vuepress/dist
