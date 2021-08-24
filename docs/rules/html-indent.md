@@ -60,7 +60,7 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 
 ```json
 {
-  "san/html-indent": ["error", type, {
+  "san/html-indent": ["error", {
     "attribute": 1,
     "baseIndent": 1,
     "closeBracket": 0,

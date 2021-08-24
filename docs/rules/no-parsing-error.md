@@ -34,10 +34,13 @@ Then reports syntax errors if exist.
   <div class={{*abc*}} / on-click="def(">
     </span>
   </div id="ghi">
+  <span s-html="'&not'" />
 </template>
 ```
 
 </eslint-code-block>
+
+> character reference must be terminated by a U+003B (;) code point. https://html.spec.whatwg.org/multipage/parsing.html#hexademical-character-reference-state
 
 ## :wrench: Options
 

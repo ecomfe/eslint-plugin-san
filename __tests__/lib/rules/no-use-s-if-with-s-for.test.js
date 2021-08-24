@@ -39,12 +39,12 @@ tester.run('no-use-s-if-with-s-for', rule, {
         },
         {
             filename: 'test.san',
-            code: '<template><div><div s-for="(x,i) in list" s-if="i%2==0"></div></div></template>',
+            code: '<template><div><div s-for="x,i in list" s-if="i%2==0"></div></div></template>',
             options: [{allowUsingIterationVar: true}]
         },
         {
             filename: 'test.san',
-            code: '<template><div s-if="shown"><div s-for="(x,i) in list"></div></div></template>'
+            code: '<template><div s-if="shown"><div s-for="x,i in list"></div></div></template>'
         },
         {
             filename: 'test.san',
@@ -53,7 +53,7 @@ tester.run('no-use-s-if-with-s-for', rule, {
                     <ul>
                         <li
                             s-for="user in activeUsers"
-                            :key="user.id"
+                            key="{{user.id}}"
                         >
                             {{ user.name }}
                         <li>
@@ -68,7 +68,7 @@ tester.run('no-use-s-if-with-s-for', rule, {
                     <ul s-if="shouldShowUsers">
                         <li
                             s-for="user in users"
-                            :key="user.id"
+                            key="{{user.id}}"
                         >
                             {{ user.name }}
                         <li>
@@ -78,37 +78,17 @@ tester.run('no-use-s-if-with-s-for', rule, {
         },
         {
             filename: 'test.san',
-            code: '<template><div><div s-for="{x} in list" s-if="x"></div></div></template>',
+            code: '<template><div><div s-for="x in list" s-if="x"></div></div></template>',
             options: [{allowUsingIterationVar: true}]
         },
         {
             filename: 'test.san',
-            code: '<template><div><div s-for="{x,y,z} in list" s-if="y.foo"></div></div></template>',
+            code: '<template><div><div s-for="x,y in list" s-if="y.foo"></div></div></template>',
             options: [{allowUsingIterationVar: true}]
         },
         {
             filename: 'test.san',
-            code: '<template><div><div s-for="({x,y,z},i) in list" s-if="i%2==0"></div></div></template>',
-            options: [{allowUsingIterationVar: true}]
-        },
-        {
-            filename: 'test.san',
-            code: '<template><div s-if="shown"><div s-for="({x,y,z},i) in list"></div></div></template>'
-        },
-        {
-            filename: 'test.san',
-            code: `
-                <template>
-                    <ul>
-                        <li
-                            s-for="{user} in activeUsers"
-                            :key="user.id"
-                        >
-                            {{ user.name }}
-                        <li>
-                    </ul>
-                </template>
-            `
+            code: '<template><div s-if="shown"><div s-for="x, y in list"></div></div></template>'
         },
         {
             filename: 'test.san',
@@ -116,8 +96,8 @@ tester.run('no-use-s-if-with-s-for', rule, {
                 <template>
                     <ul s-if="shouldShowUsers">
                         <li
-                            s-for="{user} in users"
-                            :key="user.id"
+                            s-for="user in users"
+                            key="user1"
                         >
                             {{ user.name }}
                         <li>
@@ -205,7 +185,7 @@ tester.run('no-use-s-if-with-s-for', rule, {
         },
         {
             filename: 'test.san',
-            code: '<template><div><div s-for="{x,y,z} in list" s-if="z.isActive"></div></div></template>',
+            code: '<template><div><div s-for="y,z in list" s-if="z.isActive"></div></div></template>',
             errors: [
                 {
                     message:
@@ -220,9 +200,9 @@ tester.run('no-use-s-if-with-s-for', rule, {
                 <template>
                     <ul>
                         <li
-                            s-for="{foo, bar, user} in users"
+                            s-for="user in users"
                             s-if="user.isActive"
-                            :key="user.id"
+                            key="user"
                         >
                             {{ user.name }}
                         <li>
@@ -243,9 +223,9 @@ tester.run('no-use-s-if-with-s-for', rule, {
                 <template>
                     <ul>
                         <li
-                            s-for="{foo, bar, user} in users"
+                            s-for="user in users"
                             s-if="shouldShowUsers"
-                            :key="user.id"
+                            key="user"
                         >
                             {{ user.name }}
                         <li>
@@ -261,7 +241,7 @@ tester.run('no-use-s-if-with-s-for', rule, {
         },
         {
             filename: 'test.san',
-            code: '<template><div><div s-for="{x} in list()" s-if="x.isActive"></div></div></template>',
+            code: '<template><div><div s-for="x in list()" s-if="x.isActive"></div></div></template>',
             errors: [
                 {
                     message:
