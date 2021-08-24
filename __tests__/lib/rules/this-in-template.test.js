@@ -66,27 +66,27 @@ function createValidTests(prefix, options) {
         },
         {
             filename: 'test.san',
-            code: `<template><div s-for="x of ${prefix}xs">{{this.x}}</div></template><!-- ${comment} -->`,
+            code: `<template><div s-for="x in ${prefix}xs">{{this.x}}</div></template><!-- ${comment} -->`,
             options
         },
         {
             filename: 'test.san',
-            code: `<template><div s-for="x of ${prefix}xs">{{this.x()}}</div></template><!-- ${comment} -->`,
+            code: `<template><div s-for="x in ${prefix}xs">{{this.x()}}</div></template><!-- ${comment} -->`,
             options
         },
         {
             filename: 'test.san',
-            code: `<template><div s-for="x of ${prefix}xs">{{this.x.y()}}</div></template><!-- ${comment} -->`,
+            code: `<template><div s-for="x in ${prefix}xs">{{this.x.y()}}</div></template><!-- ${comment} -->`,
             options
         },
         {
             filename: 'test.san',
-            code: `<template><div s-for="x of ${prefix}xs">{{this.x['foo']}}</div></template><!-- ${comment} -->`,
+            code: `<template><div s-for="x in ${prefix}xs">{{this.x['foo']}}</div></template><!-- ${comment} -->`,
             options
         },
         {
             filename: 'test.san',
-            code: `<template><div s-for="x of ${prefix}xs">{{this['x']}}</div></template><!-- ${comment} -->`,
+            code: `<template><div s-for="x in ${prefix}xs">{{this['x']}}</div></template><!-- ${comment} -->`,
             options
         },
         {

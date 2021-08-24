@@ -1,3 +1,12 @@
+### V1.0.1
+## Add
+* Add message to notation if the component name is host html tag name in `no-unused-components`.
+## Fix
+* Fix `indent-common` cannot check and fix the code of .ts/.js file.
+* Fix a bug that `no-expression-in-template-literals` parse template without value incorrectly.
+* Fix a bug that `no-unused-vars` parse variables of `s-for` incorrectly.
+
+
 ### V1.0.0
 
 ## Remove

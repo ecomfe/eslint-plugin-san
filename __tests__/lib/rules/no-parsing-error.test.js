@@ -288,13 +288,13 @@ tester.run('no-parsing-error', rule, {
             
             filename: 'test.san',
             code: '<template><div s-for="foo">hello</div></template>',
-            errors: [{message: 'Parsing error: Unexpected end of expression.', column: 26}]
+            errors: [{message: "Parsing error: 'foo' is invalid directive for s-for.", column: 23}]
         },
         {
             
             filename: 'test.san',
             code: '<template><div s-for="foo() in list">hello</div></template>',
-            errors: [{message: 'Parsing error: Unexpected token (.', column: 26}]
+            errors: [{message: "Parsing error: 'foo() in list' is invalid directive for s-for.", column: 23}]
         },
         {
             filename: 'test.san',

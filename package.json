@@ -1,6 +1,6 @@
 {
     "name": "eslint-plugin-san",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Official ESLint plugin for San",
     "author": "ecomfe-core",
     "keywords": [
@@ -19,7 +19,7 @@
     },
     "dependencies": {
         "eslint-utils": "^2.1.0",
-        "san-eslint-parser": "^2.0.1"
+        "san-eslint-parser": "^2.0.2"
     },
     "devDependencies": {
         "@vuepress/plugin-pwa": "^1.7.1",
