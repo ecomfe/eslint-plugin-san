@@ -34,7 +34,7 @@ Then reports syntax errors if exist.
   <div class={{*abc*}} / on-click="def(">
     </span>
   </div id="ghi">
-  <span s-html="'&not'" />
+  <span s-html="'&#xe733'" />
 </template>
 ```
 

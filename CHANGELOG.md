@@ -1,3 +1,9 @@
+### V1.0.2
+## Fix
+* Fix a bug that `no-unused-components` check every component name as a host html tag name.
+* Fix a bug that `no-unused-vars` report incorrect message when the second variable used in `s-for`.
+* Fix a bug that `no-unused-vars` report incorrect message when the `var-*` used.
+
 ### V1.0.1
 ## Add
 * Add message to notation if the component name is host html tag name in `no-unused-components`.

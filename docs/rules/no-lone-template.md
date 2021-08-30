@@ -38,11 +38,9 @@ Nothing.
 
 ## :couple: Related Rules
 
-- [san/no-template-key]
 - [no-lone-blocks]
 
 [no-lone-blocks]: https://eslint.org/docs/rules/no-lone-blocks
-[san/no-template-key]: ./no-template-key.md
 
 ## :mag: Implementation
 

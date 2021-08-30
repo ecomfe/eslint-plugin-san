@@ -13,7 +13,7 @@ This rule prevents to use duplicated names.
 
 ## :book: Rule Details
 
-This rule is aimed at preventing duplicated property names in `data`.
+This rule is aimed at preventing duplicated property names in `this.data` of a san instance.
 
 <eslint-code-block :rules="{'san/no-dupe-keys': ['error']}">
 

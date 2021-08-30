@@ -13,6 +13,9 @@
 const RuleTester = require('eslint').RuleTester;
 const rule = require('../../../lib/rules/no-unused-components');
 
+require('@typescript-eslint/parser');
+require('san-eslint-parser');
+
 // ------------------------------------------------------------------------------
 // Tests
 // ------------------------------------------------------------------------------
@@ -27,6 +30,52 @@ const tester = new RuleTester({
 
 tester.run('no-unused-components', rule, {
     valid: [
+        {
+          filename: 'test.ts',
+          code: `
+            let a = '<div></div>'
+            // @san/component
+            export default class Base {
+                static template = a;
+                components = {
+                    'the-button': F, // Unused component
+                    'the-modal': F // Used component
+                }
+            }
+          `,
+          parser: require.resolve('san-eslint-parser'),
+          parserOptions: {
+              parser: require.resolve('@typescript-eslint/parser'),
+              ecmaVersion: 6,
+              sourceType: "module",
+              ecmaFeatures: {
+                  classes: true
+              }
+          },
+        },
+        {
+          filename: 'test.ts',
+          code: `
+            let a = require('./index.html')
+            // @san/component
+            export default class Base {
+                static template = a;
+                components = {
+                    'the-button': F, // Unused component
+                    'the-modal': F // Used component
+                }
+            }
+          `,
+          parser: require.resolve('san-eslint-parser'),
+          parserOptions: {
+              parser: require.resolve('@typescript-eslint/parser'),
+              ecmaVersion: 6,
+              sourceType: "module",
+              ecmaFeatures: {
+                  classes: true
+              }
+          },
+        },
         {
             filename: 'test.san',
             code: `<template><div>Lorem ipsum</div></template>`

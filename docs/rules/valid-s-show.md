@@ -15,8 +15,6 @@ This rule checks whether every `s-show` directive is valid.
 
 This rule reports `s-show` directives in the following cases:
 
-- The directive has that argument. E.g. `<div s-show:aaa></div>`
-- The directive has that modifier. E.g. `<div s-show.bbb></div>`
 - The directive does not have that attribute value. E.g. `<div s-show></div>`
 
 <eslint-code-block :rules="{'san/valid-s-show': ['error']}">
@@ -28,8 +26,6 @@ This rule reports `s-show` directives in the following cases:
 
   <!-- ✗ BAD -->
   <div s-show/>
-  <div s-show:aaa="foo"/>
-  <div s-show.bbb="foo"/>
 </template>
 ```
 

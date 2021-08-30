@@ -5,13 +5,10 @@ title: san/valid-components-name
 description: disallow expression in the template in template literals
 ---
 # san/valid-components-name
-> disallow expression in the template in template literals
-
-- :gear: This rule is included in `"plugin:san/recommended"`.
+- :gear: This rule is included in `"plugin:san/essential"`.
 
 ## :book: Rule Details
-
-disallow expression in the template in template literals
+> The component name must be kebab-case, it will not work when the component name is camelCase or PascalCase.
 
 <eslint-code-block :rules="{'san/valid-components-name': ['error']}">
 

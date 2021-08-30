@@ -33,6 +33,14 @@ tester.run('no-parsing-error', rule, {
         },
         {
             filename: 'test.san',
+            code: '<template><div a="{=123=}"></div></template>'
+        },
+        {
+            filename: 'test.san',
+            code: '<template><slot a="{=123=}"></slot></template>'
+        },
+        {
+            filename: 'test.san',
             code: '<template>{{a + b + c}}</template>'
         },
         {
@@ -249,6 +257,26 @@ tester.run('no-parsing-error', rule, {
         '<template><div>{{ }}</div></template>'
     ],
     invalid: [
+        {
+            filename: 'test.san',
+            code: '<template><div s-if="{=123=}"></div></template>',
+            errors: ['Parsing error: Unexpected token =.']
+        },
+        {
+            filename: 'test.san',
+            code: '<template><slot s-for="{=123=}"></slot></template>',
+            errors: ["Parsing error: '{=123=}' is invalid directive for s-for."]
+        },
+        {
+            filename: 'test.san',
+            code: '<template><slot s-if="{=123=}"></slot></template>',
+            errors: ['Parsing error: Unexpected token =.']
+        },
+        {
+            filename: 'test.san',
+            code: '<template><slot var-n="{=123=}"></slot></template>',
+            errors: ['Parsing error: Unexpected token =.']
+        },
         {
             
             filename: 'test.san',

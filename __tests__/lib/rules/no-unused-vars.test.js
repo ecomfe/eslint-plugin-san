@@ -25,7 +25,19 @@ tester.run('no-unused-vars', rule, {
     valid: [
         {
             filename: 'test.san',
+            code: '<template><ol s-for="i in 5"><li><slot var-x="i"></slot></li></ol></template>'
+        },
+        {
+            filename: 'test.san',
             code: '<template><ol s-for="i in 5"><li>{{i}}</li></ol></template>'
+        },
+        {
+            filename: 'test.san',
+            code: '<template><ol s-for="i, j in 5"><li>{{j}}</li></ol></template>'
+        },
+        {
+            filename: 'test.san',
+            code: '<template><ol s-for="i, j in 5" class="{{j}}"><li>1</li></ol></template>'
         },
         {
             filename: 'test.san',

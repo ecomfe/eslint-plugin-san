@@ -14,8 +14,6 @@ When using the data property on a component , the value must be a function that 
 
 ## :book: Rule Details
 
-When the value of `data` is an object, it’s shared across all instances of a component.
-
 <eslint-code-block fix :rules="{'san/initdata-in-component': ['error']}">
 
 ```vue
