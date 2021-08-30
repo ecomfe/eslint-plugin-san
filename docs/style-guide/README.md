@@ -44,6 +44,8 @@
 
 避免和 HTML 保留字段冲突导致错误。
 
+注意⚠️：components 中的自定义组件名称必须是 `kebab-case`,否则无法正常渲染
+
 ```html
 // bad
 <template>
@@ -70,7 +72,7 @@ import OtherComponent from './OtherComponent.san';
 
 export default {
     components: {
-        OtherComponent
+        'other-component': OtherComponent
     }
 }
 </script>
