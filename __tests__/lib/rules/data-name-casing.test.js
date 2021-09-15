@@ -66,7 +66,10 @@ tester.run('data-name-casing', rule, {
                         },
                         'b_text'() {
                             return this.data.get('text') + 2;
-                        }
+                        },
+                        'CText'() {
+                            return this.data.get('text') + 3;
+                        },
                     },
                     initData() {
                         return {
@@ -96,8 +99,13 @@ tester.run('data-name-casing', rule, {
                     column: 25,
                 },
                 {
+                    message: "computed 'CText' must be camel case",
+                    line: 14,
+                    column: 25,
+                },
+                {
                     message: "initData 's-text' must be camel case",
-                    line: 18,
+                    line: 21,
                     column: 29,
                 }
             ]

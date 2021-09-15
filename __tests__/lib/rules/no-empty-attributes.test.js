@@ -43,7 +43,6 @@ tester.run('no-empty-attributes', rule, {
                         <div class="a"></div>
                         <div style="b"></div>
                         <div attr=""></div>
-                        <div attr></div>
                     </div>
                 </template>
             `
@@ -68,10 +67,8 @@ tester.run('no-empty-attributes', rule, {
             code: `
                 <template>
                     <div>
-                        <div class=""></div>
+                        <div class=" "></div>
                         <div style=""></div>
-                        <div class></div>
-                        <div style></div>
                     </div>
                 </template>
             `,
@@ -84,16 +81,6 @@ tester.run('no-empty-attributes', rule, {
                 {
                     message: "disallow attribute 'style' is empty",
                     line: 5,
-                    column: 30,
-                },
-                {
-                    message: "disallow attribute 'class' is empty",
-                    line: 6,
-                    column: 30,
-                },
-                {
-                    message: "disallow attribute 'style' is empty",
-                    line: 7,
                     column: 30,
                 }
             ],
