@@ -95,9 +95,9 @@ This rule enforces a line break before and after the contents of a multiline ele
   All inline non void elements can be found [here](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/utils/inline-non-void-elements.json).
 :::
 
-### `"ignores": ["VueComponent", "pre", "textarea"]`
+### `"ignores": ["SanComponent", "pre", "textarea"]`
 
-<eslint-code-block fix :rules="{'san/multiline-html-element-content-newline': ['error', { ignores: ['VueComponent', 'pre', 'textarea'] }]}">
+<eslint-code-block fix :rules="{'san/multiline-html-element-content-newline': ['error', { ignores: ['SanComponent', 'pre', 'textarea'] }]}">
 
 ```vue
 <template>
