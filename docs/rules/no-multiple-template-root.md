@@ -62,5 +62,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-multiple-template-root.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-multiple-template-root.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-multiple-template-root.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-multiple-template-root.test.js)

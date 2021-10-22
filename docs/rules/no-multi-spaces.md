@@ -74,5 +74,5 @@ This rule aims at removing multiple spaces in tags, which are not used for inden
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-multi-spaces.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-multi-spaces.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-multi-spaces.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-multi-spaces.test.js)

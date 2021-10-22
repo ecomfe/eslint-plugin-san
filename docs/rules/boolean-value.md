@@ -98,5 +98,5 @@ The second argument is optional: if provided, it must be an object with a `"neve
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/boolean-value.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/boolean-value.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/boolean-value.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/boolean-value.test.js)

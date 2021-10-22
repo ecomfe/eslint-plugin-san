@@ -63,5 +63,5 @@ This rule aims at preventing usage of `this` in San templates.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/this-in-template.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/this-in-template.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/this-in-template.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/this-in-template.test.js)

@@ -37,5 +37,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-duplicate-attributes.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/__tests__/lib/rules/no-duplicate-attributes.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-duplicate-attributes.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/__tests__/lib/rules/no-duplicate-attributes.test.js)

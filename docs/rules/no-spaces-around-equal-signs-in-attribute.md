@@ -45,5 +45,5 @@ HTML5 allows spaces around equal signs. But space-less is easier to read, and gr
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-spaces-around-equal-signs-in-attribute.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-spaces-around-equal-signs-in-attribute.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-spaces-around-equal-signs-in-attribute.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-spaces-around-equal-signs-in-attribute.test.js)

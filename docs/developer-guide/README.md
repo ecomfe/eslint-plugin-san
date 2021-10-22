@@ -45,9 +45,9 @@ The `san-eslint-parser` provides few useful parser services, to help traverse th
 - `context.parserServices.defineTemplateBodyVisitor(visitor, scriptVisitor)`
 - `context.parserServices.getTemplateBodyTokenStore()`
 
-Check out an [example rule](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/mustache-interpolation-spacing.js) to get a better understanding of how these work.
+Check out an [example rule](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/mustache-interpolation-spacing.js) to get a better understanding of how these work.
 
-Please be aware that regarding what kind of code examples you'll write in tests, you'll have to accordingly setup the parser in `RuleTester` (you can do it on per test case basis though). [See an example here](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/attribute-hyphenation.js#L19)
+Please be aware that regarding what kind of code examples you'll write in tests, you'll have to accordingly setup the parser in `RuleTester` (you can do it on per test case basis though). [See an example here](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/attribute-hyphenation.test.js#L19)
 
 If you'll stuck, remember there are plenty of rules you can learn from already, and if you can't find the right solution - don't hesitate to reach out in issues. We're happy to help!
 

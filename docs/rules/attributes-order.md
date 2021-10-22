@@ -190,5 +190,5 @@ This rule aims to enforce ordering of component attributes. The default order is
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomefe/eslint-plugin-san/blob/master/lib/rules/attributes-order.js)
-- [Test source](https://github.com/ecomefe/eslint-plugin-san/blob/master/tests/lib/rules/attributes-order.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/attributes-order.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/attributes-order.test.js)

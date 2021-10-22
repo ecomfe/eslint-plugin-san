@@ -65,5 +65,5 @@ This rule requires that the class attribute and style attribute cannot be empty 
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-empty-attributes.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/__tests__/lib/rules/no-empty-attributes.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-empty-attributes.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/no-empty-attributes.test.js)
