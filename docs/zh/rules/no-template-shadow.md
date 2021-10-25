@@ -17,7 +17,7 @@ description: disallow variable declarations from shadowing variables declared in
 
 <eslint-code-block :rules="{'san/no-template-shadow': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div s-for="i in 5"></div>

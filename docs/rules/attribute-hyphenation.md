@@ -16,7 +16,7 @@ This rule enforces using hyphenated attribute names on custom components in San 
 
 <eslint-code-block fix :rules="{'san/attribute-hyphenation': ['error', 'always']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent my-prop="prop" />
@@ -49,7 +49,7 @@ It errors on upper case letters.
 
 <eslint-code-block fix :rules="{'san/attribute-hyphenation': ['error', 'always']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent my-prop="prop" />
@@ -66,7 +66,7 @@ It errors on hyphens except `data-`, `aria-` and `slot-scope`.
 
 <eslint-code-block fix :rules="{'san/attribute-hyphenation': ['error', 'never']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent myProp="prop" />
@@ -86,7 +86,7 @@ Don't use hyphenated name but allow custom attributes
 
 <eslint-code-block fix :rules="{'san/attribute-hyphenation': ['error', 'never', { ignore: ['custom-prop']}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent myProp="prop" />

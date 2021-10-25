@@ -16,7 +16,7 @@ description: enforce end tag style
 
 <eslint-code-block fix :rules="{'san/html-end-tags': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div></div>

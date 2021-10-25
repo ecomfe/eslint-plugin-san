@@ -21,7 +21,7 @@ This rule reports `s-else-if` directives in the following cases:
 
 <eslint-code-block :rules="{'san/valid-s-else-if': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div s-if="foo"/>

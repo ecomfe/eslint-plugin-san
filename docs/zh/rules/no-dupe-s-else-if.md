@@ -15,7 +15,7 @@ description: disallow duplicate conditions in `s-if` / `s-else-if` chains
 
 <eslint-code-block :rules="{'san/no-dupe-s-else-if': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✗ BAD -->
   <div s-if="isSomething(x)" />
@@ -55,7 +55,7 @@ description: disallow duplicate conditions in `s-if` / `s-else-if` chains
 
 <eslint-code-block :rules="{'san/no-dupe-s-else-if': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✗ BAD -->
   <div s-if="a || b" />

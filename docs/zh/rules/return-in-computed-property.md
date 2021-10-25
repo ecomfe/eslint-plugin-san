@@ -15,7 +15,7 @@ description: enforce that a return statement is present in computed property
 
 <eslint-code-block :rules="{'san/return-in-computed-property': ['error']}">
 
-```vue
+```html
 <script>
 export default {
   computed: {
@@ -63,7 +63,7 @@ export default {
 
 <eslint-code-block :rules="{'san/return-in-computed-property': ['error', { treatUndefinedAsUnspecified: false }]}">
 
-```vue
+```html
 <script>
 export default {
   computed: {

@@ -20,7 +20,7 @@ description: enforce the maximum number of attributes per line
 
 <eslint-code-block fix :rules="{'san/max-attributes-per-line': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent lorem="1"/>
@@ -72,7 +72,7 @@ description: enforce the maximum number of attributes per line
 
 <eslint-code-block fix :rules="{'san/max-attributes-per-line': ['error', {singleline: 3}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent lorem="1" ipsum="2" dolor="3" />
@@ -88,7 +88,7 @@ description: enforce the maximum number of attributes per line
 
 <eslint-code-block fix :rules="{'san/max-attributes-per-line': ['error', {multiline: 2}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent
@@ -110,7 +110,7 @@ description: enforce the maximum number of attributes per line
 
 <eslint-code-block fix :rules="{'san/max-attributes-per-line': ['error', {multiline: { allowFirstLine: true }}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent lorem="1"

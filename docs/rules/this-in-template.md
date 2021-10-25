@@ -15,7 +15,7 @@ This rule aims at preventing usage of `this` in San templates.
 
 <eslint-code-block :rules="{'san/this-in-template': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <a href="{{url}}">
@@ -45,7 +45,7 @@ This rule aims at preventing usage of `this` in San templates.
 
 <eslint-code-block :rules="{'san/this-in-template': ['error', 'always']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <a href="{{this.data.get('url')}}">

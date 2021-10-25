@@ -15,7 +15,7 @@ description: disallow usage of `this` in template
 
 <eslint-code-block :rules="{'san/this-in-template': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <a href="{{url}}">
@@ -45,7 +45,7 @@ description: disallow usage of `this` in template
 
 <eslint-code-block :rules="{'san/this-in-template': ['error', 'always']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <a href="{{this.data.get('url')}}">

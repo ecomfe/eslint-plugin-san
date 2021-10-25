@@ -19,7 +19,7 @@ description: enforce consistent indentation in `<template>`
 
 <eslint-code-block fix :rules="{'san/html-indent': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div class="foo">
@@ -85,7 +85,7 @@ description: enforce consistent indentation in `<template>`
 
 <eslint-code-block fix :rules="{'san/html-indent': ['error', 2, {attribute: 1, closeBracket: 1}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div
@@ -107,7 +107,7 @@ description: enforce consistent indentation in `<template>`
 
 <eslint-code-block fix :rules="{'san/html-indent': ['error', 2, {attribute: 2, closeBracket: 1}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div
@@ -129,7 +129,7 @@ description: enforce consistent indentation in `<template>`
 
 <eslint-code-block fix :rules="{'san/html-indent': ['error', 2, {ignores: ['VAttribute']}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div
@@ -145,7 +145,7 @@ description: enforce consistent indentation in `<template>`
 
 <eslint-code-block fix :rules="{'san/html-indent': ['error', 2, {alignAttributesVertically: false}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div id=""
@@ -167,7 +167,7 @@ description: enforce consistent indentation in `<template>`
 
 <eslint-code-block fix :rules="{'san/html-indent': ['error', 2, {baseIndent: 0}]}">
 
-```vue
+```html
 <template>
 <!-- ✓ GOOD -->
 <div>

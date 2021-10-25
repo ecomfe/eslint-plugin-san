@@ -29,7 +29,7 @@ description: enforce order of component top-level elements
 
 <eslint-code-block :rules="{'san/component-tags-order': ['error']}">
 
-```vue
+```html
 <!-- ✓ GOOD -->
 <script>/* ... */</script>
 <template>...</template>
@@ -40,7 +40,7 @@ description: enforce order of component top-level elements
 
 <eslint-code-block :rules="{'san/component-tags-order': ['error']}">
 
-```vue
+```html
 <!-- ✓ GOOD -->
 <template>...</template>
 <script>/* ... */</script>
@@ -51,7 +51,7 @@ description: enforce order of component top-level elements
 
 <eslint-code-block :rules="{'san/component-tags-order': ['error']}">
 
-```vue
+```html
 <!-- ✗ BAD -->
 <style>/* ... */</style>
 <script>/* ... */</script>
@@ -64,7 +64,7 @@ description: enforce order of component top-level elements
 
 <eslint-code-block :rules="{'san/component-tags-order': ['error', { 'order': ['template', 'script', 'style'] }]}">
 
-```vue
+```html
 <!-- ✓ GOOD -->
 <template>...</template>
 <script>/* ... */</script>
@@ -75,7 +75,7 @@ description: enforce order of component top-level elements
 
 <eslint-code-block :rules="{'san/component-tags-order': ['error', { 'order': ['template', 'script', 'style'] }]}">
 
-```vue
+```html
 <!-- ✗ BAD -->
 <script>/* ... */</script>
 <template>...</template>
@@ -88,7 +88,7 @@ description: enforce order of component top-level elements
 
 <eslint-code-block :rules="{'san/component-tags-order': ['error', { 'order': ['docs', 'template', 'script', 'style'] }]}">
 
-```vue
+```html
 <!-- ✓ GOOD -->
 <docs> documents </docs>
 <template>...</template>
@@ -100,7 +100,7 @@ description: enforce order of component top-level elements
 
 <eslint-code-block :rules="{'san/component-tags-order': ['error', { 'order': ['docs', 'template', 'script', 'style'] }]}">
 
-```vue
+```html
 <!-- ✗ BAD -->
 <template>...</template>
 <script>/* ... */</script>

@@ -15,7 +15,7 @@ description: disallow adding multiple root nodes to the template
 
 <eslint-code-block :rules="{'san/no-multiple-template-root': ['error']}">
 
-```vue
+```html
 <!-- The root is text -->
 <template>Lorem ipsum</template>
 ```
@@ -24,7 +24,7 @@ description: disallow adding multiple root nodes to the template
 
 <eslint-code-block :rules="{'san/no-multiple-template-root': ['error']}">
 
-```vue
+```html
 <!-- There are multiple root elements -->
 <template>
   <div>hello</div>
@@ -36,7 +36,7 @@ description: disallow adding multiple root nodes to the template
 
 <eslint-code-block :rules="{'san/no-multiple-template-root': ['error']}">
 
-```vue
+```html
 <!-- The root element has `s-for` directives -->
 <template>
   <div s-for="item in items"/>
@@ -47,7 +47,7 @@ description: disallow adding multiple root nodes to the template
 
 <eslint-code-block :rules="{'san/no-multiple-template-root': ['error']}">
 
-```vue
+```html
 <!-- The root element is `<template>` or `<slot>` -->
 <template>
   <slot />

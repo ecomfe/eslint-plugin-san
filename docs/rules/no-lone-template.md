@@ -15,7 +15,7 @@ This rule aims to eliminate unnecessary and potentially confusing `<template>`.
 
 <eslint-code-block :rules="{'san/no-lone-template': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <template s-if="foo">...</template>

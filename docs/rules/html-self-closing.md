@@ -23,7 +23,7 @@ Self-closing is simple and shorter, but it's not supported in the HTML spec.
 
 <eslint-code-block fix :rules="{'san/html-self-closing': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div/>
@@ -73,7 +73,7 @@ Every option can be set to one of the following values:
 
 <eslint-code-block fix :rules="{'san/html-self-closing': ['error', {html: {normal: 'never', void: 'always'}}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div></div>

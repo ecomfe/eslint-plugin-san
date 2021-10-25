@@ -24,7 +24,7 @@ description: enforce quotes style of HTML attributes
 
 <eslint-code-block fix :rules="{'san/html-quotes': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <img src="./logo.png">
@@ -60,7 +60,7 @@ description: enforce quotes style of HTML attributes
 
 <eslint-code-block fix :rules="{'san/html-quotes': ['error', 'single']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <img src='./logo.png'>
@@ -77,7 +77,7 @@ description: enforce quotes style of HTML attributes
 
 <eslint-code-block fix :rules="{'san/html-quotes': ['error', 'double', { avoidEscape: true }]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <img title='a string containing "double" quotes'>

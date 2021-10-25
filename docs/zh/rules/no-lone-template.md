@@ -15,7 +15,7 @@ description: disallow unnecessary `<template>`
 
 <eslint-code-block :rules="{'san/no-lone-template': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <template s-if="foo">...</template>

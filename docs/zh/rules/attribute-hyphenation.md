@@ -17,7 +17,7 @@ description: enforce attribute naming style on custom components in template
 
 <eslint-code-block fix :rules="{'san/attribute-hyphenation': ['error', 'always']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent my-prop="prop" />
@@ -52,7 +52,7 @@ description: enforce attribute naming style on custom components in template
 
 <eslint-code-block fix :rules="{'san/attribute-hyphenation': ['error', 'always']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent my-prop="prop" />
@@ -69,7 +69,7 @@ description: enforce attribute naming style on custom components in template
 
 <eslint-code-block fix :rules="{'san/attribute-hyphenation': ['error', 'never']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent myProp="prop" />
@@ -89,7 +89,7 @@ description: enforce attribute naming style on custom components in template
 
 <eslint-code-block fix :rules="{'san/attribute-hyphenation': ['error', 'never', { ignore: ['custom-prop']}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent myProp="prop" />

@@ -141,7 +141,7 @@ export default class A {
 
 举个例子:
 
-```vue
+```html
 <template>
   <!-- eslint-disable-next-line san/max-attributes-per-line -->
   <div a="1" b="2" c="3" d="4">

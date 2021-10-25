@@ -20,7 +20,7 @@ description: enforce valid `s-for` directives
 
 <eslint-code-block :rules="{'san/valid-s-for': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div s-for="todo in todos"/>

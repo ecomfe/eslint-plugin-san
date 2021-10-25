@@ -15,7 +15,7 @@ This rule reports mustaches in `<textarea>`.
 
 <eslint-code-block :rules="{'san/no-textarea-mustache': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <textarea value="{=message=}" />

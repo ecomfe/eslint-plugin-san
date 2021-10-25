@@ -17,7 +17,7 @@ description: disallow duplication of field names
 
 <eslint-code-block :rules="{'san/no-dupe-keys': ['error']}">
 
-```vue
+```html
 <script>
 /* ✗ BAD */
 export default {

@@ -24,7 +24,7 @@ description: enforce self-closing style
 
 <eslint-code-block fix :rules="{'san/html-self-closing': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div/>
@@ -80,7 +80,7 @@ description: enforce self-closing style
 
 <eslint-code-block fix :rules="{'san/html-self-closing': ['error', {html: {normal: 'never', void: 'always'}}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div></div>

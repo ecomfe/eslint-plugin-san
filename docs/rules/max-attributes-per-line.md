@@ -22,7 +22,7 @@ There is a configurable number of attributes that are acceptable in one-line cas
 
 <eslint-code-block fix :rules="{'san/max-attributes-per-line': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent lorem="1"/>
@@ -72,7 +72,7 @@ There is a configurable number of attributes that are acceptable in one-line cas
 
 <eslint-code-block fix :rules="{'san/max-attributes-per-line': ['error', {singleline: 3}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent lorem="1" ipsum="2" dolor="3" />
@@ -88,7 +88,7 @@ There is a configurable number of attributes that are acceptable in one-line cas
 
 <eslint-code-block fix :rules="{'san/max-attributes-per-line': ['error', {multiline: 2}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent
@@ -110,7 +110,7 @@ There is a configurable number of attributes that are acceptable in one-line cas
 
 <eslint-code-block fix :rules="{'san/max-attributes-per-line': ['error', {multiline: { allowFirstLine: true }}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent lorem="1"

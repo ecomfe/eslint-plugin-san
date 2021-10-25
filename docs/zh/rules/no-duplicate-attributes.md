@@ -18,7 +18,7 @@ description: disallow duplication of attributes
 
 <eslint-code-block :rules="{'san/no-duplicate-attributes': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent foo="abc" />

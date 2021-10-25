@@ -16,7 +16,7 @@ This rule disallow spaces around equal signs in attribute.
 
 <eslint-code-block fix :rules="{'san/no-spaces-around-equal-signs-in-attribute': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✗ BAD -->
   <div class = "item"></div>

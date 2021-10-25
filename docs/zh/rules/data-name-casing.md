@@ -15,7 +15,7 @@ description: data names always use "camel-case"
 
 <eslint-code-block :rules="{'san/data-name-casing': ['error']}">
 
-```vue
+```html
 <script>
 export default {
   /* ✓ GOOD */

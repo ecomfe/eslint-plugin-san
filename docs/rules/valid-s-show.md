@@ -19,7 +19,7 @@ This rule reports `s-show` directives in the following cases:
 
 <eslint-code-block :rules="{'san/valid-s-show': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div s-show="foo"/>

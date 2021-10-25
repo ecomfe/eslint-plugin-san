@@ -12,7 +12,7 @@ description: disallow expression in the template in template literals
 
 <eslint-code-block :rules="{'san/valid-components-name': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <a-b a="{{true}}" on-click="fire('myEvent')" />

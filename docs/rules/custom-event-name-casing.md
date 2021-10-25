@@ -17,7 +17,7 @@ See [Guide - Custom Events] for more details.
 
 <eslint-code-block :rules="{'san/custom-event-name-casing': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <button on-click="fire('my-event')" />

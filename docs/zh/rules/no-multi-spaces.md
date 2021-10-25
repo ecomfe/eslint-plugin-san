@@ -16,7 +16,7 @@ description: disallow multiple spaces
 
 <eslint-code-block fix :rules="{'san/no-multi-spaces': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div
@@ -58,7 +58,7 @@ description: disallow multiple spaces
 
 <eslint-code-block fix :rules="{'san/no-multi-spaces': ['error', { 'ignoreProperties': true }]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <i
