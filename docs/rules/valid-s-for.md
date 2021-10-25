@@ -15,8 +15,6 @@ This rule checks whether every `s-for` directive is valid.
 
 This rule reports `s-for` directives in the following cases:
 
-- The directive has that argument. E.g. `<div s-for="{{ {aaa: bar} }}"></div>`
-- The directive has that modifier. E.g. `<div s-for="{{ {bbb: bar} }}"></div>`
 - The directive does not have that attribute value. E.g. `<div s-for></div>`
 
 
@@ -29,8 +27,6 @@ This rule reports `s-for` directives in the following cases:
 
   <!-- ✗ BAD -->
   <div s-for/>
-  <div s-for:aaa="todo in todos"/>
-  <div s-for.bbb="todo in todos"/>
 </template>
 ```
 
@@ -50,13 +46,11 @@ Nothing.
 
 ## :couple: Related Rules
 
-- [san/require-s-for-key]
 - [san/no-parsing-error]
 
-[san/require-s-for-key]: ./require-s-for-key.md
 [san/no-parsing-error]: ./no-parsing-error.md
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/valid-s-for.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/valid-s-for.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-s-for.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/valid-s-for.test.js)

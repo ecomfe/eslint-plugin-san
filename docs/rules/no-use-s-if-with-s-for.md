@@ -88,5 +88,5 @@ There are two common cases where this can be tempting:
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecom/eslint-plugin-san/blob/master/lib/rules/no-use-s-if-with-s-for.js)
-- [Test source](https://github.com/ecom/eslint-plugin-san/blob/master/tests/lib/rules/no-use-s-if-with-s-for.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-use-s-if-with-s-for.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/no-use-s-if-with-s-for.test.js)

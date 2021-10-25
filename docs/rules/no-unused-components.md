@@ -74,5 +74,5 @@ nothing
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecom/eslint-plugin-san/blob/master/lib/rules/no-unused-components.js)
-- [Test source](https://github.com/ecom/eslint-plugin-san/blob/master/tests/lib/rules/no-unused-components.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-unused-components.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/no-unused-components.test.js)

@@ -91,7 +91,7 @@ This rule enforces a line break before and after the contents of a multiline ele
 - `allowEmptyLines` ... if `true`, it allows empty lines around content. If you want to disallow multiple empty lines, use [no-multiple-empty-lines] in combination.  
     default `false`
 
-::: info
+::: tip
   All inline non void elements can be found [here](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/utils/inline-non-void-elements.json).
 :::
 
@@ -148,5 +148,5 @@ This rule enforces a line break before and after the contents of a multiline ele
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/multiline-html-element-content-newline.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/multiline-html-element-content-newline.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/multiline-html-element-content-newline.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/multiline-html-element-content-newline.test.js)
