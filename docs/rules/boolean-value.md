@@ -33,7 +33,7 @@ The second argument is optional: if provided, it must be an object with a `"neve
 
 <eslint-code-block :rules="{'san/boolean-value': ['warn']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <x a on-click="fire('my-event')" />
@@ -49,7 +49,7 @@ The second argument is optional: if provided, it must be an object with a `"neve
 
 <eslint-code-block :rules="{'san/boolean-value': ['warn', 'never', {'always': ['c']}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <x a c="{{false}}" on-click="fire('my-event')" />
@@ -68,7 +68,7 @@ The second argument is optional: if provided, it must be an object with a `"neve
 
 <eslint-code-block :rules="{'san/boolean-value': ['warn', 'always']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <x a="{{true}}" on-click="fire('myEvent')" />
@@ -84,7 +84,7 @@ The second argument is optional: if provided, it must be an object with a `"neve
 
 <eslint-code-block :rules="{'san/boolean-value': ['warn', 'always', {'never': ['c']}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <x a="{{true}}" c on-click="fire('myEvent')" />

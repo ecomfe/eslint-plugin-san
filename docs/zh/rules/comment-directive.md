@@ -29,7 +29,7 @@ ESLint 不提供任何 API 来增强`eslint-disable`功能，并且 ESLint 规�
 
 <eslint-code-block :rules="{'san/comment-directive': ['error'], 'san/max-attributes-per-line': ['error']}">
 
-```vue
+```html
 <template>
   <!-- eslint-disable-next-line san/max-attributes-per-line -->
   <div a="1" b="2" c="3" d="4" />
@@ -42,7 +42,7 @@ ESLint 不提供任何 API 来增强`eslint-disable`功能，并且 ESLint 规�
 
 <eslint-code-block :rules="{'san/comment-directive': ['error'], 'san/max-attributes-per-line': ['error'], 'san/component-tags-order': ['error'] }">
 
-```vue
+```html
 <template>
   <!-- eslint-disable-next-line san/max-attributes-per-line -->
   <div a="1" b="2" c="3" d="4" />
@@ -59,7 +59,7 @@ ESLint 不提供任何 API 来增强`eslint-disable`功能，并且 ESLint 规�
 
 <eslint-code-block :rules="{'san/comment-directive': ['error'], 'san/max-attributes-per-line': ['error'], 'san/component-tags-order': ['error'] }">
 
-```vue
+```html
 <style>
 </style>
 
@@ -78,7 +78,7 @@ ESLint 不提供任何 API 来增强`eslint-disable`功能，并且 ESLint 规�
 
 <eslint-code-block :rules="{'san/comment-directive': ['error'], 'san/max-attributes-per-line': ['error']}">
 
-```vue
+```html
 <template>
   <!-- eslint-disable-next-line san/max-attributes-per-line -- Here's a description about why this disabling is necessary. -->
   <div a="1" b="2" c="3" d="4" />
@@ -103,7 +103,7 @@ ESLint 不提供任何 API 来增强`eslint-disable`功能，并且 ESLint 规�
 
 <eslint-code-block :rules="{'san/comment-directive': ['error', {reportUnusedDisableDirectives: true} ], 'san/max-attributes-per-line': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <!-- eslint-disable-next-line san/max-attributes-per-line -->

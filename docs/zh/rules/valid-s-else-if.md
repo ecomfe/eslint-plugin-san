@@ -23,7 +23,7 @@ description: enforce valid `s-else-if` directives
 
 <eslint-code-block :rules="{'san/valid-s-else-if': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div s-if="foo"/>

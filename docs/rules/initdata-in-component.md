@@ -16,7 +16,7 @@ When using the data property on a component , the value must be a function that 
 
 <eslint-code-block fix :rules="{'san/initdata-in-component': ['error']}">
 
-```vue
+```html
 <script>
 /* ✓ GOOD */
 export default class SomeComp extends san.Component {
@@ -33,7 +33,7 @@ export default class SomeComp extends san.Component {
 
 <eslint-code-block fix :rules="{'san/initdata-in-component': ['error']}">
 
-```vue
+```html
 <script>
 /* ✗ BAD */
 export default {

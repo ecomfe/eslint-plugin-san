@@ -32,7 +32,7 @@ This rule aims to warn the right angle brackets which are at the location other 
 
 <eslint-code-block fix :rules="{'san/html-closing-bracket-newline': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div id="foo" class="bar">
@@ -76,7 +76,7 @@ Plus, you can use [`san/html-indent`](./html-indent.md) rule to enforce indent-l
 
 <eslint-code-block fix :rules="{'san/html-closing-bracket-newline': ['error', { 'multiline': 'never' }]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div

@@ -31,7 +31,7 @@ This rule aims to enforce ordering of component attributes. The default order is
 
 <eslint-code-block fix :rules="{'san/attributes-order': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div
@@ -93,7 +93,7 @@ This rule aims to enforce ordering of component attributes. The default order is
 
 <eslint-code-block fix :rules="{'san/attributes-order': ['error', {alphabetical: true}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
     <div
@@ -147,7 +147,7 @@ This rule aims to enforce ordering of component attributes. The default order is
 
 <eslint-code-block fix :rules="{'san/attributes-order': ['error', {order: ['LIST_RENDERING', 'CONDITIONALS', 'RENDER_MODIFIERS', 'GLOBAL', 'UNIQUE', 'TWO_WAY_BINDING', 'DEFINITION', 'OTHER_DIRECTIVES', 'OTHER_ATTR', 'EVENTS', 'CONTENT']}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div
@@ -170,7 +170,7 @@ This rule aims to enforce ordering of component attributes. The default order is
 
 <eslint-code-block fix :rules="{'san/attributes-order': ['error', {order: [['LIST_RENDERING', 'CONDITIONALS', 'RENDER_MODIFIERS'], ['DEFINITION', 'GLOBAL', 'UNIQUE'], 'TWO_WAY_BINDING', 'OTHER_DIRECTIVES', 'OTHER_ATTR', 'EVENTS', 'CONTENT']}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div

@@ -17,7 +17,7 @@ description: enforce valid template root
 
 <eslint-code-block :rules="{'san/valid-template-root': ['error']}">
 
-```vue
+```html
 <!-- There is no root element -->
 <template></template>
 ```

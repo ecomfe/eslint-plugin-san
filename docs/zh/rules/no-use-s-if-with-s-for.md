@@ -20,7 +20,7 @@ description: disallow use s-if on the same element as s-for
 
 <eslint-code-block :rules="{'san/no-use-s-if-with-s-for': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <ul s-if="complete">
@@ -66,7 +66,7 @@ description: disallow use s-if on the same element as s-for
 
 <eslint-code-block :rules="{'san/no-use-s-if-with-s-for': ['error', {allowUsingIterationVar: true}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <todo-item

@@ -15,7 +15,7 @@ description: disallow empty of attributes
 
 <eslint-code-block :rules="{'san/no-empty-attributes': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div class="abc" />
@@ -46,7 +46,7 @@ description: disallow empty of attributes
 
 <eslint-code-block :rules="{'san/no-empty-attributes': ['error', { groups: ['attr'] }]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div class="abc" />

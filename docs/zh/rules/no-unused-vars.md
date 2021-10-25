@@ -15,7 +15,7 @@ description: disallow unused variable definitions of s-for directives or scope a
 
 <eslint-code-block :rules="{'san/no-unused-vars': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div s-for="i in 5">

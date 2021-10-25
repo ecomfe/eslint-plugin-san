@@ -32,7 +32,7 @@ description: disallow parsing errors in `<template>`
 
 <eslint-code-block :rules="{'san/no-parsing-error': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✗ BAD -->
   {{ . }}

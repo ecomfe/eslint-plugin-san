@@ -15,7 +15,7 @@ description: disallow registering components that are not used inside templates
 
 <eslint-code-block :rules="{'san/no-unused-components': ['error']}">
 
-```vue
+```html
 <!-- ✓ GOOD -->
 <template>
   <div>
@@ -43,7 +43,7 @@ description: disallow registering components that are not used inside templates
 
 <eslint-code-block :rules="{'san/no-unused-components': ['error']}">
 
-```vue
+```html
 <!-- ✗ BAD -->
 <template>
   <div>

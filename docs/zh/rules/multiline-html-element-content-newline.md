@@ -16,7 +16,7 @@ description: require a line break before and after the contents of a multiline e
 
 <eslint-code-block fix :rules="{'san/multiline-html-element-content-newline': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div>
@@ -98,7 +98,7 @@ description: require a line break before and after the contents of a multiline e
 
 <eslint-code-block fix :rules="{'san/multiline-html-element-content-newline': ['error', { ignores: ['SanComponent', 'pre', 'textarea'] }]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <SanComponent>multiline
@@ -119,7 +119,7 @@ description: require a line break before and after the contents of a multiline e
 
 <eslint-code-block fix :rules="{'san/multiline-html-element-content-newline': ['error', { allowEmptyLines: true }]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div>

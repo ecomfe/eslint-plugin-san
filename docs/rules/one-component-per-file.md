@@ -31,7 +31,7 @@ export class UIAlert extends san.Component {
 
 <eslint-code-block :rules="{'san/one-component-per-file': ['error']}">
 
-```vue
+```html
 <script>
 /* ✓ GOOD */
 export default {

@@ -17,7 +17,7 @@ description: disallow asynchronous actions in computed properties
 
 <eslint-code-block :rules="{'san/no-async-in-computed-properties': ['error']}">
 
-```vue
+```html
 <script>
 export default {
   computed: {

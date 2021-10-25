@@ -31,7 +31,7 @@ description: require or disallow a line break before tag's closing brackets
 
 <eslint-code-block fix :rules="{'san/html-closing-bracket-newline': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div id="foo" class="bar">
@@ -75,7 +75,7 @@ description: require or disallow a line break before tag's closing brackets
 
 <eslint-code-block fix :rules="{'san/html-closing-bracket-newline': ['error', { 'multiline': 'never' }]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div

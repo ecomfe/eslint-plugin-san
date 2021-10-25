@@ -15,7 +15,7 @@ description: disallow overwriting reserved keys
 
 <eslint-code-block :rules="{'san/no-reserved-keys': ['error']}">
 
-```vue
+```html
 <script>
 /* ✗ BAD */
 export default {

@@ -16,7 +16,7 @@ description: require or disallow a space before tag's closing brackets
 
 <eslint-code-block fix :rules="{'san/html-closing-bracket-spacing': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div>
@@ -66,7 +66,7 @@ description: require or disallow a space before tag's closing brackets
 
 <eslint-code-block fix :rules="{'san/html-closing-bracket-spacing': ['error', {startTag: 'always', endTag: 'always', selfClosingTag: 'always' }]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div >

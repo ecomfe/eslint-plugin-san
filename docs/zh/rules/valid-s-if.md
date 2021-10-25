@@ -21,7 +21,7 @@ description: enforce valid `s-if` directives
 
 <eslint-code-block :rules="{'san/valid-s-if': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div s-if="foo"/>

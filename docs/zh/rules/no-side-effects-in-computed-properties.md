@@ -17,7 +17,7 @@ description: disallow side effects in computed properties
 
 <eslint-code-block :rules="{'san/no-side-effects-in-computed-properties': ['error']}">
 
-```vue
+```html
 <script>
 /* ✓ GOOD */
 export default {
@@ -40,7 +40,7 @@ export default {
 
 <eslint-code-block :rules="{'san/no-side-effects-in-computed-properties': ['error']}">
 
-```vue
+```html
 <script>
 /* ✗ BAD */
 export default {

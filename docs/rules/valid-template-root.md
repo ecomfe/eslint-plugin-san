@@ -17,7 +17,7 @@ This rule reports the template root in the following cases:
 
 <eslint-code-block :rules="{'san/valid-template-root': ['error']}">
 
-```vue
+```html
 <!-- There is no root element -->
 <template></template>
 ```

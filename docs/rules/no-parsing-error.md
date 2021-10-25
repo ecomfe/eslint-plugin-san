@@ -26,7 +26,7 @@ Then reports syntax errors if exist.
 
 <eslint-code-block :rules="{'san/no-parsing-error': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✗ BAD -->
   {{ . }}
