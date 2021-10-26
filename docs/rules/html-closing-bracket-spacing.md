@@ -16,7 +16,7 @@ This rule aims to enforce consistent spacing style before closing brackets `>` o
 
 <eslint-code-block fix :rules="{'san/html-closing-bracket-spacing': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div>
@@ -66,7 +66,7 @@ This rule aims to enforce consistent spacing style before closing brackets `>` o
 
 <eslint-code-block fix :rules="{'san/html-closing-bracket-spacing': ['error', {startTag: 'always', endTag: 'always', selfClosingTag: 'always' }]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div >
@@ -88,5 +88,5 @@ This rule aims to enforce consistent spacing style before closing brackets `>` o
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/html-closing-bracket-spacing.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/html-closing-bracket-spacing.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/html-closing-bracket-spacing.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/html-closing-bracket-spacing.test.js)

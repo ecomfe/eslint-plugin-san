@@ -15,7 +15,7 @@ This rule checks whether template contains single root element valid for San.
 
 <eslint-code-block :rules="{'san/no-multiple-template-root': ['error']}">
 
-```vue
+```html
 <!-- The root is text -->
 <template>Lorem ipsum</template>
 ```
@@ -24,7 +24,7 @@ This rule checks whether template contains single root element valid for San.
 
 <eslint-code-block :rules="{'san/no-multiple-template-root': ['error']}">
 
-```vue
+```html
 <!-- There are multiple root elements -->
 <template>
   <div>hello</div>
@@ -36,7 +36,7 @@ This rule checks whether template contains single root element valid for San.
 
 <eslint-code-block :rules="{'san/no-multiple-template-root': ['error']}">
 
-```vue
+```html
 <!-- The root element has `s-for` directives -->
 <template>
   <div s-for="item in items"/>
@@ -47,7 +47,7 @@ This rule checks whether template contains single root element valid for San.
 
 <eslint-code-block :rules="{'san/no-multiple-template-root': ['error']}">
 
-```vue
+```html
 <!-- The root element is `<template>` or `<slot>` -->
 <template>
   <slot />
@@ -62,5 +62,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-multiple-template-root.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-multiple-template-root.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-multiple-template-root.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-multiple-template-root.test.js)

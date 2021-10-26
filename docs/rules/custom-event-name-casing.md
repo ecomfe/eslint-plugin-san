@@ -17,7 +17,7 @@ See [Guide - Custom Events] for more details.
 
 <eslint-code-block :rules="{'san/custom-event-name-casing': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <button on-click="fire('my-event')" />
@@ -53,5 +53,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/custom-event-name-casing.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/custom-event-name-casing.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/custom-event-name-casing.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/custom-event-name-casing.test.js)

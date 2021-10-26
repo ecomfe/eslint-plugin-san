@@ -29,7 +29,7 @@ This rule sends all `eslint-disable`-like comments as errors to the post-process
 
 <eslint-code-block :rules="{'san/comment-directive': ['error'], 'san/max-attributes-per-line': ['error']}">
 
-```vue
+```html
 <template>
   <!-- eslint-disable-next-line san/max-attributes-per-line -->
   <div a="1" b="2" c="3" d="4" />
@@ -42,7 +42,7 @@ The `eslint-disable`-like comments can be used in the `<template>` and in the bl
 
 <eslint-code-block :rules="{'san/comment-directive': ['error'], 'san/max-attributes-per-line': ['error'], 'san/component-tags-order': ['error'] }">
 
-```vue
+```html
 <template>
   <!-- eslint-disable-next-line san/max-attributes-per-line -->
   <div a="1" b="2" c="3" d="4" />
@@ -59,7 +59,7 @@ The `eslint-disable` comments has no effect after one block.
 
 <eslint-code-block :rules="{'san/comment-directive': ['error'], 'san/max-attributes-per-line': ['error'], 'san/component-tags-order': ['error'] }">
 
-```vue
+```html
 <style>
 </style>
 
@@ -78,7 +78,7 @@ The `eslint-disable`-like comments can include descriptions to explain why the c
 
 <eslint-code-block :rules="{'san/comment-directive': ['error'], 'san/max-attributes-per-line': ['error']}">
 
-```vue
+```html
 <template>
   <!-- eslint-disable-next-line san/max-attributes-per-line -- Here's a description about why this disabling is necessary. -->
   <div a="1" b="2" c="3" d="4" />
@@ -103,7 +103,7 @@ The `eslint-disable`-like comments can include descriptions to explain why the c
 
 <eslint-code-block :rules="{'san/comment-directive': ['error', {reportUnusedDisableDirectives: true} ], 'san/max-attributes-per-line': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <!-- eslint-disable-next-line san/max-attributes-per-line -->
@@ -129,5 +129,5 @@ Unused reports cannot be suppressed with `eslint-disable` HTML comments.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/comment-directive.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/comment-directive.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/comment-directive.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/comment-directive.test.js)

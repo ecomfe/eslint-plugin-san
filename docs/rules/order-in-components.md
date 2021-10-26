@@ -16,7 +16,7 @@ This rule makes sure you keep declared order of properties in components.
 
 <eslint-code-block fix :rules="{'san/order-in-components': ['error']}">
 
-```vue
+```html
 <script>
 /* ✓ GOOD */
 export default {
@@ -37,7 +37,7 @@ export default {
 
 <eslint-code-block fix :rules="{'san/order-in-components': ['error']}">
 
-```vue
+```html
 <script>
 /* ✗ BAD */
 export default {
@@ -91,5 +91,5 @@ export default {
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/order-in-components.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/order-in-components.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/order-in-components.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/order-in-components.test.js)

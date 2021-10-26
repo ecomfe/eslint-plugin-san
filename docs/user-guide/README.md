@@ -142,7 +142,7 @@ You can use `<!-- eslint-disable -->`-like HTML comments in the `<template>` and
 
 For example:
 
-```vue
+```html
 <template>
   <!-- eslint-disable-next-line san/max-attributes-per-line -->
   <div a="1" b="2" c="3" d="4">

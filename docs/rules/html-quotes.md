@@ -24,7 +24,7 @@ This rule reports the quotes of attributes if it is different to configured quot
 
 <eslint-code-block fix :rules="{'san/html-quotes': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <img src="./logo.png">
@@ -60,7 +60,7 @@ Object option:
 
 <eslint-code-block fix :rules="{'san/html-quotes': ['error', 'single']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <img src='./logo.png'>
@@ -77,7 +77,7 @@ Object option:
 
 <eslint-code-block fix :rules="{'san/html-quotes': ['error', 'double', { avoidEscape: true }]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <img title='a string containing "double" quotes'>
@@ -92,5 +92,5 @@ Object option:
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/html-quotes.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/html-quotes.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/html-quotes.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/html-quotes.test.js)

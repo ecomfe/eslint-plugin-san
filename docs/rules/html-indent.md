@@ -19,7 +19,7 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 
 <eslint-code-block fix :rules="{'san/html-indent': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div class="foo">
@@ -85,7 +85,7 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 
 <eslint-code-block fix :rules="{'san/html-indent': ['error', 2, {attribute: 1, closeBracket: 1}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div
@@ -107,7 +107,7 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 
 <eslint-code-block fix :rules="{'san/html-indent': ['error', 2, {attribute: 2, closeBracket: 1}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div
@@ -129,7 +129,7 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 
 <eslint-code-block fix :rules="{'san/html-indent': ['error', 2, {ignores: ['VAttribute']}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div
@@ -145,7 +145,7 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 
 <eslint-code-block fix :rules="{'san/html-indent': ['error', 2, {alignAttributesVertically: false}]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div id=""
@@ -167,7 +167,7 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 
 <eslint-code-block fix :rules="{'san/html-indent': ['error', 2, {baseIndent: 0}]}">
 
-```vue
+```html
 <template>
 <!-- ✓ GOOD -->
 <div>
@@ -189,5 +189,5 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/html-indent.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/html-indent.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/html-indent.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/html-indent.test.js)

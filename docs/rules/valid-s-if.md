@@ -15,14 +15,12 @@ This rule checks whether every `s-if` directive is valid.
 
 This rule reports `s-if` directives in the following cases:
 
-- The directive has that argument. E.g. `<div s-if="{{ {aaa: bar} }}"></div>`
-- The directive has that modifier. E.g. `<div s-if="{{ {bbb: bar} }}"></div>`
 - The directive does not have that attribute value. E.g. `<div s-if></div>`
 - The directive is on the elements which have `s-else`/`s-else-if` directives. E.g. `<div s-else s-if="foo"></div>`
 
 <eslint-code-block :rules="{'san/valid-s-if': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div s-if="foo"/>
@@ -31,8 +29,6 @@ This rule reports `s-if` directives in the following cases:
 
   <!-- ✗ BAD -->
   <div s-if/>
-  <div s-if="{{ {aaa: bar} }}"/>
-  <div s-if="{{ {bbb: bar} }}"/>
   <div
     s-if="foo"
     s-else
@@ -66,5 +62,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/valid-s-if.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/valid-s-if.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-s-if.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/valid-s-if.test.js)

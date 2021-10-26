@@ -15,7 +15,7 @@ This rule prevents to use [reserved names](https://github.com/ecomfe/eslint-plug
 
 <eslint-code-block :rules="{'san/no-reserved-keys': ['error']}">
 
-```vue
+```html
 <script>
 /* ✗ BAD */
 export default {
@@ -46,5 +46,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-reserved-keys.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-reserved-keys.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-reserved-keys.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-reserved-keys.test.js)

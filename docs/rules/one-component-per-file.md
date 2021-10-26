@@ -31,7 +31,7 @@ export class UIAlert extends san.Component {
 
 <eslint-code-block :rules="{'san/one-component-per-file': ['error']}">
 
-```vue
+```html
 <script>
 /* ✓ GOOD */
 export default {
@@ -48,5 +48,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/one-component-per-file.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/one-component-per-file.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/one-component-per-file.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/one-component-per-file.test.js)

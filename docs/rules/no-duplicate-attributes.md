@@ -18,7 +18,7 @@ This rule reports duplicate attributes.
 
 <eslint-code-block :rules="{'san/no-duplicate-attributes': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <MyComponent foo="abc" />
@@ -37,5 +37,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-duplicate-attributes.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/__tests__/lib/rules/no-duplicate-attributes.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-duplicate-attributes.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/__tests__/lib/rules/no-duplicate-attributes.test.js)

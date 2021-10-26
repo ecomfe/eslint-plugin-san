@@ -15,7 +15,7 @@ This rule reports components that haven't been used in the template.
 
 <eslint-code-block :rules="{'san/no-unused-components': ['error']}">
 
-```vue
+```html
 <!-- ✓ GOOD -->
 <template>
   <div>
@@ -43,7 +43,7 @@ This rule reports components that haven't been used in the template.
 
 <eslint-code-block :rules="{'san/no-unused-components': ['error']}">
 
-```vue
+```html
 <!-- ✗ BAD -->
 <template>
   <div>
@@ -74,5 +74,5 @@ nothing
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecom/eslint-plugin-san/blob/master/lib/rules/no-unused-components.js)
-- [Test source](https://github.com/ecom/eslint-plugin-san/blob/master/tests/lib/rules/no-unused-components.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-unused-components.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/no-unused-components.test.js)

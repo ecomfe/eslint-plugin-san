@@ -16,7 +16,7 @@ This rule aims at removing multiple spaces in tags, which are not used for inden
 
 <eslint-code-block fix :rules="{'san/no-multi-spaces': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div
@@ -58,7 +58,7 @@ This rule aims at removing multiple spaces in tags, which are not used for inden
 
 <eslint-code-block fix :rules="{'san/no-multi-spaces': ['error', { 'ignoreProperties': true }]}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <i
@@ -74,5 +74,5 @@ This rule aims at removing multiple spaces in tags, which are not used for inden
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-multi-spaces.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-multi-spaces.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-multi-spaces.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-multi-spaces.test.js)

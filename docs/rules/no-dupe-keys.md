@@ -17,7 +17,7 @@ This rule is aimed at preventing duplicated property names in `this.data` of a s
 
 <eslint-code-block :rules="{'san/no-dupe-keys': ['error']}">
 
-```vue
+```html
 <script>
 /* ✗ BAD */
 export default {
@@ -46,5 +46,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-dupe-keys.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-dupe-keys.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-dupe-keys.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-dupe-keys.test.js)

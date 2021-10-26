@@ -15,7 +15,7 @@ This rule aims to eliminate unnecessary and potentially confusing `<template>`.
 
 <eslint-code-block :rules="{'san/no-lone-template': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <template s-if="foo">...</template>
@@ -44,5 +44,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-lone-template.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-lone-template.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-lone-template.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-lone-template.test.js)

@@ -16,7 +16,7 @@ This rule aims at enforcing unified spacing in mustache interpolations.
 
 <eslint-code-block fix :rules="{'san/mustache-interpolation-spacing': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div>{{ text }}</div>
@@ -44,7 +44,7 @@ This rule aims at enforcing unified spacing in mustache interpolations.
 
 <eslint-code-block fix :rules="{'san/mustache-interpolation-spacing': ['error', 'never']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div>{{text}}</div>
@@ -59,5 +59,5 @@ This rule aims at enforcing unified spacing in mustache interpolations.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/mustache-interpolation-spacing.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/mustache-interpolation-spacing.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/mustache-interpolation-spacing.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/mustache-interpolation-spacing.test.js)

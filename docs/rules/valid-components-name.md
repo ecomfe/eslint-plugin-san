@@ -12,7 +12,7 @@ description: disallow expression in the template in template literals
 
 <eslint-code-block :rules="{'san/valid-components-name': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <a-b a="{{true}}" on-click="fire('myEvent')" />
@@ -29,5 +29,5 @@ nothing
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/valid-components-name.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/valid-components-name.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-components-name.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/valid-components-name.test.js)

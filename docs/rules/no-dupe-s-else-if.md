@@ -15,7 +15,7 @@ This rule disallows duplicate conditions in the same `s-if` / `s-else-if` chain.
 
 <eslint-code-block :rules="{'san/no-dupe-s-else-if': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✗ BAD -->
   <div s-if="isSomething(x)" />
@@ -55,7 +55,7 @@ This rule can also detect some cases where the conditions are not identical, but
 
 <eslint-code-block :rules="{'san/no-dupe-s-else-if': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✗ BAD -->
   <div s-if="a || b" />
@@ -94,5 +94,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-dupe-s-else-if.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-dupe-s-else-if.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-dupe-s-else-if.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-dupe-s-else-if.test.js)

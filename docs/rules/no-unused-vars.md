@@ -15,7 +15,7 @@ This rule report variable definitions of s-for directives or scope attributes if
 
 <eslint-code-block :rules="{'san/no-unused-vars': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div s-for="i in 5">
@@ -57,5 +57,5 @@ This rule report variable definitions of s-for directives or scope attributes if
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecom/eslint-plugin-san/blob/master/lib/rules/no-unused-vars.js)
-- [Test source](https://github.com/ecom/eslint-plugin-san/blob/master/tests/lib/rules/no-unused-vars.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-unused-vars.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/no-unused-vars.test.js)

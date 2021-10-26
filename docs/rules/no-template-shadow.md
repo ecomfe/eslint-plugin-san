@@ -17,7 +17,7 @@ This rule aims to eliminate shadowed variable declarations of s-for directives o
 
 <eslint-code-block :rules="{'san/no-template-shadow': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✓ GOOD -->
   <div s-for="i in 5"></div>
@@ -51,5 +51,5 @@ Nothing.
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-template-shadow.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-template-shadow.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-template-shadow.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-template-shadow.test.js)

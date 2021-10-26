@@ -26,7 +26,7 @@ Then reports syntax errors if exist.
 
 <eslint-code-block :rules="{'san/no-parsing-error': ['error']}">
 
-```vue
+```html
 <template>
   <!-- ✗ BAD -->
   {{ . }}
@@ -40,7 +40,7 @@ Then reports syntax errors if exist.
 
 </eslint-code-block>
 
-> character reference must be terminated by a U+003B (;) code point. https://html.spec.whatwg.org/multipage/parsing.html#hexademical-character-reference-state
+> character reference must be terminated by a `U+003B (;)` code point. https://html.spec.whatwg.org/multipage/parsing.html#hexademical-character-reference-state
 
 ## :wrench: Options
 
@@ -105,5 +105,5 @@ The error codes which have `x-` prefix are original of this rule because errors 
 
 ## :mag: Implementation
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/no-parsing-error.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/tests/lib/rules/no-parsing-error.js)
+- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-parsing-error.js)
+- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-parsing-error.test.js)
