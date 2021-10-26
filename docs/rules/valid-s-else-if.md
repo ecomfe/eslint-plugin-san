@@ -5,19 +5,21 @@ title: san/valid-s-else-if
 description: enforce valid `s-else-if` directives
 ---
 # san/valid-s-else-if
-> enforce valid `s-else-if` directives
+> 禁止无效的 `s-else-if` 指令
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-This rule checks whether every `s-else-if` directive is valid.
+此规则检查每个 `s-else-if` 指令是否有效。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule reports `s-else-if` directives in the following cases:
+此规则在以下情况下会提示 `s-else-if` 指令出现错误：
 
-- The directive does not have that attribute value. E.g. `<div s-if="foo"></div><div s-else-if></div>`
-- The directive is on the elements that the previous element don't have `s-if`/`s-else-if` directives. E.g. `<div s-else-if="bar"></div>`
-- The directive is on the elements which have `s-if`/`s-else` directives. E.g. `<div s-if="foo" s-else-if="bar"></div>`
+- 该指令没有该属性值。 例如。 `<div s-if="foo"></div><div s-else-if></div>`
+
+- 该指令位于前一个元素没有 `s-if`/`s-else-if` 指令的元素上。 例如。 `<div s-else-if="bar"></div>`
+
+- 该指令位于具有 `s-if`/`s-else` 指令的元素上。 例如。 `<div s-if="foo" s-else-if="bar"></div>`
 
 <eslint-code-block :rules="{'san/valid-s-else-if': ['error']}">
 
@@ -35,15 +37,15 @@ This rule reports `s-else-if` directives in the following cases:
 
 </eslint-code-block>
 
-::: warning Note
-This rule does not check syntax errors in directives because it's checked by [san/no-parsing-error] rule.
+::: warning 注意
+此规则不检查指令中的语法错误，因为它由 [san/no-parsing-error] 规则检查。
 :::
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :couple: Related Rules
+## :couple: 相关规则
 
 - [san/valid-s-if]
 - [san/valid-s-else]
@@ -53,7 +55,7 @@ Nothing.
 [san/valid-s-else]: ./valid-s-else.md
 [san/no-parsing-error]: ./no-parsing-error.md
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-s-else-if.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/valid-s-else-if.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-s-else-if.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/valid-s-else-if.test.js)

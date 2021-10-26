@@ -5,13 +5,13 @@ title: san/data-name-casing
 description: data names always use "camel-case"
 ---
 # san/data-name-casing
-> enforce data names always use "camel-case"
+> 要求数据名使用驼峰命名法
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和`"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-`computed`、`dataTypes`、`initData` properties name must be camel-case , it will not work when the property name is snakeCase、kebabCase or PascalCase.
+`computed`、`dataTypes`、`initData` 属性名必须使用驼峰命名法，不可以使用下划线命名，短横线命名和大驼峰命名法。
 
 <eslint-code-block :rules="{'san/data-name-casing': ['error']}">
 
@@ -62,8 +62,8 @@ export default {
 
 </eslint-code-block>
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/data-name-casing.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/data-name-casing.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/data-name-casing.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/data-name-casing.test.js)
 

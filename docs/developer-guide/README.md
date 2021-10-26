@@ -1,59 +1,62 @@
-# Developer Guide
+# 开发指南
 
-Contributing is welcome.
+欢迎贡献代码。
 
-## :bug: Bug reporting
+## :bug: Bug 解决
 
-If you think you’ve found a bug in ESLint, please [create a new issue](https://github.com/ecomfe/eslint-plugin-san/issues/new?labels=&template=bug_report.md) or a pull request on GitHub.
+如果你发现了一个 bug，请在 GitHub 上 [创建一个新的issue](https://github.com/ecomfe/eslint-plugin-san/issues/new?labels=&template=bug_report.md) 或者直接提交 pr 。
 
-Please include as much detail as possible to help us properly address your issue. If we need to triage issues and constantly ask people for more detail, that’s time taken away from actually fixing issues. Help us be as efficient as possible by including a lot of detail in your issues.
+同时请提供尽可能多的详细信息，以帮助我们正确解决您的问题。 如果我们需要对问题进行分类并了解更多细节，那么就浪费了很多时间。 希望您在问题中包含尽可能多的细节，来帮助我们提高效率。
 
-## :sparkles: Proposing a new rule or a rule change
+## :sparkles: 提出新规则或更改规则
 
-In order to add a new rule or a rule change, you should:
+要添加新规则或更改规则，你可以：
 
-- Create issue on GitHub with description of proposed rule
-- Generate a new rule using the [official yeoman generator](https://github.com/eslint/generator-eslint)
-- Run `npm start`
-- Write test scenarios & implement logic
-- Describe the rule in the generated `docs` file
-- Make sure all tests are passing
-- Run `npm run lint` and fix any errors
-- Run `npm run update` in order to update readme and recommended configuration
-- Create PR and link created issue in description
+- 在 GitHub 上创建问题并描述提出的规则
+- 使用 [official yeoman generator](https://github.com/eslint/generator-eslint) 生成新规则
+- 运行`npm start`
+- 编写测试场景并实现逻辑
+- 在 `docs` 文件中描述规则
+- 确保所有测试用例都通过
+- 运行 `npm run lint` 并修复错误
+- 运行 `npm run update` 以更新`README`和推荐配置
+- 创建 PR 并且在描述中写下 issue 的链接
 
-We're more than happy to see potential contributions, so don't hesitate. If you have any suggestions, ideas or problems feel free to add new [issue](https://github.com/ecomfe/eslint-plugin-san/issues), but first please make sure your question does not repeat previous ones.
+欢迎贡献代码。 如果您有任何建议、想法或问题，请随时添加新的 [issue](https://github.com/ecomfe/eslint-plugin-san/issues)，但首先请确保你的问题没有和之前的问题重复。
 
-## :fire: Working with rules
+## :fire: 规则运行原理
 
-Before you start writing new rule, please read the [official ESLint guide](https://eslint.org/docs/developer-guide/working-with-rules).
+在开始编写新规则之前，请阅读 [官方 ESLint 指南](https://eslint.org/docs/developer-guide/working-with-rules)。
 
-Next, in order to get an idea how does the AST of the code that you want to check looks like, use the [astexplorer.net].
-The [astexplorer.net] is a great tool to inspect ASTs, also San templates are supported.
+接下来，为了了解您要检查的代码的 AST 是什么样的，请使用 [astexplorer.net]。
 
-After opening [astexplorer.net], select `San` as the syntax and `san-eslint-parser` as the parser.
+[astexplorer.net] 是检查 AST 的好工具，还支持 San 模板。
+
+打开[astexplorer.net]后，选择`San`作为语法，`san-eslint-parser`作为解析器。
 
 [astexplorer.net]: https://astexplorer.net/
 
-Since single file components in San are not plain JavaScript, we can't use the default parser, and we had to introduce additional one: `san-eslint-parser`, that generates enhanced AST with nodes that represent specific parts of the template syntax, as well as what's inside the `<script>` tag.
+由于 San 中的单个文件组件不是纯 JavaScript，我们不能使用默认解析器，我们不得不引入额外的解析器：`san-eslint-parser`，它生成增强的 AST，其节点代表模板语法的特定部分 ，以及 `<script>` 标签内的内容。
 
-To know more about certain nodes in produced ASTs, go here:
+要了解有关生成的 AST 中某些节点的更多信息，请访问此处：
 - [ESTree docs](https://github.com/estree/estree)
 - [san-eslint-parser AST docs](https://github.com/mysticatea/san-eslint-parser/blob/master/docs/ast.md)
 
-The `san-eslint-parser` provides few useful parser services, to help traverse the produced AST and access tokens of the template:
+`san-eslint-parser` 提供了一些有用的解析器服务，以帮助遍历生成的 AST 和模板中的 Token：
+
 - `context.parserServices.defineTemplateBodyVisitor(visitor, scriptVisitor)`
 - `context.parserServices.getTemplateBodyTokenStore()`
 
-Check out an [example rule](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/mustache-interpolation-spacing.js) to get a better understanding of how these work.
+查看 [示例规则](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/mustache-interpolation-spacing.js) 以更好地了解这些规则是如何工作的。
 
-Please be aware that regarding what kind of code examples you'll write in tests, you'll have to accordingly setup the parser in `RuleTester` (you can do it on per test case basis though). [See an example here](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/attribute-hyphenation.test.js#L19)
+请注意，如果你在单测中编写代码示例，你必须相应地在 `RuleTester` 中设置解析器（不过，您可以在每个测试用例的基础上进行设置）。 [在这里查看示例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/attribute-hyphenation.test.js#L19)
 
-If you'll stuck, remember there are plenty of rules you can learn from already, and if you can't find the right solution - don't hesitate to reach out in issues. We're happy to help!
+如果您遇到困难，其实已经有很多规则可供您学习，如果您找不到正确的解决方案，请联系我们。
 
-## :white_check_mark: JSDoc type checking with TypeScript
+## :white_check_mark: 使用 TypeScript 进行 JSDoc 类型检查
 
-We have type checking enabled via TypeScript and JSDoc.  
-The command to perform type checking is: `npm run tsc`
+我们通过 TypeScript 和 JSDoc 启用了类型检查。
 
-This is just to help you write the rules, not to do strict type checking. If you find it difficult to resolve type checking warnings, feel free to suppress warnings using the `// @ts-nocheck` and `// @ts-ignore` comment.
+执行类型检查的命令是：`npm run tsc`
+
+这只是为了帮助您编写规则，而不是进行严格的类型检查。 如果您发现难以解决类型检查警告，请使用 `// @ts-nocheck` 和 `// @ts-ignore` 注释来限制警告。

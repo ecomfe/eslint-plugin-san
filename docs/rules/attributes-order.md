@@ -5,29 +5,30 @@ title: san/attributes-order
 description: enforce order of attributes
 ---
 # san/attributes-order
-> enforce order of attributes
+> 要求属性顺序
 
-- :gear: This rule is included in `"plugin:san/recommended"`.
-- :wrench: The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+- :gear: 此规则包含于 `"plugin:san/recommended"`。
 
-## :book: Rule Details
+- :wrench:[命令行](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems)中的`--fix`选项可以自动修复此规则报告的一些问题。
 
-This rule aims to enforce ordering of component attributes. The default order is:
+## :book: 规则细节
 
-- `LIST_RENDERING`
-  e.g. 's-for item in items'
-- `CONDITIONALS`
-  e.g. 's-if', 's-else-if', 's-else'
-- `GLOBAL`
-  e.g. 'id'
-- `UNIQUE`
-  e.g. 'ref', 'key', 's-slot', 'slot'
-- `OTHER_ATTR`
-  e.g. 'custom-prop="foo"', 's-bind={{ {prop: foo} }}', 'prop="{{foo}}"'
-- `EVENTS`
-  e.g. 's-on="event"'
+此规则目的是强制对组件属性进行排序。 默认顺序是：
 
-### the default order
+- `列表渲染属性`
+  例如. 's-for item in items'
+- `条件属性`
+  例如. 's-if', 's-else-if', 's-else'
+- `全局属性`
+  例如. 'id'
+- `特殊属性`
+  例如. 'ref', 'key', 's-slot', 'slot'
+- `其他属性`
+  例如. 'custom-prop="foo"', 's-bind={{ {prop: foo} }}', 'prop="{{foo}}"'
+- `事件`
+  例如. 's-on="event"'
+
+### 默认顺序
 
 <eslint-code-block fix :rules="{'san/attributes-order': ['error']}">
 
@@ -72,7 +73,7 @@ This rule aims to enforce ordering of component attributes. The default order is
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 ```json
 {
   "san/attributes-order": ["error", {
@@ -89,7 +90,7 @@ This rule aims to enforce ordering of component attributes. The default order is
 }
 ```
 
-### `"alphabetical": true` 
+### `"alphabetical": true` 按字母顺序
 
 <eslint-code-block fix :rules="{'san/attributes-order': ['error', {alphabetical: true}]}">
 
@@ -141,7 +142,7 @@ This rule aims to enforce ordering of component attributes. The default order is
 
 </eslint-code-block>
 
-### Custom orders
+### 自定义顺序
 
 #### `['LIST_RENDERING', 'CONDITIONALS', 'RENDER_MODIFIERS', 'GLOBAL', 'UNIQUE', 'TWO_WAY_BINDING', 'DEFINITION', 'OTHER_DIRECTIVES', 'OTHER_ATTR', 'EVENTS', 'CONTENT']`
 
@@ -188,7 +189,7 @@ This rule aims to enforce ordering of component attributes. The default order is
 
 </eslint-code-block>
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/attributes-order.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/attributes-order.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/rules/attributes-order.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/attributes-order.test.js)

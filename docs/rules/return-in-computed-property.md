@@ -5,13 +5,13 @@ title: san/return-in-computed-property
 description: enforce that a return statement is present in computed property
 ---
 # san/return-in-computed-property
-> enforce that a return statement is present in computed property
+> 要求计算属性中存在 return 语句
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule enforces that a `return` statement is present in `computed` properties.
+此规则会检查是否在"计算"属性中存在`return`语句。
 
 <eslint-code-block :rules="{'san/return-in-computed-property': ['error']}">
 
@@ -45,7 +45,7 @@ export default {
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
@@ -55,8 +55,9 @@ export default {
 }
 ```
 
-This rule has an object option:
-- `"treatUndefinedAsUnspecified"`: `true` (default) disallows implicitly returning undefined with a `return` statement.
+此规则有一个 object 选项：
+
+- `"treatUndefinedAsUnspecified"`：`true`（默认）不允许使用 `return` 语句隐式返回 undefined。
 
 ### `treatUndefinedAsUnspecified: false`
 
@@ -92,7 +93,7 @@ export default {
 
 </eslint-code-block>
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/return-in-computed-property.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/return-in-computed-property.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/return-in-computed-property.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/return-in-computed-property.test.js)

@@ -5,14 +5,14 @@ title: san/initdata-in-component
 description: enforce component's data property to be a function
 ---
 # san/initdata-in-component
-> enforce component's data property to be a function
+> 强制组件的data属性是一个函数
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
-- :wrench: The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
+- :wrench: [命令行](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems)中的`--fix`选项可以自动修复此规则报告的一些问题。
 
-When using the data property on a component , the value must be a function that returns an object.
+在组件上使用 data 属性时，值必须是一个返回对象的函数。
 
-## :book: Rule Details
+## :book: 规则细节
 
 <eslint-code-block fix :rules="{'san/initdata-in-component': ['error']}">
 
@@ -46,15 +46,15 @@ export default {
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :books: Further Reading
+## :books: 深入阅读
 
-- [API - data](https://baidu.github.io/san/tutorial/data-method/)
+- [数据操作](https://baidu.github.io/san/tutorial/data-method/)
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/initdata-in-component.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/initdata-in-component.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/initdata-in-component.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/initdata-in-component.test.js)

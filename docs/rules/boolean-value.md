@@ -5,17 +5,17 @@ title: san/boolean-value
 description: Enforce boolean attributes notation in template
 ---
 # san/boolean-value
-> Enforce boolean attributes notation in template
+> 强制 template 中布尔属性符号。
 
-- :gear: This rule is included in `"plugin:san/strongly-recommended"`.
-- :wrench: The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+- :gear: 此规则包含于 `"plugin:san/strongly-recommended"`.
+- :wrench: [命令行](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems)中的`--fix`选项可以自动修复此规则报告的一些问题。
 
-## :book: Rule Details
+## :book: 规则细节
 
-Enforce boolean attributes notation in template
+此规则要求 template 中的布尔属性符号。
 
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
@@ -24,12 +24,12 @@ Enforce boolean attributes notation in template
   }]
 }
 ```
-This rule takes two arguments. If the first argument is `"always"` then it warns whenever an attribute is missing its value. If `"never"` then it warns if an attribute has a true value. The default value of this option is `"never"`.
+这个规则有两个参数。 如果第一个参数是`"always"`，那么它会在丢失属性值时发出警告。 如果是`"never"`，则当属性值为`true`时它会报出警告。 此选项的默认值为`"never"`。
 
-The second argument is optional: if provided, it must be an object with a `"never"` property (if the first argument is `"always"`), or an `"always"` property (if the first argument is `"never"`). This property’s value must be an array of strings representing prop names.
+第二个参数是可选的：如果提供，它必须是一个具有 `"never"` 属性的对象（如果第一个参数是 `"always"`），或一个 `"always"` 属性（如果第一个参数是 ` "never"`）。 此属性的值必须是表示属性名称的字符串数组。
 
 
-### `["warn", "never"]` (default)
+### `["warn", "never"]` (默认)
 
 <eslint-code-block :rules="{'san/boolean-value': ['warn']}">
 
@@ -96,7 +96,7 @@ The second argument is optional: if provided, it must be an object with a `"neve
 
 </eslint-code-block>
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/boolean-value.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/boolean-value.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/boolean-value.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/boolean-value.test.js)

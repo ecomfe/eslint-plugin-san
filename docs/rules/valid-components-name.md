@@ -5,10 +5,10 @@ title: san/valid-components-name
 description: disallow expression in the template in template literals
 ---
 # san/valid-components-name
-- :gear: This rule is included in `"plugin:san/essential"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`.
 
-## :book: Rule Details
-> The component name must be kebab-case, it will not work when the component name is camelCase or PascalCase.
+## :book: 规则细节
+> 组件名称必须是短横线命名，不允许驼峰或大驼峰命名。
 
 <eslint-code-block :rules="{'san/valid-components-name': ['error']}">
 
@@ -24,10 +24,10 @@ description: disallow expression in the template in template literals
 
 </eslint-code-block>
 
-## :wrench: Options
-nothing
+## :wrench: 配置
+暂无。
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-components-name.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/valid-components-name.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-components-name.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/valid-components-name.test.js)

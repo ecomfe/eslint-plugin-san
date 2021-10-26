@@ -5,17 +5,17 @@ title: san/valid-s-for
 description: enforce valid `s-for` directives
 ---
 # san/valid-s-for
-> enforce valid `s-for` directives
+> 禁止无效的 `s-for` 指令
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-This rule checks whether every `s-for` directive is valid.
+此规则检查每个 `s-for` 指令是否有效。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule reports `s-for` directives in the following cases:
+- 此规则在以下情况下提示 `s-for` 指令出现错误：
 
-- The directive does not have that attribute value. E.g. `<div s-for></div>`
+  - 该指令没有该属性值。 例如。 `<div s-for></div>`
 
 
 <eslint-code-block :rules="{'san/valid-s-for': ['error']}">
@@ -32,25 +32,26 @@ This rule reports `s-for` directives in the following cases:
 
 </eslint-code-block>
 
-::: warning Note
-This rule does not check syntax errors in directives. [san/no-parsing-error] rule reports it.
-The following cases are syntax errors:
+::: warning 注意
+此规则不检查指令中的语法错误。 [san/no-parsing-error] 规则会检查它。
+以下情况属于语法错误：
 
-- The directive's value isn't `alias in expr`. E.g. `<div s-for="foo"></div>`
-- The alias isn't LHS. E.g. `<div s-for="foo() in list"></div>`
+- `s-for`不是`alias in expr`语法形式， 例如。 `<div s-for="foo"></div>`
+- 其中的`alias`不是 LHS。 例如。 `<div s-for="foo() in list"></div>`
+
 :::
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :couple: Related Rules
+## :couple: 相关规则
 
 - [san/no-parsing-error]
 
 [san/no-parsing-error]: ./no-parsing-error.md
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-s-for.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/valid-s-for.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-s-for.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/valid-s-for.test.js)

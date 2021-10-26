@@ -16,30 +16,30 @@ const deprecatedRules = rules.filter(rule => rule.meta.deprecated);
 
 const sidebarCategories = [
     {
-        title: 'Base Rules',
-        titleZh: '基础规则',
+        titleEn: 'Base Rules',
+        title: '基础规则',
         categoryIds: ['base']
     },
     {
-        title: 'Priority A: Essential',
-        titleZh: '优先级 A: 必要',
+        titleEn: 'Priority A: Essential',
+        title: '优先级 A: 必要',
         categoryIds: ['essential']
     },
     {
-        title: 'Priority B: Strongly Recommended',
-        titleZh: '优先级 B: 强烈推荐',
+        titleEn: 'Priority B: Strongly Recommended',
+        title: '优先级 B: 强烈推荐',
         categoryIds: ['strongly-recommended']
     },
     {
-        title: 'Priority C: Recommended',
-        titleZh: '优先级 C: 推荐',
+        titleEn: 'Priority C: Recommended',
+        title: '优先级 C: 推荐',
         categoryIds: ['recommended']
     }
 ];
 
 const createCategorizedRules = function(languageRoute = '') {
     const categorizedRules = [];
-    for (const {title, titleZh, categoryIds} of sidebarCategories) {
+    for (const {title, titleEn, categoryIds} of sidebarCategories) {
         const categoryRules = rules
             .filter(rule => rule.meta.docs.categories && !rule.meta.deprecated)
             .filter(rule => categoryIds.every(categoryId => rule.meta.docs.categories.includes(categoryId)));
@@ -56,7 +56,7 @@ const createCategorizedRules = function(languageRoute = '') {
             continue;
         }
         categorizedRules.push({
-            title: languageRoute ? titleZh : title,
+            title: languageRoute ? titleEn : title,
             collapsable: false,
             children
         });
@@ -126,15 +126,41 @@ module.exports = {
             indexName: 'eslint-plugin-san'
         },
         locales: {
-            '/': {
+            '/en/': {
                 selectText: 'Languages',
                 label: 'English',
 
                 nav: [
-                    {text: 'User Guide', link: '/user-guide/'},
-                    {text: 'Developer Guide', link: '/developer-guide/'},
-                    {text: 'Rules', link: '/rules/'},
-                    {text: 'Style Guide', link: '/style-guide/'}
+                    {text: 'User Guide', link: '/en/user-guide/'},
+                    {text: 'Developer Guide', link: '/en/developer-guide/'},
+                    {text: 'Rules', link: '/en/rules/'},
+                    {text: 'Style Guide', link: '/en/style-guide/'}
+                ],
+
+                sidebar: {
+                    '/en/rules/': [
+                        // Rules in each category.
+                        ...createCategorizedRules('/en'),
+
+                        // Rules in no category.
+                        ...createExtraCategories('/en')
+                    ],
+
+                    '/en/': ['/en/user-guide/', '/en/developer-guide/', '/en/rules/', '/en/style-guide/']
+                }
+            },
+
+            '/': {
+                selectText: '选择语言',
+                editLinkText: '在 GitHub 上编辑此页',
+                label: '简体中文',
+                lastUpdated: '最后更新',
+
+                nav: [
+                    {text: '用户指南', link: '/user-guide/'},
+                    {text: '开发指南', link: '/developer-guide/'},
+                    {text: '规则', link: '/rules/'},
+                    {text: 'san规范', link: '/style-guide/'}
                 ],
 
                 sidebar: {
@@ -148,42 +174,16 @@ module.exports = {
 
                     '/': ['/user-guide/', '/developer-guide/', '/rules/', '/style-guide/']
                 }
-            },
-
-            '/zh/': {
-                selectText: '选择语言',
-                editLinkText: '在 GitHub 上编辑此页',
-                label: '简体中文',
-                lastUpdated: '最后更新',
-
-                nav: [
-                    {text: '用户指南', link: '/zh/user-guide/'},
-                    {text: '开发指南', link: '/zh/developer-guide/'},
-                    {text: '规则', link: '/zh/rules/'},
-                    {text: '样式指南', link: '/zh/style-guide/'}
-                ],
-
-                sidebar: {
-                    '/zh/rules/': [
-                        // Rules in each category.
-                        ...createCategorizedRules('/zh'),
-
-                        // Rules in no category.
-                        ...createExtraCategories('/zh')
-                    ],
-
-                    '/zh/': ['/zh/user-guide/', '/zh/developer-guide/', '/zh/rules/', '/zh/style-guide/']
-                }
             }
         }
     },
 
     locales: {
         '/': {
-            lang: 'en-US'
-        },
-        '/zh/': {
             lang: 'zh-CN'
+        },
+        '/en/': {
+            lang: 'en-US'
         }
     }
 

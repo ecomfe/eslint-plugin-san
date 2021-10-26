@@ -5,13 +5,13 @@ title: san/one-component-per-file
 description: enforce that each component should be in its own file
 ---
 # san/one-component-per-file
-> enforce that each component should be in its own file
+> 要求每个文件中只有一个组件
 
-- :gear: This rule is included in all of `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule checks if there is only one component per file.
+此规则会检查每个文件是否只有一个组件。
 
 <eslint-code-block filename="a.js" language="javascript" :rules="{'san/one-component-per-file': ['error']}">
 
@@ -42,11 +42,11 @@ export default {
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/one-component-per-file.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/one-component-per-file.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/one-component-per-file.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/one-component-per-file.test.js)

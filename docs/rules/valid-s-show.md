@@ -5,17 +5,17 @@ title: san/valid-s-show
 description: enforce valid `s-show` directives
 ---
 # san/valid-s-show
-> enforce valid `s-show` directives
+> 禁止无效的 `s-show` 指令
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-This rule checks whether every `s-show` directive is valid.
+此规则检查每个 `s-show` 指令是否有效。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule reports `s-show` directives in the following cases:
+此规则在以下情况下提示 `s-show` 指令出现错误：
 
-- The directive does not have that attribute value. E.g. `<div s-show></div>`
+- 该指令没有该属性值。 例如。 `<div s-show></div>`
 
 <eslint-code-block :rules="{'san/valid-s-show': ['error']}">
 
@@ -31,21 +31,21 @@ This rule reports `s-show` directives in the following cases:
 
 </eslint-code-block>
 
-::: warning Note
-This rule does not check syntax errors in directives because it's checked by [san/no-parsing-error] rule.
+::: warning 注意
+此规则不检查指令中的语法错误，因为它由 [san/no-parsing-error] 规则检查。
 :::
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :couple: Related Rules
+## :couple: 相关规则
 
 - [san/no-parsing-error]
 
 [san/no-parsing-error]: ./no-parsing-error.md
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-s-show.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/valid-s-show.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-s-show.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/valid-s-show.test.js)

@@ -5,15 +5,15 @@ title: san/component-tags-order
 description: enforce order of component top-level elements
 ---
 # san/component-tags-order
-> enforce order of component top-level elements
+> 要求组件顶级元素的顺序
 
-- :gear: This rule is included in `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule warns about the order of the `<script>`, `<template>` & `<style>` tags.
+此规则会要求`<script>`、`<template>` 和`<style>` 标签的顺序。
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
@@ -23,9 +23,9 @@ This rule warns about the order of the `<script>`, `<template>` & `<style>` tags
 }
 ```
 
-- `order` (`(string|string[])[]`) ... The order of top-level element names. default `[ [ "script", "template" ], "style" ]`.
+- `order` (`(string|string[])[]`) ... 组件顶级元素的顺序。默认 `[ [ "script", "template" ], "style" ]`.
 
-### `{ "order": [ [ "script", "template" ], "style" ] }` (default)
+### `{ "order": [ [ "script", "template" ], "style" ] }` (默认)
 
 <eslint-code-block :rules="{'san/component-tags-order': ['error']}">
 
@@ -110,7 +110,7 @@ This rule warns about the order of the `<script>`, `<template>` & `<style>` tags
 
 </eslint-code-block>
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/component-tags-order.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/component-tags-order.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/component-tags-order.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/component-tags-order.test.js)

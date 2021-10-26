@@ -5,15 +5,15 @@ title: san/valid-template-root
 description: enforce valid template root
 ---
 # san/valid-template-root
-> enforce valid template root
+> 禁止无效的 template 根节点
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-This rule checks whether every template root is valid.
+此规则检查每个 template 根节点是否有效。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule reports the template root in the following cases:
+此规则在以下情况下提示 template 根节点错误：
 
 <eslint-code-block :rules="{'san/valid-template-root': ['error']}">
 
@@ -24,11 +24,11 @@ This rule reports the template root in the following cases:
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-template-root.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/valid-template-root.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/valid-template-root.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/valid-template-root.test.js)

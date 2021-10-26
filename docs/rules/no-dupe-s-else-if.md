@@ -5,13 +5,13 @@ title: san/no-dupe-s-else-if
 description: disallow duplicate conditions in `s-if` / `s-else-if` chains
 ---
 # san/no-dupe-s-else-if
-> disallow duplicate conditions in `s-if` / `s-else-if` chains
+> 禁止在 `s-if` / `s-else-if` 链中出现重复条件
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule disallows duplicate conditions in the same `s-if` / `s-else-if` chain.
+此规则不允许在同一 `s-if` / `s-else-if` 链中出现重复条件。
 
 <eslint-code-block :rules="{'san/no-dupe-s-else-if': ['error']}">
 
@@ -51,7 +51,7 @@ This rule disallows duplicate conditions in the same `s-if` / `s-else-if` chain.
 
 </eslint-code-block>
 
-This rule can also detect some cases where the conditions are not identical, but the branch can never execute due to the logic of `||` and `&&` operators.
+这个规则也可以检测一些条件不相同的情况，例如由于`||`和`&& ` 运算符，分支也永远无法执行。
 
 <eslint-code-block :rules="{'san/no-dupe-s-else-if': ['error']}">
 
@@ -82,17 +82,17 @@ This rule can also detect some cases where the conditions are not identical, but
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :couple: Related Rules
+## :couple: 相关规则
 
 - [no-dupe-else-if]
 
 [no-dupe-else-if]: https://eslint.org/docs/rules/no-dupe-else-if
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-dupe-s-else-if.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-dupe-s-else-if.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-dupe-s-else-if.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-dupe-s-else-if.test.js)

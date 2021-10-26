@@ -5,15 +5,15 @@ title: san/no-template-shadow
 description: disallow variable declarations from shadowing variables declared in the outer scope
 ---
 # san/no-template-shadow
-> disallow variable declarations from shadowing variables declared in the outer scope
+> 禁止声明遮盖外部作用域变量的变量。
 
-- :gear: This rule is included in all of `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-`no-template-shadow` should report variable definitions of s-for directives or scope attributes if those shadows the variables in parent scopes.
+`no-template-shadow` 会指出 s-for 指令或 scope 属性中遮盖了父作用域中的变量。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule aims to eliminate shadowed variable declarations of s-for directives or scope attributes.
+该规则目的是避免 s-for 指令或scope 属性中声明遮盖了父作用域中的变量。
 
 <eslint-code-block :rules="{'san/no-template-shadow': ['error']}">
 
@@ -45,11 +45,11 @@ This rule aims to eliminate shadowed variable declarations of s-for directives o
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-template-shadow.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-template-shadow.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-template-shadow.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-template-shadow.test.js)

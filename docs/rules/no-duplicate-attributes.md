@@ -5,16 +5,16 @@ title: san/no-duplicate-attributes
 description: disallow duplication of attributes
 ---
 # san/no-duplicate-attributes
-> disallow duplication of attributes
+> 不允许重复的属性
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-When duplicate arguments exist, only the last one is valid.
-It's possibly mistakes.
+当存在重复参数时，只有最后一个是有效的。
+但也可能是错误。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule reports duplicate attributes.
+此规则提示出现的重复属性。
 
 <eslint-code-block :rules="{'san/no-duplicate-attributes': ['error']}">
 
@@ -32,10 +32,11 @@ This rule reports duplicate attributes.
 
 </eslint-code-block>
 
-## :wrench: Options
-Nothing.
+## :wrench: 配置
+暂无。
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-duplicate-attributes.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/master/__tests__/lib/rules/no-duplicate-attributes.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-duplicate-attributes.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/blob/master/__tests__/lib/rules/no-duplicate-attributes.test.js)
+

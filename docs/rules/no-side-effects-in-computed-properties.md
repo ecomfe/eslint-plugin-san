@@ -5,15 +5,15 @@ title: san/no-side-effects-in-computed-properties
 description: disallow side effects in computed properties
 ---
 # san/no-side-effects-in-computed-properties
-> disallow side effects in computed properties
+> 禁止计算属性中的副作用
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule is aimed at preventing the code which makes side effects in computed properties.
+此规则目的是防止在计算属性中产生副作用。
 
-It is considered a very bad practice to introduce side effects inside computed properties. It makes the code not predictable and hard to understand.
+在计算属性中引入副作用被认为是一种非常糟糕的做法。 它使代码不可预测且难以理解。
 
 <eslint-code-block :rules="{'san/no-side-effects-in-computed-properties': ['error']}">
 
@@ -59,15 +59,15 @@ export default {
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :books: Further Reading
+## :books: 深入阅读
 
-- [Guide - Computed](https://baidu.github.io/san/tutorial/component/#计算数据)
+- [计算属性](https://baidu.github.io/san/tutorial/component/#计算数据)
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-side-effects-in-computed-properties.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-side-effects-in-computed-properties.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-side-effects-in-computed-properties.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-side-effects-in-computed-properties.test.js)

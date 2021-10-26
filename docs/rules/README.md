@@ -1,25 +1,25 @@
 # eslint-plugin-san
 
-> Official ESLint plugin for San
+> San 官方 ESlint 插件
 
-## Installation
+## 安装
 
-You'll first need to install [ESLint](http://eslint.org):
+首先你需要安装 [ESLint](http://eslint.org):
 
 ```
 $ npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-san`:
+然后, 安装 `eslint-plugin-san`:
 
 ```
 $ npm install eslint-plugin-san --save-dev
 ```
 
 
-## Usage
+## 使用
 
-Add `san` to the plugins section of your `.eslintrc` configuration file.
+将`san`添加到`.eslintrc`配置文件的插件部分。
 
 ```json
 {
@@ -31,7 +31,7 @@ Add `san` to the plugins section of your `.eslintrc` configuration file.
 ```
 
 
-Then configure the rules you want to use under the rules section.
+然后在规则部分配置您要使用的规则。
 
 ```json
 {
@@ -41,9 +41,8 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
-### Supported on `VS Code`
-On VS Code using [ESlint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to support.
-By default, Eslint extension is NOT support San, you shoud config `eslint.validate` option like this in `settings.json`:
+###  支持 `VS Code` 
+在 VS Code 上使用 [ESlint 扩展](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)来支持。 默认情况下，Eslint 扩展不支持 San，你应该在 settings.json 中像这样配置 eslint.validate 选项：
 
 ```json
 {
@@ -54,9 +53,9 @@ By default, Eslint extension is NOT support San, you shoud config `eslint.valida
 ```
 
 
-## Supported Rules
+## 支持的规则
 
-* Fill in provided rules here
+* 详情请查看文档
 
 
 

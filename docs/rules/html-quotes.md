@@ -5,22 +5,22 @@ title: san/html-quotes
 description: enforce quotes style of HTML attributes
 ---
 # san/html-quotes
-> enforce quotes style of HTML attributes
+> 要求 HTML 属性中的引号样式
 
-- :gear: This rule is included in all of `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
-- :wrench: The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+- :gear: 此规则包含于 `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
+- :wrench: [命令行](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems)中的`--fix`选项可以自动修复此规则报告的一些问题。
 
-You can choose quotes of HTML attributes from:
+您可以从以下选项中选择 HTML 属性的引号：
 
-- Double quotes: `<div class="foo">`
-- Single quotes: `<div class='foo'>`
-- No quotes: `<div class=foo>`
+- 双引号：`<div class="foo">`
+- 单引号：`<div class='foo'>`
+- 没有引号：`<div class=foo>`
 
-This rule enforces the quotes style of HTML attributes.
+此规则要求 HTML 属性中的引号样式。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule reports the quotes of attributes if it is different to configured quotes.
+如果属性的引号与配置中不同，则此规则会提示错误。
 
 <eslint-code-block fix :rules="{'san/html-quotes': ['error']}">
 
@@ -37,9 +37,9 @@ This rule reports the quotes of attributes if it is different to configured quot
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
-Default is set to `double`.
+默认设置为 `double`（双引号）。
 
 ```json
 {
@@ -47,14 +47,14 @@ Default is set to `double`.
 }
 ```
 
-String option:
+字符串选项：
 
-- `"double"` (default) ... requires double quotes.
-- `"single"` ... requires single quotes.
+- `"double"` (默认) ...需要双引号。
+- `"single"` ... 需要单引号。
 
-Object option:
+对象选项：
 
-- `avoidEscape` ... If `true`, allows strings to use single-quotes or double-quotes so long as the string contains a quote that would have to be escaped otherwise.
+- `avoidEscape` ...如果为`true`，则允许字符串使用单引号或双引号，只要字符串里包含必须以其他方式转义的引号。
 
 ### `"single"`
 
@@ -90,7 +90,7 @@ Object option:
 
 </eslint-code-block>
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/html-quotes.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/html-quotes.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/html-quotes.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/html-quotes.test.js)

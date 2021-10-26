@@ -5,13 +5,13 @@ title: san/this-in-template
 description: disallow usage of `this` in template
 ---
 # san/this-in-template
-> disallow usage of `this` in template
+> 禁止在 template 中使用 `this`
 
-- :gear: This rule is included in `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule aims at preventing usage of `this` in San templates.
+此规则目的是防止在 San 模板中使用"this"。
 
 <eslint-code-block :rules="{'san/this-in-template': ['error']}">
 
@@ -31,15 +31,15 @@ This rule aims at preventing usage of `this` in San templates.
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
   "san/this-in-template": ["error", "always" | "never"]
 }
 ```
-- `"always"` ... Always use `this` while accessing properties from San.
-- `"never"` (default) ... Never use `this` keyword in expressions.
+- `"always"` ... 在 San 中访问属性时始终使用 `this`。
+- `"never"` (默认) ... 不要在表达式中使用 `this` 关键字。
 
 ### `"always"`
 
@@ -61,7 +61,7 @@ This rule aims at preventing usage of `this` in San templates.
 
 </eslint-code-block>
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/this-in-template.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/this-in-template.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/this-in-template.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/this-in-template.test.js)
