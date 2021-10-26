@@ -5,13 +5,13 @@ title: san/no-expression-in-template-literals
 description: disallow expression in the template in template literals
 ---
 # san/no-expression-in-template-literals
-> disallow expression in the template in template literals
+> 不允许在 template 中使用 template 表达式
 
-- :gear: This rule is included in `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-disallow expression in the template in template literals
+不允许在 template 中使用 template 表达式
 
 ```typescript
 // GOOD
@@ -48,9 +48,9 @@ export default {
 }
 ```
 
-## :wrench: Options
-nothing
+## :wrench: 配置
+暂无。
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-expression-in-template-literals.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-expression-in-template-literals.js)

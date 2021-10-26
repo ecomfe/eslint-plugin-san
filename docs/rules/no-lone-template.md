@@ -5,13 +5,13 @@ title: san/no-lone-template
 description: disallow unnecessary `<template>`
 ---
 # san/no-lone-template
-> disallow unnecessary `<template>`
+> 不允许不必要的 `<template>`
 
-- :gear: This rule is included in `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule aims to eliminate unnecessary and potentially confusing `<template>`.  
+该规则目的是消除不必要的和潜在混淆的 `<template>`。
 
 <eslint-code-block :rules="{'san/no-lone-template': ['error']}">
 
@@ -32,17 +32,17 @@ This rule aims to eliminate unnecessary and potentially confusing `<template>`.
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :couple: Related Rules
+## :couple: 相关规则
 
 - [no-lone-blocks]
 
 [no-lone-blocks]: https://eslint.org/docs/rules/no-lone-blocks
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-lone-template.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-lone-template.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-lone-template.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-lone-template.test.js)

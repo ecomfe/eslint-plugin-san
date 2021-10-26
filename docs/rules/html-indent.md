@@ -5,17 +5,17 @@ title: san/html-indent
 description: enforce consistent indentation in `<template>`
 ---
 # san/html-indent
-> enforce consistent indentation in `<template>`
+> 在 `<template>` 中使用一致的缩进
 
-- :gear: This rule is included in all of `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
-- :wrench: The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+- :gear: 此规则包含于 `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
+- :wrench: [命令行](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems)中的`--fix`选项可以自动修复此规则报告的一些问题。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule enforces a consistent indentation style in `<template>`. The default style is 2 spaces.
+此规则在 `<template>` 中要求使用一致的缩进样式。 默认样式为 2 个空格。
 
-- This rule checks all tags, also all expressions in directives and mustaches.
-- In the expressions, this rule supports ECMAScript 2020 syntaxes. It ignores unknown AST nodes, but it might be confused by non-standard syntaxes.
+- 此规则检查所有标签，指令以及插值语法中的所有表达式。
+- 在表达式中，此规则支持 ECMAScript 2020 语法。 它会忽略未知的 AST 节点，但可能会被非标准语法混淆。
 
 <eslint-code-block fix :rules="{'san/html-indent': ['error']}">
 
@@ -56,7 +56,7 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
@@ -70,16 +70,16 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 }
 ```
 
-- `type` (`number | "tab"`) ... The type of indentation. Default is `2`. If this is a number, it's the number of spaces for one indent. If this is `"tab"`, it uses one tab for one indent.
-- `attribute` (`integer`) ... The multiplier of indentation for attributes. Default is `1`.
-- `baseIndent` (`integer`) ... The multiplier of indentation for top-level statements. Default is `1`.
-- `closeBracket` (`integer | object`) ... The multiplier of indentation for right brackets. Default is `0`.  
-  You can apply all of the following by setting a number value.
-  - `closeBracket.startTag` (`integer`) ... The multiplier of indentation for right brackets of start tags (`<div>`). Default is `0`.
-  - `closeBracket.endTag` (`integer`) ... The multiplier of indentation for right brackets of end tags (`</div>`). Default is `0`.
-  - `closeBracket.selfClosingTag` (`integer`) ... The multiplier of indentation for right brackets of start tags (`<div/>`). Default is `0`.
-- `alignAttributesVertically` (`boolean`) ... Condition for whether attributes should be vertically aligned to the first attribute in multiline case or not. Default is `true`
-- `ignores` (`string[]`) ... The selector to ignore nodes. You can use [esquery](https://github.com/estools/esquery#readme) to select nodes. Default is an empty array.
+- `type` (`number | "tab"`) ... 缩进的类型。默认值为"2"。如果这是一个数字，它是一个缩进的空格数。如果这是`"tab"`，它使用一个制表符缩进一个。
+- `attribute` (`integer`) ... 属性缩进的乘数。默认值为"1"。
+- `baseIndent` (`integer`) ... 最外层语句的缩进倍数。默认值为"1"。
+- `closeBracket` (`integer | object`) ... 右括号缩进的乘数。默认值为"0"。
+  您可以通过设置数值来应用以下内容。
+  - `closeBracket.startTag` (`integer`) ... 开始标签右括号的缩进倍数 (`<div>`)。默认值为"0"。
+  - `closeBracket.endTag` (`integer`) ... 结束标签右括号的缩进倍数 (`</div>`)。默认值为"0"。
+  - `closeBracket.selfClosingTag` (`integer`) ... 自闭合标签右括号的缩进倍数 (`<div/>`)。默认值为"0"。
+- `alignAttributesVertically` (`boolean`) ... 在多行情况下，属性是否应该垂直对齐到第一个属性的条件。默认为`true`
+- `ignores` (`string[]`) ... 忽略节点的选择器。您可以使用 [esquery](https://github.com/estools/esquery#readme) 来选择节点。默认是一个空数组。
 
 ### `2, {"attribute": 1, "closeBracket": 1}`
 
@@ -187,7 +187,7 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 
 </eslint-code-block>
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/html-indent.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/html-indent.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/html-indent.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/html-indent.test.js)

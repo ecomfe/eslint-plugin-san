@@ -7,11 +7,11 @@ description: disallow empty of attributes
 # san/no-empty-attributes
 > disallow empty of attributes
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule requires that the class attribute and style attribute cannot be empty by default.
+该规则要求class属性和style属性默认不能为空。
 
 <eslint-code-block :rules="{'san/no-empty-attributes': ['error']}">
 
@@ -31,7 +31,7 @@ This rule requires that the class attribute and style attribute cannot be empty 
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 ```js
 {
     "san/no-empty-attributes": ["error", {
@@ -40,7 +40,7 @@ This rule requires that the class attribute and style attribute cannot be empty 
 }
 ```
 
-* `groups`：In addition to the class  and style, you can also add additional attributes that cannot be empty through group.
+* `groups`：除了 class 和 style，还可以通过 group 添加其他不能为空的属性。
 
 ### `groups: ['attr']`
 
@@ -63,7 +63,7 @@ This rule requires that the class attribute and style attribute cannot be empty 
 
 </eslint-code-block>
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-empty-attributes.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/no-empty-attributes.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-empty-attributes.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/no-empty-attributes.test.js)

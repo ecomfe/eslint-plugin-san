@@ -5,14 +5,14 @@ title: san/html-closing-bracket-spacing
 description: require or disallow a space before tag's closing brackets
 ---
 # san/html-closing-bracket-spacing
-> require or disallow a space before tag's closing brackets
+> 要求在标签的右括号之前有空格（或没有空格）
 
-- :gear: This rule is included in all of `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
-- :wrench: The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+- :gear: 此规则包含于 `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
+- :wrench: [命令行](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems)中的`--fix`选项可以自动修复此规则报告的一些问题。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule aims to enforce consistent spacing style before closing brackets `>` of tags.
+此规则目的是在标签的闭合括号 `>` 之前要求一致的空格样式。
 
 <eslint-code-block fix :rules="{'san/html-closing-bracket-spacing': ['error']}">
 
@@ -40,7 +40,7 @@ This rule aims to enforce consistent spacing style before closing brackets `>` o
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
@@ -52,15 +52,15 @@ This rule aims to enforce consistent spacing style before closing brackets `>` o
 }
 ```
 
-- `startTag` (`"always" | "never"`) ... Setting for the `>` of start tags (e.g. `<div>`). Default is `"never"`.
-    - `"always"` ... requires one or more spaces.
-    - `"never"` ... disallows spaces.
-- `endTag` (`"always" | "never"`) ... Setting for the `>` of end tags (e.g. `</div>`). Default is `"never"`.
-    - `"always"` ... requires one or more spaces.
-    - `"never"` ... disallows spaces.
-- `selfClosingTag` (`"always" | "never"`) ... Setting for the `/>` of self-closing tags (e.g. `<div/>`). Default is `"always"`.
-    - `"always"` ... requires one or more spaces.
-    - `"never"` ... disallows spaces.
+- `startTag` (`"always" | "never"`) ... 设置开始标签的 `>`（例如 `<div>`）。 默认为`"never"`。
+   - `"always"` ... 需要一个或多个空格。
+   - `"never"` ... 不允许使用空格。
+- `endTag` (`"always" | "never"`) ... 设置结束标签的 `>`（例如 `</div>`）。 默认为`"never"`。
+   - `"always"` ... 需要一个或多个空格。
+   - `"never"` ... 不允许使用空格。
+- `selfClosingTag` (`"always" | "never"`) ... 设置自闭合标签的 `/>`（例如 `<div/>`）。 默认为`"always"`。
+   - `"always"` ... 需要一个或多个空格。
+   - `"never"` ... 不允许使用空格。
 
 ### `"startTag": "always", "endTag": "always", "selfClosingTag": "always"`
 
@@ -81,12 +81,12 @@ This rule aims to enforce consistent spacing style before closing brackets `>` o
 
 </eslint-code-block>
 
-## :couple: Related Rules
+## :couple: 相关规则
 
 - [san/no-multi-spaces](./no-multi-spaces.md)
 - [san/html-closing-bracket-newline](./html-closing-bracket-newline.md)
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/html-closing-bracket-spacing.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/html-closing-bracket-spacing.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/html-closing-bracket-spacing.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/html-closing-bracket-spacing.test.js)

@@ -5,14 +5,14 @@ title: san/no-spaces-around-equal-signs-in-attribute
 description: disallow spaces around equal signs in attribute
 ---
 # san/no-spaces-around-equal-signs-in-attribute
-> disallow spaces around equal signs in attribute
+> 禁止在属性中的等号周围有空格
 
-- :gear: This rule is included in all of `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
-- :wrench: The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+- :gear: 此规则包含于 `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
+- :wrench: [命令行](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems)中的`--fix`选项可以自动修复此规则报告的一些问题。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule disallow spaces around equal signs in attribute.
+此规则不允许属性中的等号周围有空格。
 
 <eslint-code-block fix :rules="{'san/no-spaces-around-equal-signs-in-attribute': ['error']}">
 
@@ -28,10 +28,10 @@ This rule disallow spaces around equal signs in attribute.
 </eslint-code-block>
 
 ::: tip Info
-HTML5 allows spaces around equal signs. But space-less is easier to read, and groups entities better together.
+HTML5 允许等号周围有空格。 但是无空格更容易阅读，并且可以更好地将实体组合在一起。
 :::
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
@@ -39,11 +39,11 @@ HTML5 allows spaces around equal signs. But space-less is easier to read, and gr
 }
 ```
 
-## :books: Further Reading
+## :books: 深入阅读
 
 * [HTML5 Style Guide - W3Schools *Spaces and Equal Signs*](https://www.w3schools.com/html/html5_syntax.asp)
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-spaces-around-equal-signs-in-attribute.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-spaces-around-equal-signs-in-attribute.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-spaces-around-equal-signs-in-attribute.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-spaces-around-equal-signs-in-attribute.test.js)

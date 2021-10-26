@@ -5,27 +5,27 @@ title: san/comment-directive
 description: support comment-directives in `<template>`
 ---
 # san/comment-directive
-> support comment-directives in `<template>`
+> 支持 `<template>` 中的注释指令
 
-- :gear: This rule is included in all of `"plugin:san/base"`, `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/base"`, `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-Sole purpose of this rule is to provide `eslint-disable` functionality in the `<template>` and in the block level.
-It supports usage of the following comments:
+此规则的唯一目的是在 `<template>` 和块级元素提供 `eslint-disable` 功能。
+它支持使用以下注释：
 
 - `eslint-disable`
 - `eslint-enable`
 - `eslint-disable-line`
 - `eslint-disable-next-line`
 
-::: warning Note
-We can't write HTML comments in tags.
+::: warning 注意
+我们不能在标签内写 HTML 注释。
 :::
 
-## :book: Rule Details
+## :book: 规则细节
 
-ESLint doesn't provide any API to enhance `eslint-disable` functionality and ESLint rules cannot affect other rules. But ESLint provides [processors API](https://eslint.org/docs/developer-guide/working-with-plugins#processors-in-plugins).
+ESLint 不提供任何 API 来增强`eslint-disable`功能，并且 ESLint 规则不能影响其他规则。 但是 ESLint 提供了 [processors API](https://eslint.org/docs/developer-guide/working-with-plugins#processors-in-plugins)。
 
-This rule sends all `eslint-disable`-like comments as errors to the post-process of the `.san` file processor, then the post-process removes all `san/comment-directive` errors and the reported errors in disabled areas.
+此规则将所有类似`eslint-disable`的注释作为错误发送到`.san`文件处理器中的`post-process`，然后`post-process`删除所有`san/comment-directive`错误及禁用区域中提示的错误 .
 
 <eslint-code-block :rules="{'san/comment-directive': ['error'], 'san/max-attributes-per-line': ['error']}">
 
@@ -38,7 +38,7 @@ This rule sends all `eslint-disable`-like comments as errors to the post-process
 
 </eslint-code-block>
 
-The `eslint-disable`-like comments can be used in the `<template>` and in the block level.
+ `eslint-disable` 的注释可以在 `<template>` 中或块级元素级别使用。
 
 <eslint-code-block :rules="{'san/comment-directive': ['error'], 'san/max-attributes-per-line': ['error'], 'san/component-tags-order': ['error'] }">
 
@@ -55,7 +55,7 @@ The `eslint-disable`-like comments can be used in the `<template>` and in the bl
 
 </eslint-code-block>
 
-The `eslint-disable` comments has no effect after one block.
+`eslint-disable` 注释在一个块级元素过后则无效。
 
 <eslint-code-block :rules="{'san/comment-directive': ['error'], 'san/max-attributes-per-line': ['error'], 'san/component-tags-order': ['error'] }">
 
@@ -74,7 +74,7 @@ The `eslint-disable` comments has no effect after one block.
 
 </eslint-code-block>
 
-The `eslint-disable`-like comments can include descriptions to explain why the comment is necessary. The description must occur after the directive and is separated from the directive by two or more consecutive `-` characters. For example:
+`eslint-disable` 注释可以包含说明来解释为什么需要注释。 说明必须出现在指令之后，并由两个或多个连续的 - 字符与指令分隔。 例如：
 
 <eslint-code-block :rules="{'san/comment-directive': ['error'], 'san/max-attributes-per-line': ['error']}">
 
@@ -87,7 +87,7 @@ The `eslint-disable`-like comments can include descriptions to explain why the c
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
@@ -97,7 +97,7 @@ The `eslint-disable`-like comments can include descriptions to explain why the c
 }
 ```
 
-- `reportUnusedDisableDirectives` ... If `true`, to report unused `eslint-disable` HTML comments. default `false`
+- `reportUnusedDisableDirectives` ... 如果为 `true`，将提示未得到使用（因此不需要）的禁用指令。 默认`false`
 
 ### `{ "reportUnusedDisableDirectives": true }`
 
@@ -117,17 +117,17 @@ The `eslint-disable`-like comments can include descriptions to explain why the c
 
 </eslint-code-block>
 
-::: warning Note
-Unused reports cannot be suppressed with `eslint-disable` HTML comments.
+::: warning 注意
+如果没有使用到禁用注释，将会提示不能用`eslint-disable` 注释来限制。
 :::
 
-## :books: Further Reading
+## :books: 深入阅读
 
-- [Disabling rules with inline comments]
+- [使用注释禁用规则]
 
-[Disabling rules with inline comments]: https://eslint.org/docs/user-guide/configuring#disabling-rules-with-inline-comments
+[使用注释禁用规则]: https://eslint.org/docs/user-guide/configuring#disabling-rules-with-inline-comments
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/comment-directive.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/comment-directive.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/comment-directive.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/comment-directive.test.js)

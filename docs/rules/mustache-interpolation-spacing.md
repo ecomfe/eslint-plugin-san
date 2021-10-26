@@ -5,14 +5,14 @@ title: san/mustache-interpolation-spacing
 description: enforce unified spacing in mustache interpolations
 ---
 # san/mustache-interpolation-spacing
-> enforce unified spacing in mustache interpolations
+> 插值表达式统一空格
 
-- :gear: This rule is included in all of `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
-- :wrench: The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+- :gear: 此规则包含于 `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
+- :wrench: [命令行](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems)中的`--fix`选项可以自动修复此规则报告的一些问题。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule aims at enforcing unified spacing in mustache interpolations.
+该规则目的是在插值表达式中要求统一空格。
 
 <eslint-code-block fix :rules="{'san/mustache-interpolation-spacing': ['error']}">
 
@@ -29,7 +29,7 @@ This rule aims at enforcing unified spacing in mustache interpolations.
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
@@ -37,8 +37,8 @@ This rule aims at enforcing unified spacing in mustache interpolations.
 }
 ```
 
-- `"always"` (default) ... Expect one space between expression and curly brackets.
-- `"never"` ... Expect no spaces between expression and curly brackets.
+- `"always"`（默认）... 表达式和大括号之间需要一个空格。
+- `"never"`......表达式和大括号之间没有空格。
 
 ### `"never"`
 
@@ -57,7 +57,7 @@ This rule aims at enforcing unified spacing in mustache interpolations.
 
 </eslint-code-block>
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/mustache-interpolation-spacing.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/mustache-interpolation-spacing.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/mustache-interpolation-spacing.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/mustache-interpolation-spacing.test.js)

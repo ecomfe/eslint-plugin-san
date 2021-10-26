@@ -5,13 +5,13 @@ title: san/no-unused-components
 description: disallow registering components that are not used inside templates
 ---
 # san/no-unused-components
-> disallow registering components that are not used inside templates
+> 禁止注册未在 templates 中使用的组件
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule reports components that haven't been used in the template.
+该规则会提示组件未在 template 中使用。
 
 <eslint-code-block :rules="{'san/no-unused-components': ['error']}">
 
@@ -68,11 +68,11 @@ This rule reports components that haven't been used in the template.
 </eslint-code-block>
 
 
-## :wrench: Options
+## :wrench: 配置
 
-nothing
+暂无。
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-unused-components.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/no-unused-components.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-unused-components.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/no-unused-components.test.js)

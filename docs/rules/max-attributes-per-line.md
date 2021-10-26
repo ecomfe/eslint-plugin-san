@@ -5,20 +5,18 @@ title: san/max-attributes-per-line
 description: enforce the maximum number of attributes per line
 ---
 # san/max-attributes-per-line
-> enforce the maximum number of attributes per line
+> 限制每行的最大属性数量
 
-- :gear: This rule is included in all of `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
-- :wrench: The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+- :gear: 此规则包含于 `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
+- :wrench: [命令行](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems)中的`--fix`选项可以自动修复此规则报告的一些问题。
 
-Limits the maximum number of attributes/properties per line to improve readability.
+限制每行最大的属性数量以提高可读性。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule aims to enforce a number of attributes per line in templates.
-It checks all the elements in a template and verifies that the number of attributes per line does not exceed the defined maximum.
-An attribute is considered to be in a new line when there is a line break between two attributes.
+此规则目的是限制模板中每行的多个属性。它检查模板中的所有元素并验证每行的属性数是否不超过定义的最大值。当两个属性之间有换行符时，一个属性被认为是在一个新行中。
 
-There is a configurable number of attributes that are acceptable in one-line case (default 1), as well as how many attributes are acceptable per line in multi-line case (default 1).
+单行情况下可接受的属性数量是可配置的（默认 1），以及多行情况下每行可接受的属性数量（默认 1）。
 
 <eslint-code-block fix :rules="{'san/max-attributes-per-line': ['error']}">
 
@@ -50,7 +48,7 @@ There is a configurable number of attributes that are acceptable in one-line cas
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
@@ -64,9 +62,11 @@ There is a configurable number of attributes that are acceptable in one-line cas
 }
 ```
 
-- `singleline` (`number`) ... The number of maximum attributes per line when the opening tag is in a single line. Default is `1`.
-- `multiline.max` (`number`) ... The max number of attributes per line when the opening tag is in multiple lines. Default is `1`. This can be `{ multiline: 1 }` instead of `{ multiline: { max: 1 }}` if you don't configure `allowFirstLine` property.
-- `multiline.allowFirstLine` (`boolean`) ... If `true`, it allows attributes on the same line as that tag name. Default is `false`.
+- singleline (number) ... 当标签处于一行中时，每行的最大属性数。 默认值为 1。
+
+- multiline.max (number) ... 当标签处于多行中时，每行的最大属性数。 默认值为 1。如果未配置allowFirstLine 属性，应该是 { multiline: 1 } 而不是 { multiline: { max: 1 }} 。
+
+- multiline.allowFirstLine (boolean) ... 如果为 true，则允许属性与标签位于同一行。 默认为`false`。
 
 ### `"singleline": 3`
 
@@ -122,7 +122,7 @@ There is a configurable number of attributes that are acceptable in one-line cas
 
 </eslint-code-block>
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/max-attributes-per-line.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/max-attributes-per-line.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/max-attributes-per-line.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/max-attributes-per-line.test.js)

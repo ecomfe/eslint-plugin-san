@@ -5,14 +5,14 @@ title: san/order-in-components
 description: enforce order of properties in components
 ---
 # san/order-in-components
-> enforce order of properties in components
+> 要求组件中属性的顺序
 
-- :gear: This rule is included in `"plugin:san/recommended"`.
-- :wrench: The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+- :gear: 此规则包含于 `"plugin:san/recommended"`.
+- :wrench: [命令行](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems)中的`--fix`选项可以自动修复此规则报告的一些问题。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule makes sure you keep declared order of properties in components.
+此规则会检查组件中属性的声明顺序。
 
 <eslint-code-block fix :rules="{'san/order-in-components': ['error']}">
 
@@ -56,7 +56,7 @@ export default {
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
@@ -83,13 +83,16 @@ export default {
 }
 ```
 
-- `order` (`(string | string[])[]`) ... The order of properties. Elements are the property names or one of the following groups:
+* `order` (`(string | string[])[]`) ... 属性的顺序。 元素可以是以下：
 
-  - `LIFECYCLE_HOOKS`: [San Lifecycle Events](https://baidu.github.io/san/tutorial/component/#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F), in the order they are called
+  * `LIFECYCLE_HOOKS` [San 生命周期]()，按照它们被调用的顺序
 
-  If an element is an array of strings, it means any of those can be placed there unordered. Default is above.
+  如果一个元素是一个字符串数组，这意味着其中任何一个都可以无序放置。
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/order-in-components.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/order-in-components.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/order-in-components.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/order-in-components.test.js)
+
+[San 生命周期]: https://baidu.github.io/san/tutorial/component/#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F
+

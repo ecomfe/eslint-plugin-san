@@ -5,24 +5,30 @@ title: san/no-parsing-error
 description: disallow parsing errors in `<template>`
 ---
 # san/no-parsing-error
-> disallow parsing errors in `<template>`
+> 不允许`<template>`中语法错误
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-This rule reports syntax errors in `<template>`. For example:
+此规则会提示 `<template>` 中的语法错误。 例如：
 
-- Syntax errors of scripts in directives.
-- Syntax errors of scripts in mustaches.
-- Syntax errors of HTML.
-    - Invalid end tags.
-    - Attributes in end tags.
-    - ...
-    - See also: [WHATWG HTML spec](https://html.spec.whatwg.org/multipage/parsing.html#parse-errors)
+- 指令中脚本的语法错误。
 
-## :book: Rule Details
+- 插值表达式中的语法错误。
 
-This rule tries to parse directives/mustaches in `<template>` by the parser which parses `<script>`.
-Then reports syntax errors if exist.
+- HTML 的语法错误。
+  
+   - 无效的结束标签。
+   
+   - 结束标签中的属性。
+   
+   - ...
+   
+   - 另请参阅：[WHATWG HTML 规范](https://html.spec.whatwg.org/multipage/parsing.html#parse-errors)
+
+## :book: 规则细节
+
+此规则尝试通过解析 `<script>` 的解析器来解析 `<template>` 中的指令/插值表达式。
+然后提示语法错误。
 
 <eslint-code-block :rules="{'san/no-parsing-error': ['error']}">
 
@@ -40,9 +46,9 @@ Then reports syntax errors if exist.
 
 </eslint-code-block>
 
-> character reference must be terminated by a `U+003B (;)` code point. https://html.spec.whatwg.org/multipage/parsing.html#hexademical-character-reference-state
+> 字符引用必须以 `U+003B (;) `分号结束。 https://html.spec.whatwg.org/multipage/parsing.html#hexademical-character-reference-state
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
@@ -87,23 +93,24 @@ Then reports syntax errors if exist.
 }
 ```
 
-You can disable HTML syntax errors by options. Please see [WHATWG HTML spec](https://html.spec.whatwg.org/multipage/parsing.html#parse-errors) to know the details of HTML syntax errors.
-Only `non-void-html-element-start-tag-with-trailing-solidus` is disabled by default because San.js supports self-closing tags.
+您可以通过配置禁用 HTML 语法错误。 请参阅 [WHATWG HTML 规范](https://html.spec.whatwg.org/multipage/parsing.html#parse-errors) 了解 HTML 语法错误的详细信息。
+因为 San.js 支持自闭合标签，所以只有 `non-void-html-element-start-tag-with-trailing-solidus` 默认被禁用。
 
-::: warning Note
-This rule does not support all of those (E.g., it does not catch errors about DOCTYPE).
+::: warning 注意
+此规则不支持捕获（比如有关 DOCTYPE 的错误）。
 :::
 
-The error codes which have `x-` prefix are original of this rule because errors in tree construction phase have not codified yet.
+带有 `x-` 前缀的错误是这条规则独创的，因为树构建阶段的错误还没有被编码。
 
-- `x-invalid-end-tag` enables the errors about the end tags of elements which have not opened.
-- `x-invalid-namespace` enables the errors about invalid `xmlns` attributes. See also [step 10. of "create an element for a token"](https://html.spec.whatwg.org/multipage/parsing.html#create-an-element-for-the-token).
+- `x-invalid-end-tag` 启用自闭合元素含有结束标签的错误。
+- `x-invalid-namespace` 启用关于无效 `xmlns` 属性的错误。 另请参阅 [step 10. of "create an element for a token"](https://html.spec.whatwg.org/multipage/parsing.html#create-an-element-for-the-token)
 
-## :books: Further Reading
+## :books: 深入阅读
 
-- [WHATWG HTML spec](https://html.spec.whatwg.org/multipage/parsing.html#parse-errors)
+- [WHATWG HTML 规范](https://html.spec.whatwg.org/multipage/parsing.html#parse-errors)
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-parsing-error.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-parsing-error.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-parsing-error.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-parsing-error.test.js)
+

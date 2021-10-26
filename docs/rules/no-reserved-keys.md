@@ -5,13 +5,13 @@ title: san/no-reserved-keys
 description: disallow overwriting reserved keys
 ---
 # san/no-reserved-keys
-> disallow overwriting reserved keys
+> 禁止覆盖保留字
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule prevents to use [reserved names](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/utils/san-reserved.json) to avoid conflicts and unexpected behavior.
+此规则禁止使用 [保留字](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/utils/san-reserved.json) 以避免冲突和意外行为。
 
 <eslint-code-block :rules="{'san/no-reserved-keys': ['error']}">
 
@@ -36,15 +36,15 @@ export default {
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :books: Further Reading
+## :books: 深入阅读
 
-- [List of reserved keys](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/utils/san-reserved.json)
+- [保留字列表](https://github.com/ecomfe/eslint-plugin-san/blob/master/lib/utils/san-reserved.json)
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-reserved-keys.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-reserved-keys.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-reserved-keys.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-reserved-keys.test.js)

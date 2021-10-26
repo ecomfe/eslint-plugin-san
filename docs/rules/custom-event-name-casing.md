@@ -5,15 +5,15 @@ title: san/custom-event-name-casing
 description: enforce custom event names always use "kebab-case"
 ---
 # san/custom-event-name-casing
-> enforce custom event names always use "kebab-case"
+> 强制自定义事件名称始终使用短横线命名
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule enforces using kebab-case custom event names.
+此规则要求使用短横线自定义事件名称。
 
-See [Guide - Custom Events] for more details.
+查看 [自定义事件] 了解更多细节。
 
 <eslint-code-block :rules="{'san/custom-event-name-casing': ['error']}">
 
@@ -41,17 +41,17 @@ export default {
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :books: Further Reading
+## :books: 深入阅读
 
-- [Guide - Custom Events]
+- [自定义事件]
 
-[Guide - Custom Events]: https://baidu.github.io/san/tutorial/event/#自定义事件
+[自定义事件]: https://baidu.github.io/san/tutorial/event/#自定义事件
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/custom-event-name-casing.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/custom-event-name-casing.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/custom-event-name-casing.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/custom-event-name-casing.test.js)

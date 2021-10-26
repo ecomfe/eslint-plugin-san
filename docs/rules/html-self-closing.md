@@ -5,21 +5,22 @@ title: san/html-self-closing
 description: enforce self-closing style
 ---
 # san/html-self-closing
-> enforce self-closing style
+> 要求自闭合样式
 
-- :gear: This rule is included in all of `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
-- :wrench: The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+- :gear: 此规则包含于 `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`。
+- :wrench: [命令行](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems)中的`--fix`选项可以自动修复此规则报告的一些问题。
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule aims to enforce the self-closing sign as the configured style.
+此规则目的是要求将自闭合标签应用为配置的样式。
 
-In San.js template, we can use either two styles for elements which don't have their content.
+在 San.js 模板中，我们可以为没有内容的元素使用两种样式。
 
 1. `<YourComponent></YourComponent>`
-2. `<YourComponent/>` (self-closing)
 
-Self-closing is simple and shorter, but it's not supported in the HTML spec.
+2. `<YourComponent/>`（自闭合）
+
+自闭合简单且更短，但 HTML 规范不支持它。
 
 <eslint-code-block fix :rules="{'san/html-self-closing': ['error']}">
 
@@ -41,7 +42,7 @@ Self-closing is simple and shorter, but it's not supported in the HTML spec.
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
@@ -57,17 +58,23 @@ Self-closing is simple and shorter, but it's not supported in the HTML spec.
 }
 ```
 
-- `html.void` (`"never"` by default) ... The style of well-known HTML void elements.
-- `html.normal` (`"always"` by default) ... The style of well-known HTML elements except void elements.
-- `html.component` (`"always"` by default) ... The style of San.js custom components.
-- `svg`(`"always"` by default) .... The style of well-known SVG elements.
-- `math`(`"always"` by default) .... The style of well-known MathML elements.
+- `html.void`（默认`"nerver"`）... HTML 空元素的样式。
 
-Every option can be set to one of the following values:
+- `html.normal`（默认`"always"`）... HTML 除了空元素的样式。
 
-- `"always"` ... Require self-closing at elements which don't have their content.
-- `"never"` ... Disallow self-closing.
-- `"any"` ... Don't enforce self-closing style.
+- `html.component` ( 默认`"always"`) ... San.js 自定义组件的样式。
+
+- `svg`(默认`"always"`) ....  SVG 元素的样式。
+
+- `math`(默认`"always"`) .... MathML 元素的样式。
+
+每个选项都可以设置为以下值之一：
+
+* `"always"`...要求在没有内容的元素上自闭合。
+
+*  ` "nerver"`... 禁止自闭合。
+
+*   `"any" `... 不要强制执行自闭合。
 
 ### `html: {normal: "never", void: "always"}`
 
@@ -91,7 +98,7 @@ Every option can be set to one of the following values:
 
 </eslint-code-block>
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/html-self-closing.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/html-self-closing.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/html-self-closing.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/html-self-closing.test.js)

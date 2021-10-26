@@ -5,17 +5,18 @@ title: san/no-use-s-if-with-s-for
 description: disallow use s-if on the same element as s-for
 ---
 # san/no-use-s-if-with-s-for
-> disallow use s-if on the same element as s-for
+> 禁止在与 s-for 相同的元素上使用 s-if
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule is aimed at preventing the use of `s-for` directives together with `s-if` directives on the same element.
+此规则目的是防止在同一元素上使用 `s-for` 指令和 `s-if` 指令。
 
-There are two common cases where this can be tempting:
- * To filter items in a list (e.g. `s-for="user in users" s-if="user.isActive"`). In these cases, replace `users` with a new computed property that returns your filtered list (e.g. `activeUsers`).
- * To avoid rendering a list if it should be hidden (e.g. `s-for="user in users" s-if="shouldShowUsers"`). In these cases, move the `s-if` to a container element (e.g. `ul`, `ol`).
+有两种常见的情况可能会很常见：
+
+  * 过滤列表中的项目（例如`s-for="user in users" s-if="user.isActive"`）。 在这些情况下，用返回过滤列表的新计算属性替换"users"（例如"activeUsers"）。
+  * 为了避免在应该隐藏的情况下展示列表（例如`s-for="user in users" s-if="shouldShowUsers"`）。 在这些情况下，将 `s-if` 移动到容器元素（例如 `ul`、`ol`）。
 
 <eslint-code-block :rules="{'san/no-use-s-if-with-s-for': ['error']}">
 
@@ -49,7 +50,7 @@ There are two common cases where this can be tempting:
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
 ```json
 {
@@ -59,7 +60,7 @@ There are two common cases where this can be tempting:
 }
 ```
 
-- `allowUsingIterationVar` (`boolean`) ... Enables The `s-if` directive use the reference which is to the variables which are defined by the `s-for` directives. Default is `false`.
+- `allowUsingIterationVar` (`boolean`) ... 使 `s-if` 指令能够使用由 `s-for` 指令定义的变量。 默认为`false`。
 
 ### `"allowUsingIterationVar": true`
 
@@ -86,7 +87,8 @@ There are two common cases where this can be tempting:
 </eslint-code-block>
 
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-use-s-if-with-s-for.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/no-use-s-if-with-s-for.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-use-s-if-with-s-for.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/no-use-s-if-with-s-for.test.js)
+

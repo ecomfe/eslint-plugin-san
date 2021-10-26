@@ -5,13 +5,13 @@ title: san/no-multiple-template-root
 description: disallow adding multiple root nodes to the template
 ---
 # san/no-multiple-template-root
-> disallow adding multiple root nodes to the template
+> 不允许向模板添加多个根节点
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule checks whether template contains single root element valid for San.
+此规则检查 San 中的 template 是否只包含单个根元素。
 
 <eslint-code-block :rules="{'san/no-multiple-template-root': ['error']}">
 
@@ -56,11 +56,11 @@ This rule checks whether template contains single root element valid for San.
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-multiple-template-root.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-multiple-template-root.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-multiple-template-root.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-multiple-template-root.test.js)

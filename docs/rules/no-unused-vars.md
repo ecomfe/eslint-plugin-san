@@ -5,13 +5,13 @@ title: san/no-unused-vars
 description: disallow unused variable definitions of s-for directives or scope attributes
 ---
 # san/no-unused-vars
-> disallow unused variable definitions of s-for directives or scope attributes
+> 禁止 s-for 指令或 scope 属性中定义未使用的变量
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule report variable definitions of s-for directives or scope attributes if those are not used.
+此规则会指出 s-for 指令或 scope 属性中定义的未使用的变量。
 
 <eslint-code-block :rules="{'san/no-unused-vars': ['error']}">
 
@@ -39,7 +39,7 @@ This rule report variable definitions of s-for directives or scope attributes if
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
 ```js
 {
@@ -49,13 +49,13 @@ This rule report variable definitions of s-for directives or scope attributes if
 }
 ```
 
-- `ignorePattern` ... disables reporting when your definitions of s-for directives or scope attributes match your ignorePattern Regular expression. default `null`, will ignore nothing
+- `ignorePattern` ...当你的 s-for 指令或范围属性的定义与您的 ignorePattern 正则表达式匹配时禁用规则。 默认`null`，不会忽略任何内容
 
 ## :rocket: Suggestion
 
-- When your ignorePattern set to `^_`, we could provide a suggestion which add a prefix`_` to your variable and no more eslint error
+- 当 ignorePattern 设置为 `^_` 时，我们可以提供一个建议，为您的变量添加一个前缀 `_` 那样就不会再出现 eslint 错误。
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-unused-vars.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/no-unused-vars.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-unused-vars.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/blob/main/__tests__/lib/rules/no-unused-vars.test.js)

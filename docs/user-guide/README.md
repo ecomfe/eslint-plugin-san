@@ -1,33 +1,33 @@
-# User Guide
+# 用户指南
 
-## :cd: Installation
+## :cd: 安装
 
-Via [npm](https://www.npmjs.com/):
+通过 [npm](https://www.npmjs.com/):
 
 ```bash
 npm install --save-dev eslint eslint-plugin-san
 ```
 
-Via [yarn](https://yarnpkg.com/):
+通过 [yarn](https://yarnpkg.com/):
 
 ```bash
 yarn add -D eslint eslint-plugin-san
 ```
 
-::: tip Requirements
+::: tip 要求
 
-- ESLint v6.2.0 and above
-- Node.js v8.10.0 and above
+- ESLint v6.2.0 及以上
+- Node.js v8.10.0 及以上
 
 :::
 
-## :book: Usage
+## :book: 用法
 
-### Configuration
+### 配置
 
-Use `.eslintrc.*` file to configure rules. See also: [https://eslint.org/docs/user-guide/configuring](https://eslint.org/docs/user-guide/configuring).
+使用 `.eslintrc.*` 文件来配置规则。可以参考: [https://eslint.org/docs/user-guide/configuring](https://eslint.org/docs/user-guide/configuring).
 
-Example **.eslintrc.js**:
+例子 **.eslintrc.js**:
 
 ```js
 module.exports = {
@@ -43,27 +43,26 @@ module.exports = {
 }
 ```
 
-See [the rule list](../rules/README.md) to get the `extends` &amp; `rules` that this plugin provides.
+请查看 [规则列表](../rules/README.md) 来获取插件所提供的 `extends` 和 `rules` 。
 
-#### Bundle Configurations
+#### 预定义配置
 
-This plugin provides some predefined configs.
-You can use the following configs by adding them to `extends`.
+这个插件提供了一些预定义的配置。你可以通过将以下配置添加到`extends`来使用它们。
 
-- `"plugin:san/base"` ... Settings and rules to enable correct ESLint parsing.
-- `"plugin:san/essential"` ... `base`, plus rules to prevent errors or unintended behavior.
-- `"plugin:san/strongly-recommended"` ... Above, plus rules to considerably improve code readability and/or dev experience.
-- `"plugin:san/recommended"` ... Above, plus rules to enforce subjective community defaults to ensure consistency
+- `"plugin:san/base"` ... 能够使 Eslint 正确解析的设置和规则。
+- `"plugin:san/essential"` ...在 `base`基础上加上避免错误或意外行为的规则。
+- `"plugin:san/strongly-recommended"` ... 在以上两种规则集的基础上添加提高代码可读性和开发经验的规则。
+- `"plugin:san/recommended"` ... 在以上三种规则集的基础上添加社区主观上默认的规则以确保代码平滑性。
 
-:::warning Reporting rules
-By default all rules from **base** and **essential** categories report ESLint errors. Other rules - because they're not covering potential bugs in the application - report warnings. What does it mean? By default - nothing, but if you want - you can set up a threshold and break the build after a certain amount of warnings, instead of any. More information [here](https://eslint.org/docs/user-guide/command-line-interface#handling-warnings).
+:::warning 规则报告
+默认情况下，**base** 和 **essential** 中的所有规则都会报告 ESLint 的 **errors**。而其他规则因为它们不能引起应用程序中的错误，将只会报告 **warnings**。默认情况如果没有出现错误（只有警告），它将以成功的状态退出，但如果你愿意，你可以设置一个阈值并在出现一定数量的 **warnings** 后以错误的状态退出。更多可点击 [这里](https://eslint.org/docs/user-guide/command-line-interface#handling-warnings).
 :::
 
-### Running ESLint from the command line
+### 从命令行运行 ESLint
 
-If you want to run `eslint` from the command line, make sure you include the `.san` extension using [the `--ext` option](https://eslint.org/docs/user-guide/configuring#specifying-target-files-to-lint) or a glob pattern, because ESLint targets only `.js` files by default.
+如果你想从命令行运行 `eslint` , 请确保使用 [--ext](https://eslint.org/docs/user-guide/configuring#specifying-target-files-to-lint) 或者`glob pattern`时包含`.san` 扩展名，因为默认情况下 ESLint 仅针对 `.js` 文件。
 
-Examples:
+例子:
 
 ```bash
 eslint --ext .js,.san src
@@ -71,30 +70,30 @@ eslint "src/**/*.{js,san}"
 ```
 
 ::: tip
-If you installed [@san/cli-plugin-eslint](https://github.com/ecomfe/san-cli/tree/dev/packages/%40san/cli-plugin-eslint), you should have the `lint` script added to your `package.json`. That means you can just run `yarn lint` or `npm run lint`.
+如果你安装了 [@san/cli-plugin-eslint](https://github.com/ecomfe/san-cli/tree/dev/packages/%40san/cli-plugin-eslint), 你应该将 `lint` 脚本添加到你的 `package.json` 中。 这意味着你可以运行 `yarn lint` 或 `npm run lint`。
 :::
 
-### How to use a custom parser?
+### 如何使用自定义解析器？
 
-If you want to use custom parsers such as [babel-eslint](https://www.npmjs.com/package/babel-eslint) or [@typescript-eslint/parser](https://www.npmjs.com/package/@typescript-eslint/parser), you have to use the `parserOptions.parser` option instead of the `parser` option. Because this plugin requires [san-eslint-parser](https://www.npmjs.com/package/san-eslint-parser) to parse `.san` files, this plugin doesn't work if you overwrite the `parser` option.
+如果你想使用自定义解析器，例如 [babel-eslint](https://www.npmjs.com/package/babel-eslint) 或 @typescript-eslint/parser，你必须使用 `parserOptions.parser` 选项而不是 `parser` 选项。 因为 eslint-plugin-san 需要[san-eslint-parser](https://www.npmjs.com/package/san-eslint-parser)来解析`.san`文件，如果你覆盖了`parser`，这个插件就不起作用了。
 
 ```diff
 - "parser": "babel-eslint",
 + "parser": "san-eslint-parser",
-  "parserOptions": {
+  "parseOptions": {
 +     "parser": "babel-eslint",
       "sourceType": "module"
   }
 ```
 
-### How does ESLint detect components?
+### ESLint 如何检测组件？
 
-All component-related rules are applied to code that passes any of the following checks by default:
+默认情况下，所有与组件相关的规则都应用于以下形式的组件代码：
 
 - `export default {}` and `san.defineComponent({})` in `.san/.js/.ts` file
 - `static template` and `template: '...'` in `.san/.js/.ts` file
 
-However, if you want to take advantage of the rules in any of your custom objects that are San components, you might need to use the special comment `// @san/component` that marks an object in the next line as a San component in any file, e.g.:
+但是，如果自定义了San 组件对象，这时你想使用规则，可能需要使用特殊注释 `// @san/component` 将下一行中的对象标记为 San 组件，例如：
 
 ```js
 // @san/component
@@ -113,7 +112,7 @@ export default class UINoticeBar extends san.Component {
 }
 ```
 
-Also, if you want to ignore the template checks, you can use the `/* eslint-disable */` and `/* eslint-enable */` block to wrap the `template` code block, e.g.:
+另外，如果你想忽略模板检查，你可以使用 `/* eslint-disable */` 和 `/* eslint-enable */` 块来包装 `template` 代码块，例如：
 ```js
 // @san/component
 export default class A {
@@ -136,11 +135,11 @@ export default class A {
 
 ```
 
-### Disabling rules via `<!-- eslint-disable -->`
+### 通过 `<!-- eslint-disable -->` 禁用规则
 
-You can use `<!-- eslint-disable -->`-like HTML comments in the `<template>` and in the block level of `.san` files to disable a certain rule temporarily.
+你可以在 `<template>` 和 `.san` 文件的块级元素使用 `<!-- eslint-disable -->` 类HTML 注释的方式来暂时禁用某个规则。
 
-For example:
+举个例子:
 
 ```html
 <template>
@@ -150,17 +149,17 @@ For example:
 </template>
 ```
 
-If you want to disallow `eslint-disable` functionality in `<template>`, disable the [san/comment-directive](../rules/comment-directive.md) rule.
+如果您想在 `<template>`中禁用 eslint-disable 功能，请禁用 [san/comment-directive](../rules/comment-directive.md) 规则。 
 
-## :computer: Editor integrations
+## :computer: 编辑器集成
 
 ### Visual Studio Code
 
-Use the [dbaeumer.vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) extension that Microsoft provides officially.
+使用微软官方提供的 [dbaeumer.vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) 扩展。
 
-You have to configure the `eslint.validate` option of the extension to check `.san` files, because the extension targets only `*.js` files by default.
+你必须配置扩展的 `eslint.validate` 选项来检查 `.san` 文件，因为扩展默认只针对 `*.js` 文件。
 
-Example **.vscode/settings.json**:
+例子 **.vscode/settings.json**:
 
 ```json
 {
@@ -174,9 +173,9 @@ Example **.vscode/settings.json**:
 
 ### Sublime Text
 
-Use Package Control to install **SublimeLinter** and its ESLint extension **[SublimeLinter-eslint](https://github.com/SublimeLinter/SublimeLinter-eslint)**.
+使用 Package Control 安装 **SublimeLinter** 及其 ESLint 扩展 [SublimeLinter-eslint](https://github.com/SublimeLinter/SublimeLinter-eslint)。
 
-In the menu go to `Preferences > Package Settings > SublimeLinter > Settings` and paste in this:
+在菜单中转到`Preferences > Package Settings > SublimeLinter > Settings` 并粘贴：
 
 ```json
 {
@@ -188,46 +187,45 @@ In the menu go to `Preferences > Package Settings > SublimeLinter > Settings` an
 }
 ```
 
-### Atom editor
+### Atom 编辑器
 
-Go into `Settings -> Packages -> linter-eslint`, under the option "List of scopes to run eslint on", add `text.html.san`. You may need to restart Atom.
+进入`Settings -> Packages -> linter-eslint`，在 "List of scopes to run eslint on" 选项下，添加`text.html.san`。 您可能需要重新启动 Atom。
 
 ### IntelliJ IDEA / JetBrains WebStorm
 
-In the **Settings/Preferences** dialog (`Cmd+,`/`Ctrl+Alt+S`), choose JavaScript under **Languages and Frameworks** and then choose **ESLint** under **Code Quality Tools**.
-On the **ESLint page** that opens, select the *Enable* checkbox.
+在 **Settings/Preferences** 对话框中 (`Cmd+,`/`Ctrl+Alt+S`), 在 **Languages and Frameworks** 中选择 JavaScript 然后在 **Code Quality Tools** 中 选择 **ESLint**。在打开的 **ESLint page** 中, 选择 *Enable* 复选框.
 
-If your ESLint configuration is updated (manually or from your version control), open it in the editor and choose **Apply ESLint Code Style Rules** in the context menu.
+如果您的 ESLint 配置已更新（手动或从您的版本控制），请在编辑器中打开它并在上下文菜单中选择 **Apply ESLint Code Style Rules**。
 
-read more: [JetBrains - ESLint](https://www.jetbrains.com/help/idea/eslint.html)
+了解更多: [JetBrains - ESLint](https://www.jetbrains.com/help/idea/eslint.html)
 
-## :question: FAQ
+## :question: 常见问题
 
-### What is the "Use the latest san-eslint-parser" error?
+### "Use the latest san-eslint-parser" 错误是什么？
 
-Most `eslint-plugin-san` rules require `san-eslint-parser` to check `<template>` ASTs.
+大多数 `eslint-plugin-san` 规则要求使用 `san-eslint-parser` 来解析 `<template>` 抽象语法树。
 
-Make sure you have one of the following settings in your **.eslintrc**:
+确保您的 **.eslintrc** 中有以下设置之一：
 
 - `"extends": ["plugin:san/base"]`
 
-If you already use another parser (e.g. `"parser": "babel-eslint"`), please move it into `parserOptions`, so it doesn't collide with the `san-eslint-parser` used by this plugin's configuration:
+如果你已经使用了另一个解析器（例如 `"parser": "babel-eslint"`），请将它移到 `parseOptions` 中，这样它就不会与这个插件配置使用的 `san-eslint-parser` 冲突：
 
 ```diff
 - "parser": "babel-eslint",
 + "parser": "san-eslint-parser",
-  "parserOptions": {
+  "parseOptions": {
 +     "parser": "babel-eslint",
       "ecmaVersion": 2020,
       "sourceType": "module"
   }
 ```
 
-See also: "[How to use a custom parser?](#how-to-use-a-custom-parser)" section.
+另请参阅："[如何使用自定义解析器？](#如何使用自定义解析器)"部分。
 
-### Why doesn't it work on .san files?
+### 为什么规则在 .san 文件中不生效？
 
-1. Make sure you don't have `eslint-plugin-html` in your config. The `eslint-plugin-html` extracts the content from `<script>` tags, but `eslint-plugin-san` requires `<script>` tags and `<template>` tags in order to distinguish template and script in single file components.
+1. 确保你的配置中没有 `eslint-plugin-html`。 `eslint-plugin-html` 从 `<script>` 标签中提取内容，但 `eslint-plugin-san` 需要 `<script>` 标签和 `<template>` 标签，以便在单文件组件中区分 template 和 script。
 
   ```diff
     "plugins": [
@@ -236,15 +234,15 @@ See also: "[How to use a custom parser?](#how-to-use-a-custom-parser)" section.
     ]
   ```
 
-2. Make sure your tool is set to lint `.san` files.
-  - CLI targets only `.js` files by default. You have to specify additional extensions with the `--ext` option or glob patterns. E.g. `eslint "src/**/*.{js,san}"` or `eslint src --ext .san`. If you use `@san/cli-plugin-eslint` and the `san-cli-service lint` command - you don't have to worry about it.
-  - If you are having issues with configuring editor, please read [editor integrations](#editor-integrations)
+2. 确保你的工具设置了检测 `.san` 文件。
+  - 默认情况下，CLI 仅针对 `.js` 文件。 您必须使用 `--ext` 选项或 glob pattern 指定其他扩展名。 例如。 `eslint "src/**/*.{js,san}"` 或 `eslint src --ext .san`。 如果你使用 `@san/cli-plugin-eslint` 和 `san-cli-service lint` 命令那么你不必担心它。
+  - 如果您在配置编辑器时遇到问题，请阅读 [编辑器集成](#编辑器集成)
 
-### Conflict with [Prettier]
+### 与 [Prettier] 冲突
 
-If the [Prettier] conflicts with the shareable config provided by this plugin, use [eslint-config-prettier] to resolve it.
+如果 Prettier 与此插件提供的可共享配置冲突，请使用 [eslint-config-prettier] 解决。
 
-Example **.eslintrc.js**:
+例子 **.eslintrc.js**:
 
 ```js
 module.exports = {
@@ -264,11 +262,11 @@ module.exports = {
 }
 ```
 
-If the [Prettier] conflicts with the rule you have set, turn off that rule.
+如果 [Prettier] 与你设置的规则冲突，请关闭该规则。
 
-Example **.eslintrc.js**:
+例子 **.eslintrc.js**:
 
-When the `san/html-indent` rule conflict with [Prettier].
+ `san/html-indent` 规则与 [Prettier]() 冲突的情况。
 
 ```diff
 module.exports = {
@@ -286,9 +284,9 @@ module.exports = {
 [prettier]: https://prettier.io/
 [eslint-config-prettier]: https://github.com/prettier/eslint-config-prettier
 
-### Trouble with Visual Studio Code
+### Visual Studio Code 中的一些问题
 
-- Turning off the rule in the ESLint configuration file does not ignore the warning.
-- Using the `<!-- eslint-disable -->` comment does not suppress warnings.
-- Duplicate warnings are displayed.
-- Used `babel-eslint`, but the template still show `san/no-parsing-error` warnings.
+- 关闭 ESLint 配置文件中的规则不会忽略警告。
+- 使用 `<!-- eslint-disable -->` 注释不会限制警告。
+- 警告重复显示。
+- 使用了 `babel-eslint`，但模板仍然显示 `san/no-parsing-error` 警告。

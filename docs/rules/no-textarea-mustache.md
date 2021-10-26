@@ -5,13 +5,13 @@ title: san/no-textarea-mustache
 description: disallow mustaches in `<textarea>`
 ---
 # san/no-textarea-mustache
-> disallow mustaches in `<textarea>`
+> 禁止在 `<textarea>`中使用插值表达式
 
-- :gear: This rule is included in all of `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` and `"plugin:san/recommended"`.
+- :gear: 此规则包含于 `"plugin:san/essential"`, `"plugin:san/strongly-recommended"` 和 `"plugin:san/recommended"`.
 
-## :book: Rule Details
+## :book: 规则细节
 
-This rule reports mustaches in `<textarea>`.
+该规则会提示在  `<textarea>` 中使用插值表达式的错误。
 
 <eslint-code-block :rules="{'san/no-textarea-mustache': ['error']}">
 
@@ -27,15 +27,15 @@ This rule reports mustaches in `<textarea>`.
 
 </eslint-code-block>
 
-## :wrench: Options
+## :wrench: 配置
 
-Nothing.
+暂无。
 
-## :books: Further Reading
+## :books: 深入阅读
 
-- [Guide - Form Input Bindings / Multiline text](https://baidu.github.io/san/tutorial/form/#输入框)
+- [表单输入绑定/多行文本](https://baidu.github.io/san/tutorial/form/#输入框)
 
-## :mag: Implementation
+## :mag: 实现
 
-- [Rule source](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-textarea-mustache.js)
-- [Test source](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-textarea-mustache.test.js)
+- [规则源码](https://github.com/ecomfe/eslint-plugin-san/blob/main/lib/rules/no-textarea-mustache.js)
+- [测试用例](https://github.com/ecomfe/eslint-plugin-san/tree/main/__tests__/lib/rules/no-textarea-mustache.test.js)
