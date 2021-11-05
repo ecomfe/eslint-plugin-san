@@ -60,7 +60,7 @@ description: enforce consistent indentation in `<template>`
 
 ```json
 {
-  "san/html-indent": ["error", {
+  "san/html-indent": ["error", 4, {
     "attribute": 1,
     "baseIndent": 1,
     "closeBracket": 0,
@@ -70,7 +70,7 @@ description: enforce consistent indentation in `<template>`
 }
 ```
 
-- `type` (`number | "tab"`) ... 缩进的类型。默认值为"2"。如果这是一个数字，它是一个缩进的空格数。如果这是`"tab"`，它使用一个制表符缩进一个。
+- 第二个参数代表缩进的类型，值可以是一个数字或者字符串 `"tab"`，默认值为"2"。如果这是一个数字，它是一个缩进的空格数。如果这是`"tab"`，它使用一个制表符缩进一个。
 - `attribute` (`integer`) ... 属性缩进的乘数。默认值为"1"。
 - `baseIndent` (`integer`) ... 最外层语句的缩进倍数。默认值为"1"。
 - `closeBracket` (`integer | object`) ... 右括号缩进的乘数。默认值为"0"。

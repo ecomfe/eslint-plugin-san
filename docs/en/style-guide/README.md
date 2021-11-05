@@ -251,7 +251,7 @@ export default {
 ##### 相关规则
 - [boolean-value](https://ecomfe.github.io/eslint-plugin-san/rules/boolean-value.html)
 
-#### [强制] 当组件的属性多于 `2` 个时，必须分成多行，每行写一个属性；只有属性个数小于或等于 `2` 个时，可以写在一行内
+#### [建议] 当组件的属性多于 `2` 个时，建议分成多行，每行写一个属性；只有属性个数小于或等于 `2` 个时，可以写在一行内
 
 ```html
 // bad san/max-attributes-per-line
