@@ -11,7 +11,7 @@ description: disallow side effects in computed properties
 
 ## :book: 规则细节
 
-此规则目的是防止在计算属性中产生副作用。
+此规则目的是防止在计算属性中产生副作用，同时由于 computed 属性中的 this 为 data 对象，因此也无法通过 this 访问组件上的属性或者方法。
 
 在计算属性中引入副作用被认为是一种非常糟糕的做法。 它使代码不可预测且难以理解。
 

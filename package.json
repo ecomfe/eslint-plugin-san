@@ -1,6 +1,6 @@
 {
     "name": "eslint-plugin-san",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Official ESLint plugin for San",
     "author": "ecomfe-core",
     "keywords": [

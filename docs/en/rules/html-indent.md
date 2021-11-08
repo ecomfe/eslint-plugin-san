@@ -60,7 +60,7 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 
 ```json
 {
-  "san/html-indent": ["error", {
+  "san/html-indent": ["error", 4, {
     "attribute": 1,
     "baseIndent": 1,
     "closeBracket": 0,
@@ -70,7 +70,7 @@ This rule enforces a consistent indentation style in `<template>`. The default s
 }
 ```
 
-- `type` (`number | "tab"`) ... The type of indentation. Default is `2`. If this is a number, it's the number of spaces for one indent. If this is `"tab"`, it uses one tab for one indent.
+- the second attribute is indentation, the value can be a number or `"tab"`. Default is `2`. If this is a number, it's the number of spaces for one indent. If this is `"tab"`, it uses one tab for one indent.
 - `attribute` (`integer`) ... The multiplier of indentation for attributes. Default is `1`.
 - `baseIndent` (`integer`) ... The multiplier of indentation for top-level statements. Default is `1`.
 - `closeBracket` (`integer | object`) ... The multiplier of indentation for right brackets. Default is `0`.  

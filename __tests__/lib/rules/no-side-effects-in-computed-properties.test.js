@@ -45,16 +45,6 @@ ruleTester.run('no-side-effects-in-computed-properties', rule, {
                               test: 'example'
                           };
                       },
-                      test5: {
-                          get() {
-                              return this.firstName + ' ' + this.lastName;
-                          },
-                          set(newValue) {
-                              const names = newValue.split(' ');
-                              this.firstName = names[0];
-                              this.lastName = names[names.length - 1];
-                          }
-                      },
                       test6: {
                           get() {
                               return this.data.get('something').slice(0).reverse();
@@ -262,6 +252,7 @@ ruleTester.run('no-side-effects-in-computed-properties', rule, {
         export default {
           computed: {
             test1() : string {
+              let a = this.xxx();
               return this.data.get('something').reverse()
             }
           }
@@ -269,10 +260,20 @@ ruleTester.run('no-side-effects-in-computed-properties', rule, {
       `,
             parserOptions,
             errors: [
-                {
-                    line: 5,
-                    message: 'Unexpected side effect in "test1" computed property.'
-                }
+              {
+                message: 'Can not access "this.xxx" in computed property of san components',
+                line: 5,
+                column: 23,
+                endLine: 5,
+                endColumn: 31
+              },
+              {
+                message: 'Unexpected side effect in "test1" computed property.',
+                line: 6,
+                column: 22,
+                endLine: 6,
+                endColumn: 58
+              }
             ],
             parser: require.resolve('@typescript-eslint/parser')
         },
