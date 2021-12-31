@@ -1,3 +1,7 @@
+### V1.0.4
+## Fix
+* Fix `html-quotes` replace ' & " to unexpected string.
+
 ### V1.0.3
 ## Add
 * Add a feature that prevent developer from using method of this in computed property of san components.

@@ -105,7 +105,7 @@ tester.run('html-quotes', rule, {
         {
             filename: 'test.san',
             code: '<template><div :class=foo+"bar"></div></template>',
-            output: '<template><div :class="foo+&quot;bar&quot;"></div></template>',
+            output: `<template><div :class="foo+'bar'"></div></template>`,
             errors: ['Expected to be enclosed by double quotes.']
         },
         {
@@ -139,7 +139,7 @@ tester.run('html-quotes', rule, {
         {
             filename: 'test.san',
             code: '<template><div :class=foo+"bar"></div></template>',
-            output: '<template><div :class="foo+&quot;bar&quot;"></div></template>',
+            output: `<template><div :class="foo+'bar'"></div></template>`,
             options: ['double'],
             errors: ['Expected to be enclosed by double quotes.']
         },
@@ -174,7 +174,7 @@ tester.run('html-quotes', rule, {
         {
             filename: 'test.san',
             code: "<template><div :class=foo+'bar'></div></template>",
-            output: "<template><div :class='foo+&apos;bar&apos;'></div></template>",
+            output: `<template><div :class='foo+"bar"'></div></template>`,
             options: ['single'],
             errors: ['Expected to be enclosed by single quotes.']
         },
@@ -210,14 +210,14 @@ tester.run('html-quotes', rule, {
         {
             filename: 'test.san',
             code: '<template><div attr=foo"bar\'baz></div></template>',
-            output: '<template><div attr="foo&quot;bar\'baz"></div></template>',
+            output: `<template><div attr="foo'bar\'baz"></div></template>`,
             options: ['double', {avoidEscape: true}],
             errors: ['Expected to be enclosed by double quotes.']
         },
         {
             filename: 'test.san',
             code: '<template><div attr=foo"bar\'baz></div></template>',
-            output: "<template><div attr='foo\"bar&apos;baz'></div></template>",
+            output: `<template><div attr='foo\"bar"baz'></div></template>`,
             options: ['single', {avoidEscape: true}],
             errors: ['Expected to be enclosed by single quotes.']
         }
