@@ -1,6 +1,8 @@
 ### V1.0.4
 ## Fix
 * Fix `html-quotes` replace ' & " to unexpected string.
+## Add
+* Add a feature that `order-in-components` can detect this order of other methods not declared in `order`.
 
 ### V1.0.3
 ## Add

@@ -77,7 +77,9 @@ export default {
       "initData",
 
       // 生命周期
-      "LIFECYCLE_HOOKS"
+      "LIFECYCLE_HOOKS",
+      // 其他函数方法
+      // "OTHER_METHODS"
     ]
   }]
 }
@@ -88,6 +90,78 @@ export default {
   * `LIFECYCLE_HOOKS` [San 生命周期]()，按照它们被调用的顺序
 
   如果一个元素是一个字符串数组，这意味着其中任何一个都可以无序放置。
+
+在上面的配置中，`order` 数组中每一项中间可以添加任何方法，但是如果你不想让每一项之间插入其他方法，并且其他所有方法应该放到生命周期函数即 `LIFECYCLE_HOOKS` 后面。那么你可以这样配置：
+```json
+{
+  "san/order-in-components": ["error", {
+    "order": [
+      // 视图
+      "template",
+      "components",
+      "trimWhitespace",
+
+      // 事件
+      "messages",
+
+      // 数据
+      "dataTypes",
+      "computed",
+      "filters",
+      "initData",
+
+      // 生命周期
+      "LIFECYCLE_HOOKS",
+      // 其他函数方法
+      "OTHER_METHODS"
+    ]
+  }]
+}
+```
+那么下面的代码会报错:
+
+<eslint-code-block 
+  fix 
+  :rules="{
+    'san/order-in-components':
+      [
+        'error', 
+            "order": [
+              "template",
+              "components",
+              "trimWhitespace",
+              "messages",
+              "dataTypes",
+              "computed",
+              "filters",
+              "initData",
+              "LIFECYCLE_HOOKS",
+              "OTHER_METHODS"
+            ]
+      ]}"
+>
+
+```html
+<script>
+/* ✗ BAD */
+export default {
+  custom2() {
+
+  },
+  initData () {
+    return {
+      msg: 'Welcome to Your San App'
+    }
+  },
+
+  dataTypes: {
+    name: DataTypes.string
+  }
+}
+</script>
+```
+
+</eslint-code-block>
 
 ## :mag: 实现
 

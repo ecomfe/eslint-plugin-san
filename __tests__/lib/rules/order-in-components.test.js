@@ -34,6 +34,95 @@ ruleTester.run('order-in-components', rule, {
             parserOptions
         },
         {
+            filename: 'test.san',
+            code: `
+                export default {
+                    el: 'app',
+                    template: '<div></div>',
+                    initData () {
+                        return {
+                            msg: 'Welcome to Your San.js App'
+                        }
+                    },
+                }
+            `,
+            parserOptions,
+            options: [
+                {
+                    "order": [
+                        // 视图
+                        'template',
+                        'components',
+                        'trimWhitespace',
+
+                        // 事件
+                        'messages',
+
+                        // 数据
+                        'dataTypes',
+                        'computed',
+                        'filters',
+                        'initData',
+
+                        // 生命周期
+                        'LIFECYCLE_HOOKS'
+                    ]
+                }
+            ]
+        },
+        {
+            filename: 'test.ts',
+            code: `
+                // @san/component
+                class A {
+                    custom2() {
+
+                    }
+                    static template = "<div>123</div>";
+                    initData() {
+                        return {
+                            
+                        }
+                    }
+                    attached() {
+                        
+                    }
+                }
+            `,
+            parser: require.resolve('san-eslint-parser'),
+            parserOptions: {
+                parser: require.resolve('@typescript-eslint/parser'),
+                ecmaVersion: 6,
+                sourceType: "module",
+                ecmaFeatures: {
+                    classes: true
+                }
+            },
+            options: [
+                {
+                    "order": [
+                        'OTHER_METHODS',
+                        // 视图
+                        'template',
+                        'components',
+                        'trimWhitespace',
+
+                        // 事件
+                        'messages',
+
+                        // 数据
+                        'dataTypes',
+                        'computed',
+                        'filters',
+                        'initData',
+
+                        // 生命周期
+                        'LIFECYCLE_HOOKS'
+                    ]
+                }
+            ]
+        },
+        {
             filename: 'example.san',
             code: `
                 export default {
@@ -182,6 +271,64 @@ ruleTester.run('order-in-components', rule, {
                 {
                     message: 'The "computed" property should be above the "initData" property on line 4.',
                     line: 9
+                }
+            ]
+        },
+        {
+            filename: 'test.ts',
+            code: `
+                // @san/component
+                class A {
+                    static template = "<div>123</div>";
+                    initData() {
+                        return {
+                            
+                        }
+                    }
+                    attached() {
+                        
+                    }
+                    custom2() {
+
+                    }
+                }
+            `,
+            parser: require.resolve('san-eslint-parser'),
+            parserOptions: {
+                parser: require.resolve('@typescript-eslint/parser'),
+                ecmaVersion: 6,
+                sourceType: "module",
+                ecmaFeatures: {
+                    classes: true
+                }
+            },
+            options: [
+                {
+                    "order": [
+                        'OTHER_METHODS',
+                        // 视图
+                        'template',
+                        'components',
+                        'trimWhitespace',
+
+                        // 事件
+                        'messages',
+
+                        // 数据
+                        'dataTypes',
+                        'computed',
+                        'filters',
+                        'initData',
+
+                        // 生命周期
+                        'LIFECYCLE_HOOKS'
+                    ]
+                }
+            ],
+            errors: [
+                {
+                    message: 'The "custom2" property should be above the "template" property on line 4.',
+                    line: 13
                 }
             ]
         },
