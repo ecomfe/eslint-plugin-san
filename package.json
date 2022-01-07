@@ -19,11 +19,11 @@
     },
     "dependencies": {
         "eslint-utils": "^2.1.0",
-        "san-eslint-parser": "^2.0.4"
+        "san-eslint-parser": "^2.0.5"
     },
     "devDependencies": {
         "@vuepress/plugin-pwa": "^1.7.1",
-        "@typescript-eslint/parser": "^4.9.0",
+        "@typescript-eslint/parser": "^5.9.0",
         "babel-eslint": "^10.1.0",
         "eslint": "^7.1.0",
         "eslint4b": "^7.14.0",

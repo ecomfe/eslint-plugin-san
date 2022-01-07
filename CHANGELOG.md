@@ -1,6 +1,9 @@
 ### V1.0.4
 ## Fix
 * Fix `html-quotes` replace ' & " to unexpected string.
+## Add
+* Add a feature that `order-in-components` can detect this order of other methods not declared in `order`.
+* Support @typescript-eslint/parser v5+.
 
 ### V1.0.3
 ## Add
