@@ -60,13 +60,13 @@ ruleTester.run('boolean-value', rule, {
             code: `
                 // @san/component
                 class A {
-                    static template = '<a-b b="{{ true }}" c="{{false}}"></a-b>';
+                    static template = '<a-b b="{{ true }}" c="{{false}}" d-e="{{true}}" attr="{{true}}"></a-b>';
                 }
                 san.defineComponent({
-                    template: '<a-b b="{{ false }}" c="{  {true}}"></a-b>',
+                    template: '<a-b b="{{ false }}" c="{  {true}}" d-e="{{true} }" attr="{{ true }}"></a-b>',
                 })
                 export default {
-                    template: '<a-b b="{{ true }}" c ="{{false}}"></a-b>',
+                    template: '<a-b b="{{ true }}" c ="{{false}}" d-e="{{false}}" attr="{{false}}"></a-b>',
                 }
             `,
             parser: require.resolve('san-eslint-parser'),
@@ -81,32 +81,60 @@ ruleTester.run('boolean-value', rule, {
             output: `
                 // @san/component
                 class A {
-                    static template = '<a-b b c="{{false}}"></a-b>';
+                    static template = '<a-b b c="{{false}}" d-e attr></a-b>';
                 }
                 san.defineComponent({
-                    template: '<a-b b="{{ false }}" c></a-b>',
+                    template: '<a-b b="{{ false }}" c d-e attr></a-b>',
                 })
                 export default {
-                    template: '<a-b b c ="{{false}}"></a-b>',
+                    template: '<a-b b c ="{{false}}" d-e="{{false}}" attr="{{false}}"></a-b>',
                 }
             `,
             errors: [
                 {
-                    message: 'Value must be omitted for boolean attributesb',
+                    message: 'Value must be omitted for boolean attributes b',
                     line: 4,
                     column: 45,
                     endLine: 4,
                     endColumn: 59,
                 },
                 {
-                    message: 'Value must be omitted for boolean attributesc',
+                    message: 'Value must be omitted for boolean attributes d-e',
+                    line: 4,
+                    column: 74,
+                    endLine: 4,
+                    endColumn: 88,
+                },
+                {
+                    message: 'Value must be omitted for boolean attributes attr',
+                    line: 4,
+                    column: 89,
+                    endLine: 4,
+                    endColumn: 104,
+                },
+                {
+                    message: 'Value must be omitted for boolean attributes c',
                     line: 7,
                     column: 53,
                     endLine: 7,
                     endColumn: 67,
                 },
                 {
-                    message: 'Value must be omitted for boolean attributesb',
+                    message: 'Value must be omitted for boolean attributes d-e',
+                    line: 7,
+                    column: 68,
+                    endLine: 7,
+                    endColumn: 83,
+                },
+                {
+                    message: 'Value must be omitted for boolean attributes attr',
+                    line: 7,
+                    column: 84,
+                    endLine: 7,
+                    endColumn: 101,
+                },
+                {
+                    message: 'Value must be omitted for boolean attributes b',
                     line: 10,
                     column: 37,
                     endLine: 10,
@@ -153,14 +181,14 @@ ruleTester.run('boolean-value', rule, {
             `,
             errors: [
                 {
-                    message: 'Value must be omitted for boolean attributesb',
+                    message: 'Value must be omitted for boolean attributes b',
                     line: 4,
                     column: 45,
                     endLine: 4,
                     endColumn: 59,
                 },
                 {
-                    message: 'Value must be omitted for boolean attributesb',
+                    message: 'Value must be omitted for boolean attributes b',
                     line: 10,
                     column: 37,
                     endLine: 10,
@@ -207,42 +235,42 @@ ruleTester.run('boolean-value', rule, {
             `,
             errors: [
                 {
-                    message: 'Value must be set for boolean attributesb',
+                    message: 'Value must be set for boolean attributes b',
                     line: 4,
                     column: 45,
                     endLine: 4,
                     endColumn: 46,
                 },
                 {
-                    message: 'Value must be set for boolean attributesc',
+                    message: 'Value must be set for boolean attributes c',
                     line: 4,
                     column: 47,
                     endLine: 4,
                     endColumn: 48,
                 },
                 {
-                    message: 'Value must be set for boolean attributesb',
+                    message: 'Value must be set for boolean attributes b',
                     line: 7,
                     column: 37,
                     endLine: 7,
                     endColumn: 38,
                 },
                 {
-                    message: 'Value must be set for boolean attributesc',
+                    message: 'Value must be set for boolean attributes c',
                     line: 7,
                     column: 39,
                     endLine: 7,
                     endColumn: 41,
                 },
                 {
-                    message: 'Value must be set for boolean attributesb',
+                    message: 'Value must be set for boolean attributes b',
                     line: 10,
                     column: 37,
                     endLine: 10,
                     endColumn: 38,
                 },
                 {
-                    message: 'Value must be set for boolean attributesc',
+                    message: 'Value must be set for boolean attributes c',
                     line: 10,
                     column: 39,
                     endLine: 10,
@@ -289,21 +317,21 @@ ruleTester.run('boolean-value', rule, {
             `,
             errors: [
                 {
-                    message: 'Value must be set for boolean attributesb',
+                    message: 'Value must be set for boolean attributes b',
                     line: 4,
                     column: 45,
                     endLine: 4,
                     endColumn: 46,
                   },
                   {
-                    message: 'Value must be set for boolean attributesb',
+                    message: 'Value must be set for boolean attributes b',
                     line: 7,
                     column: 37,
                     endLine: 7,
                     endColumn: 38,
                   },
                   {
-                    message: 'Value must be set for boolean attributesb',
+                    message: 'Value must be set for boolean attributes b',
                     line: 10,
                     column: 37,
                     endLine: 10,
