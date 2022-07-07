@@ -1,4 +1,11 @@
+### V1.0.5
+
+## Fix
+
+* Fix a bug that `boolean-value` not support detecting multiple character attributes.
+
 ### V1.0.4
+
 ## Fix
 * Fix `html-quotes` replace ' & " to unexpected string.
 ## Add
