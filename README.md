@@ -16,8 +16,21 @@ Next, install `eslint-plugin-san`:
 $ npm install eslint-plugin-san --save-dev
 ```
 
+## Flat Config Usage
 
-## Usage
+eslint.config.mjs
+
+```js
+{
+    files: ['packages/**/src/**/*.san'],
+    extends: [san.configs['flat/recommended']],
+    rules: {
+        // 'san/html-indent': ['warn', 4],
+    }
+}
+```
+
+## Legacy Usage
 
 Add `san` to the plugins section of your `.eslintrc` configuration file.
 
